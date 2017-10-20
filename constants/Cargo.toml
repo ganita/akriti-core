@@ -1,0 +1,19 @@
+[package]
+authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
+name = "akriti-constants"
+version = "0.1.0"
+
+[lib]
+path = "lib.rs"
+test = true
+
+[dependencies]
+phf = "0.7.21"
+constants_props = { path = "props" }
+
+[build-dependencies]
+phf_codegen = "0.7.21"
+serde = "1.0.15"
+serde_derive = "1.0.15"
+serde_json = "1.0.3"
+constants_props = { path = "props" }

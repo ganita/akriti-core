@@ -1,0 +1,12 @@
+[package]
+authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
+name = "akriti-macros"
+version = "0.1.0"
+
+[dependencies]
+quote = "0.3.15"
+syn = "0.11.11"
+
+[lib]
+proc-macro = true
+path = "lib.rs"

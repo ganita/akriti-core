@@ -1,0 +1,4222 @@
+{
+    "65": {
+        "Bold": {
+            "variant": 119808,
+            "name": "MATHEMATICAL BOLD CAPITAL A"
+        },
+        "Italic": {
+            "variant": 119860,
+            "name": "MATHEMATICAL ITALIC CAPITAL A"
+        },
+        "BoldItalic": {
+            "variant": 119912,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL A"
+        },
+        "Script": {
+            "variant": 119964,
+            "name": "MATHEMATICAL SCRIPT CAPITAL A"
+        },
+        "BoldScript": {
+            "variant": 120016,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL A"
+        },
+        "Fraktur": {
+            "variant": 120068,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL A"
+        },
+        "DoubleStruck": {
+            "variant": 120120,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL A"
+        },
+        "BoldFraktur": {
+            "variant": 120172,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL A"
+        },
+        "SansSerif": {
+            "variant": 120224,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL A"
+        },
+        "BoldSansSerif": {
+            "variant": 120276,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL A"
+        },
+        "SansSerifItalic": {
+            "variant": 120328,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL A"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120380,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL A"
+        },
+        "Monospace": {
+            "variant": 120432,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL A"
+        }
+    },
+    "66": {
+        "Bold": {
+            "variant": 119809,
+            "name": "MATHEMATICAL BOLD CAPITAL B"
+        },
+        "Italic": {
+            "variant": 119861,
+            "name": "MATHEMATICAL ITALIC CAPITAL B"
+        },
+        "BoldItalic": {
+            "variant": 119913,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL B"
+        },
+        "BoldScript": {
+            "variant": 120017,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL B"
+        },
+        "Fraktur": {
+            "variant": 120069,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL B"
+        },
+        "DoubleStruck": {
+            "variant": 120121,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL B"
+        },
+        "BoldFraktur": {
+            "variant": 120173,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL B"
+        },
+        "SansSerif": {
+            "variant": 120225,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL B"
+        },
+        "BoldSansSerif": {
+            "variant": 120277,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL B"
+        },
+        "SansSerifItalic": {
+            "variant": 120329,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL B"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120381,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL B"
+        },
+        "Monospace": {
+            "variant": 120433,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL B"
+        }
+    },
+    "67": {
+        "Bold": {
+            "variant": 119810,
+            "name": "MATHEMATICAL BOLD CAPITAL C"
+        },
+        "Italic": {
+            "variant": 119862,
+            "name": "MATHEMATICAL ITALIC CAPITAL C"
+        },
+        "BoldItalic": {
+            "variant": 119914,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL C"
+        },
+        "Script": {
+            "variant": 119966,
+            "name": "MATHEMATICAL SCRIPT CAPITAL C"
+        },
+        "BoldScript": {
+            "variant": 120018,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL C"
+        },
+        "BoldFraktur": {
+            "variant": 120174,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL C"
+        },
+        "SansSerif": {
+            "variant": 120226,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL C"
+        },
+        "BoldSansSerif": {
+            "variant": 120278,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL C"
+        },
+        "SansSerifItalic": {
+            "variant": 120330,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL C"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120382,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL C"
+        },
+        "Monospace": {
+            "variant": 120434,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL C"
+        }
+    },
+    "68": {
+        "Bold": {
+            "variant": 119811,
+            "name": "MATHEMATICAL BOLD CAPITAL D"
+        },
+        "Italic": {
+            "variant": 119863,
+            "name": "MATHEMATICAL ITALIC CAPITAL D"
+        },
+        "BoldItalic": {
+            "variant": 119915,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL D"
+        },
+        "Script": {
+            "variant": 119967,
+            "name": "MATHEMATICAL SCRIPT CAPITAL D"
+        },
+        "BoldScript": {
+            "variant": 120019,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL D"
+        },
+        "Fraktur": {
+            "variant": 120071,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL D"
+        },
+        "DoubleStruck": {
+            "variant": 120123,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL D"
+        },
+        "BoldFraktur": {
+            "variant": 120175,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL D"
+        },
+        "SansSerif": {
+            "variant": 120227,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL D"
+        },
+        "BoldSansSerif": {
+            "variant": 120279,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL D"
+        },
+        "SansSerifItalic": {
+            "variant": 120331,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL D"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120383,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL D"
+        },
+        "Monospace": {
+            "variant": 120435,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL D"
+        }
+    },
+    "69": {
+        "Bold": {
+            "variant": 119812,
+            "name": "MATHEMATICAL BOLD CAPITAL E"
+        },
+        "Italic": {
+            "variant": 119864,
+            "name": "MATHEMATICAL ITALIC CAPITAL E"
+        },
+        "BoldItalic": {
+            "variant": 119916,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL E"
+        },
+        "BoldScript": {
+            "variant": 120020,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL E"
+        },
+        "Fraktur": {
+            "variant": 120072,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL E"
+        },
+        "DoubleStruck": {
+            "variant": 120124,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL E"
+        },
+        "BoldFraktur": {
+            "variant": 120176,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL E"
+        },
+        "SansSerif": {
+            "variant": 120228,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL E"
+        },
+        "BoldSansSerif": {
+            "variant": 120280,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL E"
+        },
+        "SansSerifItalic": {
+            "variant": 120332,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL E"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120384,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL E"
+        },
+        "Monospace": {
+            "variant": 120436,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL E"
+        }
+    },
+    "70": {
+        "Bold": {
+            "variant": 119813,
+            "name": "MATHEMATICAL BOLD CAPITAL F"
+        },
+        "Italic": {
+            "variant": 119865,
+            "name": "MATHEMATICAL ITALIC CAPITAL F"
+        },
+        "BoldItalic": {
+            "variant": 119917,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL F"
+        },
+        "BoldScript": {
+            "variant": 120021,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL F"
+        },
+        "Fraktur": {
+            "variant": 120073,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL F"
+        },
+        "DoubleStruck": {
+            "variant": 120125,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL F"
+        },
+        "BoldFraktur": {
+            "variant": 120177,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL F"
+        },
+        "SansSerif": {
+            "variant": 120229,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL F"
+        },
+        "BoldSansSerif": {
+            "variant": 120281,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL F"
+        },
+        "SansSerifItalic": {
+            "variant": 120333,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL F"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120385,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL F"
+        },
+        "Monospace": {
+            "variant": 120437,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL F"
+        }
+    },
+    "71": {
+        "Bold": {
+            "variant": 119814,
+            "name": "MATHEMATICAL BOLD CAPITAL G"
+        },
+        "Italic": {
+            "variant": 119866,
+            "name": "MATHEMATICAL ITALIC CAPITAL G"
+        },
+        "BoldItalic": {
+            "variant": 119918,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL G"
+        },
+        "Script": {
+            "variant": 119970,
+            "name": "MATHEMATICAL SCRIPT CAPITAL G"
+        },
+        "BoldScript": {
+            "variant": 120022,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL G"
+        },
+        "Fraktur": {
+            "variant": 120074,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL G"
+        },
+        "DoubleStruck": {
+            "variant": 120126,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL G"
+        },
+        "BoldFraktur": {
+            "variant": 120178,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL G"
+        },
+        "SansSerif": {
+            "variant": 120230,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL G"
+        },
+        "BoldSansSerif": {
+            "variant": 120282,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL G"
+        },
+        "SansSerifItalic": {
+            "variant": 120334,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL G"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120386,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL G"
+        },
+        "Monospace": {
+            "variant": 120438,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL G"
+        }
+    },
+    "72": {
+        "Bold": {
+            "variant": 119815,
+            "name": "MATHEMATICAL BOLD CAPITAL H"
+        },
+        "Italic": {
+            "variant": 119867,
+            "name": "MATHEMATICAL ITALIC CAPITAL H"
+        },
+        "BoldItalic": {
+            "variant": 119919,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL H"
+        },
+        "BoldScript": {
+            "variant": 120023,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL H"
+        },
+        "BoldFraktur": {
+            "variant": 120179,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL H"
+        },
+        "SansSerif": {
+            "variant": 120231,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL H"
+        },
+        "BoldSansSerif": {
+            "variant": 120283,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL H"
+        },
+        "SansSerifItalic": {
+            "variant": 120335,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL H"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120387,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL H"
+        },
+        "Monospace": {
+            "variant": 120439,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL H"
+        }
+    },
+    "73": {
+        "Bold": {
+            "variant": 119816,
+            "name": "MATHEMATICAL BOLD CAPITAL I"
+        },
+        "Italic": {
+            "variant": 119868,
+            "name": "MATHEMATICAL ITALIC CAPITAL I"
+        },
+        "BoldItalic": {
+            "variant": 119920,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL I"
+        },
+        "BoldScript": {
+            "variant": 120024,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL I"
+        },
+        "DoubleStruck": {
+            "variant": 120128,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL I"
+        },
+        "BoldFraktur": {
+            "variant": 120180,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL I"
+        },
+        "SansSerif": {
+            "variant": 120232,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL I"
+        },
+        "BoldSansSerif": {
+            "variant": 120284,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL I"
+        },
+        "SansSerifItalic": {
+            "variant": 120336,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL I"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120388,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL I"
+        },
+        "Monospace": {
+            "variant": 120440,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL I"
+        }
+    },
+    "74": {
+        "Bold": {
+            "variant": 119817,
+            "name": "MATHEMATICAL BOLD CAPITAL J"
+        },
+        "Italic": {
+            "variant": 119869,
+            "name": "MATHEMATICAL ITALIC CAPITAL J"
+        },
+        "BoldItalic": {
+            "variant": 119921,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL J"
+        },
+        "Script": {
+            "variant": 119973,
+            "name": "MATHEMATICAL SCRIPT CAPITAL J"
+        },
+        "BoldScript": {
+            "variant": 120025,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL J"
+        },
+        "Fraktur": {
+            "variant": 120077,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL J"
+        },
+        "DoubleStruck": {
+            "variant": 120129,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL J"
+        },
+        "BoldFraktur": {
+            "variant": 120181,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL J"
+        },
+        "SansSerif": {
+            "variant": 120233,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL J"
+        },
+        "BoldSansSerif": {
+            "variant": 120285,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL J"
+        },
+        "SansSerifItalic": {
+            "variant": 120337,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL J"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120389,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL J"
+        },
+        "Monospace": {
+            "variant": 120441,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL J"
+        }
+    },
+    "75": {
+        "Bold": {
+            "variant": 119818,
+            "name": "MATHEMATICAL BOLD CAPITAL K"
+        },
+        "Italic": {
+            "variant": 119870,
+            "name": "MATHEMATICAL ITALIC CAPITAL K"
+        },
+        "BoldItalic": {
+            "variant": 119922,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL K"
+        },
+        "Script": {
+            "variant": 119974,
+            "name": "MATHEMATICAL SCRIPT CAPITAL K"
+        },
+        "BoldScript": {
+            "variant": 120026,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL K"
+        },
+        "Fraktur": {
+            "variant": 120078,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL K"
+        },
+        "DoubleStruck": {
+            "variant": 120130,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL K"
+        },
+        "BoldFraktur": {
+            "variant": 120182,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL K"
+        },
+        "SansSerif": {
+            "variant": 120234,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL K"
+        },
+        "BoldSansSerif": {
+            "variant": 120286,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL K"
+        },
+        "SansSerifItalic": {
+            "variant": 120338,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL K"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120390,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL K"
+        },
+        "Monospace": {
+            "variant": 120442,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL K"
+        }
+    },
+    "76": {
+        "Bold": {
+            "variant": 119819,
+            "name": "MATHEMATICAL BOLD CAPITAL L"
+        },
+        "Italic": {
+            "variant": 119871,
+            "name": "MATHEMATICAL ITALIC CAPITAL L"
+        },
+        "BoldItalic": {
+            "variant": 119923,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL L"
+        },
+        "BoldScript": {
+            "variant": 120027,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL L"
+        },
+        "Fraktur": {
+            "variant": 120079,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL L"
+        },
+        "DoubleStruck": {
+            "variant": 120131,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL L"
+        },
+        "BoldFraktur": {
+            "variant": 120183,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL L"
+        },
+        "SansSerif": {
+            "variant": 120235,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL L"
+        },
+        "BoldSansSerif": {
+            "variant": 120287,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL L"
+        },
+        "SansSerifItalic": {
+            "variant": 120339,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL L"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120391,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL L"
+        },
+        "Monospace": {
+            "variant": 120443,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL L"
+        }
+    },
+    "77": {
+        "Bold": {
+            "variant": 119820,
+            "name": "MATHEMATICAL BOLD CAPITAL M"
+        },
+        "Italic": {
+            "variant": 119872,
+            "name": "MATHEMATICAL ITALIC CAPITAL M"
+        },
+        "BoldItalic": {
+            "variant": 119924,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL M"
+        },
+        "BoldScript": {
+            "variant": 120028,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL M"
+        },
+        "Fraktur": {
+            "variant": 120080,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL M"
+        },
+        "DoubleStruck": {
+            "variant": 120132,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL M"
+        },
+        "BoldFraktur": {
+            "variant": 120184,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL M"
+        },
+        "SansSerif": {
+            "variant": 120236,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL M"
+        },
+        "BoldSansSerif": {
+            "variant": 120288,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL M"
+        },
+        "SansSerifItalic": {
+            "variant": 120340,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL M"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120392,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL M"
+        },
+        "Monospace": {
+            "variant": 120444,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL M"
+        }
+    },
+    "78": {
+        "Bold": {
+            "variant": 119821,
+            "name": "MATHEMATICAL BOLD CAPITAL N"
+        },
+        "Italic": {
+            "variant": 119873,
+            "name": "MATHEMATICAL ITALIC CAPITAL N"
+        },
+        "BoldItalic": {
+            "variant": 119925,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL N"
+        },
+        "Script": {
+            "variant": 119977,
+            "name": "MATHEMATICAL SCRIPT CAPITAL N"
+        },
+        "BoldScript": {
+            "variant": 120029,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL N"
+        },
+        "Fraktur": {
+            "variant": 120081,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL N"
+        },
+        "BoldFraktur": {
+            "variant": 120185,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL N"
+        },
+        "SansSerif": {
+            "variant": 120237,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL N"
+        },
+        "BoldSansSerif": {
+            "variant": 120289,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL N"
+        },
+        "SansSerifItalic": {
+            "variant": 120341,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL N"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120393,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL N"
+        },
+        "Monospace": {
+            "variant": 120445,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL N"
+        }
+    },
+    "79": {
+        "Bold": {
+            "variant": 119822,
+            "name": "MATHEMATICAL BOLD CAPITAL O"
+        },
+        "Italic": {
+            "variant": 119874,
+            "name": "MATHEMATICAL ITALIC CAPITAL O"
+        },
+        "BoldItalic": {
+            "variant": 119926,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL O"
+        },
+        "Script": {
+            "variant": 119978,
+            "name": "MATHEMATICAL SCRIPT CAPITAL O"
+        },
+        "BoldScript": {
+            "variant": 120030,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL O"
+        },
+        "Fraktur": {
+            "variant": 120082,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL O"
+        },
+        "DoubleStruck": {
+            "variant": 120134,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL O"
+        },
+        "BoldFraktur": {
+            "variant": 120186,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL O"
+        },
+        "SansSerif": {
+            "variant": 120238,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL O"
+        },
+        "BoldSansSerif": {
+            "variant": 120290,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL O"
+        },
+        "SansSerifItalic": {
+            "variant": 120342,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL O"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120394,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL O"
+        },
+        "Monospace": {
+            "variant": 120446,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL O"
+        }
+    },
+    "80": {
+        "Bold": {
+            "variant": 119823,
+            "name": "MATHEMATICAL BOLD CAPITAL P"
+        },
+        "Italic": {
+            "variant": 119875,
+            "name": "MATHEMATICAL ITALIC CAPITAL P"
+        },
+        "BoldItalic": {
+            "variant": 119927,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL P"
+        },
+        "Script": {
+            "variant": 119979,
+            "name": "MATHEMATICAL SCRIPT CAPITAL P"
+        },
+        "BoldScript": {
+            "variant": 120031,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL P"
+        },
+        "Fraktur": {
+            "variant": 120083,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL P"
+        },
+        "BoldFraktur": {
+            "variant": 120187,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL P"
+        },
+        "SansSerif": {
+            "variant": 120239,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL P"
+        },
+        "BoldSansSerif": {
+            "variant": 120291,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL P"
+        },
+        "SansSerifItalic": {
+            "variant": 120343,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL P"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120395,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL P"
+        },
+        "Monospace": {
+            "variant": 120447,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL P"
+        }
+    },
+    "81": {
+        "Bold": {
+            "variant": 119824,
+            "name": "MATHEMATICAL BOLD CAPITAL Q"
+        },
+        "Italic": {
+            "variant": 119876,
+            "name": "MATHEMATICAL ITALIC CAPITAL Q"
+        },
+        "BoldItalic": {
+            "variant": 119928,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL Q"
+        },
+        "Script": {
+            "variant": 119980,
+            "name": "MATHEMATICAL SCRIPT CAPITAL Q"
+        },
+        "BoldScript": {
+            "variant": 120032,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL Q"
+        },
+        "Fraktur": {
+            "variant": 120084,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL Q"
+        },
+        "BoldFraktur": {
+            "variant": 120188,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL Q"
+        },
+        "SansSerif": {
+            "variant": 120240,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL Q"
+        },
+        "BoldSansSerif": {
+            "variant": 120292,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL Q"
+        },
+        "SansSerifItalic": {
+            "variant": 120344,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL Q"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120396,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL Q"
+        },
+        "Monospace": {
+            "variant": 120448,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL Q"
+        }
+    },
+    "82": {
+        "Bold": {
+            "variant": 119825,
+            "name": "MATHEMATICAL BOLD CAPITAL R"
+        },
+        "Italic": {
+            "variant": 119877,
+            "name": "MATHEMATICAL ITALIC CAPITAL R"
+        },
+        "BoldItalic": {
+            "variant": 119929,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL R"
+        },
+        "BoldScript": {
+            "variant": 120033,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL R"
+        },
+        "BoldFraktur": {
+            "variant": 120189,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL R"
+        },
+        "SansSerif": {
+            "variant": 120241,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL R"
+        },
+        "BoldSansSerif": {
+            "variant": 120293,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL R"
+        },
+        "SansSerifItalic": {
+            "variant": 120345,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL R"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120397,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL R"
+        },
+        "Monospace": {
+            "variant": 120449,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL R"
+        }
+    },
+    "83": {
+        "Bold": {
+            "variant": 119826,
+            "name": "MATHEMATICAL BOLD CAPITAL S"
+        },
+        "Italic": {
+            "variant": 119878,
+            "name": "MATHEMATICAL ITALIC CAPITAL S"
+        },
+        "BoldItalic": {
+            "variant": 119930,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL S"
+        },
+        "Script": {
+            "variant": 119982,
+            "name": "MATHEMATICAL SCRIPT CAPITAL S"
+        },
+        "BoldScript": {
+            "variant": 120034,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL S"
+        },
+        "Fraktur": {
+            "variant": 120086,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL S"
+        },
+        "DoubleStruck": {
+            "variant": 120138,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL S"
+        },
+        "BoldFraktur": {
+            "variant": 120190,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL S"
+        },
+        "SansSerif": {
+            "variant": 120242,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL S"
+        },
+        "BoldSansSerif": {
+            "variant": 120294,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL S"
+        },
+        "SansSerifItalic": {
+            "variant": 120346,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL S"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120398,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL S"
+        },
+        "Monospace": {
+            "variant": 120450,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL S"
+        }
+    },
+    "84": {
+        "Bold": {
+            "variant": 119827,
+            "name": "MATHEMATICAL BOLD CAPITAL T"
+        },
+        "Italic": {
+            "variant": 119879,
+            "name": "MATHEMATICAL ITALIC CAPITAL T"
+        },
+        "BoldItalic": {
+            "variant": 119931,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL T"
+        },
+        "Script": {
+            "variant": 119983,
+            "name": "MATHEMATICAL SCRIPT CAPITAL T"
+        },
+        "BoldScript": {
+            "variant": 120035,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL T"
+        },
+        "Fraktur": {
+            "variant": 120087,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL T"
+        },
+        "DoubleStruck": {
+            "variant": 120139,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL T"
+        },
+        "BoldFraktur": {
+            "variant": 120191,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL T"
+        },
+        "SansSerif": {
+            "variant": 120243,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL T"
+        },
+        "BoldSansSerif": {
+            "variant": 120295,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL T"
+        },
+        "SansSerifItalic": {
+            "variant": 120347,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL T"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120399,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL T"
+        },
+        "Monospace": {
+            "variant": 120451,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL T"
+        }
+    },
+    "85": {
+        "Bold": {
+            "variant": 119828,
+            "name": "MATHEMATICAL BOLD CAPITAL U"
+        },
+        "Italic": {
+            "variant": 119880,
+            "name": "MATHEMATICAL ITALIC CAPITAL U"
+        },
+        "BoldItalic": {
+            "variant": 119932,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL U"
+        },
+        "Script": {
+            "variant": 119984,
+            "name": "MATHEMATICAL SCRIPT CAPITAL U"
+        },
+        "BoldScript": {
+            "variant": 120036,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL U"
+        },
+        "Fraktur": {
+            "variant": 120088,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL U"
+        },
+        "DoubleStruck": {
+            "variant": 120140,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL U"
+        },
+        "BoldFraktur": {
+            "variant": 120192,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL U"
+        },
+        "SansSerif": {
+            "variant": 120244,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL U"
+        },
+        "BoldSansSerif": {
+            "variant": 120296,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL U"
+        },
+        "SansSerifItalic": {
+            "variant": 120348,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL U"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120400,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL U"
+        },
+        "Monospace": {
+            "variant": 120452,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL U"
+        }
+    },
+    "86": {
+        "Bold": {
+            "variant": 119829,
+            "name": "MATHEMATICAL BOLD CAPITAL V"
+        },
+        "Italic": {
+            "variant": 119881,
+            "name": "MATHEMATICAL ITALIC CAPITAL V"
+        },
+        "BoldItalic": {
+            "variant": 119933,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL V"
+        },
+        "Script": {
+            "variant": 119985,
+            "name": "MATHEMATICAL SCRIPT CAPITAL V"
+        },
+        "BoldScript": {
+            "variant": 120037,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL V"
+        },
+        "Fraktur": {
+            "variant": 120089,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL V"
+        },
+        "DoubleStruck": {
+            "variant": 120141,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL V"
+        },
+        "BoldFraktur": {
+            "variant": 120193,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL V"
+        },
+        "SansSerif": {
+            "variant": 120245,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL V"
+        },
+        "BoldSansSerif": {
+            "variant": 120297,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL V"
+        },
+        "SansSerifItalic": {
+            "variant": 120349,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL V"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120401,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL V"
+        },
+        "Monospace": {
+            "variant": 120453,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL V"
+        }
+    },
+    "87": {
+        "Bold": {
+            "variant": 119830,
+            "name": "MATHEMATICAL BOLD CAPITAL W"
+        },
+        "Italic": {
+            "variant": 119882,
+            "name": "MATHEMATICAL ITALIC CAPITAL W"
+        },
+        "BoldItalic": {
+            "variant": 119934,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL W"
+        },
+        "Script": {
+            "variant": 119986,
+            "name": "MATHEMATICAL SCRIPT CAPITAL W"
+        },
+        "BoldScript": {
+            "variant": 120038,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL W"
+        },
+        "Fraktur": {
+            "variant": 120090,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL W"
+        },
+        "DoubleStruck": {
+            "variant": 120142,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL W"
+        },
+        "BoldFraktur": {
+            "variant": 120194,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL W"
+        },
+        "SansSerif": {
+            "variant": 120246,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL W"
+        },
+        "BoldSansSerif": {
+            "variant": 120298,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL W"
+        },
+        "SansSerifItalic": {
+            "variant": 120350,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL W"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120402,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL W"
+        },
+        "Monospace": {
+            "variant": 120454,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL W"
+        }
+    },
+    "88": {
+        "Bold": {
+            "variant": 119831,
+            "name": "MATHEMATICAL BOLD CAPITAL X"
+        },
+        "Italic": {
+            "variant": 119883,
+            "name": "MATHEMATICAL ITALIC CAPITAL X"
+        },
+        "BoldItalic": {
+            "variant": 119935,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL X"
+        },
+        "Script": {
+            "variant": 119987,
+            "name": "MATHEMATICAL SCRIPT CAPITAL X"
+        },
+        "BoldScript": {
+            "variant": 120039,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL X"
+        },
+        "Fraktur": {
+            "variant": 120091,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL X"
+        },
+        "DoubleStruck": {
+            "variant": 120143,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL X"
+        },
+        "BoldFraktur": {
+            "variant": 120195,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL X"
+        },
+        "SansSerif": {
+            "variant": 120247,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL X"
+        },
+        "BoldSansSerif": {
+            "variant": 120299,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL X"
+        },
+        "SansSerifItalic": {
+            "variant": 120351,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL X"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120403,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL X"
+        },
+        "Monospace": {
+            "variant": 120455,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL X"
+        }
+    },
+    "89": {
+        "Bold": {
+            "variant": 119832,
+            "name": "MATHEMATICAL BOLD CAPITAL Y"
+        },
+        "Italic": {
+            "variant": 119884,
+            "name": "MATHEMATICAL ITALIC CAPITAL Y"
+        },
+        "BoldItalic": {
+            "variant": 119936,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL Y"
+        },
+        "Script": {
+            "variant": 119988,
+            "name": "MATHEMATICAL SCRIPT CAPITAL Y"
+        },
+        "BoldScript": {
+            "variant": 120040,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL Y"
+        },
+        "Fraktur": {
+            "variant": 120092,
+            "name": "MATHEMATICAL FRAKTUR CAPITAL Y"
+        },
+        "DoubleStruck": {
+            "variant": 120144,
+            "name": "MATHEMATICAL DOUBLE-STRUCK CAPITAL Y"
+        },
+        "BoldFraktur": {
+            "variant": 120196,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL Y"
+        },
+        "SansSerif": {
+            "variant": 120248,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL Y"
+        },
+        "BoldSansSerif": {
+            "variant": 120300,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL Y"
+        },
+        "SansSerifItalic": {
+            "variant": 120352,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL Y"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120404,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL Y"
+        },
+        "Monospace": {
+            "variant": 120456,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL Y"
+        }
+    },
+    "90": {
+        "Bold": {
+            "variant": 119833,
+            "name": "MATHEMATICAL BOLD CAPITAL Z"
+        },
+        "Italic": {
+            "variant": 119885,
+            "name": "MATHEMATICAL ITALIC CAPITAL Z"
+        },
+        "BoldItalic": {
+            "variant": 119937,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL Z"
+        },
+        "Script": {
+            "variant": 119989,
+            "name": "MATHEMATICAL SCRIPT CAPITAL Z"
+        },
+        "BoldScript": {
+            "variant": 120041,
+            "name": "MATHEMATICAL BOLD SCRIPT CAPITAL Z"
+        },
+        "BoldFraktur": {
+            "variant": 120197,
+            "name": "MATHEMATICAL BOLD FRAKTUR CAPITAL Z"
+        },
+        "SansSerif": {
+            "variant": 120249,
+            "name": "MATHEMATICAL SANS-SERIF CAPITAL Z"
+        },
+        "BoldSansSerif": {
+            "variant": 120301,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL Z"
+        },
+        "SansSerifItalic": {
+            "variant": 120353,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC CAPITAL Z"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120405,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL Z"
+        },
+        "Monospace": {
+            "variant": 120457,
+            "name": "MATHEMATICAL MONOSPACE CAPITAL Z"
+        }
+    },
+    "97": {
+        "Bold": {
+            "variant": 119834,
+            "name": "MATHEMATICAL BOLD SMALL A"
+        },
+        "Italic": {
+            "variant": 119886,
+            "name": "MATHEMATICAL ITALIC SMALL A"
+        },
+        "BoldItalic": {
+            "variant": 119938,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL A"
+        },
+        "Script": {
+            "variant": 119990,
+            "name": "MATHEMATICAL SCRIPT SMALL A"
+        },
+        "BoldScript": {
+            "variant": 120042,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL A"
+        },
+        "Fraktur": {
+            "variant": 120094,
+            "name": "MATHEMATICAL FRAKTUR SMALL A"
+        },
+        "DoubleStruck": {
+            "variant": 120146,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL A"
+        },
+        "BoldFraktur": {
+            "variant": 120198,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL A"
+        },
+        "SansSerif": {
+            "variant": 120250,
+            "name": "MATHEMATICAL SANS-SERIF SMALL A"
+        },
+        "BoldSansSerif": {
+            "variant": 120302,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL A"
+        },
+        "SansSerifItalic": {
+            "variant": 120354,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL A"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120406,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL A"
+        },
+        "Monospace": {
+            "variant": 120458,
+            "name": "MATHEMATICAL MONOSPACE SMALL A"
+        }
+    },
+    "98": {
+        "Bold": {
+            "variant": 119835,
+            "name": "MATHEMATICAL BOLD SMALL B"
+        },
+        "Italic": {
+            "variant": 119887,
+            "name": "MATHEMATICAL ITALIC SMALL B"
+        },
+        "BoldItalic": {
+            "variant": 119939,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL B"
+        },
+        "Script": {
+            "variant": 119991,
+            "name": "MATHEMATICAL SCRIPT SMALL B"
+        },
+        "BoldScript": {
+            "variant": 120043,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL B"
+        },
+        "Fraktur": {
+            "variant": 120095,
+            "name": "MATHEMATICAL FRAKTUR SMALL B"
+        },
+        "DoubleStruck": {
+            "variant": 120147,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL B"
+        },
+        "BoldFraktur": {
+            "variant": 120199,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL B"
+        },
+        "SansSerif": {
+            "variant": 120251,
+            "name": "MATHEMATICAL SANS-SERIF SMALL B"
+        },
+        "BoldSansSerif": {
+            "variant": 120303,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL B"
+        },
+        "SansSerifItalic": {
+            "variant": 120355,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL B"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120407,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL B"
+        },
+        "Monospace": {
+            "variant": 120459,
+            "name": "MATHEMATICAL MONOSPACE SMALL B"
+        }
+    },
+    "99": {
+        "Bold": {
+            "variant": 119836,
+            "name": "MATHEMATICAL BOLD SMALL C"
+        },
+        "Italic": {
+            "variant": 119888,
+            "name": "MATHEMATICAL ITALIC SMALL C"
+        },
+        "BoldItalic": {
+            "variant": 119940,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL C"
+        },
+        "Script": {
+            "variant": 119992,
+            "name": "MATHEMATICAL SCRIPT SMALL C"
+        },
+        "BoldScript": {
+            "variant": 120044,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL C"
+        },
+        "Fraktur": {
+            "variant": 120096,
+            "name": "MATHEMATICAL FRAKTUR SMALL C"
+        },
+        "DoubleStruck": {
+            "variant": 120148,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL C"
+        },
+        "BoldFraktur": {
+            "variant": 120200,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL C"
+        },
+        "SansSerif": {
+            "variant": 120252,
+            "name": "MATHEMATICAL SANS-SERIF SMALL C"
+        },
+        "BoldSansSerif": {
+            "variant": 120304,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL C"
+        },
+        "SansSerifItalic": {
+            "variant": 120356,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL C"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120408,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL C"
+        },
+        "Monospace": {
+            "variant": 120460,
+            "name": "MATHEMATICAL MONOSPACE SMALL C"
+        }
+    },
+    "100": {
+        "Bold": {
+            "variant": 119837,
+            "name": "MATHEMATICAL BOLD SMALL D"
+        },
+        "Italic": {
+            "variant": 119889,
+            "name": "MATHEMATICAL ITALIC SMALL D"
+        },
+        "BoldItalic": {
+            "variant": 119941,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL D"
+        },
+        "Script": {
+            "variant": 119993,
+            "name": "MATHEMATICAL SCRIPT SMALL D"
+        },
+        "BoldScript": {
+            "variant": 120045,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL D"
+        },
+        "Fraktur": {
+            "variant": 120097,
+            "name": "MATHEMATICAL FRAKTUR SMALL D"
+        },
+        "DoubleStruck": {
+            "variant": 120149,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL D"
+        },
+        "BoldFraktur": {
+            "variant": 120201,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL D"
+        },
+        "SansSerif": {
+            "variant": 120253,
+            "name": "MATHEMATICAL SANS-SERIF SMALL D"
+        },
+        "BoldSansSerif": {
+            "variant": 120305,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL D"
+        },
+        "SansSerifItalic": {
+            "variant": 120357,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL D"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120409,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL D"
+        },
+        "Monospace": {
+            "variant": 120461,
+            "name": "MATHEMATICAL MONOSPACE SMALL D"
+        }
+    },
+    "101": {
+        "Bold": {
+            "variant": 119838,
+            "name": "MATHEMATICAL BOLD SMALL E"
+        },
+        "Italic": {
+            "variant": 119890,
+            "name": "MATHEMATICAL ITALIC SMALL E"
+        },
+        "BoldItalic": {
+            "variant": 119942,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL E"
+        },
+        "BoldScript": {
+            "variant": 120046,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL E"
+        },
+        "Fraktur": {
+            "variant": 120098,
+            "name": "MATHEMATICAL FRAKTUR SMALL E"
+        },
+        "DoubleStruck": {
+            "variant": 120150,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL E"
+        },
+        "BoldFraktur": {
+            "variant": 120202,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL E"
+        },
+        "SansSerif": {
+            "variant": 120254,
+            "name": "MATHEMATICAL SANS-SERIF SMALL E"
+        },
+        "BoldSansSerif": {
+            "variant": 120306,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL E"
+        },
+        "SansSerifItalic": {
+            "variant": 120358,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL E"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120410,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL E"
+        },
+        "Monospace": {
+            "variant": 120462,
+            "name": "MATHEMATICAL MONOSPACE SMALL E"
+        }
+    },
+    "102": {
+        "Bold": {
+            "variant": 119839,
+            "name": "MATHEMATICAL BOLD SMALL F"
+        },
+        "Italic": {
+            "variant": 119891,
+            "name": "MATHEMATICAL ITALIC SMALL F"
+        },
+        "BoldItalic": {
+            "variant": 119943,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL F"
+        },
+        "Script": {
+            "variant": 119995,
+            "name": "MATHEMATICAL SCRIPT SMALL F"
+        },
+        "BoldScript": {
+            "variant": 120047,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL F"
+        },
+        "Fraktur": {
+            "variant": 120099,
+            "name": "MATHEMATICAL FRAKTUR SMALL F"
+        },
+        "DoubleStruck": {
+            "variant": 120151,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL F"
+        },
+        "BoldFraktur": {
+            "variant": 120203,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL F"
+        },
+        "SansSerif": {
+            "variant": 120255,
+            "name": "MATHEMATICAL SANS-SERIF SMALL F"
+        },
+        "BoldSansSerif": {
+            "variant": 120307,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL F"
+        },
+        "SansSerifItalic": {
+            "variant": 120359,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL F"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120411,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL F"
+        },
+        "Monospace": {
+            "variant": 120463,
+            "name": "MATHEMATICAL MONOSPACE SMALL F"
+        }
+    },
+    "103": {
+        "Bold": {
+            "variant": 119840,
+            "name": "MATHEMATICAL BOLD SMALL G"
+        },
+        "Italic": {
+            "variant": 119892,
+            "name": "MATHEMATICAL ITALIC SMALL G"
+        },
+        "BoldItalic": {
+            "variant": 119944,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL G"
+        },
+        "BoldScript": {
+            "variant": 120048,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL G"
+        },
+        "Fraktur": {
+            "variant": 120100,
+            "name": "MATHEMATICAL FRAKTUR SMALL G"
+        },
+        "DoubleStruck": {
+            "variant": 120152,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL G"
+        },
+        "BoldFraktur": {
+            "variant": 120204,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL G"
+        },
+        "SansSerif": {
+            "variant": 120256,
+            "name": "MATHEMATICAL SANS-SERIF SMALL G"
+        },
+        "BoldSansSerif": {
+            "variant": 120308,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL G"
+        },
+        "SansSerifItalic": {
+            "variant": 120360,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL G"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120412,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL G"
+        },
+        "Monospace": {
+            "variant": 120464,
+            "name": "MATHEMATICAL MONOSPACE SMALL G"
+        }
+    },
+    "104": {
+        "Bold": {
+            "variant": 119841,
+            "name": "MATHEMATICAL BOLD SMALL H"
+        },
+        "BoldItalic": {
+            "variant": 119945,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL H"
+        },
+        "Script": {
+            "variant": 119997,
+            "name": "MATHEMATICAL SCRIPT SMALL H"
+        },
+        "BoldScript": {
+            "variant": 120049,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL H"
+        },
+        "Fraktur": {
+            "variant": 120101,
+            "name": "MATHEMATICAL FRAKTUR SMALL H"
+        },
+        "DoubleStruck": {
+            "variant": 120153,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL H"
+        },
+        "BoldFraktur": {
+            "variant": 120205,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL H"
+        },
+        "SansSerif": {
+            "variant": 120257,
+            "name": "MATHEMATICAL SANS-SERIF SMALL H"
+        },
+        "BoldSansSerif": {
+            "variant": 120309,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL H"
+        },
+        "SansSerifItalic": {
+            "variant": 120361,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL H"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120413,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL H"
+        },
+        "Monospace": {
+            "variant": 120465,
+            "name": "MATHEMATICAL MONOSPACE SMALL H"
+        }
+    },
+    "105": {
+        "Bold": {
+            "variant": 119842,
+            "name": "MATHEMATICAL BOLD SMALL I"
+        },
+        "Italic": {
+            "variant": 119894,
+            "name": "MATHEMATICAL ITALIC SMALL I"
+        },
+        "BoldItalic": {
+            "variant": 119946,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL I"
+        },
+        "Script": {
+            "variant": 119998,
+            "name": "MATHEMATICAL SCRIPT SMALL I"
+        },
+        "BoldScript": {
+            "variant": 120050,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL I"
+        },
+        "Fraktur": {
+            "variant": 120102,
+            "name": "MATHEMATICAL FRAKTUR SMALL I"
+        },
+        "DoubleStruck": {
+            "variant": 120154,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL I"
+        },
+        "BoldFraktur": {
+            "variant": 120206,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL I"
+        },
+        "SansSerif": {
+            "variant": 120258,
+            "name": "MATHEMATICAL SANS-SERIF SMALL I"
+        },
+        "BoldSansSerif": {
+            "variant": 120310,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL I"
+        },
+        "SansSerifItalic": {
+            "variant": 120362,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL I"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120414,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL I"
+        },
+        "Monospace": {
+            "variant": 120466,
+            "name": "MATHEMATICAL MONOSPACE SMALL I"
+        }
+    },
+    "106": {
+        "Bold": {
+            "variant": 119843,
+            "name": "MATHEMATICAL BOLD SMALL J"
+        },
+        "Italic": {
+            "variant": 119895,
+            "name": "MATHEMATICAL ITALIC SMALL J"
+        },
+        "BoldItalic": {
+            "variant": 119947,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL J"
+        },
+        "Script": {
+            "variant": 119999,
+            "name": "MATHEMATICAL SCRIPT SMALL J"
+        },
+        "BoldScript": {
+            "variant": 120051,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL J"
+        },
+        "Fraktur": {
+            "variant": 120103,
+            "name": "MATHEMATICAL FRAKTUR SMALL J"
+        },
+        "DoubleStruck": {
+            "variant": 120155,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL J"
+        },
+        "BoldFraktur": {
+            "variant": 120207,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL J"
+        },
+        "SansSerif": {
+            "variant": 120259,
+            "name": "MATHEMATICAL SANS-SERIF SMALL J"
+        },
+        "BoldSansSerif": {
+            "variant": 120311,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL J"
+        },
+        "SansSerifItalic": {
+            "variant": 120363,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL J"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120415,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL J"
+        },
+        "Monospace": {
+            "variant": 120467,
+            "name": "MATHEMATICAL MONOSPACE SMALL J"
+        }
+    },
+    "107": {
+        "Bold": {
+            "variant": 119844,
+            "name": "MATHEMATICAL BOLD SMALL K"
+        },
+        "Italic": {
+            "variant": 119896,
+            "name": "MATHEMATICAL ITALIC SMALL K"
+        },
+        "BoldItalic": {
+            "variant": 119948,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL K"
+        },
+        "Script": {
+            "variant": 120000,
+            "name": "MATHEMATICAL SCRIPT SMALL K"
+        },
+        "BoldScript": {
+            "variant": 120052,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL K"
+        },
+        "Fraktur": {
+            "variant": 120104,
+            "name": "MATHEMATICAL FRAKTUR SMALL K"
+        },
+        "DoubleStruck": {
+            "variant": 120156,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL K"
+        },
+        "BoldFraktur": {
+            "variant": 120208,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL K"
+        },
+        "SansSerif": {
+            "variant": 120260,
+            "name": "MATHEMATICAL SANS-SERIF SMALL K"
+        },
+        "BoldSansSerif": {
+            "variant": 120312,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL K"
+        },
+        "SansSerifItalic": {
+            "variant": 120364,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL K"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120416,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL K"
+        },
+        "Monospace": {
+            "variant": 120468,
+            "name": "MATHEMATICAL MONOSPACE SMALL K"
+        }
+    },
+    "108": {
+        "Bold": {
+            "variant": 119845,
+            "name": "MATHEMATICAL BOLD SMALL L"
+        },
+        "Italic": {
+            "variant": 119897,
+            "name": "MATHEMATICAL ITALIC SMALL L"
+        },
+        "BoldItalic": {
+            "variant": 119949,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL L"
+        },
+        "Script": {
+            "variant": 120001,
+            "name": "MATHEMATICAL SCRIPT SMALL L"
+        },
+        "BoldScript": {
+            "variant": 120053,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL L"
+        },
+        "Fraktur": {
+            "variant": 120105,
+            "name": "MATHEMATICAL FRAKTUR SMALL L"
+        },
+        "DoubleStruck": {
+            "variant": 120157,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL L"
+        },
+        "BoldFraktur": {
+            "variant": 120209,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL L"
+        },
+        "SansSerif": {
+            "variant": 120261,
+            "name": "MATHEMATICAL SANS-SERIF SMALL L"
+        },
+        "BoldSansSerif": {
+            "variant": 120313,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL L"
+        },
+        "SansSerifItalic": {
+            "variant": 120365,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL L"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120417,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL L"
+        },
+        "Monospace": {
+            "variant": 120469,
+            "name": "MATHEMATICAL MONOSPACE SMALL L"
+        }
+    },
+    "109": {
+        "Bold": {
+            "variant": 119846,
+            "name": "MATHEMATICAL BOLD SMALL M"
+        },
+        "Italic": {
+            "variant": 119898,
+            "name": "MATHEMATICAL ITALIC SMALL M"
+        },
+        "BoldItalic": {
+            "variant": 119950,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL M"
+        },
+        "Script": {
+            "variant": 120002,
+            "name": "MATHEMATICAL SCRIPT SMALL M"
+        },
+        "BoldScript": {
+            "variant": 120054,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL M"
+        },
+        "Fraktur": {
+            "variant": 120106,
+            "name": "MATHEMATICAL FRAKTUR SMALL M"
+        },
+        "DoubleStruck": {
+            "variant": 120158,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL M"
+        },
+        "BoldFraktur": {
+            "variant": 120210,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL M"
+        },
+        "SansSerif": {
+            "variant": 120262,
+            "name": "MATHEMATICAL SANS-SERIF SMALL M"
+        },
+        "BoldSansSerif": {
+            "variant": 120314,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL M"
+        },
+        "SansSerifItalic": {
+            "variant": 120366,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL M"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120418,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL M"
+        },
+        "Monospace": {
+            "variant": 120470,
+            "name": "MATHEMATICAL MONOSPACE SMALL M"
+        }
+    },
+    "110": {
+        "Bold": {
+            "variant": 119847,
+            "name": "MATHEMATICAL BOLD SMALL N"
+        },
+        "Italic": {
+            "variant": 119899,
+            "name": "MATHEMATICAL ITALIC SMALL N"
+        },
+        "BoldItalic": {
+            "variant": 119951,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL N"
+        },
+        "Script": {
+            "variant": 120003,
+            "name": "MATHEMATICAL SCRIPT SMALL N"
+        },
+        "BoldScript": {
+            "variant": 120055,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL N"
+        },
+        "Fraktur": {
+            "variant": 120107,
+            "name": "MATHEMATICAL FRAKTUR SMALL N"
+        },
+        "DoubleStruck": {
+            "variant": 120159,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL N"
+        },
+        "BoldFraktur": {
+            "variant": 120211,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL N"
+        },
+        "SansSerif": {
+            "variant": 120263,
+            "name": "MATHEMATICAL SANS-SERIF SMALL N"
+        },
+        "BoldSansSerif": {
+            "variant": 120315,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL N"
+        },
+        "SansSerifItalic": {
+            "variant": 120367,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL N"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120419,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL N"
+        },
+        "Monospace": {
+            "variant": 120471,
+            "name": "MATHEMATICAL MONOSPACE SMALL N"
+        }
+    },
+    "111": {
+        "Bold": {
+            "variant": 119848,
+            "name": "MATHEMATICAL BOLD SMALL O"
+        },
+        "Italic": {
+            "variant": 119900,
+            "name": "MATHEMATICAL ITALIC SMALL O"
+        },
+        "BoldItalic": {
+            "variant": 119952,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL O"
+        },
+        "BoldScript": {
+            "variant": 120056,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL O"
+        },
+        "Fraktur": {
+            "variant": 120108,
+            "name": "MATHEMATICAL FRAKTUR SMALL O"
+        },
+        "DoubleStruck": {
+            "variant": 120160,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL O"
+        },
+        "BoldFraktur": {
+            "variant": 120212,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL O"
+        },
+        "SansSerif": {
+            "variant": 120264,
+            "name": "MATHEMATICAL SANS-SERIF SMALL O"
+        },
+        "BoldSansSerif": {
+            "variant": 120316,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL O"
+        },
+        "SansSerifItalic": {
+            "variant": 120368,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL O"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120420,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL O"
+        },
+        "Monospace": {
+            "variant": 120472,
+            "name": "MATHEMATICAL MONOSPACE SMALL O"
+        }
+    },
+    "112": {
+        "Bold": {
+            "variant": 119849,
+            "name": "MATHEMATICAL BOLD SMALL P"
+        },
+        "Italic": {
+            "variant": 119901,
+            "name": "MATHEMATICAL ITALIC SMALL P"
+        },
+        "BoldItalic": {
+            "variant": 119953,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL P"
+        },
+        "Script": {
+            "variant": 120005,
+            "name": "MATHEMATICAL SCRIPT SMALL P"
+        },
+        "BoldScript": {
+            "variant": 120057,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL P"
+        },
+        "Fraktur": {
+            "variant": 120109,
+            "name": "MATHEMATICAL FRAKTUR SMALL P"
+        },
+        "DoubleStruck": {
+            "variant": 120161,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL P"
+        },
+        "BoldFraktur": {
+            "variant": 120213,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL P"
+        },
+        "SansSerif": {
+            "variant": 120265,
+            "name": "MATHEMATICAL SANS-SERIF SMALL P"
+        },
+        "BoldSansSerif": {
+            "variant": 120317,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL P"
+        },
+        "SansSerifItalic": {
+            "variant": 120369,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL P"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120421,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL P"
+        },
+        "Monospace": {
+            "variant": 120473,
+            "name": "MATHEMATICAL MONOSPACE SMALL P"
+        }
+    },
+    "113": {
+        "Bold": {
+            "variant": 119850,
+            "name": "MATHEMATICAL BOLD SMALL Q"
+        },
+        "Italic": {
+            "variant": 119902,
+            "name": "MATHEMATICAL ITALIC SMALL Q"
+        },
+        "BoldItalic": {
+            "variant": 119954,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL Q"
+        },
+        "Script": {
+            "variant": 120006,
+            "name": "MATHEMATICAL SCRIPT SMALL Q"
+        },
+        "BoldScript": {
+            "variant": 120058,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL Q"
+        },
+        "Fraktur": {
+            "variant": 120110,
+            "name": "MATHEMATICAL FRAKTUR SMALL Q"
+        },
+        "DoubleStruck": {
+            "variant": 120162,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL Q"
+        },
+        "BoldFraktur": {
+            "variant": 120214,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL Q"
+        },
+        "SansSerif": {
+            "variant": 120266,
+            "name": "MATHEMATICAL SANS-SERIF SMALL Q"
+        },
+        "BoldSansSerif": {
+            "variant": 120318,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL Q"
+        },
+        "SansSerifItalic": {
+            "variant": 120370,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL Q"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120422,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL Q"
+        },
+        "Monospace": {
+            "variant": 120474,
+            "name": "MATHEMATICAL MONOSPACE SMALL Q"
+        }
+    },
+    "114": {
+        "Bold": {
+            "variant": 119851,
+            "name": "MATHEMATICAL BOLD SMALL R"
+        },
+        "Italic": {
+            "variant": 119903,
+            "name": "MATHEMATICAL ITALIC SMALL R"
+        },
+        "BoldItalic": {
+            "variant": 119955,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL R"
+        },
+        "Script": {
+            "variant": 120007,
+            "name": "MATHEMATICAL SCRIPT SMALL R"
+        },
+        "BoldScript": {
+            "variant": 120059,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL R"
+        },
+        "Fraktur": {
+            "variant": 120111,
+            "name": "MATHEMATICAL FRAKTUR SMALL R"
+        },
+        "DoubleStruck": {
+            "variant": 120163,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL R"
+        },
+        "BoldFraktur": {
+            "variant": 120215,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL R"
+        },
+        "SansSerif": {
+            "variant": 120267,
+            "name": "MATHEMATICAL SANS-SERIF SMALL R"
+        },
+        "BoldSansSerif": {
+            "variant": 120319,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL R"
+        },
+        "SansSerifItalic": {
+            "variant": 120371,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL R"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120423,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL R"
+        },
+        "Monospace": {
+            "variant": 120475,
+            "name": "MATHEMATICAL MONOSPACE SMALL R"
+        }
+    },
+    "115": {
+        "Bold": {
+            "variant": 119852,
+            "name": "MATHEMATICAL BOLD SMALL S"
+        },
+        "Italic": {
+            "variant": 119904,
+            "name": "MATHEMATICAL ITALIC SMALL S"
+        },
+        "BoldItalic": {
+            "variant": 119956,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL S"
+        },
+        "Script": {
+            "variant": 120008,
+            "name": "MATHEMATICAL SCRIPT SMALL S"
+        },
+        "BoldScript": {
+            "variant": 120060,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL S"
+        },
+        "Fraktur": {
+            "variant": 120112,
+            "name": "MATHEMATICAL FRAKTUR SMALL S"
+        },
+        "DoubleStruck": {
+            "variant": 120164,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL S"
+        },
+        "BoldFraktur": {
+            "variant": 120216,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL S"
+        },
+        "SansSerif": {
+            "variant": 120268,
+            "name": "MATHEMATICAL SANS-SERIF SMALL S"
+        },
+        "BoldSansSerif": {
+            "variant": 120320,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL S"
+        },
+        "SansSerifItalic": {
+            "variant": 120372,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL S"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120424,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL S"
+        },
+        "Monospace": {
+            "variant": 120476,
+            "name": "MATHEMATICAL MONOSPACE SMALL S"
+        }
+    },
+    "116": {
+        "Bold": {
+            "variant": 119853,
+            "name": "MATHEMATICAL BOLD SMALL T"
+        },
+        "Italic": {
+            "variant": 119905,
+            "name": "MATHEMATICAL ITALIC SMALL T"
+        },
+        "BoldItalic": {
+            "variant": 119957,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL T"
+        },
+        "Script": {
+            "variant": 120009,
+            "name": "MATHEMATICAL SCRIPT SMALL T"
+        },
+        "BoldScript": {
+            "variant": 120061,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL T"
+        },
+        "Fraktur": {
+            "variant": 120113,
+            "name": "MATHEMATICAL FRAKTUR SMALL T"
+        },
+        "DoubleStruck": {
+            "variant": 120165,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL T"
+        },
+        "BoldFraktur": {
+            "variant": 120217,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL T"
+        },
+        "SansSerif": {
+            "variant": 120269,
+            "name": "MATHEMATICAL SANS-SERIF SMALL T"
+        },
+        "BoldSansSerif": {
+            "variant": 120321,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL T"
+        },
+        "SansSerifItalic": {
+            "variant": 120373,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL T"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120425,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL T"
+        },
+        "Monospace": {
+            "variant": 120477,
+            "name": "MATHEMATICAL MONOSPACE SMALL T"
+        }
+    },
+    "117": {
+        "Bold": {
+            "variant": 119854,
+            "name": "MATHEMATICAL BOLD SMALL U"
+        },
+        "Italic": {
+            "variant": 119906,
+            "name": "MATHEMATICAL ITALIC SMALL U"
+        },
+        "BoldItalic": {
+            "variant": 119958,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL U"
+        },
+        "Script": {
+            "variant": 120010,
+            "name": "MATHEMATICAL SCRIPT SMALL U"
+        },
+        "BoldScript": {
+            "variant": 120062,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL U"
+        },
+        "Fraktur": {
+            "variant": 120114,
+            "name": "MATHEMATICAL FRAKTUR SMALL U"
+        },
+        "DoubleStruck": {
+            "variant": 120166,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL U"
+        },
+        "BoldFraktur": {
+            "variant": 120218,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL U"
+        },
+        "SansSerif": {
+            "variant": 120270,
+            "name": "MATHEMATICAL SANS-SERIF SMALL U"
+        },
+        "BoldSansSerif": {
+            "variant": 120322,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL U"
+        },
+        "SansSerifItalic": {
+            "variant": 120374,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL U"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120426,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL U"
+        },
+        "Monospace": {
+            "variant": 120478,
+            "name": "MATHEMATICAL MONOSPACE SMALL U"
+        }
+    },
+    "118": {
+        "Bold": {
+            "variant": 119855,
+            "name": "MATHEMATICAL BOLD SMALL V"
+        },
+        "Italic": {
+            "variant": 119907,
+            "name": "MATHEMATICAL ITALIC SMALL V"
+        },
+        "BoldItalic": {
+            "variant": 119959,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL V"
+        },
+        "Script": {
+            "variant": 120011,
+            "name": "MATHEMATICAL SCRIPT SMALL V"
+        },
+        "BoldScript": {
+            "variant": 120063,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL V"
+        },
+        "Fraktur": {
+            "variant": 120115,
+            "name": "MATHEMATICAL FRAKTUR SMALL V"
+        },
+        "DoubleStruck": {
+            "variant": 120167,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL V"
+        },
+        "BoldFraktur": {
+            "variant": 120219,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL V"
+        },
+        "SansSerif": {
+            "variant": 120271,
+            "name": "MATHEMATICAL SANS-SERIF SMALL V"
+        },
+        "BoldSansSerif": {
+            "variant": 120323,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL V"
+        },
+        "SansSerifItalic": {
+            "variant": 120375,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL V"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120427,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL V"
+        },
+        "Monospace": {
+            "variant": 120479,
+            "name": "MATHEMATICAL MONOSPACE SMALL V"
+        }
+    },
+    "119": {
+        "Bold": {
+            "variant": 119856,
+            "name": "MATHEMATICAL BOLD SMALL W"
+        },
+        "Italic": {
+            "variant": 119908,
+            "name": "MATHEMATICAL ITALIC SMALL W"
+        },
+        "BoldItalic": {
+            "variant": 119960,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL W"
+        },
+        "Script": {
+            "variant": 120012,
+            "name": "MATHEMATICAL SCRIPT SMALL W"
+        },
+        "BoldScript": {
+            "variant": 120064,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL W"
+        },
+        "Fraktur": {
+            "variant": 120116,
+            "name": "MATHEMATICAL FRAKTUR SMALL W"
+        },
+        "DoubleStruck": {
+            "variant": 120168,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL W"
+        },
+        "BoldFraktur": {
+            "variant": 120220,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL W"
+        },
+        "SansSerif": {
+            "variant": 120272,
+            "name": "MATHEMATICAL SANS-SERIF SMALL W"
+        },
+        "BoldSansSerif": {
+            "variant": 120324,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL W"
+        },
+        "SansSerifItalic": {
+            "variant": 120376,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL W"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120428,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL W"
+        },
+        "Monospace": {
+            "variant": 120480,
+            "name": "MATHEMATICAL MONOSPACE SMALL W"
+        }
+    },
+    "120": {
+        "Bold": {
+            "variant": 119857,
+            "name": "MATHEMATICAL BOLD SMALL X"
+        },
+        "Italic": {
+            "variant": 119909,
+            "name": "MATHEMATICAL ITALIC SMALL X"
+        },
+        "BoldItalic": {
+            "variant": 119961,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL X"
+        },
+        "Script": {
+            "variant": 120013,
+            "name": "MATHEMATICAL SCRIPT SMALL X"
+        },
+        "BoldScript": {
+            "variant": 120065,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL X"
+        },
+        "Fraktur": {
+            "variant": 120117,
+            "name": "MATHEMATICAL FRAKTUR SMALL X"
+        },
+        "DoubleStruck": {
+            "variant": 120169,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL X"
+        },
+        "BoldFraktur": {
+            "variant": 120221,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL X"
+        },
+        "SansSerif": {
+            "variant": 120273,
+            "name": "MATHEMATICAL SANS-SERIF SMALL X"
+        },
+        "BoldSansSerif": {
+            "variant": 120325,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL X"
+        },
+        "SansSerifItalic": {
+            "variant": 120377,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL X"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120429,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL X"
+        },
+        "Monospace": {
+            "variant": 120481,
+            "name": "MATHEMATICAL MONOSPACE SMALL X"
+        }
+    },
+    "121": {
+        "Bold": {
+            "variant": 119858,
+            "name": "MATHEMATICAL BOLD SMALL Y"
+        },
+        "Italic": {
+            "variant": 119910,
+            "name": "MATHEMATICAL ITALIC SMALL Y"
+        },
+        "BoldItalic": {
+            "variant": 119962,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL Y"
+        },
+        "Script": {
+            "variant": 120014,
+            "name": "MATHEMATICAL SCRIPT SMALL Y"
+        },
+        "BoldScript": {
+            "variant": 120066,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL Y"
+        },
+        "Fraktur": {
+            "variant": 120118,
+            "name": "MATHEMATICAL FRAKTUR SMALL Y"
+        },
+        "DoubleStruck": {
+            "variant": 120170,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL Y"
+        },
+        "BoldFraktur": {
+            "variant": 120222,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL Y"
+        },
+        "SansSerif": {
+            "variant": 120274,
+            "name": "MATHEMATICAL SANS-SERIF SMALL Y"
+        },
+        "BoldSansSerif": {
+            "variant": 120326,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL Y"
+        },
+        "SansSerifItalic": {
+            "variant": 120378,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL Y"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120430,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL Y"
+        },
+        "Monospace": {
+            "variant": 120482,
+            "name": "MATHEMATICAL MONOSPACE SMALL Y"
+        }
+    },
+    "122": {
+        "Bold": {
+            "variant": 119859,
+            "name": "MATHEMATICAL BOLD SMALL Z"
+        },
+        "Italic": {
+            "variant": 119911,
+            "name": "MATHEMATICAL ITALIC SMALL Z"
+        },
+        "BoldItalic": {
+            "variant": 119963,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL Z"
+        },
+        "Script": {
+            "variant": 120015,
+            "name": "MATHEMATICAL SCRIPT SMALL Z"
+        },
+        "BoldScript": {
+            "variant": 120067,
+            "name": "MATHEMATICAL BOLD SCRIPT SMALL Z"
+        },
+        "Fraktur": {
+            "variant": 120119,
+            "name": "MATHEMATICAL FRAKTUR SMALL Z"
+        },
+        "DoubleStruck": {
+            "variant": 120171,
+            "name": "MATHEMATICAL DOUBLE-STRUCK SMALL Z"
+        },
+        "BoldFraktur": {
+            "variant": 120223,
+            "name": "MATHEMATICAL BOLD FRAKTUR SMALL Z"
+        },
+        "SansSerif": {
+            "variant": 120275,
+            "name": "MATHEMATICAL SANS-SERIF SMALL Z"
+        },
+        "BoldSansSerif": {
+            "variant": 120327,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL Z"
+        },
+        "SansSerifItalic": {
+            "variant": 120379,
+            "name": "MATHEMATICAL SANS-SERIF ITALIC SMALL Z"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120431,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL Z"
+        },
+        "Monospace": {
+            "variant": 120483,
+            "name": "MATHEMATICAL MONOSPACE SMALL Z"
+        }
+    },
+    "913": {
+        "Bold": {
+            "variant": 120488,
+            "name": "MATHEMATICAL BOLD CAPITAL ALPHA"
+        },
+        "Italic": {
+            "variant": 120546,
+            "name": "MATHEMATICAL ITALIC CAPITAL ALPHA"
+        },
+        "BoldItalic": {
+            "variant": 120604,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL ALPHA"
+        },
+        "BoldSansSerif": {
+            "variant": 120662,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL ALPHA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120720,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL ALPHA"
+        }
+    },
+    "914": {
+        "Bold": {
+            "variant": 120489,
+            "name": "MATHEMATICAL BOLD CAPITAL BETA"
+        },
+        "Italic": {
+            "variant": 120547,
+            "name": "MATHEMATICAL ITALIC CAPITAL BETA"
+        },
+        "BoldItalic": {
+            "variant": 120605,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL BETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120663,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL BETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120721,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL BETA"
+        }
+    },
+    "915": {
+        "Bold": {
+            "variant": 120490,
+            "name": "MATHEMATICAL BOLD CAPITAL GAMMA"
+        },
+        "Italic": {
+            "variant": 120548,
+            "name": "MATHEMATICAL ITALIC CAPITAL GAMMA"
+        },
+        "BoldItalic": {
+            "variant": 120606,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL GAMMA"
+        },
+        "BoldSansSerif": {
+            "variant": 120664,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL GAMMA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120722,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL GAMMA"
+        }
+    },
+    "916": {
+        "Bold": {
+            "variant": 120491,
+            "name": "MATHEMATICAL BOLD CAPITAL DELTA"
+        },
+        "Italic": {
+            "variant": 120549,
+            "name": "MATHEMATICAL ITALIC CAPITAL DELTA"
+        },
+        "BoldItalic": {
+            "variant": 120607,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL DELTA"
+        },
+        "BoldSansSerif": {
+            "variant": 120665,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL DELTA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120723,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL DELTA"
+        }
+    },
+    "917": {
+        "Bold": {
+            "variant": 120492,
+            "name": "MATHEMATICAL BOLD CAPITAL EPSILON"
+        },
+        "Italic": {
+            "variant": 120550,
+            "name": "MATHEMATICAL ITALIC CAPITAL EPSILON"
+        },
+        "BoldItalic": {
+            "variant": 120608,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL EPSILON"
+        },
+        "BoldSansSerif": {
+            "variant": 120666,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL EPSILON"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120724,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL EPSILON"
+        }
+    },
+    "918": {
+        "Bold": {
+            "variant": 120493,
+            "name": "MATHEMATICAL BOLD CAPITAL ZETA"
+        },
+        "Italic": {
+            "variant": 120551,
+            "name": "MATHEMATICAL ITALIC CAPITAL ZETA"
+        },
+        "BoldItalic": {
+            "variant": 120609,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL ZETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120667,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL ZETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120725,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL ZETA"
+        }
+    },
+    "919": {
+        "Bold": {
+            "variant": 120494,
+            "name": "MATHEMATICAL BOLD CAPITAL ETA"
+        },
+        "Italic": {
+            "variant": 120552,
+            "name": "MATHEMATICAL ITALIC CAPITAL ETA"
+        },
+        "BoldItalic": {
+            "variant": 120610,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL ETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120668,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL ETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120726,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL ETA"
+        }
+    },
+    "920": {
+        "Bold": {
+            "variant": 120495,
+            "name": "MATHEMATICAL BOLD CAPITAL THETA"
+        },
+        "Italic": {
+            "variant": 120553,
+            "name": "MATHEMATICAL ITALIC CAPITAL THETA"
+        },
+        "BoldItalic": {
+            "variant": 120611,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL THETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120669,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL THETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120727,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL THETA"
+        }
+    },
+    "921": {
+        "Bold": {
+            "variant": 120496,
+            "name": "MATHEMATICAL BOLD CAPITAL IOTA"
+        },
+        "Italic": {
+            "variant": 120554,
+            "name": "MATHEMATICAL ITALIC CAPITAL IOTA"
+        },
+        "BoldItalic": {
+            "variant": 120612,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL IOTA"
+        },
+        "BoldSansSerif": {
+            "variant": 120670,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL IOTA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120728,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL IOTA"
+        }
+    },
+    "922": {
+        "Bold": {
+            "variant": 120497,
+            "name": "MATHEMATICAL BOLD CAPITAL KAPPA"
+        },
+        "Italic": {
+            "variant": 120555,
+            "name": "MATHEMATICAL ITALIC CAPITAL KAPPA"
+        },
+        "BoldItalic": {
+            "variant": 120613,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL KAPPA"
+        },
+        "BoldSansSerif": {
+            "variant": 120671,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL KAPPA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120729,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL KAPPA"
+        }
+    },
+    "923": {
+        "Bold": {
+            "variant": 120498,
+            "name": "MATHEMATICAL BOLD CAPITAL LAMDA"
+        },
+        "Italic": {
+            "variant": 120556,
+            "name": "MATHEMATICAL ITALIC CAPITAL LAMDA"
+        },
+        "BoldItalic": {
+            "variant": 120614,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL LAMDA"
+        },
+        "BoldSansSerif": {
+            "variant": 120672,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL LAMDA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120730,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL LAMDA"
+        }
+    },
+    "924": {
+        "Bold": {
+            "variant": 120499,
+            "name": "MATHEMATICAL BOLD CAPITAL MU"
+        },
+        "Italic": {
+            "variant": 120557,
+            "name": "MATHEMATICAL ITALIC CAPITAL MU"
+        },
+        "BoldItalic": {
+            "variant": 120615,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL MU"
+        },
+        "BoldSansSerif": {
+            "variant": 120673,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL MU"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120731,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL MU"
+        }
+    },
+    "925": {
+        "Bold": {
+            "variant": 120500,
+            "name": "MATHEMATICAL BOLD CAPITAL NU"
+        },
+        "Italic": {
+            "variant": 120558,
+            "name": "MATHEMATICAL ITALIC CAPITAL NU"
+        },
+        "BoldItalic": {
+            "variant": 120616,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL NU"
+        },
+        "BoldSansSerif": {
+            "variant": 120674,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL NU"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120732,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL NU"
+        }
+    },
+    "926": {
+        "Bold": {
+            "variant": 120501,
+            "name": "MATHEMATICAL BOLD CAPITAL XI"
+        },
+        "Italic": {
+            "variant": 120559,
+            "name": "MATHEMATICAL ITALIC CAPITAL XI"
+        },
+        "BoldItalic": {
+            "variant": 120617,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL XI"
+        },
+        "BoldSansSerif": {
+            "variant": 120675,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL XI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120733,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL XI"
+        }
+    },
+    "927": {
+        "Bold": {
+            "variant": 120502,
+            "name": "MATHEMATICAL BOLD CAPITAL OMICRON"
+        },
+        "Italic": {
+            "variant": 120560,
+            "name": "MATHEMATICAL ITALIC CAPITAL OMICRON"
+        },
+        "BoldItalic": {
+            "variant": 120618,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL OMICRON"
+        },
+        "BoldSansSerif": {
+            "variant": 120676,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL OMICRON"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120734,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL OMICRON"
+        }
+    },
+    "928": {
+        "Bold": {
+            "variant": 120503,
+            "name": "MATHEMATICAL BOLD CAPITAL PI"
+        },
+        "Italic": {
+            "variant": 120561,
+            "name": "MATHEMATICAL ITALIC CAPITAL PI"
+        },
+        "BoldItalic": {
+            "variant": 120619,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL PI"
+        },
+        "BoldSansSerif": {
+            "variant": 120677,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL PI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120735,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL PI"
+        }
+    },
+    "929": {
+        "Bold": {
+            "variant": 120504,
+            "name": "MATHEMATICAL BOLD CAPITAL RHO"
+        },
+        "Italic": {
+            "variant": 120562,
+            "name": "MATHEMATICAL ITALIC CAPITAL RHO"
+        },
+        "BoldItalic": {
+            "variant": 120620,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL RHO"
+        },
+        "BoldSansSerif": {
+            "variant": 120678,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL RHO"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120736,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL RHO"
+        }
+    },
+    "1012": {
+        "Bold": {
+            "variant": 120505,
+            "name": "MATHEMATICAL BOLD CAPITAL THETA SYMBOL"
+        },
+        "Italic": {
+            "variant": 120563,
+            "name": "MATHEMATICAL ITALIC CAPITAL THETA SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120621,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL THETA SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120679,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL THETA SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120737,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL THETA SYMBOL"
+        }
+    },
+    "931": {
+        "Bold": {
+            "variant": 120506,
+            "name": "MATHEMATICAL BOLD CAPITAL SIGMA"
+        },
+        "Italic": {
+            "variant": 120564,
+            "name": "MATHEMATICAL ITALIC CAPITAL SIGMA"
+        },
+        "BoldItalic": {
+            "variant": 120622,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL SIGMA"
+        },
+        "BoldSansSerif": {
+            "variant": 120680,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL SIGMA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120738,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL SIGMA"
+        }
+    },
+    "932": {
+        "Bold": {
+            "variant": 120507,
+            "name": "MATHEMATICAL BOLD CAPITAL TAU"
+        },
+        "Italic": {
+            "variant": 120565,
+            "name": "MATHEMATICAL ITALIC CAPITAL TAU"
+        },
+        "BoldItalic": {
+            "variant": 120623,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL TAU"
+        },
+        "BoldSansSerif": {
+            "variant": 120681,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL TAU"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120739,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL TAU"
+        }
+    },
+    "933": {
+        "Bold": {
+            "variant": 120508,
+            "name": "MATHEMATICAL BOLD CAPITAL UPSILON"
+        },
+        "Italic": {
+            "variant": 120566,
+            "name": "MATHEMATICAL ITALIC CAPITAL UPSILON"
+        },
+        "BoldItalic": {
+            "variant": 120624,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL UPSILON"
+        },
+        "BoldSansSerif": {
+            "variant": 120682,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL UPSILON"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120740,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL UPSILON"
+        }
+    },
+    "934": {
+        "Bold": {
+            "variant": 120509,
+            "name": "MATHEMATICAL BOLD CAPITAL PHI"
+        },
+        "Italic": {
+            "variant": 120567,
+            "name": "MATHEMATICAL ITALIC CAPITAL PHI"
+        },
+        "BoldItalic": {
+            "variant": 120625,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL PHI"
+        },
+        "BoldSansSerif": {
+            "variant": 120683,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL PHI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120741,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL PHI"
+        }
+    },
+    "935": {
+        "Bold": {
+            "variant": 120510,
+            "name": "MATHEMATICAL BOLD CAPITAL CHI"
+        },
+        "Italic": {
+            "variant": 120568,
+            "name": "MATHEMATICAL ITALIC CAPITAL CHI"
+        },
+        "BoldItalic": {
+            "variant": 120626,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL CHI"
+        },
+        "BoldSansSerif": {
+            "variant": 120684,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL CHI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120742,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL CHI"
+        }
+    },
+    "936": {
+        "Bold": {
+            "variant": 120511,
+            "name": "MATHEMATICAL BOLD CAPITAL PSI"
+        },
+        "Italic": {
+            "variant": 120569,
+            "name": "MATHEMATICAL ITALIC CAPITAL PSI"
+        },
+        "BoldItalic": {
+            "variant": 120627,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL PSI"
+        },
+        "BoldSansSerif": {
+            "variant": 120685,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL PSI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120743,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL PSI"
+        }
+    },
+    "937": {
+        "Bold": {
+            "variant": 120512,
+            "name": "MATHEMATICAL BOLD CAPITAL OMEGA"
+        },
+        "Italic": {
+            "variant": 120570,
+            "name": "MATHEMATICAL ITALIC CAPITAL OMEGA"
+        },
+        "BoldItalic": {
+            "variant": 120628,
+            "name": "MATHEMATICAL BOLD ITALIC CAPITAL OMEGA"
+        },
+        "BoldSansSerif": {
+            "variant": 120686,
+            "name": "MATHEMATICAL SANS-SERIF BOLD CAPITAL OMEGA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120744,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC CAPITAL OMEGA"
+        }
+    },
+    "8711": {
+        "Bold": {
+            "variant": 120513,
+            "name": "MATHEMATICAL BOLD NABLA"
+        },
+        "Italic": {
+            "variant": 120571,
+            "name": "MATHEMATICAL ITALIC NABLA"
+        },
+        "BoldItalic": {
+            "variant": 120629,
+            "name": "MATHEMATICAL BOLD ITALIC NABLA"
+        },
+        "BoldSansSerif": {
+            "variant": 120687,
+            "name": "MATHEMATICAL SANS-SERIF BOLD NABLA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120745,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC NABLA"
+        }
+    },
+    "945": {
+        "Bold": {
+            "variant": 120514,
+            "name": "MATHEMATICAL BOLD SMALL ALPHA"
+        },
+        "Italic": {
+            "variant": 120572,
+            "name": "MATHEMATICAL ITALIC SMALL ALPHA"
+        },
+        "BoldItalic": {
+            "variant": 120630,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL ALPHA"
+        },
+        "BoldSansSerif": {
+            "variant": 120688,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL ALPHA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120746,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL ALPHA"
+        }
+    },
+    "946": {
+        "Bold": {
+            "variant": 120515,
+            "name": "MATHEMATICAL BOLD SMALL BETA"
+        },
+        "Italic": {
+            "variant": 120573,
+            "name": "MATHEMATICAL ITALIC SMALL BETA"
+        },
+        "BoldItalic": {
+            "variant": 120631,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL BETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120689,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL BETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120747,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL BETA"
+        }
+    },
+    "947": {
+        "Bold": {
+            "variant": 120516,
+            "name": "MATHEMATICAL BOLD SMALL GAMMA"
+        },
+        "Italic": {
+            "variant": 120574,
+            "name": "MATHEMATICAL ITALIC SMALL GAMMA"
+        },
+        "BoldItalic": {
+            "variant": 120632,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL GAMMA"
+        },
+        "BoldSansSerif": {
+            "variant": 120690,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL GAMMA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120748,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL GAMMA"
+        }
+    },
+    "948": {
+        "Bold": {
+            "variant": 120517,
+            "name": "MATHEMATICAL BOLD SMALL DELTA"
+        },
+        "Italic": {
+            "variant": 120575,
+            "name": "MATHEMATICAL ITALIC SMALL DELTA"
+        },
+        "BoldItalic": {
+            "variant": 120633,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL DELTA"
+        },
+        "BoldSansSerif": {
+            "variant": 120691,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL DELTA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120749,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL DELTA"
+        }
+    },
+    "949": {
+        "Bold": {
+            "variant": 120518,
+            "name": "MATHEMATICAL BOLD SMALL EPSILON"
+        },
+        "Italic": {
+            "variant": 120576,
+            "name": "MATHEMATICAL ITALIC SMALL EPSILON"
+        },
+        "BoldItalic": {
+            "variant": 120634,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL EPSILON"
+        },
+        "BoldSansSerif": {
+            "variant": 120692,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL EPSILON"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120750,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL EPSILON"
+        }
+    },
+    "950": {
+        "Bold": {
+            "variant": 120519,
+            "name": "MATHEMATICAL BOLD SMALL ZETA"
+        },
+        "Italic": {
+            "variant": 120577,
+            "name": "MATHEMATICAL ITALIC SMALL ZETA"
+        },
+        "BoldItalic": {
+            "variant": 120635,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL ZETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120693,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL ZETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120751,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL ZETA"
+        }
+    },
+    "951": {
+        "Bold": {
+            "variant": 120520,
+            "name": "MATHEMATICAL BOLD SMALL ETA"
+        },
+        "Italic": {
+            "variant": 120578,
+            "name": "MATHEMATICAL ITALIC SMALL ETA"
+        },
+        "BoldItalic": {
+            "variant": 120636,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL ETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120694,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL ETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120752,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL ETA"
+        }
+    },
+    "952": {
+        "Bold": {
+            "variant": 120521,
+            "name": "MATHEMATICAL BOLD SMALL THETA"
+        },
+        "Italic": {
+            "variant": 120579,
+            "name": "MATHEMATICAL ITALIC SMALL THETA"
+        },
+        "BoldItalic": {
+            "variant": 120637,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL THETA"
+        },
+        "BoldSansSerif": {
+            "variant": 120695,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL THETA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120753,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL THETA"
+        }
+    },
+    "953": {
+        "Bold": {
+            "variant": 120522,
+            "name": "MATHEMATICAL BOLD SMALL IOTA"
+        },
+        "Italic": {
+            "variant": 120580,
+            "name": "MATHEMATICAL ITALIC SMALL IOTA"
+        },
+        "BoldItalic": {
+            "variant": 120638,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL IOTA"
+        },
+        "BoldSansSerif": {
+            "variant": 120696,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL IOTA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120754,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL IOTA"
+        }
+    },
+    "954": {
+        "Bold": {
+            "variant": 120523,
+            "name": "MATHEMATICAL BOLD SMALL KAPPA"
+        },
+        "Italic": {
+            "variant": 120581,
+            "name": "MATHEMATICAL ITALIC SMALL KAPPA"
+        },
+        "BoldItalic": {
+            "variant": 120639,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL KAPPA"
+        },
+        "BoldSansSerif": {
+            "variant": 120697,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL KAPPA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120755,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL KAPPA"
+        }
+    },
+    "955": {
+        "Bold": {
+            "variant": 120524,
+            "name": "MATHEMATICAL BOLD SMALL LAMDA"
+        },
+        "Italic": {
+            "variant": 120582,
+            "name": "MATHEMATICAL ITALIC SMALL LAMDA"
+        },
+        "BoldItalic": {
+            "variant": 120640,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL LAMDA"
+        },
+        "BoldSansSerif": {
+            "variant": 120698,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL LAMDA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120756,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL LAMDA"
+        }
+    },
+    "956": {
+        "Bold": {
+            "variant": 120525,
+            "name": "MATHEMATICAL BOLD SMALL MU"
+        },
+        "Italic": {
+            "variant": 120583,
+            "name": "MATHEMATICAL ITALIC SMALL MU"
+        },
+        "BoldItalic": {
+            "variant": 120641,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL MU"
+        },
+        "BoldSansSerif": {
+            "variant": 120699,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL MU"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120757,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL MU"
+        }
+    },
+    "957": {
+        "Bold": {
+            "variant": 120526,
+            "name": "MATHEMATICAL BOLD SMALL NU"
+        },
+        "Italic": {
+            "variant": 120584,
+            "name": "MATHEMATICAL ITALIC SMALL NU"
+        },
+        "BoldItalic": {
+            "variant": 120642,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL NU"
+        },
+        "BoldSansSerif": {
+            "variant": 120700,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL NU"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120758,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL NU"
+        }
+    },
+    "958": {
+        "Bold": {
+            "variant": 120527,
+            "name": "MATHEMATICAL BOLD SMALL XI"
+        },
+        "Italic": {
+            "variant": 120585,
+            "name": "MATHEMATICAL ITALIC SMALL XI"
+        },
+        "BoldItalic": {
+            "variant": 120643,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL XI"
+        },
+        "BoldSansSerif": {
+            "variant": 120701,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL XI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120759,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL XI"
+        }
+    },
+    "959": {
+        "Bold": {
+            "variant": 120528,
+            "name": "MATHEMATICAL BOLD SMALL OMICRON"
+        },
+        "Italic": {
+            "variant": 120586,
+            "name": "MATHEMATICAL ITALIC SMALL OMICRON"
+        },
+        "BoldItalic": {
+            "variant": 120644,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL OMICRON"
+        },
+        "BoldSansSerif": {
+            "variant": 120702,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL OMICRON"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120760,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL OMICRON"
+        }
+    },
+    "960": {
+        "Bold": {
+            "variant": 120529,
+            "name": "MATHEMATICAL BOLD SMALL PI"
+        },
+        "Italic": {
+            "variant": 120587,
+            "name": "MATHEMATICAL ITALIC SMALL PI"
+        },
+        "BoldItalic": {
+            "variant": 120645,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL PI"
+        },
+        "BoldSansSerif": {
+            "variant": 120703,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL PI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120761,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL PI"
+        }
+    },
+    "961": {
+        "Bold": {
+            "variant": 120530,
+            "name": "MATHEMATICAL BOLD SMALL RHO"
+        },
+        "Italic": {
+            "variant": 120588,
+            "name": "MATHEMATICAL ITALIC SMALL RHO"
+        },
+        "BoldItalic": {
+            "variant": 120646,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL RHO"
+        },
+        "BoldSansSerif": {
+            "variant": 120704,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL RHO"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120762,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL RHO"
+        }
+    },
+    "962": {
+        "Bold": {
+            "variant": 120531,
+            "name": "MATHEMATICAL BOLD SMALL FINAL SIGMA"
+        },
+        "Italic": {
+            "variant": 120589,
+            "name": "MATHEMATICAL ITALIC SMALL FINAL SIGMA"
+        },
+        "BoldItalic": {
+            "variant": 120647,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL FINAL SIGMA"
+        },
+        "BoldSansSerif": {
+            "variant": 120705,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL FINAL SIGMA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120763,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL FINAL SIGMA"
+        }
+    },
+    "963": {
+        "Bold": {
+            "variant": 120532,
+            "name": "MATHEMATICAL BOLD SMALL SIGMA"
+        },
+        "Italic": {
+            "variant": 120590,
+            "name": "MATHEMATICAL ITALIC SMALL SIGMA"
+        },
+        "BoldItalic": {
+            "variant": 120648,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL SIGMA"
+        },
+        "BoldSansSerif": {
+            "variant": 120706,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL SIGMA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120764,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL SIGMA"
+        }
+    },
+    "964": {
+        "Bold": {
+            "variant": 120533,
+            "name": "MATHEMATICAL BOLD SMALL TAU"
+        },
+        "Italic": {
+            "variant": 120591,
+            "name": "MATHEMATICAL ITALIC SMALL TAU"
+        },
+        "BoldItalic": {
+            "variant": 120649,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL TAU"
+        },
+        "BoldSansSerif": {
+            "variant": 120707,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL TAU"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120765,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL TAU"
+        }
+    },
+    "965": {
+        "Bold": {
+            "variant": 120534,
+            "name": "MATHEMATICAL BOLD SMALL UPSILON"
+        },
+        "Italic": {
+            "variant": 120592,
+            "name": "MATHEMATICAL ITALIC SMALL UPSILON"
+        },
+        "BoldItalic": {
+            "variant": 120650,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL UPSILON"
+        },
+        "BoldSansSerif": {
+            "variant": 120708,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL UPSILON"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120766,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL UPSILON"
+        }
+    },
+    "966": {
+        "Bold": {
+            "variant": 120535,
+            "name": "MATHEMATICAL BOLD SMALL PHI"
+        },
+        "Italic": {
+            "variant": 120593,
+            "name": "MATHEMATICAL ITALIC SMALL PHI"
+        },
+        "BoldItalic": {
+            "variant": 120651,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL PHI"
+        },
+        "BoldSansSerif": {
+            "variant": 120709,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL PHI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120767,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL PHI"
+        }
+    },
+    "967": {
+        "Bold": {
+            "variant": 120536,
+            "name": "MATHEMATICAL BOLD SMALL CHI"
+        },
+        "Italic": {
+            "variant": 120594,
+            "name": "MATHEMATICAL ITALIC SMALL CHI"
+        },
+        "BoldItalic": {
+            "variant": 120652,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL CHI"
+        },
+        "BoldSansSerif": {
+            "variant": 120710,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL CHI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120768,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL CHI"
+        }
+    },
+    "968": {
+        "Bold": {
+            "variant": 120537,
+            "name": "MATHEMATICAL BOLD SMALL PSI"
+        },
+        "Italic": {
+            "variant": 120595,
+            "name": "MATHEMATICAL ITALIC SMALL PSI"
+        },
+        "BoldItalic": {
+            "variant": 120653,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL PSI"
+        },
+        "BoldSansSerif": {
+            "variant": 120711,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL PSI"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120769,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL PSI"
+        }
+    },
+    "969": {
+        "Bold": {
+            "variant": 120538,
+            "name": "MATHEMATICAL BOLD SMALL OMEGA"
+        },
+        "Italic": {
+            "variant": 120596,
+            "name": "MATHEMATICAL ITALIC SMALL OMEGA"
+        },
+        "BoldItalic": {
+            "variant": 120654,
+            "name": "MATHEMATICAL BOLD ITALIC SMALL OMEGA"
+        },
+        "BoldSansSerif": {
+            "variant": 120712,
+            "name": "MATHEMATICAL SANS-SERIF BOLD SMALL OMEGA"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120770,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC SMALL OMEGA"
+        }
+    },
+    "8706": {
+        "Bold": {
+            "variant": 120539,
+            "name": "MATHEMATICAL BOLD PARTIAL DIFFERENTIAL"
+        },
+        "Italic": {
+            "variant": 120597,
+            "name": "MATHEMATICAL ITALIC PARTIAL DIFFERENTIAL"
+        },
+        "BoldItalic": {
+            "variant": 120655,
+            "name": "MATHEMATICAL BOLD ITALIC PARTIAL DIFFERENTIAL"
+        },
+        "BoldSansSerif": {
+            "variant": 120713,
+            "name": "MATHEMATICAL SANS-SERIF BOLD PARTIAL DIFFERENTIAL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120771,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC PARTIAL DIFFERENTIAL"
+        }
+    },
+    "1013": {
+        "Bold": {
+            "variant": 120540,
+            "name": "MATHEMATICAL BOLD EPSILON SYMBOL"
+        },
+        "Italic": {
+            "variant": 120598,
+            "name": "MATHEMATICAL ITALIC EPSILON SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120656,
+            "name": "MATHEMATICAL BOLD ITALIC EPSILON SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120714,
+            "name": "MATHEMATICAL SANS-SERIF BOLD EPSILON SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120772,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC EPSILON SYMBOL"
+        }
+    },
+    "977": {
+        "Bold": {
+            "variant": 120541,
+            "name": "MATHEMATICAL BOLD THETA SYMBOL"
+        },
+        "Italic": {
+            "variant": 120599,
+            "name": "MATHEMATICAL ITALIC THETA SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120657,
+            "name": "MATHEMATICAL BOLD ITALIC THETA SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120715,
+            "name": "MATHEMATICAL SANS-SERIF BOLD THETA SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120773,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC THETA SYMBOL"
+        }
+    },
+    "1008": {
+        "Bold": {
+            "variant": 120542,
+            "name": "MATHEMATICAL BOLD KAPPA SYMBOL"
+        },
+        "Italic": {
+            "variant": 120600,
+            "name": "MATHEMATICAL ITALIC KAPPA SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120658,
+            "name": "MATHEMATICAL BOLD ITALIC KAPPA SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120716,
+            "name": "MATHEMATICAL SANS-SERIF BOLD KAPPA SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120774,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC KAPPA SYMBOL"
+        }
+    },
+    "981": {
+        "Bold": {
+            "variant": 120543,
+            "name": "MATHEMATICAL BOLD PHI SYMBOL"
+        },
+        "Italic": {
+            "variant": 120601,
+            "name": "MATHEMATICAL ITALIC PHI SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120659,
+            "name": "MATHEMATICAL BOLD ITALIC PHI SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120717,
+            "name": "MATHEMATICAL SANS-SERIF BOLD PHI SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120775,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC PHI SYMBOL"
+        }
+    },
+    "1009": {
+        "Bold": {
+            "variant": 120544,
+            "name": "MATHEMATICAL BOLD RHO SYMBOL"
+        },
+        "Italic": {
+            "variant": 120602,
+            "name": "MATHEMATICAL ITALIC RHO SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120660,
+            "name": "MATHEMATICAL BOLD ITALIC RHO SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120718,
+            "name": "MATHEMATICAL SANS-SERIF BOLD RHO SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120776,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC RHO SYMBOL"
+        }
+    },
+    "982": {
+        "Bold": {
+            "variant": 120545,
+            "name": "MATHEMATICAL BOLD PI SYMBOL"
+        },
+        "Italic": {
+            "variant": 120603,
+            "name": "MATHEMATICAL ITALIC PI SYMBOL"
+        },
+        "BoldItalic": {
+            "variant": 120661,
+            "name": "MATHEMATICAL BOLD ITALIC PI SYMBOL"
+        },
+        "BoldSansSerif": {
+            "variant": 120719,
+            "name": "MATHEMATICAL SANS-SERIF BOLD PI SYMBOL"
+        },
+        "SansSerifBoldItalic": {
+            "variant": 120777,
+            "name": "MATHEMATICAL SANS-SERIF BOLD ITALIC PI SYMBOL"
+        }
+    },
+    "988": {
+        "Bold": {
+            "variant": 120778,
+            "name": "MATHEMATICAL BOLD CAPITAL DIGAMMA"
+        }
+    },
+    "989": {
+        "Bold": {
+            "variant": 120779,
+            "name": "MATHEMATICAL BOLD SMALL DIGAMMA"
+        }
+    },
+    "48": {
+        "Bold": {
+            "variant": 120782,
+            "name": "MATHEMATICAL BOLD DIGIT ZERO"
+        },
+        "DoubleStruck": {
+            "variant": 120792,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT ZERO"
+        },
+        "SansSerif": {
+            "variant": 120802,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT ZERO"
+        },
+        "BoldSansSerif": {
+            "variant": 120812,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT ZERO"
+        },
+        "Monospace": {
+            "variant": 120822,
+            "name": "MATHEMATICAL MONOSPACE DIGIT ZERO"
+        }
+    },
+    "49": {
+        "Bold": {
+            "variant": 120783,
+            "name": "MATHEMATICAL BOLD DIGIT ONE"
+        },
+        "DoubleStruck": {
+            "variant": 120793,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT ONE"
+        },
+        "SansSerif": {
+            "variant": 120803,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT ONE"
+        },
+        "BoldSansSerif": {
+            "variant": 120813,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT ONE"
+        },
+        "Monospace": {
+            "variant": 120823,
+            "name": "MATHEMATICAL MONOSPACE DIGIT ONE"
+        }
+    },
+    "50": {
+        "Bold": {
+            "variant": 120784,
+            "name": "MATHEMATICAL BOLD DIGIT TWO"
+        },
+        "DoubleStruck": {
+            "variant": 120794,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT TWO"
+        },
+        "SansSerif": {
+            "variant": 120804,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT TWO"
+        },
+        "BoldSansSerif": {
+            "variant": 120814,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT TWO"
+        },
+        "Monospace": {
+            "variant": 120824,
+            "name": "MATHEMATICAL MONOSPACE DIGIT TWO"
+        }
+    },
+    "51": {
+        "Bold": {
+            "variant": 120785,
+            "name": "MATHEMATICAL BOLD DIGIT THREE"
+        },
+        "DoubleStruck": {
+            "variant": 120795,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT THREE"
+        },
+        "SansSerif": {
+            "variant": 120805,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT THREE"
+        },
+        "BoldSansSerif": {
+            "variant": 120815,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT THREE"
+        },
+        "Monospace": {
+            "variant": 120825,
+            "name": "MATHEMATICAL MONOSPACE DIGIT THREE"
+        }
+    },
+    "52": {
+        "Bold": {
+            "variant": 120786,
+            "name": "MATHEMATICAL BOLD DIGIT FOUR"
+        },
+        "DoubleStruck": {
+            "variant": 120796,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT FOUR"
+        },
+        "SansSerif": {
+            "variant": 120806,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT FOUR"
+        },
+        "BoldSansSerif": {
+            "variant": 120816,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT FOUR"
+        },
+        "Monospace": {
+            "variant": 120826,
+            "name": "MATHEMATICAL MONOSPACE DIGIT FOUR"
+        }
+    },
+    "53": {
+        "Bold": {
+            "variant": 120787,
+            "name": "MATHEMATICAL BOLD DIGIT FIVE"
+        },
+        "DoubleStruck": {
+            "variant": 120797,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT FIVE"
+        },
+        "SansSerif": {
+            "variant": 120807,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT FIVE"
+        },
+        "BoldSansSerif": {
+            "variant": 120817,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT FIVE"
+        },
+        "Monospace": {
+            "variant": 120827,
+            "name": "MATHEMATICAL MONOSPACE DIGIT FIVE"
+        }
+    },
+    "54": {
+        "Bold": {
+            "variant": 120788,
+            "name": "MATHEMATICAL BOLD DIGIT SIX"
+        },
+        "DoubleStruck": {
+            "variant": 120798,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT SIX"
+        },
+        "SansSerif": {
+            "variant": 120808,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT SIX"
+        },
+        "BoldSansSerif": {
+            "variant": 120818,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT SIX"
+        },
+        "Monospace": {
+            "variant": 120828,
+            "name": "MATHEMATICAL MONOSPACE DIGIT SIX"
+        }
+    },
+    "55": {
+        "Bold": {
+            "variant": 120789,
+            "name": "MATHEMATICAL BOLD DIGIT SEVEN"
+        },
+        "DoubleStruck": {
+            "variant": 120799,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT SEVEN"
+        },
+        "SansSerif": {
+            "variant": 120809,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT SEVEN"
+        },
+        "BoldSansSerif": {
+            "variant": 120819,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT SEVEN"
+        },
+        "Monospace": {
+            "variant": 120829,
+            "name": "MATHEMATICAL MONOSPACE DIGIT SEVEN"
+        }
+    },
+    "56": {
+        "Bold": {
+            "variant": 120790,
+            "name": "MATHEMATICAL BOLD DIGIT EIGHT"
+        },
+        "DoubleStruck": {
+            "variant": 120800,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT EIGHT"
+        },
+        "SansSerif": {
+            "variant": 120810,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT EIGHT"
+        },
+        "BoldSansSerif": {
+            "variant": 120820,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT EIGHT"
+        },
+        "Monospace": {
+            "variant": 120830,
+            "name": "MATHEMATICAL MONOSPACE DIGIT EIGHT"
+        }
+    },
+    "57": {
+        "Bold": {
+            "variant": 120791,
+            "name": "MATHEMATICAL BOLD DIGIT NINE"
+        },
+        "DoubleStruck": {
+            "variant": 120801,
+            "name": "MATHEMATICAL DOUBLE-STRUCK DIGIT NINE"
+        },
+        "SansSerif": {
+            "variant": 120811,
+            "name": "MATHEMATICAL SANS-SERIF DIGIT NINE"
+        },
+        "BoldSansSerif": {
+            "variant": 120821,
+            "name": "MATHEMATICAL SANS-SERIF BOLD DIGIT NINE"
+        },
+        "Monospace": {
+            "variant": 120831,
+            "name": "MATHEMATICAL MONOSPACE DIGIT NINE"
+        }
+    }
+}

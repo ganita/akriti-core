@@ -1,0 +1,8 @@
+[package]
+name = "akriti-core"
+version = "0.1.0"
+authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
+
+[dependencies]
+akriti-constants = { path = "constants" }
+akriti-macros = { path = "macros" }

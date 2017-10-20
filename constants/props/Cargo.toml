@@ -1,0 +1,10 @@
+[package]
+authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
+name = "constants_props"
+version = "0.1.0"
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
+phf_shared = "0.7.21"
