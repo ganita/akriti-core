@@ -80,6 +80,31 @@ impl Color {
         Color::RGB(0, 0, 0)
     }
 
+    pub fn a(&self) -> u8 {
+       match *self {
+           Color::ARGB(a, _, _, _) => a,
+           Color::RGB(_, _, _) => 255
+       }
+    }
+
+    pub fn r(&self) -> u8 {
+        match *self {
+            Color::ARGB(_, r, _, _) | Color::RGB(r, _, _) => r,
+        }
+    }
+
+    pub fn g(&self) -> u8 {
+        match *self {
+            Color::ARGB(_, _, g, _) | Color::RGB(_, g, _) => g,
+        }
+    }
+
+    pub fn b(&self) -> u8 {
+        match *self {
+            Color::ARGB(_, _, _, b) | Color::RGB(_, _, b) => b,
+        }
+    }
+
 }
 
 #[cfg(test)]
