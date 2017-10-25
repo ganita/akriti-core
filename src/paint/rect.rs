@@ -14,4 +14,12 @@ impl Rect {
             height
         }
     }
+
+    pub fn height(&self) -> f32 {
+        self.height
+    }
+
+    pub fn width(&self) -> f32 {
+        self.width
+    }
 }
