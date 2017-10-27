@@ -731,5 +731,15 @@ mod test {
         assert_eq!(ll.bounding_box().baseline(), 0.);
         assert_eq!(ll.bounding_box().axis(), 0.);
 
+        ll.add_child(Box::new(Fixed::new(10., 50., 20., 30.)),
+                     LinearLayoutParams::new());
+
+        calculate(&mut ll);
+
+        assert_eq!(ll.bounding_box().width(), 30.);
+        assert_eq!(ll.bounding_box().height(), 50.);
+        assert_eq!(ll.bounding_box().baseline(), 20.);
+        assert_eq!(ll.bounding_box().axis(), 30.);
+
     }
 }
