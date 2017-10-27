@@ -79,6 +79,40 @@ pub struct Child {
     point: Point
 }
 
+struct AxisParams {
+    align: Align,
+    baseline_pos: f32,
+    axis_baseline_shift: f32,
+}
+
+impl Default for AxisParams {
+    fn default() -> Self {
+        AxisParams {
+            align: Align::Start,
+            baseline_pos: 0.0,
+            axis_baseline_shift: 0.0,
+        }
+    }
+}
+
+impl AxisParams {
+    fn set_baseline_pos(&mut self, pos: f32) {
+        self.baseline_pos = pos;
+    }
+
+    fn set_axis_pos(&mut self, pos: f32) {
+        self.baseline_pos = pos-self.axis_baseline_shift;
+    }
+
+    pub fn baseline_pos(&self) -> f32 {
+        self.baseline_pos
+    }
+
+    pub fn axis_pos(&self) -> f32 {
+        self.baseline_pos+self.axis_baseline_shift
+    }
+}
+
 impl Drawable for LinearLayout {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         for child in self.children.iter() {
@@ -102,13 +136,15 @@ impl Drawable for LinearLayout {
 
         let layout_align = &self.layout_align;
         let layout_gravity = &self.gravity;
-        let mut basis_child_align: Align = Align::Start;
 
-        let mut baseline_pos: Option<f32> = None;
-        let mut axis_pos: Option<f32> = None;
+        let mut axis_params: Option<AxisParams> = None;
         let mut bottom_pos = 0f32;
 
+        // In first iteration we will compute the dimension of children to just wrap the content
+        // and compute the total size of container
         for child in self.children.iter_mut() {
+
+            // Compute minimum dimension required by child to wrap its contents
             child.drawable.calculate(context, -1., &MeasureMode::Wrap,
                                      -1., &MeasureMode::Wrap);
 
@@ -119,97 +155,92 @@ impl Drawable for LinearLayout {
             bottom_pos = match *align {
                 Align::Start | Align::End | Align::Center => {
                     let local_bottom_pos = bottom_pos.max(child.drawable.bounding_box().height());
-                    if let Some(pos) = baseline_pos {
-                        baseline_pos = Some(match basis_child_align {
-                            Align::Start => pos,
-                            Align::Center | Align::Baseline | Align::Axis => ((local_bottom_pos-bottom_pos)/2.) + pos,
-                            Align::End => local_bottom_pos-(bottom_pos-pos),
-                        });
+                    if let Some(ref mut params) = axis_params {
+                        params.baseline_pos = match params.align {
+                            Align::Start => params.baseline_pos,
+
+                            Align::Center | Align::Baseline | Align::Axis =>
+                                ((local_bottom_pos-bottom_pos)/2.) + params.baseline_pos,
+
+                            Align::End => local_bottom_pos-(bottom_pos-params.baseline_pos),
+                        };
 
                     } else if child.params.cross_axis_bound_mode != CrossAxisBoundMode::FillParent {
-                        basis_child_align = align.clone();
-                        baseline_pos = Some(child.drawable.bounding_box().baseline_pos());
-                        axis_pos = Some(child.drawable.bounding_box().axis_pos());
+                        axis_params = Some(AxisParams {
+                            align: align.clone(),
+                            baseline_pos: child.drawable.bounding_box().baseline_pos(),
+                            axis_baseline_shift: child.drawable.bounding_box().axis_pos()
+                                -child.drawable.bounding_box().baseline_pos(),
+                        });
                     }
 
                     local_bottom_pos
                 },
-                Align::Baseline => {
-                    let (n_height, n_baseline_pos) = if let Some(pos) = baseline_pos {
-                        let new_ascent = pos.max(child.drawable.bounding_box().baseline_pos());
-                        let new_descent = child.drawable.bounding_box().baseline()
-                            .max(bottom_pos-pos);
+                Align::Baseline | Align::Axis => {
+                    let (n_height, n_axis_pos) = if let Some(ref mut params) = axis_params {
+                        let new_ascent = if *align == Align::Baseline {
+                            params.baseline_pos().max(child.drawable.bounding_box().baseline_pos())
+                        } else {
+                            params.axis_pos().max(child.drawable.bounding_box().axis_pos())
+                        };
 
-                        match basis_child_align {
-                            Align::Start => (bottom_pos.max(pos+new_descent), pos),
-                            Align::Center => (bottom_pos, pos),
-                            Align::End => (new_ascent+bottom_pos-pos, new_ascent),
+                        let new_descent = if *align == Align::Baseline {
+                            child.drawable.bounding_box().baseline().max(bottom_pos-params.baseline_pos())
+                        } else {
+                            child.drawable.bounding_box().axis().max(bottom_pos-params.axis_pos())
+                        };
+
+                        let basis_axis_pos = if *align == Align::Baseline {
+                            params.baseline_pos()
+                        } else {
+                            params.axis_pos()
+                        };
+
+                        match params.align {
+                            Align::Start => (bottom_pos.max(basis_axis_pos+new_descent), basis_axis_pos),
+                            Align::Center => (bottom_pos, basis_axis_pos),
+                            Align::End => (new_ascent+bottom_pos-basis_axis_pos, new_ascent),
                             Align::Baseline => (new_ascent+new_descent, new_ascent),
                             Align::Axis => (bottom_pos.max(new_ascent+new_descent), new_ascent)
                         }
                     } else {
                         (
                             bottom_pos.max(child.drawable.bounding_box().height()),
-                            child.drawable.bounding_box().baseline_pos()
+                            if *align == Align::Baseline {
+                                child.drawable.bounding_box().baseline_pos()
+                            } else {
+                                child.drawable.bounding_box().axis_pos()
+                            }
                         )
                     };
 
-                    if baseline_pos.is_none() && child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
-                        n_height
-                    } else {
-                        axis_pos = Some(if let Some(val) = baseline_pos{
-                            axis_pos.unwrap()+n_baseline_pos-val
+                    if let Some(ref mut params) = axis_params {
+                        if *align == Align::Baseline {
+                            params.set_baseline_pos(n_axis_pos);
                         } else {
-                            basis_child_align = align.clone();
-                            n_baseline_pos+(child.drawable.bounding_box().axis()
-                                -child.drawable.bounding_box().baseline())
-                        });
-                        baseline_pos = Some(n_baseline_pos);
-
-                        n_height
-                    }
-                },
-                Align::Axis => {
-                    let (n_height, n_axis_pos) = if let Some(pos) = axis_pos {
-                        let new_ascent = pos.max(child.drawable.bounding_box().axis_pos());
-                        let new_descent = child.drawable.bounding_box().axis()
-                            .max(bottom_pos-pos);
-
-                        match basis_child_align {
-                            Align::Start => (bottom_pos.max(pos+new_descent), pos),
-                            Align::Center => (bottom_pos, pos),
-                            Align::End => (new_ascent+bottom_pos-pos, new_ascent),
-                            Align::Baseline => (new_ascent+new_descent, new_ascent),
-                            Align::Axis => (bottom_pos.max(new_ascent+new_descent), new_ascent)
+                            params.set_axis_pos(n_axis_pos);
                         }
-                    } else {
-                        (bottom_pos.max(
-                            child.drawable.bounding_box().height()
-                        ), child.drawable.bounding_box().baseline_pos())
-                    };
-
-                    if axis_pos.is_none() && child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
-                        n_height
-                    } else {
-                        baseline_pos = Some(if let Some(val) = axis_pos {
-                            baseline_pos.unwrap() + n_axis_pos - val
-                        } else {
-                            basis_child_align = align.clone();
-                            n_axis_pos + (child.drawable.bounding_box().baseline()
-                                - child.drawable.bounding_box().axis())
-                        });
-
-                        axis_pos = Some(n_axis_pos);
-
-                        n_height
+                    } else if child.params.cross_axis_bound_mode != CrossAxisBoundMode::FillParent {
+                        axis_params = Some(AxisParams {
+                            align: align.clone(),
+                            baseline_pos: child.drawable.bounding_box().baseline_pos(),
+                            axis_baseline_shift: child.drawable.bounding_box().axis_pos() -
+                                child.drawable.bounding_box().baseline_pos(),
+                        })
                     }
+
+                    n_height
                 }
             };
         }
 
         let height = bottom_pos;
-        let baseline_pos = baseline_pos.unwrap_or(height);
-        let axis_pos = axis_pos.unwrap_or(height);
+        let axis_params = axis_params.unwrap_or(AxisParams {
+            align: Align::Start,
+            baseline_pos: height,
+            axis_baseline_shift: 0.,
+        });
+
         let mut width = 0f32;
         for child in self.children.iter_mut() {
             if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
@@ -227,8 +258,8 @@ impl Drawable for LinearLayout {
                 Align::Start => Point::new(width, 0.),
                 Align::Center => Point::new(width, (height-child.drawable.bounding_box().height())/2.),
                 Align::End => Point::new(width, height-child.drawable.bounding_box().height()),
-                Align::Baseline => Point::new(width, baseline_pos-child.drawable.bounding_box().baseline_pos()),
-                Align::Axis => Point::new(width, axis_pos-child.drawable.bounding_box().axis_pos())
+                Align::Baseline => Point::new(width, axis_params.baseline_pos()-child.drawable.bounding_box().baseline_pos()),
+                Align::Axis => Point::new(width, axis_params.axis_pos()-child.drawable.bounding_box().axis_pos())
             };
 
             child.point = pos;
@@ -238,8 +269,8 @@ impl Drawable for LinearLayout {
 
         self.bounding_box = BoundingBox {
             rect: Rect::new(width, height),
-            baseline: height-baseline_pos,
-            axis: height-axis_pos,
+            baseline: height-axis_params.baseline_pos(),
+            axis: height-axis_params.axis_pos(),
         };
     }
 
