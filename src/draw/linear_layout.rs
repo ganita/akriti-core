@@ -245,13 +245,17 @@ impl Drawable for LinearLayout {
                                             height, &MeasureMode::UpTo);
             }
 
-            let align = LinearLayout::get_align_self(
-                &self.gravity,
-                &self.layout_align,
-                child.params.align_self.as_ref()
-            );
+            let align = if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
+                Align::Start
+            } else {
+                LinearLayout::get_align_self(
+                    &self.gravity,
+                    &self.layout_align,
+                    child.params.align_self.as_ref()
+                ).clone()
+            };
 
-            let pos = match *align {
+            let pos = match align {
                 Align::Start => Point::new(width, 0.),
                 Align::Center => Point::new(width, (height-child.drawable.bounding_box().height())/2.),
                 Align::End => Point::new(width, height-child.drawable.bounding_box().height()),
@@ -738,5 +742,39 @@ mod test {
         assert_eq!(ll.bounding_box().baseline(), 20.);
         assert_eq!(ll.bounding_box().axis(), 30.);
 
+    }
+
+    #[test]
+    fn it_can_flex_to_cross_axis() {
+        let context = test_context();
+        let mut ll = LinearLayout::new();
+        ll.layout_align = Align::Baseline;
+
+        let calculate = | ll: &mut LinearLayout| {
+            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
+                         &MeasureMode::Wrap);
+        };
+
+        ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
+                     LinearLayoutParams::new());
+
+        let mut flex_child = Box::new(Fixed::new(10., 20., 10., 10.));
+        flex_child.flex = true;
+        ll.add_child(
+            flex_child,
+            LinearLayoutParams::new().with_cross_axis_bound_mode(CrossAxisBoundMode::FillParent)
+        );
+
+        calculate(&mut ll);
+
+        assert_eq!(ll.bounding_box().width(), 20.);
+        assert_eq!(ll.bounding_box().height(), 50.);
+        assert_eq!(ll.bounding_box().baseline(), 10.);
+        assert_eq!(ll.bounding_box().axis(), 10.);
+
+        assert_eq!(ll.children[0].point, Point::new(0., 0.));
+        assert_eq!(ll.children[1].point, Point::new(10., 0.));
+        assert_eq!(ll.children[1].drawable.bounding_box().height(), 50.);
+        assert_eq!(ll.children[0].drawable.bounding_box().height(), 50.);
     }
 }
