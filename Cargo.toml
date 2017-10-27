@@ -6,3 +6,13 @@ authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
 [dependencies]
 akriti-constants = { path = "constants" }
 akriti-macros = { path = "macros" }
+
+[dev-dependencies]
+akriti-measure = { path="../akriti-measure" }
+gtk = "^0"
+cairo-rs = { version = "^0", features = ["png"] }
+freetype-sys = { git="https://github.com/ganita/rust-freetype-sys" }
+
+[[example]]
+name = "inspect"
+path = "examples/inspect/inspect.rs"
