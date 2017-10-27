@@ -165,13 +165,6 @@ impl Drawable for LinearLayout {
                             Align::End => local_bottom_pos-(bottom_pos-params.baseline_pos),
                         };
 
-                    } else if child.params.cross_axis_bound_mode != CrossAxisBoundMode::FillParent {
-                        axis_params = Some(AxisParams {
-                            align: align.clone(),
-                            baseline_pos: child.drawable.bounding_box().baseline_pos(),
-                            axis_baseline_shift: child.drawable.bounding_box().axis_pos()
-                                -child.drawable.bounding_box().baseline_pos(),
-                        });
                     }
 
                     local_bottom_pos
@@ -220,18 +213,22 @@ impl Drawable for LinearLayout {
                         } else {
                             params.set_axis_pos(n_axis_pos);
                         }
-                    } else if child.params.cross_axis_bound_mode != CrossAxisBoundMode::FillParent {
-                        axis_params = Some(AxisParams {
-                            align: align.clone(),
-                            baseline_pos: child.drawable.bounding_box().baseline_pos(),
-                            axis_baseline_shift: child.drawable.bounding_box().axis_pos() -
-                                child.drawable.bounding_box().baseline_pos(),
-                        })
                     }
 
                     n_height
                 }
             };
+
+            // If baseline and axis of layout is not set and if child is not having flex bound,
+            // use the baseline and axis of that child as baseline and axis of layout
+            if axis_params.is_none() && child.params.cross_axis_bound_mode != CrossAxisBoundMode::FillParent {
+                axis_params = Some(AxisParams {
+                    align: align.clone(),
+                    baseline_pos: child.drawable.bounding_box().baseline_pos(),
+                    axis_baseline_shift: child.drawable.bounding_box().axis_pos() -
+                        child.drawable.bounding_box().baseline_pos(),
+                })
+            }
         }
 
         let height = bottom_pos;
