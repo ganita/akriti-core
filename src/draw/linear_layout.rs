@@ -49,14 +49,6 @@ impl LinearLayoutParams {
         }
     }
 
-    pub fn new_aligned(align: Align) -> LinearLayoutParams {
-        LinearLayoutParams {
-            align_self: Some(align),
-            weight: 0.0,
-            cross_axis_bound_mode: CrossAxisBoundMode::WrapContent,
-        }
-    }
-
     pub fn with_align(mut self, align: Option<Align>) -> LinearLayoutParams {
         self.align_self = align;
         self
@@ -554,7 +546,7 @@ mod test {
         assert_eq!(ll.children[1].point, Point::new(10., 30.));
 
         ll.add_child(Box::new(Fixed::new(20., 40., 20., 15.)),
-                     LinearLayoutParams::new_aligned(Align::Center));
+                     LinearLayoutParams::new().with_align(Some(Align::Center)));
         calculate(&mut ll);
 
         assert_eq!(ll.bounding_box().width(), 50.);
@@ -577,7 +569,7 @@ mod test {
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
-                     LinearLayoutParams::new_aligned(Align::Start));
+                     LinearLayoutParams::new().with_align(Some(Align::Start)));
         calculate(&mut ll);
 
         assert_eq!(ll.bounding_box().width(), 10.);
@@ -619,7 +611,7 @@ mod test {
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
-                     LinearLayoutParams::new_aligned(Align::Center));
+                     LinearLayoutParams::new().with_align(Some(Align::Center)));
         calculate(&mut ll);
 
         assert_eq!(ll.bounding_box().width(), 10.);
@@ -673,7 +665,7 @@ mod test {
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
-                     LinearLayoutParams::new_aligned(Align::End));
+                     LinearLayoutParams::new().with_align(Some(Align::End)));
         calculate(&mut ll);
 
         assert_eq!(ll.bounding_box().width(), 10.);
