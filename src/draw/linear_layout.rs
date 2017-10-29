@@ -101,7 +101,7 @@ impl AxisParams {
     }
 
     fn set_axis_pos(&mut self, pos: f32) {
-        self.baseline_pos = pos-self.axis_baseline_shift;
+        self.baseline_pos = pos - self.axis_baseline_shift;
     }
 
     pub fn baseline_pos(&self) -> f32 {
@@ -109,19 +109,18 @@ impl AxisParams {
     }
 
     pub fn axis_pos(&self) -> f32 {
-        self.baseline_pos+self.axis_baseline_shift
+        self.baseline_pos + self.axis_baseline_shift
     }
 }
 
 impl Drawable for LinearLayout {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         for child in self.children.iter() {
-            child.drawable.draw(canvas, &(pen_pos+&child.point));
+            child.drawable.draw(canvas, &(pen_pos + &child.point));
         }
     }
 
-    fn calculate(&mut self, context: &Context, _: f32, _: &MeasureMode, _: f32,
-                 _: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, _: f32, _: &MeasureMode, _: f32, _: &MeasureMode) {
         if self.children.len() == 0 {
             self.bounding_box = BoundingBox::default();
             return ();
@@ -143,7 +142,6 @@ impl Drawable for LinearLayout {
         // In first iteration we will compute the dimension of children to just wrap the content
         // and compute the total size of container
         for child in self.children.iter_mut() {
-
             // Compute minimum dimension required by child to wrap its contents
             child.drawable.calculate(context, -1., &MeasureMode::Wrap,
                                      -1., &MeasureMode::Wrap);
@@ -160,15 +158,14 @@ impl Drawable for LinearLayout {
                             Align::Start => params.baseline_pos,
 
                             Align::Center | Align::Baseline | Align::Axis =>
-                                ((local_bottom_pos-bottom_pos)/2.) + params.baseline_pos,
+                                ((local_bottom_pos - bottom_pos) / 2.) + params.baseline_pos,
 
-                            Align::End => local_bottom_pos-(bottom_pos-params.baseline_pos),
+                            Align::End => local_bottom_pos - (bottom_pos - params.baseline_pos),
                         };
-
                     }
 
                     local_bottom_pos
-                },
+                }
                 Align::Baseline | Align::Axis => {
                     let (n_height, n_axis_pos) = if let Some(ref mut params) = axis_params {
                         let new_ascent = if *align == Align::Baseline {
@@ -178,9 +175,9 @@ impl Drawable for LinearLayout {
                         };
 
                         let new_descent = if *align == Align::Baseline {
-                            child.drawable.bounding_box().baseline().max(bottom_pos-params.baseline_pos())
+                            child.drawable.bounding_box().baseline().max(bottom_pos - params.baseline_pos())
                         } else {
-                            child.drawable.bounding_box().axis().max(bottom_pos-params.axis_pos())
+                            child.drawable.bounding_box().axis().max(bottom_pos - params.axis_pos())
                         };
 
                         let basis_axis_pos = if *align == Align::Baseline {
@@ -190,11 +187,11 @@ impl Drawable for LinearLayout {
                         };
 
                         match params.align {
-                            Align::Start => (bottom_pos.max(basis_axis_pos+new_descent), basis_axis_pos),
+                            Align::Start => (bottom_pos.max(basis_axis_pos + new_descent), basis_axis_pos),
                             Align::Center => (bottom_pos, basis_axis_pos),
-                            Align::End => (new_ascent+bottom_pos-basis_axis_pos, new_ascent),
-                            Align::Baseline => (new_ascent+new_descent, new_ascent),
-                            Align::Axis => (bottom_pos.max(new_ascent+new_descent), new_ascent)
+                            Align::End => (new_ascent + bottom_pos - basis_axis_pos, new_ascent),
+                            Align::Baseline => (new_ascent + new_descent, new_ascent),
+                            Align::Axis => (bottom_pos.max(new_ascent + new_descent), new_ascent)
                         }
                     } else {
                         (
@@ -242,7 +239,7 @@ impl Drawable for LinearLayout {
         for child in self.children.iter_mut() {
             if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
                 child.drawable.calculate(context, -1., &MeasureMode::Wrap,
-                                            height, &MeasureMode::UpTo);
+                                         height, &MeasureMode::UpTo);
             }
 
             let align = if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
@@ -257,10 +254,10 @@ impl Drawable for LinearLayout {
 
             let pos = match align {
                 Align::Start => Point::new(width, 0.),
-                Align::Center => Point::new(width, (height-child.drawable.bounding_box().height())/2.),
-                Align::End => Point::new(width, height-child.drawable.bounding_box().height()),
-                Align::Baseline => Point::new(width, axis_params.baseline_pos()-child.drawable.bounding_box().baseline_pos()),
-                Align::Axis => Point::new(width, axis_params.axis_pos()-child.drawable.bounding_box().axis_pos())
+                Align::Center => Point::new(width, (height - child.drawable.bounding_box().height()) / 2.),
+                Align::End => Point::new(width, height - child.drawable.bounding_box().height()),
+                Align::Baseline => Point::new(width, axis_params.baseline_pos() - child.drawable.bounding_box().baseline_pos()),
+                Align::Axis => Point::new(width, axis_params.axis_pos() - child.drawable.bounding_box().axis_pos())
             };
 
             child.point = pos;
@@ -270,8 +267,8 @@ impl Drawable for LinearLayout {
 
         self.bounding_box = BoundingBox {
             rect: Rect::new(width, height),
-            baseline: height-axis_params.baseline_pos(),
-            axis: height-axis_params.axis_pos(),
+            baseline: height - axis_params.baseline_pos(),
+            axis: height - axis_params.axis_pos(),
         };
     }
 
@@ -319,7 +316,8 @@ mod test {
     use ::paint::{TextRuler, MathRuler};
     use ::elements::Element;
 
-    pub struct MockPlatform{}
+    pub struct MockPlatform {}
+
     impl Platform for MockPlatform {
         fn get_text_ruler(&self, _: &Element, _: f32) -> &TextRuler {
             unimplemented!()
@@ -352,7 +350,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&test_context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -387,7 +385,6 @@ mod test {
         assert_eq!(ll.children[0].point, Point::new(0., 10.));
         assert_eq!(ll.children[1].point, Point::new(10., 0.));
         assert_eq!(ll.children[2].point, Point::new(30., 15.));
-
     }
 
     #[test]
@@ -396,7 +393,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Axis;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&test_context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -431,7 +428,6 @@ mod test {
         assert_eq!(ll.children[0].point, Point::new(0., 10.));
         assert_eq!(ll.children[1].point, Point::new(10., 0.));
         assert_eq!(ll.children[2].point, Point::new(30., 15.));
-
     }
 
     #[test]
@@ -440,7 +436,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Start;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -463,7 +459,6 @@ mod test {
         assert_eq!(ll.bounding_box().baseline(), 20.);
         assert_eq!(ll.children[0].point, Point::new(0., 0.));
         assert_eq!(ll.children[1].point, Point::new(10., 0.));
-
     }
 
     #[test]
@@ -472,7 +467,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Center;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -503,7 +498,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::End;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -534,7 +529,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -576,7 +571,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -618,7 +613,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -672,7 +667,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -714,7 +709,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
@@ -741,7 +736,6 @@ mod test {
         assert_eq!(ll.bounding_box().height(), 50.);
         assert_eq!(ll.bounding_box().baseline(), 20.);
         assert_eq!(ll.bounding_box().axis(), 30.);
-
     }
 
     #[test]
@@ -750,7 +744,7 @@ mod test {
         let mut ll = LinearLayout::new();
         ll.layout_align = Align::Baseline;
 
-        let calculate = | ll: &mut LinearLayout| {
+        let calculate = |ll: &mut LinearLayout| {
             ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
                          &MeasureMode::Wrap);
         };
