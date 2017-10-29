@@ -112,7 +112,9 @@ impl Drawable for LinearLayout {
         }
     }
 
-    fn calculate(&mut self, context: &Context, _: f32, _: &MeasureMode, _: f32, _: &MeasureMode) {
+    // TODO optimize time complexity to at least O(n^2)
+    fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
+                 height_mode: &MeasureMode) {
         if self.children.len() == 0 {
             self.bounding_box = BoundingBox::default();
             return ();
@@ -234,12 +236,54 @@ impl Drawable for LinearLayout {
             axis_baseline_shift: 0.,
         });
 
-        let mut main_axis_pen = 0f32;
+        let mut main_axis_wrap_length = 0f32;
+        let mut weight_sum = 0f32;
+        // Calculate width and height of cross axis flexible items.
         for child in self.children.iter_mut() {
             if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
                 let (width, width_mode, height, height_mode) = match self.gravity {
                     Gravity::Vertical => (cross_axis_length, MeasureMode::UpTo, -1., MeasureMode::Wrap),
                     Gravity::Horizontal => (-1., MeasureMode::Wrap, cross_axis_length, MeasureMode::UpTo),
+                };
+
+                child.drawable.calculate(context, width, &width_mode, height, &height_mode);
+            }
+
+            if child.params.weight <= 0. {
+                main_axis_wrap_length += match self.gravity {
+                    Gravity::Horizontal => child.drawable.bounding_box().width(),
+                    Gravity::Vertical => child.drawable.bounding_box().height(),
+                };
+            }
+
+            weight_sum += child.params.weight;
+        }
+
+        let main_axis_available_length = match self.gravity {
+            Gravity::Horizontal => if *width_mode == MeasureMode::UpTo {width} else {-1.},
+            Gravity::Vertical => if *height_mode == MeasureMode::UpTo {height} else {-1.},
+        } - main_axis_wrap_length;
+
+        let weight_factor = main_axis_available_length/weight_sum;
+
+        let mut main_axis_pen = 0f32;
+        for child in self.children.iter_mut() {
+
+            // Stretch main axis flexible items
+            if child.params.weight > 0. && weight_factor > 0. {
+                let (width, width_mode, height, height_mode) = match self.gravity {
+                    Gravity::Vertical => (
+                        child.drawable.bounding_box().width(),
+                        MeasureMode::UpTo,
+                        child.drawable.bounding_box().height().max(weight_factor*child.params.weight),
+                        MeasureMode::UpTo
+                    ),
+                    Gravity::Horizontal => (
+                        child.drawable.bounding_box().width().max(weight_factor*child.params.weight),
+                        MeasureMode::UpTo,
+                        child.drawable.bounding_box().height(),
+                        MeasureMode::UpTo
+                    ),
                 };
 
                 child.drawable.calculate(context, width, &width_mode, height, &height_mode);
@@ -771,10 +815,8 @@ mod test {
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
                      LinearLayoutParams::new());
 
-        let mut flex_child = Box::new(Fixed::new(10., 20., 10., 10.));
-        flex_child.flex = true;
         ll.add_child(
-            flex_child,
+            Box::new(Fixed::new(10., 20., 10., 10.)),
             LinearLayoutParams::new().with_cross_axis_bound_mode(CrossAxisBoundMode::FillParent)
         );
 
@@ -928,6 +970,41 @@ mod test {
         assert_eq!(ll.children[0].point, Point::new(0., 0.));
         assert_eq!(ll.children[1].point, Point::new(0., 50.));
         assert_eq!(ll.children[2].point, Point::new(80., 70.));
+
+    }
+
+    #[test]
+    fn it_stretch_items_in_main_axis() {
+        let context = test_context();
+        let mut ll = LinearLayout::new();
+        ll.gravity = Gravity::Vertical;
+        ll.layout_align = Align::Center;
+
+        let calculate = |ll: &mut LinearLayout| {
+            ll.calculate(&context, -1., &MeasureMode::Wrap, 200.,
+                         &MeasureMode::UpTo);
+        };
+
+        ll.add_child(Box::new(Fixed::new(30., 20., 10., 10.)),
+                     LinearLayoutParams::new());
+        ll.add_child(Box::new(Fixed::new(100., 0., 10., 10.)),
+                     LinearLayoutParams::new().with_weight(1.));
+        ll.add_child(Box::new(Fixed::new(20., 0., 10., 10.)),
+                     LinearLayoutParams::new().with_weight(2.));
+        ll.add_child(Box::new(Fixed::new(30., 0., 10., 10.)),
+                     LinearLayoutParams::new().with_weight(3.));
+        ll.add_child(Box::new(Fixed::new(50., 60., 10., 10.)),
+                     LinearLayoutParams::new());
+
+        calculate(&mut ll);
+
+        assert_eq!(ll.bounding_box().height(), 200.);
+        assert_eq!(ll.bounding_box().width(), 100.);
+        assert_eq!(ll.children[0].drawable.bounding_box().height(), 20.);
+        assert_eq!(ll.children[1].drawable.bounding_box().height(), 20.);
+        assert_eq!(ll.children[2].drawable.bounding_box().height(), 40.);
+        assert_eq!(ll.children[3].drawable.bounding_box().height(), 60.);
+        assert_eq!(ll.children[4].drawable.bounding_box().height(), 60.);
 
     }
 }
