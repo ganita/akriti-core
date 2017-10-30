@@ -19,7 +19,10 @@ impl<'a, T, U: Drawable> Drawable for Wrapper<'a, T, U> {
             pen_pos,
             self.bounding_box.rect(),
             (self.math_background_reader)(self.props)
-        )
+        );
+        if let Some(ref wrapped) = self.wrapped {
+            wrapped.draw(canvas, pen_pos);
+        }
     }
 
     fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
