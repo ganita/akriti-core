@@ -4,8 +4,8 @@ use super::{Drawable, BoundingBox, MeasureMode};
 use ::platform::Context;
 use ::paint::{Canvas, Point, Rect};
 
-pub struct LinearLayout {
-    children: Vec<Child>,
+pub struct LinearLayout<'a> {
+    children: Vec<Child<'a>>,
     pub gravity: Gravity,
     pub layout_align: Align,
 
@@ -64,8 +64,8 @@ impl LinearLayoutParams {
     }
 }
 
-pub struct Child {
-    drawable: Box<Drawable>,
+pub struct Child<'a> {
+    drawable: Box<Drawable + 'a>,
     params: LinearLayoutParams,
     point: Point
 }
@@ -104,7 +104,7 @@ impl AxisParams {
     }
 }
 
-impl Drawable for LinearLayout {
+impl<'a> Drawable for LinearLayout<'a> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         for child in self.children.iter() {
             child.drawable.draw(canvas, &(pen_pos + &child.point));
@@ -339,8 +339,8 @@ impl Drawable for LinearLayout {
     }
 }
 
-impl LinearLayout {
-    pub fn new() -> LinearLayout {
+impl<'a> LinearLayout<'a> {
+    pub fn new() -> LinearLayout<'a> {
         LinearLayout {
             children: Vec::new(),
             gravity: Gravity::Horizontal,
@@ -349,8 +349,8 @@ impl LinearLayout {
         }
     }
 
-    fn get_align_self<'a>(parent_gravity: &Gravity, parent_align: &'a Align,
-                          child_align: Option<&'a Align>) -> &'a Align {
+    fn get_align_self<'b>(parent_gravity: &Gravity, parent_align: &'b Align,
+                          child_align: Option<&'b Align>) -> &'b Align {
         let alignment = if let Some(ref child) = child_align {
             child
         } else {
@@ -364,7 +364,7 @@ impl LinearLayout {
         alignment
     }
 
-    pub fn add_child(&mut self, drawable: Box<Drawable>, params: LinearLayoutParams) {
+    pub fn add_child(&mut self, drawable: Box<Drawable + 'a>, params: LinearLayoutParams) {
         self.children.push(Child { drawable, params, point: Point::new(0., 0.) })
     }
 }
