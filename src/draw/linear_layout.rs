@@ -8,7 +8,6 @@ pub struct LinearLayout {
     children: Vec<Child>,
     pub gravity: Gravity,
     pub layout_align: Align,
-    pub weight_sum: f32,
 
     bounding_box: BoundingBox,
 }
@@ -346,7 +345,6 @@ impl LinearLayout {
             children: Vec::new(),
             gravity: Gravity::Horizontal,
             layout_align: Align::Center,
-            weight_sum: 0.0,
             bounding_box: BoundingBox::default(),
         }
     }
