@@ -30,6 +30,7 @@ impl<'a, T: Element<'a>> Drawable for Text<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         canvas.draw_text(
             pen_pos,
+            &self.bounding_box,
             self.variant_text.as_ref(),
             (self.math_color_reader)(self.props),
             (self.math_size_reader)(self.props),
