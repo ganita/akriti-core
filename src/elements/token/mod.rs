@@ -16,6 +16,7 @@
 
 
 mod mi;                         pub use self::mi::*;
+mod mn;                         pub use self::mn::*;
 
 use super::{ConcreteElement, Element, PresentationElement};
 use ::draw::{Text, Drawable, Wrapper, MeasureMode};
