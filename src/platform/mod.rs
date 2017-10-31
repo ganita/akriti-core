@@ -30,3 +30,5 @@ pub trait Platform {
     fn sp_to_du(&self, sp: f32) -> f32;
     fn dp_to_du(&self, dp: f32) -> f32;
 }
+
+#[cfg(test)] pub mod test;
