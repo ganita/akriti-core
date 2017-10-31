@@ -15,6 +15,8 @@
 */
 
 
+use std::char::from_u32;
+
 use super::{Drawable, BoundingBox, MeasureMode};
 use ::paint::{Point, Canvas};
 use ::elements::Element;
@@ -25,8 +27,13 @@ pub type SizeReader<T> = fn(&T) -> f32;
 pub type DirReader<T> = fn(&T) -> &Directionality;
 pub type ColorReader<T> = fn(&T) -> &Color;
 
+pub enum GlyphIndex {
+    Char(u32),
+    Index(u32),
+}
+
 pub struct Glyph<'a, T: Element + 'a> {
-    glyph_index: u32,
+    glyph_index: GlyphIndex,
     element: &'a T,
     size_reader: SizeReader<T>,
     dir_reader: DirReader<T>,
@@ -37,18 +44,36 @@ pub struct Glyph<'a, T: Element + 'a> {
 
 impl<'a, T: Element + 'a> Drawable for Glyph<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
-        canvas.draw_glyph(pen_pos, &self.bounding_box, self.glyph_index,
-                          (self.color_reader)(self.element),
-                          (self.size_reader)(self.element),
-                          (self.dir_reader)(self.element));
+        match self.glyph_index {
+            GlyphIndex::Index(index) => {
+                canvas.draw_glyph(pen_pos, &self.bounding_box, index,
+                                  (self.color_reader)(self.element),
+                                  (self.size_reader)(self.element),
+                                  (self.dir_reader)(self.element));
+            },
+            GlyphIndex::Char(unicode) => {
+                canvas.draw_text(pen_pos, &self.bounding_box,
+                                 &from_u32(unicode).unwrap().to_string(),
+                                 (self.color_reader)(self.element),
+                                 (self.size_reader)(self.element),
+                                 (self.dir_reader)(self.element));
+            }
+        }
     }
 
     fn calculate(&mut self, context: &Context, width: f32, width_measure_mode: &MeasureMode,
                  height: f32, height_measure_mode: &MeasureMode) {
         let base_size = (self.size_reader)(self.element);
         let ruler = context.platform().get_math_ruler(self.element, base_size);
+        let dir = (self.dir_reader)(self.element);
+
+        let bounds = match self.glyph_index {
+            GlyphIndex::Char(unicode) => ruler.measure_char(unicode, dir),
+            GlyphIndex::Index(index) => ruler.measure_glyph(index, dir),
+        };
+
         self.bounding_box = BoundingBox {
-            rect: ruler.measure_glyph(self.glyph_index, (self.dir_reader)(self.element)),
+            rect: bounds,
             baseline: -ruler.descent(),
             axis: ruler.axis_height()-ruler.descent(),
         }
@@ -60,7 +85,7 @@ impl<'a, T: Element + 'a> Drawable for Glyph<'a, T> {
 }
 
 impl<'a, T: Element + 'a> Glyph<'a, T> {
-    pub fn new(element: &'a T, glyph_index: u32, size_reader: SizeReader<T>,
+    pub fn new(element: &'a T, glyph_index: GlyphIndex, size_reader: SizeReader<T>,
                color_reader: ColorReader<T>, dir_reader: DirReader<T>) -> Glyph<'a, T> {
         Glyph {
             glyph_index,
