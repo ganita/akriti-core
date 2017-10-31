@@ -18,7 +18,7 @@ use super::{
     TableSide
 };
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Immutable)]
 pub struct StyleProps {
     math_background: Option<Color>,
     math_variant: Option<MathVariant>,

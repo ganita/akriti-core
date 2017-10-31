@@ -1,13 +1,15 @@
 mod context;                pub use self::context::Context;
-mod display_metrics;        pub use self::display_metrics::DisplayMetrics;
 
 use ::paint::{
     TextRuler, 
     MathRuler
 };
+use ::elements::Element;
 
 pub trait Platform {
-    fn create_text_ruler(&self) -> Box<TextRuler>;
-    fn create_math_ruler(&self) -> Box<MathRuler>;
-    fn display_metrics(&self) -> DisplayMetrics;
+    fn get_text_ruler(&self, element: &Element, size: f32) -> &TextRuler;
+    fn get_math_ruler(&self, element: &Element, size: f32) -> &MathRuler;
+    fn px_to_du(&self, px: f32) -> f32;
+    fn sp_to_du(&self, sp: f32) -> f32;
+    fn dp_to_du(&self, dp: f32) -> f32;
 }

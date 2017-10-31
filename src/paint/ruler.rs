@@ -1,19 +1,16 @@
 use super::typeface::TypeFace;
 use super::rect::Rect;
+use ::props::Directionality;
 
 pub trait TextRuler {
-    fn set_font_size(&mut self, size: f32);
-    fn set_typeface(&mut self, typeface: TypeFace);
     fn font_size(&self) -> f32;
     fn typeface(&self) -> &TypeFace;
 
-    fn measure(&self, text: &String) -> Rect;
-    fn measure_char(&self, unicode: u32) -> Rect;
+    fn measure(&self, text: &str, dir: &Directionality) -> Rect;
+    fn measure_char(&self, unicode: u32, dir: &Directionality) -> Rect;
 
     fn ascent(&self) -> f32;
     fn descent(&self) -> f32;
-    fn top(&self) -> f32;
-    fn bottom(&self) -> f32;
 }
 
 pub trait MathRuler : TextRuler {

@@ -73,7 +73,7 @@ impl Color {
     }
 
     pub fn transparent() -> Color {
-        Color::ARGB(255, 0, 0, 0)
+        Color::ARGB(0, 0, 0, 0)
     }
 
     pub fn black() -> Color {

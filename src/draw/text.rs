@@ -12,7 +12,7 @@ pub type MathVariantReader<T> = fn(&T) -> &MathVariant;
 pub type DirectionalityReader<T> = fn(&T) -> &Directionality;
 pub type MathColorReader<T> = fn(&T) -> &Color;
 
-pub struct Text<'a, T: 'a + Element<'a>> {
+pub struct Text<'a, T: Element + 'a> {
     props: &'a T,
 
     text_reader: TextReader<T>,
@@ -26,7 +26,7 @@ pub struct Text<'a, T: 'a + Element<'a>> {
     variant_text: Cow<'a, str>
 }
 
-impl<'a, T: Element<'a>> Drawable for Text<'a, T> {
+impl<'a, T: Element> Drawable for Text<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         canvas.draw_text(
             pen_pos,
@@ -81,7 +81,7 @@ fn get_variant_text<'a>(context: &Context, text: &'a str, math_variant: &MathVar
     return Cow::Owned(variant);
 }
 
-impl<'a, T: Element<'a>> Text<'a, T> {
+impl<'a, T: Element> Text<'a, T> {
     pub fn new(props: &'a T, text_reader: TextReader<T>, math_size_reader: MathSizeReader<T>,
                math_variant_reader: MathVariantReader<T>, dir_reader: DirectionalityReader<T>,
                math_color_reader: MathColorReader<T>) -> Text<'a, T> {
