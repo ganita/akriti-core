@@ -35,7 +35,9 @@ pub struct PaddingBox<'a, T: 'a, U: Drawable> {
 impl<'a, T, U: Drawable> Drawable for PaddingBox<'a, T, U> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         if let Some(ref wrapped) = self.wrapped {
-            wrapped.draw(canvas, pen_pos);
+            let point = pen_pos+&Point::new((self.padding_left_reader)(self.props),
+                                            (self.padding_top_reader)(self.props));
+            wrapped.draw(canvas, &point);
         }
     }
 
