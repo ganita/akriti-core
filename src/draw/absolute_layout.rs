@@ -21,16 +21,16 @@ use ::paint::{Canvas, Point, Rect};
 use std::cmp::Ordering;
 use std::slice::{Iter, IterMut};
 
-pub struct AbsoluteLayout {
-    children: Vec<Child>,
+pub struct AbsoluteLayout<'a> {
+    children: Vec<Child<'a>>,
     bounding_box: BoundingBox,
 
     baseline: Option<f32>,
     axis: Option<f32>,
 }
 
-pub struct Child {
-    drawable: Box<Drawable>,
+pub struct Child<'a> {
+    drawable: Box<Drawable+'a>,
     params: AbsoluteLayoutParams
 }
 
@@ -38,7 +38,7 @@ pub struct AbsoluteLayoutParams {
     position: Point
 }
 
-impl Drawable for AbsoluteLayout {
+impl<'a> Drawable for AbsoluteLayout<'a> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         for child in &self.children {
             child.drawable.draw(canvas, &(pen_pos+&child.params.position))
@@ -77,8 +77,8 @@ impl Drawable for AbsoluteLayout {
     }
 }
 
-impl AbsoluteLayout {
-    pub fn new() -> AbsoluteLayout {
+impl<'a> AbsoluteLayout<'a> {
+    pub fn new() -> AbsoluteLayout<'a> {
         AbsoluteLayout {
             children: Vec::new(),
             bounding_box: BoundingBox::default(),
@@ -87,7 +87,7 @@ impl AbsoluteLayout {
         }
     }
 
-    pub fn add_child(&mut self, child: Box<Drawable>, params: AbsoluteLayoutParams) {
+    pub fn add_child(&mut self, child: Box<Drawable + 'a>, params: AbsoluteLayoutParams) {
         self.children.push(Child { drawable: child, params });
     }
 
@@ -113,11 +113,11 @@ impl AbsoluteLayout {
         }
     }
 
-    pub fn iter(&self) -> Iter<Child> {
+    pub fn iter(&self) -> Iter<Child<'a>> {
         self.children.iter()
     }
 
-    pub fn iter_mut(&mut self) -> IterMut<Child> {
+    pub fn iter_mut(&mut self) -> IterMut<Child<'a>> {
         self.children.iter_mut()
     }
 }
