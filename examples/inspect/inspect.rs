@@ -34,7 +34,7 @@ use platform::GTKPlatform;
 use canvas::CairoCanvas;
 use akriti_core::paint::{Point};
 use akriti_core::platform::Context as AkritiContext;
-use akriti_core::elements::{MiElement, MrowElement, MnElement};
+use akriti_core::elements::{MiElement, MrowElement, MnElement, MtextElement};
 use akriti_core::props::{MathVariant, Directionality, Color};
 use akriti_core::elements::Element;
 
@@ -82,6 +82,16 @@ fn main() {
     mrow.add_element(
         Box::new(MiElement::new(
             String::from("j"),
+            MathVariant::Normal,
+            64.,
+            Directionality::LTR,
+            Color::RGB(0, 0, 0),
+            Color::RGB(0, 255, 0),
+        ))
+    );
+    mrow.add_element(
+        Box::new(MtextElement::new(
+            String::from("hello"),
             MathVariant::Normal,
             64.,
             Directionality::LTR,
