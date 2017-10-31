@@ -38,6 +38,12 @@ pub struct AbsoluteLayoutParams {
     position: Point
 }
 
+impl AbsoluteLayoutParams {
+    pub fn new(point: Point) -> AbsoluteLayoutParams {
+        AbsoluteLayoutParams { position: point }
+    }
+}
+
 impl<'a> Drawable for AbsoluteLayout<'a> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         for child in &self.children {
