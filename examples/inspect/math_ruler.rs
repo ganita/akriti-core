@@ -15,7 +15,8 @@
 */
 
 
-use ::akriti_core::paint::{TypeFace, Rect, TextRuler, MathRuler};
+use ::akriti_core::paint::{TypeFace, Rect, TextRuler, MathRuler, GlyphAssembly,
+                           GlyphConstructionDirection, GlyphVariant};
 use ::akriti_measure::harfbuzz::HBFace;
 use ::akriti_core::props::Directionality;
 use ::cairo::{Context, ImageSurface, Format, FontSlant, FontWeight};
@@ -296,6 +297,18 @@ impl MathRuler for HarfbuzzMathRuler  {
     }
 
     fn radical_degree_bottom_raise_percent(&self) -> f32 {
+        unimplemented!()
+    }
+
+    fn minimum_connector_overlap(&self, _direction: &GlyphConstructionDirection) -> f32 {
+        unimplemented!()
+    }
+
+    fn glyph_variants(&self, _unicode: u32, _direction: &GlyphConstructionDirection) -> Vec<GlyphVariant> {
+        unimplemented!()
+    }
+
+    fn glyph_assembly(&self, _unicode: u32, _direction: &GlyphConstructionDirection) -> GlyphAssembly {
         unimplemented!()
     }
 }

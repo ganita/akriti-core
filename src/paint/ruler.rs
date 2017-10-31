@@ -87,4 +87,94 @@ pub trait MathRuler : TextRuler {
     fn radical_kern_before_degree(&self) -> f32;
     fn radical_kern_after_degree(&self) -> f32;
     fn radical_degree_bottom_raise_percent(&self) -> f32;
+    fn minimum_connector_overlap(&self, direction: &GlyphConstructionDirection) -> f32;
+    fn glyph_variants(&self, unicode: u32, direction: &GlyphConstructionDirection) -> Vec<GlyphVariant>;
+    fn glyph_assembly(&self, unicode: u32, direction: &GlyphConstructionDirection) -> GlyphAssembly;
+}
+
+pub enum GlyphConstructionDirection {
+    Horizontal,
+    Vertical,
+}
+
+pub struct GlyphVariant {
+    glyph_index: u32,
+    advance: f32,
+}
+
+impl GlyphVariant {
+    pub fn new(glyph_index: u32, advance: f32) -> GlyphVariant {
+        GlyphVariant { glyph_index, advance }
+    }
+
+    pub fn glyph_index(&self) -> u32 {
+        self.glyph_index
+    }
+
+    pub fn advance(&self) -> f32 {
+        self.advance
+    }
+}
+
+pub struct GlyphAssemblyPart {
+    glyph_index: u32,
+    start_connector_length: f32,
+    end_connector_length: f32,
+    full_advance: f32,
+    is_extender: bool,
+}
+
+impl GlyphAssemblyPart {
+    pub fn new(glyph_index: u32, start_connector_length: f32, end_connector_length: f32,
+               full_advance: f32, is_extender: bool) -> GlyphAssemblyPart {
+        GlyphAssemblyPart {
+            glyph_index,
+            start_connector_length,
+            end_connector_length,
+            full_advance,
+            is_extender,
+        }
+    }
+
+    pub fn glyph_index(&self) -> u32 {
+        self.glyph_index
+    }
+
+    pub fn start_connector_length(&self) -> f32 {
+        self.start_connector_length
+    }
+
+    pub fn end_connector_length(&self) -> f32 {
+        self.end_connector_length
+    }
+
+    pub fn full_advance(&self) -> f32 {
+        self.full_advance
+    }
+
+    pub fn is_extender(&self) -> bool {
+        self.is_extender
+    }
+}
+
+pub struct GlyphAssembly {
+    parts: Vec<GlyphAssemblyPart>,
+    italics_correction: f32,
+}
+
+impl GlyphAssembly {
+    pub fn new(parts: Vec<GlyphAssemblyPart>, italics_correction: f32) -> GlyphAssembly {
+        GlyphAssembly {
+            parts,
+            italics_correction
+        }
+    }
+
+    pub fn parts(&self) -> &Vec<GlyphAssemblyPart> {
+        &self.parts
+    }
+
+    pub fn italics_correction(&self) -> f32 {
+        self.italics_correction
+    }
 }
