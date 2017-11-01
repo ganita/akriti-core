@@ -56,16 +56,24 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
 
         if *height_mode == MeasureMode::UpTo {
             let stretch_dir = GlyphConstructionDirection::Vertical;
+            let stretched_size = base_size
+                .max((self.min_size_reader)(self.props))
+                .min((self.max_size_reader)(self.props))
+                .min(height);
 
-            if self.try_stretch_symbol(context,symbol, ruler, height, &stretch_dir) {
+            if self.try_stretch_symbol(context,symbol, ruler, stretched_size, &stretch_dir) {
                 return;
             }
         }
 
         if *width_mode == MeasureMode::UpTo {
             let stretch_dir = GlyphConstructionDirection::Horizontal;
+            let stretched_size = base_size
+                .max((self.min_size_reader)(self.props))
+                .min((self.max_size_reader)(self.props))
+                .min(width);
 
-            if self.try_stretch_symbol(context,symbol, ruler, width, &stretch_dir) {
+            if self.try_stretch_symbol(context,symbol, ruler, stretched_size, &stretch_dir) {
                 return;
             }
         }
