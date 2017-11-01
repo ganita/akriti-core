@@ -66,6 +66,10 @@ impl TextRuler for HarfbuzzMathRuler {
         self.measure(&String::from_utf16(&[unicode as u16]).unwrap(), dir)
     }
 
+    fn measure_glyph(&self, _glyph_index: u32, _dir: &Directionality) -> Rect {
+        unimplemented!()
+    }
+
     fn ascent(&self) -> f32 {
         self.context.font_extents().ascent as f32
     }

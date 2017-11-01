@@ -25,6 +25,7 @@ pub trait TextRuler {
 
     fn measure(&self, text: &str, dir: &Directionality) -> Rect;
     fn measure_char(&self, unicode: u32, dir: &Directionality) -> Rect;
+    fn measure_glyph(&self, glyph_index: u32, dir: &Directionality) -> Rect;
 
     fn ascent(&self) -> f32;
     fn descent(&self) -> f32;
