@@ -21,6 +21,8 @@ mod absolute_layout;        pub use self::absolute_layout::*;
 mod linear_layout;          pub use self::linear_layout::*;
 mod fixed;                  pub use self::fixed::*;
 mod padding_box;            pub use self::padding_box::*;
+mod symbol;                 pub use self::symbol::*;
+mod glyph;                  pub use self::glyph::*;
 
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;
