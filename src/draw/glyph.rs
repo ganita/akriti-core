@@ -61,8 +61,8 @@ impl<'a, T: Element + 'a> Drawable for Glyph<'a, T> {
         }
     }
 
-    fn calculate(&mut self, context: &Context, width: f32, width_measure_mode: &MeasureMode,
-                 height: f32, height_measure_mode: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, _: f32, _: &MeasureMode,
+                 _: f32, _: &MeasureMode) {
         let base_size = (self.size_reader)(self.element);
         let ruler = context.platform().get_math_ruler(self.element, base_size);
         let dir = (self.dir_reader)(self.element);

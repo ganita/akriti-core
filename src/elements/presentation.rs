@@ -29,7 +29,7 @@ fn math_background_reader(element: &PresentationElement) -> &Color {
 }
 
 impl<'a, U: Drawable + 'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, U>> for PresentationElement {
-    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationElement, U> {
+    fn layout(&'a self, _: &Context) -> Wrapper<'a, PresentationElement, U> {
         Wrapper::<'a, PresentationElement, U>::new(
             self,
             math_background_reader
