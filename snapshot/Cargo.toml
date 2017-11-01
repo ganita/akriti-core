@@ -14,23 +14,11 @@
  # limitations under the License.
 ##
 
-
 [package]
-name = "akriti-core"
-version = "0.1.0"
 authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
+name = "akriti-snapshot"
+version = "0.1.0"
 
 [dependencies]
-akriti-constants = { path = "constants" }
-akriti-macros = { path = "macros" }
-
-[dev-dependencies]
-akriti-measure = { path="../akriti-measure" }
-akriti-snapshot = { path="snapshot" }
-gtk = "^0"
 cairo-rs = { version = "^0", features = ["png"] }
 freetype-sys = { git="https://github.com/ganita/rust-freetype-sys" }
-
-[[example]]
-name = "inspect"
-path = "examples/inspect/inspect.rs"
