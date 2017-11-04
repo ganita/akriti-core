@@ -32,7 +32,8 @@ impl Platform {
     }
 
     pub fn new_canvas(&self, width: f32, height: f32) -> Canvas {
-        Canvas::new(width, height, self.ruler.get_sk_typeface())
+        Canvas::new(width.max(1.), height.max(1.),
+                    self.ruler.get_sk_typeface())
     }
 }
 
