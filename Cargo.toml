@@ -27,8 +27,6 @@ akriti-macros = { path = "macros" }
 [dev-dependencies]
 akriti-measure = { path="../akriti-measure" }
 akriti-snapshot = { path="snapshot" }
-gtk = "^0"
-cairo-rs = { version = "^0", features = ["png"] }
 freetype-sys = { git="https://github.com/ganita/rust-freetype-sys" }
 
 [[example]]

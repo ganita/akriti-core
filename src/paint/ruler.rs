@@ -43,7 +43,7 @@ pub trait MathRuler : TextRuler {
     fn subscript_shift_down(&self) -> f32;
     fn subscript_top_max(&self) -> f32;
     fn subscript_baseline_drop_min(&self) -> f32;
-    fn subscript_shift_up(&self) -> f32;
+    fn superscript_shift_up(&self) -> f32;
     fn superscript_shift_up_cramped(&self) -> f32;
     fn superscript_bottom_min(&self) -> f32;
     fn superscript_baseline_drop_max(&self) -> f32;
@@ -168,6 +168,13 @@ impl GlyphAssembly {
         GlyphAssembly {
             parts,
             italics_correction
+        }
+    }
+
+    pub fn empty() -> GlyphAssembly {
+        GlyphAssembly {
+            parts: Vec::new(),
+            italics_correction: 0.0,
         }
     }
 

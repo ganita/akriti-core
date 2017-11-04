@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-
+/*
 use std::ffi::{CString};
 use std::ptr;
 
@@ -82,4 +82,4 @@ impl GTKPlatform {
             math_ruler: HarfbuzzMathRuler::new(HBFace::from_freetype_font(ft_face as FTFontRef))
         }
     }
-}
+}*/

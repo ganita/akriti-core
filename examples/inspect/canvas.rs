@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-
+/*
 use ::akriti_core::paint::{Canvas, Point, Rect};
 use ::akriti_core::draw::BoundingBox;
 use ::cairo::{Context, Glyph};
@@ -77,4 +77,4 @@ impl<'a> Canvas for CairoCanvas<'a> {
         self.context.line_to(end.x() as f64, end.y() as f64);
         self.context.stroke();
     }
-}
+}*/

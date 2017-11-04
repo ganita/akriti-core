@@ -21,6 +21,7 @@ mod directionality;         pub use self::directionality::*;
 mod frame_spacing;          pub use self::frame_spacing::*;
 mod group_align;            pub use self::group_align::*;
 mod halign;                 pub use self::halign::*;
+mod id_ref;                 pub use self::id_ref::*;
 mod indent;                 pub use self::indent::*;
 mod length;                 pub use self::length::*;
 mod linebreak;              pub use self::linebreak::*;

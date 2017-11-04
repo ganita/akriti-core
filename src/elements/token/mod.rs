@@ -18,6 +18,7 @@
 mod mi;                         pub use self::mi::*;
 mod mn;                         pub use self::mn::*;
 mod mtext;                      pub use self::mtext::*;
+mod mo;                         pub use self::mo::*;
 
 use super::{ConcreteElement, Element, PresentationElement};
 use ::draw::{Text, Drawable, Wrapper, MeasureMode};
@@ -36,7 +37,7 @@ pub struct TokenElement {
 }
 
 impl Element for TokenElement {
-    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
+    fn layout<'a>(&'a self, _context: &Context) -> Box<Drawable + 'a> {
         unimplemented!()
     }
 }

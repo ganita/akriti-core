@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-
+/*
 use ::cairo::{ImageSurface, Context, Format};
 use ::akriti_core::paint::{TextRuler, Rect, TypeFace};
 use ::akriti_core::props::Directionality;
@@ -65,4 +65,4 @@ impl CairoTextRuler {
     pub fn set_size(&self, size: f32) {
         self.context.set_font_size(size as f64);
     }
-}
+}*/

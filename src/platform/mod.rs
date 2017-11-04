@@ -17,6 +17,8 @@
 
 mod context;                pub use self::context::Context;
 
+use std::any::Any;
+
 use ::paint::{
     TextRuler, 
     MathRuler
@@ -29,6 +31,7 @@ pub trait Platform {
     fn px_to_du(&self, px: f32) -> f32;
     fn sp_to_du(&self, sp: f32) -> f32;
     fn dp_to_du(&self, dp: f32) -> f32;
+    fn as_any(&self) -> &Any;
 }
 
 #[cfg(test)] pub mod test;

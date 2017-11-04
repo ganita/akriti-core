@@ -1,3 +1,5 @@
+use std::any::Any;
+
 use ::platform::{Platform, Context};
 use ::paint::{TextRuler, MathRuler};
 use ::elements::Element;
@@ -23,6 +25,10 @@ impl Platform for MockPlatform {
 
     fn dp_to_du(&self, _: f32) -> f32 {
         unimplemented!()
+    }
+
+    fn as_any(&self) -> &Any {
+        self
     }
 }
 

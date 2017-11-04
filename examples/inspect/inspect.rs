@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-
+/*
 pub extern crate cairo;
 pub extern crate gtk;
 pub extern crate akriti_core;
@@ -133,3 +133,6 @@ pub fn drawable<F>(width: i32, height: i32, draw_fn: F)
     window.set_keep_above(true);
     window.show_all();
 }
+*/
+
+fn main() {}

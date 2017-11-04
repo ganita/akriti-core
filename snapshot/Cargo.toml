@@ -20,5 +20,6 @@ name = "akriti-snapshot"
 version = "0.1.0"
 
 [dependencies]
-cairo-rs = { version = "^0", features = ["png"] }
-freetype-sys = { git="https://github.com/ganita/rust-freetype-sys" }
+akriti-core = { path = "../" }
+akriti-measure = { path = "../../akriti-measure" }
+skia-sys = { path = "../../skia-sys" }

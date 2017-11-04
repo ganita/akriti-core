@@ -15,6 +15,8 @@
 */
 
 
+use std::any::Any;
+
 use ::props::{
     Color, 
     Directionality
@@ -31,4 +33,5 @@ pub trait Canvas {
     fn draw_rect(&self, top_left: &Point, rect: &Rect, color: &Color);
     fn draw_rect_outline(&self, top_left: &Point, rect: &Rect, color: &Color, stroke_width: f32);
     fn draw_line(&self, start: &Point, end: &Point, color: &Color, stroke_width: f32);
+    fn as_any(&self) -> &Any;
 }
