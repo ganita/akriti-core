@@ -34,6 +34,16 @@ pub struct Child<'a> {
     params: AbsoluteLayoutParams
 }
 
+impl<'a> Child<'a> {
+    pub fn drawable(&self) -> &Drawable {
+        self.drawable.as_ref()
+    }
+
+    pub fn params(&self) -> &AbsoluteLayoutParams {
+        &self.params
+    }
+}
+
 pub struct AbsoluteLayoutParams {
     position: Point
 }
