@@ -129,15 +129,14 @@ impl<'a> Drawable for LinearLayout<'a> {
     }
 
     // TODO optimize time complexity to at least O(n^2)
-    fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
-                 height_mode: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
         if self.children.len() == 0 {
             self.bounding_box = BoundingBox::default();
             return ();
         }
 
         if self.children.len() == 1 {
-            self.children[0].drawable.calculate(context, -1., &MeasureMode::Wrap, -1.,
+            self.children[0].drawable.calculate(context, &MeasureMode::Wrap,
                                                 &MeasureMode::Wrap);
             self.bounding_box = self.children[0].drawable.bounding_box().clone();
             return ();
@@ -153,8 +152,7 @@ impl<'a> Drawable for LinearLayout<'a> {
         // and compute the total size of container
         for child in self.children.iter_mut() {
             // Compute minimum dimension required by child to wrap its contents
-            child.drawable.calculate(context, -1., &MeasureMode::Wrap,
-                                     -1., &MeasureMode::Wrap);
+            child.drawable.calculate(context,&MeasureMode::Wrap, &MeasureMode::Wrap);
 
             let align = LinearLayout::get_align_self(layout_gravity,
                                                      layout_align,
@@ -257,12 +255,12 @@ impl<'a> Drawable for LinearLayout<'a> {
         // Calculate width and height of cross axis flexible items.
         for child in self.children.iter_mut() {
             if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
-                let (width, width_mode, height, height_mode) = match self.gravity {
-                    Gravity::Vertical => (cross_axis_length, MeasureMode::UpTo, -1., MeasureMode::Wrap),
-                    Gravity::Horizontal => (-1., MeasureMode::Wrap, cross_axis_length, MeasureMode::UpTo),
+                let (width_mode, height_mode) = match self.gravity {
+                    Gravity::Vertical => (MeasureMode::UpTo(cross_axis_length), MeasureMode::Wrap),
+                    Gravity::Horizontal => (MeasureMode::Wrap, MeasureMode::UpTo(cross_axis_length)),
                 };
 
-                child.drawable.calculate(context, width, &width_mode, height, &height_mode);
+                child.drawable.calculate(context, &width_mode, &height_mode);
             }
 
             if child.params.weight <= 0. {
@@ -276,9 +274,9 @@ impl<'a> Drawable for LinearLayout<'a> {
         }
 
         let main_axis_available_length = match self.gravity {
-            Gravity::Horizontal => if *width_mode == MeasureMode::UpTo {width} else {-1.},
-            Gravity::Vertical => if *height_mode == MeasureMode::UpTo {height} else {-1.},
-        } - main_axis_wrap_length;
+            Gravity::Horizontal => if let MeasureMode::UpTo(width) = *width_mode { width } else { -1. },
+            Gravity::Vertical => if let MeasureMode::UpTo(height) = *height_mode { height } else { -1. },
+        } - main_axis_wrap_length ;
 
         let weight_factor = main_axis_available_length/weight_sum;
 
@@ -287,22 +285,20 @@ impl<'a> Drawable for LinearLayout<'a> {
 
             // Stretch main axis flexible items
             if child.params.weight > 0. && weight_factor > 0. {
-                let (width, width_mode, height, height_mode) = match self.gravity {
+                let (width_mode, height_mode) = match self.gravity {
                     Gravity::Vertical => (
-                        child.drawable.bounding_box().width(),
-                        MeasureMode::UpTo,
-                        child.drawable.bounding_box().height().max(weight_factor*child.params.weight),
-                        MeasureMode::UpTo
+                        MeasureMode::UpTo(child.drawable.bounding_box().width()),
+                        MeasureMode::UpTo(child.drawable.bounding_box().height()
+                            .max(weight_factor*child.params.weight))
                     ),
                     Gravity::Horizontal => (
-                        child.drawable.bounding_box().width().max(weight_factor*child.params.weight),
-                        MeasureMode::UpTo,
-                        child.drawable.bounding_box().height(),
-                        MeasureMode::UpTo
+                        MeasureMode::UpTo(child.drawable.bounding_box().width()
+                            .max(weight_factor*child.params.weight)),
+                        MeasureMode::UpTo(child.drawable.bounding_box().height())
                     ),
                 };
 
-                child.drawable.calculate(context, width, &width_mode, height, &height_mode);
+                child.drawable.calculate(context, &width_mode, &height_mode);
             }
 
             let align = if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
@@ -399,8 +395,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&test_context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&test_context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 20., 10., 10.)),
@@ -442,8 +437,7 @@ mod test {
         ll.layout_align = Align::Axis;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&test_context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&test_context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 20., 0., 10.)),
@@ -485,8 +479,7 @@ mod test {
         ll.layout_align = Align::Start;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 20., 10., 10.)),
@@ -516,8 +509,7 @@ mod test {
         ll.layout_align = Align::Center;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 20., 10., 10.)),
@@ -547,8 +539,7 @@ mod test {
         ll.layout_align = Align::End;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -578,8 +569,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -620,8 +610,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -662,8 +651,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -716,8 +704,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -758,8 +745,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -793,8 +779,7 @@ mod test {
         ll.layout_align = Align::Baseline;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(10., 50., 10., 10.)),
@@ -826,8 +811,7 @@ mod test {
         ll.layout_align = Align::Center;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(30., 50., 10., 10.)),
@@ -860,8 +844,7 @@ mod test {
         ll.layout_align = Align::Start;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(30., 50., 10., 10.)),
@@ -894,8 +877,7 @@ mod test {
         ll.layout_align = Align::End;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(30., 50., 10., 10.)),
@@ -928,8 +910,7 @@ mod test {
         ll.layout_align = Align::Center;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, -1.,
-                         &MeasureMode::Wrap);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         };
 
         ll.add_child(Box::new(Fixed::new(100., 50., 10., 10.)),
@@ -966,8 +947,7 @@ mod test {
         ll.layout_align = Align::Center;
 
         let calculate = |ll: &mut LinearLayout| {
-            ll.calculate(&context, -1., &MeasureMode::Wrap, 200.,
-                         &MeasureMode::UpTo);
+            ll.calculate(&context, &MeasureMode::Wrap, &MeasureMode::UpTo(200.));
         };
 
         ll.add_child(Box::new(Fixed::new(30., 20., 10., 10.)),

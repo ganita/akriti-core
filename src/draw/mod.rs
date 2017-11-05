@@ -84,14 +84,13 @@ impl Default for BoundingBox {
 
 #[derive(Debug, PartialEq)]
 pub enum MeasureMode {
-    UpTo,
+    UpTo(f32),
     Wrap
 }
 
 pub trait Drawable {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point);
-    fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
-                 height_mode: &MeasureMode);
+    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode);
 
     fn bounding_box(&self) -> &BoundingBox;
 }

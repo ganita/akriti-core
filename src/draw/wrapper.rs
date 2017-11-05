@@ -42,10 +42,9 @@ impl<'a, T, U: Drawable> Drawable for Wrapper<'a, T, U> {
         }
     }
 
-    fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
-                 height_mode: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
         if let Some(val) = self.wrapped.as_mut() {
-            val.calculate(context, width, width_mode, height, height_mode);
+            val.calculate(context, width_mode, height_mode);
         }
         self.bounding_box = BoundingBox {
             rect: if let Some(ref val) = self.wrapped {

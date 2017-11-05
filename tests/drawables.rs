@@ -49,8 +49,8 @@ fn test_symbol() {
         |_| &Color::RGB(0, 0, 0)
     );
 
-    snap_drawable(&mut symbol, -1., &MeasureMode::Wrap,
-                  1000., &MeasureMode::UpTo, "symbol_sqrt");
+    snap_drawable(&mut symbol, &MeasureMode::Wrap,
+                  &MeasureMode::UpTo(1000.), "symbol_sqrt");
 
     let mut symbol = Symbol::new(
         &test_element,
@@ -63,7 +63,7 @@ fn test_symbol() {
         |_| &Color::RGB(0, 0, 0)
     );
 
-    snap_drawable(&mut symbol, 1000., &MeasureMode::UpTo,
-                  -1., &MeasureMode::Wrap, "symbol_left_arrow");
+    snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+                  &MeasureMode::Wrap, "symbol_left_arrow");
 
 }

@@ -50,7 +50,7 @@ impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, Text<'a, TokenElem
                              math_variant_reader, dir_reader, math_color_reader);
 
         layout.wrap(text);
-        layout.calculate(context, -1., &MeasureMode::Wrap, -1., &MeasureMode::Wrap);
+        layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
         return layout;
     }

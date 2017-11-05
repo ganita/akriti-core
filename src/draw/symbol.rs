@@ -50,13 +50,12 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
         self.layout.draw(canvas, pen_pos);
     }
 
-    fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
-                 height_mode: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
         let base_size = (self.base_size_reader)(self.props);
         let symbol = (self.symbol_reader)(self.props);
         let ruler = context.platform().get_math_ruler(self.props, base_size);
 
-        if *height_mode == MeasureMode::UpTo {
+        if let MeasureMode::UpTo(height) = *height_mode {
             let stretch_dir = GlyphConstructionDirection::Vertical;
             let stretched_size = base_size
                 .max((self.min_size_reader)(self.props))
@@ -68,7 +67,7 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
             }
         }
 
-        if *width_mode == MeasureMode::UpTo {
+        if let MeasureMode::UpTo(width) = *width_mode {
             let stretch_dir = GlyphConstructionDirection::Horizontal;
             let stretched_size = base_size
                 .max((self.min_size_reader)(self.props))
@@ -120,7 +119,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
         self.layout.add_child(Box::new(glyph),
                               AbsoluteLayoutParams::new(Point::new(0., 0.)));
 
-        self.layout.calculate(context, -1., &MeasureMode::Wrap, -1., &MeasureMode::Wrap);
+        self.layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
         self.bounding_box = self.layout.bounding_box().clone();
     }
@@ -232,7 +231,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
             }
         }
 
-        self.layout.calculate(context, -1., &MeasureMode::Wrap, -1., &MeasureMode::Wrap);
+        self.layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
         self.bounding_box = self.layout.bounding_box().clone();
     }
 

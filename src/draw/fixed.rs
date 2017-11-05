@@ -44,16 +44,15 @@ impl Drawable for Fixed {
         );
     }
 
-    fn calculate(&mut self, _: &Context, width: f32, width_measure_mode: &MeasureMode,
-                 height: f32, height_measure_mode: &MeasureMode) {
-        let width = if *width_measure_mode == MeasureMode::UpTo {
-            width.max(self.width)
+    fn calculate(&mut self, _: &Context, width_measure_mode: &MeasureMode, height_measure_mode: &MeasureMode) {
+        let width = if let MeasureMode::UpTo(val) = *width_measure_mode {
+            val.max(self.width)
         } else {
             self.width
         };
 
-        let height = if *height_measure_mode == MeasureMode::UpTo {
-            height.max(self.height)
+        let height = if let MeasureMode::UpTo(val) = *height_measure_mode {
+            val.max(self.height)
         } else {
             self.height
         };

@@ -56,7 +56,7 @@ impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, LinearLayout<'a>>>
 
         let mut wrapper = self.presentation_element.layout(context);
         wrapper.wrap(layout);
-        wrapper.calculate(context, -1., &MeasureMode::Wrap, -1., &MeasureMode::Wrap);
+        wrapper.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
         wrapper
     }

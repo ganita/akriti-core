@@ -48,13 +48,12 @@ pub fn snap_element(element: &Element, name: &str) {
 }
 
 #[allow(dead_code)]
-pub fn snap_drawable(drawable: &mut Drawable, width: f32, width_mode: &MeasureMode, height: f32,
-                     height_mode: &MeasureMode,  name: &str) {
+pub fn snap_drawable(drawable: &mut Drawable, width_mode: &MeasureMode, height_mode: &MeasureMode, name: &str) {
     let root_dir = env!("CARGO_MANIFEST_DIR");
     let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
 
     let context = Context::new(Box::new(Platform::new(&font)), 64.);
-    drawable.calculate(&context, width, width_mode, height, height_mode);
+    drawable.calculate(&context, width_mode, height_mode);
 
     let canvas: Canvas = context.platform().as_any().downcast_ref::<Platform>().unwrap()
         .new_canvas(drawable.bounding_box().width(), drawable.bounding_box().height());

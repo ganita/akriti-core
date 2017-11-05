@@ -41,15 +41,14 @@ impl<'a, T, U: Drawable> Drawable for PaddingBox<'a, T, U> {
         }
     }
 
-    fn calculate(&mut self, context: &Context, width: f32, width_mode: &MeasureMode, height: f32,
-                 height_mode: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
         let padding_left = (self.padding_left_reader)(self.props);
         let padding_right = (self.padding_right_reader)(self.props);
         let padding_top = (self.padding_top_reader)(self.props);
         let padding_bottom = (self.padding_bottom_reader)(self.props);
 
         self.bounding_box = if let Some(ref mut val) = self.wrapped {
-            val.calculate(context, width, width_mode, height, height_mode);
+            val.calculate(context, width_mode, height_mode);
             BoundingBox {
                 rect: Rect::new(val.bounding_box().width()+padding_left+padding_right,
                                 val.bounding_box().height()+padding_top+padding_bottom),
@@ -111,8 +110,7 @@ mod test {
             |_| 2.
         );
 
-        wrapped.calculate(&context, -1., &MeasureMode::Wrap,
-                          -1., &MeasureMode::Wrap);
+        wrapped.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
         assert_eq!(wrapped.bounding_box().width(), 8.);
         assert_eq!(wrapped.bounding_box().height(), 6.);
@@ -120,8 +118,7 @@ mod test {
         assert_eq!(wrapped.bounding_box().axis(), 0.);
 
         wrapped.wrap(content);
-        wrapped.calculate(&context, -1., &MeasureMode::Wrap,
-                          -1., &MeasureMode::Wrap);
+        wrapped.calculate(&context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
         assert_eq!(wrapped.bounding_box().width(), 18.);
         assert_eq!(wrapped.bounding_box().height(), 26.);

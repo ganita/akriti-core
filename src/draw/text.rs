@@ -55,8 +55,7 @@ impl<'a, T: Element> Drawable for Text<'a, T> {
         )
     }
 
-    fn calculate(&mut self, context: &Context, _: f32, _: &MeasureMode, _: f32,
-                 _: &MeasureMode) {
+    fn calculate(&mut self, context: &Context, _: &MeasureMode, _: &MeasureMode) {
         let size = (self.math_size_reader)(self.props);
 
         let text = (self.text_reader)(self.props);
