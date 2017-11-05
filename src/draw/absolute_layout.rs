@@ -51,8 +51,13 @@ impl<'a> Drawable for AbsoluteLayout<'a> {
         }
     }
 
-    fn calculate(&mut self, _: &Context, _: f32, _: &MeasureMode, _: f32,
+    fn calculate(&mut self, context: &Context, _: f32, _: &MeasureMode, _: f32,
                  _: &MeasureMode) {
+        for child in self.children.iter_mut() {
+            child.drawable.calculate(context, -1., &MeasureMode::Wrap, -1.,
+                                     &MeasureMode::Wrap);
+        }
+
         let end_x_calc = |child: &Child|
             child.drawable.bounding_box().width() + child.params.position.x();
 
