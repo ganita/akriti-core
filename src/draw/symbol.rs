@@ -132,7 +132,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
 
         self.layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
-        self.bounding_box = self.layout.bounding_box().clone();
+        self.bounding_box = self.layout.iter().next().unwrap().drawable().bounding_box().clone();
     }
 
     fn try_stretch_symbol(&mut self, context: &Context, symbol: u32, ruler: &MathRuler,
@@ -293,7 +293,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
 
         self.layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
-        self.bounding_box = self.layout.bounding_box().clone();
+        self.bounding_box = self.layout.iter().next().unwrap().drawable().bounding_box().clone();
     }
 
 }
