@@ -19,6 +19,8 @@ extern crate akriti_core;
 
 mod common;     use common::snap_element;
 
+use std::f32;
+
 use akriti_core::elements::*;
 use akriti_core::props::*;
 
@@ -85,4 +87,75 @@ fn test_mi() {
     );
 
     snap_element(&mi, "mi");
+}
+
+#[test]
+fn test_mo() {
+    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(255, 255, 255));
+
+    mrow.add_element(
+        Box::new(MiElement::new(
+            String::from("a"),
+            MathVariant::Italic,
+            64.,
+            Directionality::LTR,
+            Color::RGB(0, 0, 0),
+            Color::transparent()
+        ))
+    );
+
+    mrow.add_element(
+        Box::new(MoElement::new(
+            String::from("+"),
+            MathVariant::Normal,
+            64.,
+            Directionality::LTR,
+            Color::RGB(0, 0, 0),
+            12.,
+            12.,
+            false,
+            false,
+            f32::INFINITY,
+            64.,
+            false,
+            false,
+            false,
+            LineBreak::Auto,
+            20.,
+            LineBreakStyle::After,
+            String::from(""),
+            IndentAlign::Auto,
+            20.,
+            None,
+            IndentAlignFirstLast::Auto,
+            IndentShiftFirstLast::IndentShift,
+            IndentAlignFirstLast::Auto,
+            IndentShiftFirstLast::IndentShift,
+            Color::transparent()
+        ))
+    );
+
+    mrow.add_element(
+        Box::new(MiElement::new(
+            String::from("x"),
+            MathVariant::Italic,
+            64.,
+            Directionality::LTR,
+            Color::RGB(0, 0, 0),
+            Color::transparent()
+        ))
+    );
+
+    mrow.add_element(
+        Box::new(MiElement::new(
+            String::from("i"),
+            MathVariant::Italic,
+            64.,
+            Directionality::LTR,
+            Color::RGB(0, 0, 0),
+            Color::transparent()
+        ))
+    );
+
+    snap_element(&mrow, "mo");
 }
