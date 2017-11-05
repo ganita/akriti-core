@@ -93,11 +93,13 @@ pub trait MathRuler : TextRuler {
     fn glyph_assembly(&self, unicode: u32, direction: &GlyphConstructionDirection) -> GlyphAssembly;
 }
 
+#[derive(Debug, Clone, PartialOrd, PartialEq)]
 pub enum GlyphConstructionDirection {
     Horizontal,
     Vertical,
 }
 
+#[derive(Debug)]
 pub struct GlyphVariant {
     glyph_index: u32,
     advance: f32,
@@ -117,6 +119,7 @@ impl GlyphVariant {
     }
 }
 
+#[derive(Debug)]
 pub struct GlyphAssemblyPart {
     glyph_index: u32,
     start_connector_length: f32,
@@ -158,6 +161,7 @@ impl GlyphAssemblyPart {
     }
 }
 
+#[derive(Debug)]
 pub struct GlyphAssembly {
     parts: Vec<GlyphAssemblyPart>,
     italics_correction: f32,
