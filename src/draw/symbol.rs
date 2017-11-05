@@ -16,8 +16,6 @@
 
 
 use std::f32;
-use std::iter;
-use std::ops::Deref;
 
 use super::{Drawable, MeasureMode, BoundingBox, AbsoluteLayout, AbsoluteLayoutParams, Glyph, GlyphIndex, Text};
 use ::platform::Context;
@@ -258,7 +256,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
 
         let mut pen_pos = pen_pos;
 
-        for i in 0..num_iters {
+        for _ in 0..num_iters {
             self.layout.add_child(
                 Box::new(Glyph::new(
                     self.props,
