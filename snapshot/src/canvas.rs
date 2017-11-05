@@ -83,7 +83,7 @@ impl akriti_core::paint::Canvas for Canvas {
                                             paint.deref());
     }
 
-    fn draw_glyph(&self, top_left: &Point, _: &BoundingBox, glyph_index: u32, color: &Color,
+    fn draw_glyph(&self, top_left: &Point, bounds: &BoundingBox, glyph_index: u32, color: &Color,
                   size: f32, _: &Directionality) {
         let mut paint = self.paint.borrow_mut();
         paint.set_color(&SkiaColor {
@@ -97,8 +97,8 @@ impl akriti_core::paint::Canvas for Canvas {
         paint.set_antialias(true);
         paint.set_stroke(false);
 
-        self.surface.get_canvas().draw_blob(&[glyph_index as u16], top_left.x(), top_left.y(),
-                                            paint.deref());
+        self.surface.get_canvas().draw_blob(&[glyph_index as u16], top_left.x(),
+                                            top_left.y()+bounds.baseline_pos(), paint.deref());
     }
 
     fn draw_rect(&self, top_left: &Point, rect: &Rect, color: &Color) {
