@@ -16,10 +16,12 @@
 
 
 use std::f32;
+use std::iter;
+use std::ops::Deref;
 
 use super::{Drawable, MeasureMode, BoundingBox, AbsoluteLayout, AbsoluteLayoutParams, Glyph, GlyphIndex};
 use ::platform::Context;
-use ::paint::{Point, Canvas, GlyphConstructionDirection, MathRuler, GlyphAssembly};
+use ::paint::{Point, Canvas, GlyphConstructionDirection, MathRuler, GlyphAssembly, GlyphAssemblyPart};
 use ::props::{Color, Directionality};
 use ::elements::Element;
 
@@ -59,7 +61,7 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
             let stretched_size = base_size
                 .max((self.min_size_reader)(self.props))
                 .min((self.max_size_reader)(self.props))
-                .min(height);
+                .max(height);
 
             if self.try_stretch_symbol(context,symbol, ruler, stretched_size, &stretch_dir) {
                 return;
@@ -71,7 +73,7 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
             let stretched_size = base_size
                 .max((self.min_size_reader)(self.props))
                 .min((self.max_size_reader)(self.props))
-                .min(width);
+                .max(width);
 
             if self.try_stretch_symbol(context,symbol, ruler, stretched_size, &stretch_dir) {
                 return;
@@ -154,7 +156,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
         let mut num_non_extenders = 0;
         let mut total_non_extender_advance = 0f32;
 
-        let mut max_connector_overlap = 0f32;
+        let mut max_connector_overlap = f32::INFINITY;
 
         for (index, part) in assembly.parts().iter().enumerate() {
             if part.is_extender() {
@@ -174,30 +176,77 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
             if index != assembly.parts().len()-1 {
                 max_connector_overlap = max_connector_overlap.min(part.end_connector_length());
             }
-
-            max_connector_overlap = max_connector_overlap
-                .min(part.start_connector_length())
-                .min(part.end_connector_length())
-                .min(part.full_advance());
         }
 
         let num_extenders = num_extenders as f32;
         let num_non_extenders = num_non_extenders as f32;
 
-        let extender_multiplier = ((stretched_size + (min_connector_overlap * (num_non_extenders + 1.))
-            - total_non_extender_advance) /
-            (total_extender_advance + (min_connector_overlap * num_extenders))).ceil();
+        // Number of times extenders needs to be repeated to get size >= stretched size
+        let extender_multiplier = ((stretched_size-total_non_extender_advance-
+            min_connector_overlap*(1.-num_non_extenders)) /
+            (total_extender_advance-(min_connector_overlap*num_extenders))).ceil();
 
+        // Overlap adjustment to minimize size - stretched_size
         let required_overlap = (total_non_extender_advance + (extender_multiplier * total_extender_advance)
             - stretched_size) /
             (num_non_extenders + (extender_multiplier * num_extenders) - 1.);
 
+        // Never use overlap greater than maximum connector overlap
         let overlap = required_overlap.min(max_connector_overlap);
+
+        #[cfg(debug_assertions)]
+        {
+            assert!(max_connector_overlap >= min_connector_overlap);
+
+            let size_with_overlap_correction = extender_multiplier*total_extender_advance
+                +total_non_extender_advance -
+                (overlap*(num_non_extenders+(extender_multiplier*num_extenders)-1.));
+
+            let size_without_overlap_correction = extender_multiplier*total_extender_advance
+                +total_non_extender_advance -
+                (min_connector_overlap*(num_non_extenders+(extender_multiplier*num_extenders)-1.));
+
+            assert!(size_without_overlap_correction >= stretched_size);
+
+            assert!(size_with_overlap_correction <= size_without_overlap_correction);
+        }
 
         self.layout.clear();
 
         let mut pen_pos = 0f32;
-        for part in assembly.parts().iter() {
+
+        // Ordering of parts in GlyphAssembly for vertical construction is from bottom to top
+        // and for horizontal construction is from left to right
+        match *stretch_dir {
+            GlyphConstructionDirection::Vertical => {
+                for part in assembly.parts().iter().rev() {
+                    pen_pos = self.add_glyph_part_to_layout(part, stretch_dir, overlap,
+                                                            extender_multiplier as u32, pen_pos);
+                }
+            },
+            GlyphConstructionDirection::Horizontal => {
+                for part in assembly.parts().iter() {
+                    pen_pos = self.add_glyph_part_to_layout(part, stretch_dir, overlap,
+                                                            extender_multiplier as u32, pen_pos);
+                }
+            }
+        }
+
+        self.layout.calculate(context, -1., &MeasureMode::Wrap, -1., &MeasureMode::Wrap);
+        self.bounding_box = self.layout.bounding_box().clone();
+    }
+
+    fn add_glyph_part_to_layout(&mut self, part: &GlyphAssemblyPart, stretch_dir: &GlyphConstructionDirection,
+                                overlap: f32, multiplier: u32, pen_pos: f32) -> f32 {
+        let num_iters = if part.is_extender() {
+            multiplier
+        } else {
+            1
+        };
+
+        let mut pen_pos = pen_pos;
+
+        for i in 0..num_iters {
             self.layout.add_child(
                 Box::new(Glyph::new(
                     self.props,
@@ -215,8 +264,7 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
             pen_pos += part.full_advance()-overlap;
         }
 
-        self.layout.calculate(context, -1., &MeasureMode::Wrap, -1., &MeasureMode::Wrap);
-
-        self.bounding_box = self.layout.bounding_box().clone();
+        pen_pos
     }
+
 }
