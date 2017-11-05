@@ -16,3 +16,51 @@
 
 
 extern crate akriti_core;
+extern crate akriti_snapshot;
+
+use std::path::Path;
+
+use akriti_core::paint::{Point};
+use akriti_core::elements::Element;
+use akriti_core::platform::Context;
+use akriti_core::paint::Canvas as AkritiCanvas;
+use akriti_core::draw::{Drawable, MeasureMode};
+
+use self::akriti_snapshot::platform::Platform;
+use self::akriti_snapshot::canvas::Canvas;
+
+#[allow(dead_code)]
+pub fn snap_element(element: &Element, name: &str) {
+    let root_dir = env!("CARGO_MANIFEST_DIR");
+    let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
+
+    let context = Context::new(Box::new(Platform::new(&font)), 64.);
+
+    let layout = element.layout(&context);
+
+    let canvas: Canvas = context.platform().as_any().downcast_ref::<Platform>().unwrap()
+        .new_canvas(layout.bounding_box().width(), layout.bounding_box().height());
+
+    layout.draw(&canvas, &Point::new(0., 0.));
+
+    canvas.as_any().downcast_ref::<Canvas>().unwrap().snapshot(Path::new("target")
+        .join(format!("{}.png", name)).as_ref()).expect("Cannot snap");
+}
+
+#[allow(dead_code)]
+pub fn snap_drawable(drawable: &mut Drawable, width: f32, width_mode: &MeasureMode, height: f32,
+                     height_mode: &MeasureMode,  name: &str) {
+    let root_dir = env!("CARGO_MANIFEST_DIR");
+    let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
+
+    let context = Context::new(Box::new(Platform::new(&font)), 64.);
+    drawable.calculate(&context, width, width_mode, height, height_mode);
+
+    let canvas: Canvas = context.platform().as_any().downcast_ref::<Platform>().unwrap()
+        .new_canvas(drawable.bounding_box().width(), drawable.bounding_box().height());
+
+    drawable.draw(&canvas, &Point::new(0., 0.));
+
+    canvas.as_any().downcast_ref::<Canvas>().unwrap().snapshot(Path::new("target")
+        .join(format!("{}.png", name)).as_ref()).expect("Cannot snap");
+}

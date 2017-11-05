@@ -16,22 +16,14 @@
 
 
 extern crate akriti_core;
-extern crate akriti_snapshot;
 
-use std::path::Path;
+mod common;     use common::snap_element;
 
-use akriti_core::paint::{Point};
-use akriti_core::elements::Element;
-use akriti_core::elements::{MiElement, MrowElement};
+use akriti_core::elements::*;
 use akriti_core::props::*;
-use akriti_snapshot::platform::Platform;
-use akriti_snapshot::canvas::Canvas;
-use akriti_core::platform::Context;
-use akriti_core::paint::Canvas as AkritiCanvas;
-
 
 #[test]
-fn it_works() {
+fn test_mrow() {
     let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(255, 255, 255));
 
     mrow.add_element(
@@ -78,17 +70,19 @@ fn it_works() {
         ))
     );
 
-    let root_dir = env!("CARGO_MANIFEST_DIR");
-    let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
+    snap_element(&mrow, "mrow");
+}
 
-    let context = Context::new(Box::new(Platform::new(&font)), 64.);
+#[test]
+fn test_mi() {
+    let mi = MiElement::new(
+        String::from("Hello world"),
+        MathVariant::Normal,
+        64.,
+        Directionality::LTR,
+        Color::RGB(0, 0, 0),
+        Color::transparent()
+    );
 
-    let layout = mrow.layout(&context);
-
-    let canvas: Canvas = context.platform().as_any().downcast_ref::<Platform>().unwrap()
-        .new_canvas(layout.bounding_box().width(), layout.bounding_box().height());
-
-    layout.draw(&canvas, &Point::new(0., 0.));
-
-    canvas.as_any().downcast_ref::<Canvas>().unwrap().snapshot(Path::new("target/mi.png"));
+    snap_element(&mi, "mi");
 }
