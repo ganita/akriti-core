@@ -76,7 +76,7 @@ impl<'a, T: Element + 'a> Drawable for Glyph<'a, T> {
             rect: bounds,
             baseline: -ruler.descent(),
             axis: ruler.axis_height()-ruler.descent(),
-        }
+        };
     }
 
     fn bounding_box(&self) -> &BoundingBox {
