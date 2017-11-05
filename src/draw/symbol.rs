@@ -19,21 +19,23 @@ use std::f32;
 use std::iter;
 use std::ops::Deref;
 
-use super::{Drawable, MeasureMode, BoundingBox, AbsoluteLayout, AbsoluteLayoutParams, Glyph, GlyphIndex};
+use super::{Drawable, MeasureMode, BoundingBox, AbsoluteLayout, AbsoluteLayoutParams, Glyph, GlyphIndex, Text};
 use ::platform::Context;
 use ::paint::{Point, Canvas, GlyphConstructionDirection, MathRuler, GlyphAssembly, GlyphAssemblyPart};
-use ::props::{Color, Directionality};
+use ::props::{Color, Directionality, MathVariant};
 use ::elements::Element;
 
-type SymbolReader<T> = fn(&T) -> u32;
+type SymbolReader<T> = fn(&T) -> &str;
 type SymmetricReader<T> = fn(&T) -> bool;
 type SizeReader<T> = fn(&T) -> f32;
 type DirReader<T> = fn(&T) -> &Directionality;
 type ColorReader<T> = fn(&T) -> &Color;
+type VariantReader<T> = fn(&T) -> &MathVariant;
 
 pub struct Symbol<'a, T: Element + 'a> {
     props: &'a T,
     symbol_reader: SymbolReader<T>,
+    math_variant_reader: VariantReader<T>,
     symmetric_reader: SymmetricReader<T>,
     base_size_reader: SizeReader<T>,
     max_size_reader: SizeReader<T>,
@@ -54,6 +56,15 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
         let base_size = (self.base_size_reader)(self.props);
         let symbol = (self.symbol_reader)(self.props);
         let ruler = context.platform().get_math_ruler(self.props, base_size);
+
+        let chars: Vec<char> = symbol.chars().collect();
+
+        if chars.len() > 1 {
+            self.set_text(context);
+            return;
+        }
+
+        let symbol = chars[0] as u32;
 
         if let MeasureMode::UpTo(height) = *height_mode {
             let stretch_dir = GlyphConstructionDirection::Vertical;
@@ -88,13 +99,15 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
 }
 
 impl<'a, T: Element + 'a> Symbol<'a, T> {
-    pub fn new(props: &'a T, symbol_reader: SymbolReader<T>, symmetric_reader: SymmetricReader<T>,
+    pub fn new(props: &'a T, symbol_reader: SymbolReader<T>, math_variant_reader: VariantReader<T>,
+               symmetric_reader: SymmetricReader<T>,
                base_size_reader: SizeReader<T>, max_size_reader: SizeReader<T>,
                min_size_reader: SizeReader<T>, dir_reader: DirReader<T>,
                color_reader: ColorReader<T>) -> Symbol<'a, T> {
         Symbol {
             props,
             symbol_reader,
+            math_variant_reader,
             symmetric_reader,
             base_size_reader,
             max_size_reader,
@@ -264,6 +277,25 @@ impl<'a, T: Element + 'a> Symbol<'a, T> {
         }
 
         pen_pos
+    }
+
+    fn set_text(&mut self, context: &Context) {
+        let text = Text::new(
+            self.props,
+            self.symbol_reader,
+            self.base_size_reader,
+            self.math_variant_reader,
+            self.dir_reader,
+            self.color_reader
+        );
+
+        self.layout.clear();
+        self.layout.add_child(Box::new(text),
+                              AbsoluteLayoutParams::new(Point::new(0., 0.)));
+
+        self.layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
+
+        self.bounding_box = self.layout.bounding_box().clone();
     }
 
 }

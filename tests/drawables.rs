@@ -40,7 +40,8 @@ fn test_symbol() {
 
     let mut symbol = Symbol::new(
         &test_element,
-        |_| '√' as u32,
+        |_| "√",
+        |_| &MathVariant::Normal,
         |_| true,
         |_| 64.,
         |_| f32::INFINITY,
@@ -54,7 +55,8 @@ fn test_symbol() {
 
     let mut symbol = Symbol::new(
         &test_element,
-        |_| '←' as u32,
+        |_| "←",
+        |_| &MathVariant::Normal,
         |_| true,
         |_| 64.,
         |_| f32::INFINITY,
@@ -66,4 +68,34 @@ fn test_symbol() {
     snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
                   &MeasureMode::Wrap, "symbol_left_arrow");
 
+
+    let mut symbol = Symbol::new(
+        &test_element,
+        |_| "+",
+        |_| &MathVariant::Normal,
+        |_| true,
+        |_| 64.,
+        |_| f32::INFINITY,
+        |_| 64.,
+        |_| &Directionality::LTR,
+        |_| &Color::RGB(0, 0, 0)
+    );
+
+    snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+                  &MeasureMode::Wrap, "symbol_plus");
+
+    let mut symbol = Symbol::new(
+        &test_element,
+        |_| "hello",
+        |_| &MathVariant::Normal,
+        |_| true,
+        |_| 64.,
+        |_| f32::INFINITY,
+        |_| 64.,
+        |_| &Directionality::LTR,
+        |_| &Color::RGB(0, 0, 0)
+    );
+
+    snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+                  &MeasureMode::Wrap, "symbol_text");
 }
