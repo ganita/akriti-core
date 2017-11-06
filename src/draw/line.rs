@@ -45,8 +45,8 @@ pub struct Line<'a, T: Element + 'a> {
 impl<'a, T: Element + 'a> Drawable for Line<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         canvas.draw_line(
-            &self.start,
-            &self.end,
+            &(&self.start+pen_pos),
+            &(&self.end+pen_pos),
             (self.color_reader)(self.element),
             (self.stroke_width_reader)(self.element),
         )
