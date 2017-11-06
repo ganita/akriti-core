@@ -26,7 +26,8 @@ use akriti_core::props::*;
 
 #[test]
 fn test_mrow() {
-    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(255, 255, 255));
+    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(0, 0, 0),
+                                    Color::RGB(255, 255, 255));
 
     mrow.add_element(
         Box::new(MiElement::new(
@@ -91,7 +92,8 @@ fn test_mi() {
 
 #[test]
 fn test_mo() {
-    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(255, 255, 255));
+    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(0, 0, 0),
+                                    Color::RGB(255, 255, 255));
 
     mrow.add_element(
         Box::new(MiElement::new(
@@ -158,4 +160,40 @@ fn test_mo() {
     );
 
     snap_element(&mrow, "mo");
+}
+
+
+#[test]
+fn test_mfrac() {
+    let numerator = MiElement::new(
+        String::from("x"),
+        MathVariant::Italic,
+        64.,
+        Directionality::LTR,
+        Color::RGB(0, 0, 0),
+        Color::transparent()
+    );
+
+    let denominator = MiElement::new(
+        String::from("y"),
+        MathVariant::Italic,
+        64.,
+        Directionality::LTR,
+        Color::RGB(0, 0, 0),
+        Color::transparent()
+    );
+
+    let mfrac = MfracElement::new(
+        Box::new(numerator),
+        Box::new(denominator),
+        2.,
+        HAlign::Center,
+        HAlign::Center,
+        false,
+        Directionality::LTR,
+        Color::RGB(0, 0, 0),
+        Color::transparent()
+    );
+
+    snap_element(&mfrac, "mfrac");
 }

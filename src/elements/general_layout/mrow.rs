@@ -63,11 +63,11 @@ impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, LinearLayout<'a>>>
 }
 
 impl MrowElement {
-    pub fn new(dir: Directionality, math_background: Color) -> MrowElement {
+    pub fn new(dir: Directionality, math_color: Color, math_background: Color) -> MrowElement {
         MrowElement {
             elements: Vec::new(),
             dir,
-            presentation_element: PresentationElement::new(math_background),
+            presentation_element: PresentationElement::new(math_color, math_background),
         }
     }
 
@@ -85,7 +85,9 @@ mod test {
 
     #[test]
     fn mrow_works() {
-        let mut mrow = MrowElement::new(Directionality::LTR, Color::transparent());
+        let mut mrow = MrowElement::new(Directionality::LTR,
+                                        Color::RGB(0, 0, 0),
+                                        Color::transparent());
         mrow.add_element(
             Box::new(MiElement::new(
                 String::from("Hello"),
