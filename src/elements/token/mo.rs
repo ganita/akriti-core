@@ -82,7 +82,7 @@ impl<'a> ConcreteElement<'a, PaddingBox<'a, MoElement, Symbol<'a, MoElement>>> f
             |s| s.max_size,
             |s| s.min_size,
             |s| &s.token_element.dir,
-            |s| &s.token_element.math_color,
+            |s| &s.token_element.presentation_element.math_color,
         );
 
         padding_box.wrap(symbol);

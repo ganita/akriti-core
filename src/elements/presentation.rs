@@ -21,7 +21,8 @@ use ::platform::Context;
 use ::draw::{Drawable, Wrapper};
 
 pub struct PresentationElement {
-    pub math_background: Color
+    pub math_color: Color,
+    pub math_background: Color,
 }
 
 fn math_background_reader(element: &PresentationElement) -> &Color {
@@ -38,7 +39,7 @@ impl<'a, U: Drawable + 'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, 
 }
 
 impl PresentationElement {
-    pub fn new(math_background: Color) -> PresentationElement {
-        PresentationElement { math_background }
+    pub fn new(math_color: Color, math_background: Color) -> PresentationElement {
+        PresentationElement { math_color, math_background }
     }
 }

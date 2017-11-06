@@ -31,7 +31,6 @@ pub struct TokenElement {
     math_variant: MathVariant,
     math_size: f32,
     dir: Directionality,
-    math_color: Color,
 
     presentation_element: PresentationElement
 }
@@ -64,8 +63,7 @@ impl TokenElement {
             math_variant,
             math_size,
             dir,
-            math_color,
-            presentation_element: PresentationElement::new(math_background),
+            presentation_element: PresentationElement::new(math_color, math_background),
         }
     }
 }
@@ -87,5 +85,5 @@ fn dir_reader(element: &TokenElement) -> &Directionality {
 }
 
 fn math_color_reader(element: &TokenElement) -> &Color {
-    &element.math_color
+    &element.presentation_element.math_color
 }
