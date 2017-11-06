@@ -15,23 +15,14 @@
 */
 
 
-#[macro_use] extern crate akriti_macros;
+use super::super::StyleProps;
 
-pub extern crate akriti_constants;
-pub use akriti_constants as constants;
+pub struct Mstyle {
 
-pub mod draw;
-pub mod elements;
-pub mod layout;
-pub mod paint;
-pub mod props;
-pub mod platform;
-pub mod utils;
+}
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test() {
-        assert!(true);
+impl Mstyle {
+    pub fn get_props(&self) -> &StyleProps {
+        unimplemented!()
     }
 }
