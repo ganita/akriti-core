@@ -21,7 +21,7 @@ extern crate akriti_snapshot;
 use std::path::Path;
 
 use akriti_core::paint::{Point};
-use akriti_core::elements::Element;
+use akriti_core::layout::Element;
 use akriti_core::platform::Context;
 use akriti_core::paint::Canvas as AkritiCanvas;
 use akriti_core::draw::{Drawable, MeasureMode};

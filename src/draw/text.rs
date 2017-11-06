@@ -21,7 +21,7 @@ use super::{Drawable, BoundingBox, MeasureMode};
 use ::props::{MathVariant, Directionality, Color};
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;
-use ::elements::Element;
+use ::layout::Element;
 
 pub type TextReader<T> = fn(&T) -> &str;
 pub type MathSizeReader<T> = fn(&T) -> f32;

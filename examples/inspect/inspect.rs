@@ -34,9 +34,9 @@ use platform::GTKPlatform;
 use canvas::CairoCanvas;
 use akriti_core::paint::{Point};
 use akriti_core::platform::Context as AkritiContext;
-use akriti_core::elements::{MiElement, MrowElement, MnElement, MtextElement};
+use akriti_core::layout::{MiElement, MrowElement, MnElement, MtextElement};
 use akriti_core::props::{MathVariant, Directionality, Color};
-use akriti_core::elements::Element;
+use akriti_core::layout::Element;
 
 fn main() {
     if gtk::init().is_err() {

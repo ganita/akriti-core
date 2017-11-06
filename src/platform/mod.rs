@@ -23,7 +23,7 @@ use ::paint::{
     TextRuler, 
     MathRuler
 };
-use ::elements::Element;
+use ::layout::Element;
 
 pub trait Platform {
     fn get_text_ruler(&self, element: &Element, size: f32) -> &TextRuler;

@@ -17,7 +17,7 @@
 use std::any::Any;
 
 use ::akriti_core;
-use akriti_core::elements::Element;
+use akriti_core::layout::Element;
 use akriti_core::paint::{TextRuler, MathRuler};
 use ::ruler::Ruler as SnapshotRuler;
 use ::canvas::Canvas;

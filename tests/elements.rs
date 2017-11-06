@@ -21,7 +21,7 @@ mod common;     use common::snap_element;
 
 use std::f32;
 
-use akriti_core::elements::*;
+use akriti_core::layout::*;
 use akriti_core::props::*;
 
 #[test]

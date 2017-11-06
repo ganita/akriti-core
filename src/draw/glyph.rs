@@ -19,7 +19,7 @@ use std::char::from_u32;
 
 use super::{Drawable, BoundingBox, MeasureMode};
 use ::paint::{Point, Canvas};
-use ::elements::Element;
+use ::layout::Element;
 use ::platform::Context;
 use ::props::{Color, Directionality};
 

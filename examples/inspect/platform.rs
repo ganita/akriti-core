@@ -23,7 +23,7 @@ use ::math_ruler::HarfbuzzMathRuler;
 use ::freetype_sys;
 use ::akriti_core::paint::{TextRuler, MathRuler};
 use ::akriti_core::platform::{Platform};
-use ::akriti_core::elements::Element;
+use ::akriti_core::layout::Element;
 use ::akriti_measure::harfbuzz::FTFontRef;
 use ::akriti_measure::harfbuzz::HBFace;
 

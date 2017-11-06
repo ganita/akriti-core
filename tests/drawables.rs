@@ -21,7 +21,7 @@ mod common;     use common::snap_drawable;
 
 use std::f32;
 
-use akriti_core::elements::*;
+use akriti_core::layout::*;
 use akriti_core::draw::*;
 use akriti_core::props::*;
 use akriti_core::platform::Context;

@@ -16,7 +16,7 @@
 
 
 use super::{Drawable, BoundingBox, MeasureMode};
-use ::elements::{Element};
+use ::layout::{Element};
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;
 use ::props::{Color};

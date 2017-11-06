@@ -21,7 +21,7 @@ use super::{Drawable, MeasureMode, BoundingBox, AbsoluteLayout, AbsoluteLayoutPa
 use ::platform::Context;
 use ::paint::{Point, Canvas, GlyphConstructionDirection, MathRuler, GlyphAssembly, GlyphAssemblyPart};
 use ::props::{Color, Directionality, MathVariant};
-use ::elements::Element;
+use ::layout::Element;
 
 type SymbolReader<T> = fn(&T) -> &str;
 type SymmetricReader<T> = fn(&T) -> bool;
