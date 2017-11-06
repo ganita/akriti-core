@@ -78,8 +78,6 @@ impl<'a, T: Element + 'a> Drawable for Line<'a, T> {
         let x_diff = angle.sin()*stroke_width/2.;
         let y_diff = angle.cos()*stroke_width/2.;
 
-        println!("Slope: {}, Angle: {}, x_diff: {}, y_diff: {}", slope, angle, x_diff, y_diff);
-
         let width = (start.x()-end.x()).abs()+(x_diff*2.);
         let height = (start.y()-end.y()).abs()+(y_diff*2.);
 
