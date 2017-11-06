@@ -30,7 +30,7 @@ use akriti_core::paint::*;
 
 struct Test;
 
-impl Element for Test {
+impl Layout for Test {
     fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
         unimplemented!()
     }

@@ -19,7 +19,7 @@ use std::char::from_u32;
 
 use super::{Drawable, BoundingBox, MeasureMode};
 use ::paint::{Point, Canvas};
-use ::layout::Element;
+use ::layout::Layout;
 use ::platform::Context;
 use ::props::{Color, Directionality};
 
@@ -32,7 +32,7 @@ pub enum GlyphIndex {
     Index(u32),
 }
 
-pub struct Glyph<'a, T: Element + 'a> {
+pub struct Glyph<'a, T: Layout + 'a> {
     glyph_index: GlyphIndex,
     element: &'a T,
     size_reader: SizeReader<T>,
@@ -42,7 +42,7 @@ pub struct Glyph<'a, T: Element + 'a> {
     bounding_box: BoundingBox,
 }
 
-impl<'a, T: Element + 'a> Drawable for Glyph<'a, T> {
+impl<'a, T: Layout + 'a> Drawable for Glyph<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         match self.glyph_index {
             GlyphIndex::Index(index) => {
@@ -83,7 +83,7 @@ impl<'a, T: Element + 'a> Drawable for Glyph<'a, T> {
     }
 }
 
-impl<'a, T: Element + 'a> Glyph<'a, T> {
+impl<'a, T: Layout + 'a> Glyph<'a, T> {
     pub fn new(element: &'a T, glyph_index: GlyphIndex, size_reader: SizeReader<T>,
                color_reader: ColorReader<T>, dir_reader: DirReader<T>) -> Glyph<'a, T> {
         Glyph {

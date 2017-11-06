@@ -20,29 +20,29 @@ mod mn;                         pub use self::mn::*;
 mod mtext;                      pub use self::mtext::*;
 mod mo;                         pub use self::mo::*;
 
-use super::{ConcreteElement, Element, PresentationElement};
+use super::{ConcreteLayout, Layout, PresentationLayout};
 use ::draw::{Text, Drawable, Wrapper, MeasureMode};
 use ::platform::{Context};
 use ::props::{MathVariant, Directionality, Color};
 
 
-pub struct TokenElement {
+pub struct TokenLayout {
     text: String,
     math_variant: MathVariant,
     math_size: f32,
     dir: Directionality,
 
-    presentation_element: PresentationElement
+    presentation_element: PresentationLayout
 }
 
-impl Element for TokenElement {
+impl Layout for TokenLayout {
     fn layout<'a>(&'a self, _context: &Context) -> Box<Drawable + 'a> {
         unimplemented!()
     }
 }
 
-impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, Text<'a, TokenElement>>> for TokenElement {
-    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationElement, Text<'a, TokenElement>> {
+impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>>> for TokenLayout {
+    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>> {
         let mut layout = self.presentation_element.layout(context);
 
         let text = Text::new(self, text_reader, math_size_reader,
@@ -55,35 +55,35 @@ impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, Text<'a, TokenElem
     }
 }
 
-impl TokenElement {
+impl TokenLayout {
     pub fn new(text: String, math_variant: MathVariant, math_size: f32, dir: Directionality,
-               math_color: Color, math_background: Color) -> TokenElement {
-        TokenElement {
+               math_color: Color, math_background: Color) -> TokenLayout {
+        TokenLayout {
             text,
             math_variant,
             math_size,
             dir,
-            presentation_element: PresentationElement::new(math_color, math_background),
+            presentation_element: PresentationLayout::new(math_color, math_background),
         }
     }
 }
 
-fn text_reader(element: &TokenElement) -> &str {
+fn text_reader(element: &TokenLayout) -> &str {
     &element.text
 }
 
-fn math_variant_reader(element: &TokenElement) -> &MathVariant {
+fn math_variant_reader(element: &TokenLayout) -> &MathVariant {
     &element.math_variant
 }
 
-fn math_size_reader(element: &TokenElement) -> f32 {
+fn math_size_reader(element: &TokenLayout) -> f32 {
     element.math_size
 }
 
-fn dir_reader(element: &TokenElement) -> &Directionality {
+fn dir_reader(element: &TokenLayout) -> &Directionality {
     &element.dir
 }
 
-fn math_color_reader(element: &TokenElement) -> &Color {
+fn math_color_reader(element: &TokenLayout) -> &Color {
     &element.presentation_element.math_color
 }

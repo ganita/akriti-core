@@ -14,6 +14,6 @@
  * limitations under the License.
 */
 
-use super::MiElement;
+use super::MiLayout;
 
-pub type MtextElement = MiElement;
+pub type MtextLayout = MiLayout;

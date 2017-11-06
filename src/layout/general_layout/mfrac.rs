@@ -15,15 +15,15 @@
 */
 
 
-use super::super::{Element, ElementGroup, ConcreteElement, PresentationElement};
+use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout};
 use ::platform::Context;
 use ::draw::{Drawable, LinearLayout, Gravity, Align, LinearLayoutParams, Wrapper, MeasureMode,
              Line, LineParam, CrossAxisBoundMode};
 use ::props::{Directionality, Color, HAlign};
 
-pub struct MfracElement {
-    numerator: Box<Element>,
-    denominator: Box<Element>,
+pub struct MfracLayout {
+    numerator: Box<Layout>,
+    denominator: Box<Layout>,
 
     dir: Directionality,
     line_thickness: f32,
@@ -31,23 +31,23 @@ pub struct MfracElement {
     denom_align: HAlign,
     bevelled: bool,
 
-    presentation_element: PresentationElement,
+    presentation_element: PresentationLayout,
 }
 
-impl Element for MfracElement {
+impl Layout for MfracLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        Box::new(ConcreteElement::layout(self, context))
+        Box::new(ConcreteLayout::layout(self, context))
     }
 }
 
-impl ElementGroup for MfracElement {
-    fn children(&self) -> &[Box<Element>] {
+impl ElementGroup for MfracLayout {
+    fn children(&self) -> &[Box<Layout>] {
         unimplemented!()
     }
 }
 
-impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, LinearLayout<'a>>> for MfracElement {
-    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationElement, LinearLayout<'a>> {
+impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, LinearLayout<'a>>> for MfracLayout {
+    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationLayout, LinearLayout<'a>> {
         let layout = if self.bevelled {
             self.layout_bevelled(context)
         } else {
@@ -63,10 +63,10 @@ impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, LinearLayout<'a>>>
     }
 }
 
-impl MfracElement {
+impl MfracLayout {
     pub fn new(
-        numerator: Box<Element>,
-        denominator: Box<Element>,
+        numerator: Box<Layout>,
+        denominator: Box<Layout>,
         line_thickness: f32,
         num_align: HAlign,
         denom_align: HAlign,
@@ -74,9 +74,9 @@ impl MfracElement {
         dir: Directionality,
         math_color: Color,
         math_background: Color,
-    ) -> MfracElement {
+    ) -> MfracLayout {
 
-        MfracElement {
+        MfracLayout {
             numerator,
             denominator,
             line_thickness,
@@ -84,7 +84,7 @@ impl MfracElement {
             denom_align,
             bevelled,
             dir,
-            presentation_element: PresentationElement::new(math_color, math_background),
+            presentation_element: PresentationLayout::new(math_color, math_background),
         }
     }
 
@@ -117,11 +117,11 @@ impl MfracElement {
         unimplemented!()
     }
 
-    pub fn set_numerator(&mut self, element: Box<Element>) {
+    pub fn set_numerator(&mut self, element: Box<Layout>) {
         self.numerator = element;
     }
 
-    pub fn set_denominator(&mut self, element: Box<Element>) {
+    pub fn set_denominator(&mut self, element: Box<Layout>) {
         self.denominator = element;
     }
 }

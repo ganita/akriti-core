@@ -21,7 +21,7 @@ extern crate akriti_snapshot;
 use std::path::Path;
 
 use akriti_core::paint::{Point};
-use akriti_core::layout::Element;
+use akriti_core::layout::Layout;
 use akriti_core::platform::Context;
 use akriti_core::paint::Canvas as AkritiCanvas;
 use akriti_core::draw::{Drawable, MeasureMode};
@@ -30,7 +30,7 @@ use self::akriti_snapshot::platform::Platform;
 use self::akriti_snapshot::canvas::Canvas;
 
 #[allow(dead_code)]
-pub fn snap_element(element: &Element, name: &str) {
+pub fn snap_element(element: &Layout, name: &str) {
     let root_dir = env!("CARGO_MANIFEST_DIR");
     let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
 

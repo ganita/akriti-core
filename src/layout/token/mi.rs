@@ -15,21 +15,21 @@
 */
 
 
-use super::{TokenElement, PresentationElement};
-use super::super::{Element, ConcreteElement};
+use super::{TokenLayout, PresentationLayout};
+use super::super::{Layout, ConcreteLayout};
 use ::props::{MathVariant, Directionality, Color};
 use ::platform::Context;
 use ::draw::{Drawable, Wrapper, Text};
 
-pub struct MiElement {
-    token_element: TokenElement
+pub struct MiLayout {
+    token_element: TokenLayout
 }
 
-impl MiElement {
+impl MiLayout {
     pub fn new(text: String, math_variant: MathVariant, math_size: f32, dir: Directionality,
-               math_color: Color, math_background: Color) -> MiElement {
-        MiElement {
-            token_element: TokenElement::new(
+               math_color: Color, math_background: Color) -> MiLayout {
+        MiLayout {
+            token_element: TokenLayout::new(
                 text,
                 math_variant,
                 math_size,
@@ -41,15 +41,15 @@ impl MiElement {
     }
 }
 
-impl Element for MiElement {
+impl Layout for MiLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        Box::new(ConcreteElement::layout(self, context))
+        Box::new(ConcreteLayout::layout(self, context))
     }
 }
 
-impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, Text<'a, TokenElement>>> for MiElement {
-    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationElement, Text<'a, TokenElement>> {
-        <TokenElement as ConcreteElement<'a, Wrapper<'a, PresentationElement, Text<'a, TokenElement>>>>
+impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>>> for MiLayout {
+    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>> {
+        <TokenLayout as ConcreteLayout<'a, Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>>>>
         ::layout(&self.token_element, context)
     }
 }

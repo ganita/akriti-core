@@ -26,11 +26,11 @@ use ::props::{
     IndentShiftFirstLast,
     IdRef
 };
-use super::{Element, ConcreteElement, TokenElement};
+use super::{Layout, ConcreteLayout, TokenLayout};
 use ::draw::{PaddingBox, Drawable, Symbol, MeasureMode};
 use ::platform::Context;
 
-pub struct MoElement {
+pub struct MoLayout {
     lspace: f32,
     rspace: f32,
     stretchy: bool,
@@ -54,17 +54,17 @@ pub struct MoElement {
     indent_align_last: IndentAlignFirstLast,
     indent_shift_last: IndentShiftFirstLast,
 
-    token_element: TokenElement,
+    token_element: TokenLayout,
 }
 
-impl Element for MoElement {
+impl Layout for MoLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        Box::new(ConcreteElement::layout(self, context))
+        Box::new(ConcreteLayout::layout(self, context))
     }
 }
 
-impl<'a> ConcreteElement<'a, PaddingBox<'a, MoElement, Symbol<'a, MoElement>>> for MoElement {
-    fn layout(&'a self, context: &Context) -> PaddingBox<'a, MoElement, Symbol<'a, MoElement>> {
+impl<'a> ConcreteLayout<'a, PaddingBox<'a, MoLayout, Symbol<'a, MoLayout>>> for MoLayout {
+    fn layout(&'a self, context: &Context) -> PaddingBox<'a, MoLayout, Symbol<'a, MoLayout>> {
         let mut padding_box = PaddingBox::new(
             self,
             |s| s.lspace,
@@ -93,7 +93,7 @@ impl<'a> ConcreteElement<'a, PaddingBox<'a, MoElement, Symbol<'a, MoElement>>> f
     }
 }
 
-impl MoElement {
+impl MoLayout {
     pub fn new(
         text: String,
         math_variant: MathVariant,
@@ -125,8 +125,8 @@ impl MoElement {
         indent_shift_last: IndentShiftFirstLast,
 
         math_background: Color,
-    ) -> MoElement {
-        MoElement {
+    ) -> MoLayout {
+        MoLayout {
             lspace,
             rspace,
             stretchy,
@@ -147,7 +147,7 @@ impl MoElement {
             indent_shift_first,
             indent_align_last,
             indent_shift_last,
-            token_element: TokenElement::new(
+            token_element: TokenLayout::new(
                 text,
                 math_variant,
                 math_size,

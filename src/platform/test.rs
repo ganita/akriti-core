@@ -2,16 +2,16 @@ use std::any::Any;
 
 use ::platform::{Platform, Context};
 use ::paint::{TextRuler, MathRuler};
-use ::layout::Element;
+use ::layout::Layout;
 
 pub struct MockPlatform {}
 
 impl Platform for MockPlatform {
-    fn get_text_ruler(&self, _: &Element, _: f32) -> &TextRuler {
+    fn get_text_ruler(&self, _: &Layout, _: f32) -> &TextRuler {
         unimplemented!()
     }
 
-    fn get_math_ruler(&self, _: &Element, _: f32) -> &MathRuler {
+    fn get_math_ruler(&self, _: &Layout, _: f32) -> &MathRuler {
         unimplemented!()
     }
 

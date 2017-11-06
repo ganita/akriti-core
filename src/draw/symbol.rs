@@ -21,7 +21,7 @@ use super::{Drawable, MeasureMode, BoundingBox, AbsoluteLayout, AbsoluteLayoutPa
 use ::platform::Context;
 use ::paint::{Point, Canvas, GlyphConstructionDirection, MathRuler, GlyphAssembly, GlyphAssemblyPart};
 use ::props::{Color, Directionality, MathVariant};
-use ::layout::Element;
+use ::layout::Layout;
 
 type SymbolReader<T> = fn(&T) -> &str;
 type SymmetricReader<T> = fn(&T) -> bool;
@@ -30,7 +30,7 @@ type DirReader<T> = fn(&T) -> &Directionality;
 type ColorReader<T> = fn(&T) -> &Color;
 type VariantReader<T> = fn(&T) -> &MathVariant;
 
-pub struct Symbol<'a, T: Element + 'a> {
+pub struct Symbol<'a, T: Layout + 'a> {
     props: &'a T,
     symbol_reader: SymbolReader<T>,
     math_variant_reader: VariantReader<T>,
@@ -45,7 +45,7 @@ pub struct Symbol<'a, T: Element + 'a> {
     layout: AbsoluteLayout<'a>,
 }
 
-impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
+impl<'a, T: Layout + 'a> Drawable for Symbol<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         self.layout.draw(canvas, pen_pos);
     }
@@ -96,7 +96,7 @@ impl<'a, T: Element + 'a> Drawable for Symbol<'a, T> {
     }
 }
 
-impl<'a, T: Element + 'a> Symbol<'a, T> {
+impl<'a, T: Layout + 'a> Symbol<'a, T> {
     pub fn new(props: &'a T, symbol_reader: SymbolReader<T>, math_variant_reader: VariantReader<T>,
                symmetric_reader: SymmetricReader<T>,
                base_size_reader: SizeReader<T>, max_size_reader: SizeReader<T>,

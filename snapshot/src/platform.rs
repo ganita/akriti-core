@@ -17,7 +17,7 @@
 use std::any::Any;
 
 use ::akriti_core;
-use akriti_core::layout::Element;
+use akriti_core::layout::Layout;
 use akriti_core::paint::{TextRuler, MathRuler};
 use ::ruler::Ruler as SnapshotRuler;
 use ::canvas::Canvas;
@@ -38,12 +38,12 @@ impl Platform {
 }
 
 impl akriti_core::platform::Platform for Platform {
-    fn get_text_ruler(&self, _: &Element, size: f32) -> &TextRuler {
+    fn get_text_ruler(&self, _: &Layout, size: f32) -> &TextRuler {
         self.ruler.set_size(size);
         &self.ruler
     }
 
-    fn get_math_ruler(&self, _: &Element, size: f32) -> &MathRuler {
+    fn get_math_ruler(&self, _: &Layout, size: f32) -> &MathRuler {
         self.ruler.set_size(size);
         &self.ruler
     }

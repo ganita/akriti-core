@@ -26,11 +26,11 @@ use akriti_core::props::*;
 
 #[test]
 fn test_mrow() {
-    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(0, 0, 0),
-                                    Color::RGB(255, 255, 255));
+    let mut mrow = MrowLayout::new(Directionality::LTR, Color::RGB(0, 0, 0),
+                                   Color::RGB(255, 255, 255));
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from("a"),
             MathVariant::Italic,
             64.,
@@ -41,7 +41,7 @@ fn test_mrow() {
     );
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from(" + "),
             MathVariant::Normal,
             64.,
@@ -52,7 +52,7 @@ fn test_mrow() {
     );
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from("x"),
             MathVariant::Italic,
             64.,
@@ -63,7 +63,7 @@ fn test_mrow() {
     );
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from("i"),
             MathVariant::Italic,
             64.,
@@ -78,7 +78,7 @@ fn test_mrow() {
 
 #[test]
 fn test_mi() {
-    let mi = MiElement::new(
+    let mi = MiLayout::new(
         String::from("Hello world"),
         MathVariant::Normal,
         64.,
@@ -92,11 +92,11 @@ fn test_mi() {
 
 #[test]
 fn test_mo() {
-    let mut mrow = MrowElement::new(Directionality::LTR, Color::RGB(0, 0, 0),
-                                    Color::RGB(255, 255, 255));
+    let mut mrow = MrowLayout::new(Directionality::LTR, Color::RGB(0, 0, 0),
+                                   Color::RGB(255, 255, 255));
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from("a"),
             MathVariant::Italic,
             64.,
@@ -107,7 +107,7 @@ fn test_mo() {
     );
 
     mrow.add_element(
-        Box::new(MoElement::new(
+        Box::new(MoLayout::new(
             String::from("+"),
             MathVariant::Normal,
             64.,
@@ -138,7 +138,7 @@ fn test_mo() {
     );
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from("x"),
             MathVariant::Italic,
             64.,
@@ -149,7 +149,7 @@ fn test_mo() {
     );
 
     mrow.add_element(
-        Box::new(MiElement::new(
+        Box::new(MiLayout::new(
             String::from("i"),
             MathVariant::Italic,
             64.,
@@ -165,7 +165,7 @@ fn test_mo() {
 
 #[test]
 fn test_mfrac() {
-    let numerator = MiElement::new(
+    let numerator = MiLayout::new(
         String::from("x"),
         MathVariant::Italic,
         64.,
@@ -174,7 +174,7 @@ fn test_mfrac() {
         Color::transparent()
     );
 
-    let denominator = MiElement::new(
+    let denominator = MiLayout::new(
         String::from("y"),
         MathVariant::Italic,
         64.,
@@ -183,7 +183,7 @@ fn test_mfrac() {
         Color::transparent()
     );
 
-    let mfrac = MfracElement::new(
+    let mfrac = MfracLayout::new(
         Box::new(numerator),
         Box::new(denominator),
         2.,

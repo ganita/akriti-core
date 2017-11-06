@@ -23,14 +23,14 @@ mod general_layout;             pub use self::general_layout::*;
 use ::platform::Context;
 use ::draw::Drawable;
 
-pub trait Element {
+pub trait Layout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a>;
 }
 
-pub trait ConcreteElement<'a, T: Drawable + 'a> {
+pub trait ConcreteLayout<'a, T: Drawable + 'a> {
     fn layout(&'a self, context: &Context) -> T;
 }
 
-pub trait ElementGroup : Element {
-    fn children(&self) -> &[Box<Element>];
+pub trait ElementGroup : Layout {
+    fn children(&self) -> &[Box<Layout>];
 }

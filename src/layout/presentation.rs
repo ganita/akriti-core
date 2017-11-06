@@ -16,30 +16,30 @@
 
 
 use ::props::Color;
-use super::ConcreteElement;
+use super::ConcreteLayout;
 use ::platform::Context;
 use ::draw::{Drawable, Wrapper};
 
-pub struct PresentationElement {
+pub struct PresentationLayout {
     pub math_color: Color,
     pub math_background: Color,
 }
 
-fn math_background_reader(element: &PresentationElement) -> &Color {
+fn math_background_reader(element: &PresentationLayout) -> &Color {
     &element.math_background
 }
 
-impl<'a, U: Drawable + 'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, U>> for PresentationElement {
-    fn layout(&'a self, _: &Context) -> Wrapper<'a, PresentationElement, U> {
-        Wrapper::<'a, PresentationElement, U>::new(
+impl<'a, U: Drawable + 'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, U>> for PresentationLayout {
+    fn layout(&'a self, _: &Context) -> Wrapper<'a, PresentationLayout, U> {
+        Wrapper::<'a, PresentationLayout, U>::new(
             self,
             math_background_reader
         )
     }
 }
 
-impl PresentationElement {
-    pub fn new(math_color: Color, math_background: Color) -> PresentationElement {
-        PresentationElement { math_color, math_background }
+impl PresentationLayout {
+    pub fn new(math_color: Color, math_background: Color) -> PresentationLayout {
+        PresentationLayout { math_color, math_background }
     }
 }

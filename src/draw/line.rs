@@ -16,7 +16,7 @@
 
 
 use super::{Drawable, BoundingBox, MeasureMode};
-use ::layout::{Element};
+use ::layout::{Layout};
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;
 use ::props::{Color};
@@ -30,7 +30,7 @@ pub enum LineParam {
     Horizontal { y: f32 },
 }
 
-pub struct Line<'a, T: Element + 'a> {
+pub struct Line<'a, T: Layout + 'a> {
     param: LineParam,
 
     element: &'a T,
@@ -42,7 +42,7 @@ pub struct Line<'a, T: Element + 'a> {
     end: Point,
 }
 
-impl<'a, T: Element + 'a> Drawable for Line<'a, T> {
+impl<'a, T: Layout + 'a> Drawable for Line<'a, T> {
     fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
         canvas.draw_line(
             &(&self.start+pen_pos),
@@ -104,7 +104,7 @@ impl<'a, T: Element + 'a> Drawable for Line<'a, T> {
     }
 }
 
-impl<'a, T: Element + 'a> Line<'a, T> {
+impl<'a, T: Layout + 'a> Line<'a, T> {
     pub fn new(param: LineParam, element: &'a T, stroke_width_reader: StrokeWidthReader<T>,
                color_reader: ColorReader<T>) -> Line<'a, T> {
         Line {
@@ -125,7 +125,7 @@ mod test {
     use ::platform::test::test_context;
 
     struct MockElement;
-    impl Element for MockElement {
+    impl Layout for MockElement {
         fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
             unimplemented!()
         }

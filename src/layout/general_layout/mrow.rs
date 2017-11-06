@@ -15,32 +15,32 @@
 */
 
 
-use super::super::{Element, ElementGroup, ConcreteElement, PresentationElement};
+use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout};
 use ::platform::Context;
 use ::draw::{Drawable, LinearLayout, Gravity, Align, LinearLayoutParams, Wrapper, MeasureMode};
 use ::props::{Directionality, Color};
 
-pub struct MrowElement {
-    elements: Vec<Box<Element>>,
+pub struct MrowLayout {
+    elements: Vec<Box<Layout>>,
     dir: Directionality,
 
-    presentation_element: PresentationElement,
+    presentation_element: PresentationLayout,
 }
 
-impl Element for MrowElement {
+impl Layout for MrowLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        Box::new(ConcreteElement::layout(self, context))
+        Box::new(ConcreteLayout::layout(self, context))
     }
 }
 
-impl ElementGroup for MrowElement {
-    fn children(&self) -> &[Box<Element>] {
+impl ElementGroup for MrowLayout {
+    fn children(&self) -> &[Box<Layout>] {
         &self.elements[..]
     }
 }
 
-impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, LinearLayout<'a>>> for MrowElement {
-    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationElement, LinearLayout<'a>> {
+impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, LinearLayout<'a>>> for MrowLayout {
+    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationLayout, LinearLayout<'a>> {
         let mut layout: LinearLayout<'a> = LinearLayout::new();
         layout.gravity = Gravity::Horizontal;
         layout.layout_align = Align::Baseline;
@@ -62,16 +62,16 @@ impl<'a> ConcreteElement<'a, Wrapper<'a, PresentationElement, LinearLayout<'a>>>
     }
 }
 
-impl MrowElement {
-    pub fn new(dir: Directionality, math_color: Color, math_background: Color) -> MrowElement {
-        MrowElement {
+impl MrowLayout {
+    pub fn new(dir: Directionality, math_color: Color, math_background: Color) -> MrowLayout {
+        MrowLayout {
             elements: Vec::new(),
             dir,
-            presentation_element: PresentationElement::new(math_color, math_background),
+            presentation_element: PresentationLayout::new(math_color, math_background),
         }
     }
 
-    pub fn add_element(&mut self, element: Box<Element>) -> &mut MrowElement {
+    pub fn add_element(&mut self, element: Box<Layout>) -> &mut MrowLayout {
         self.elements.push(element);
         self
     }
@@ -80,16 +80,16 @@ impl MrowElement {
 #[cfg(test)]
 mod test {
     use super::*;
-    use super::super::super::{MiElement};
+    use super::super::super::{MiLayout};
     use ::props::{MathVariant};
 
     #[test]
     fn mrow_works() {
-        let mut mrow = MrowElement::new(Directionality::LTR,
-                                        Color::RGB(0, 0, 0),
-                                        Color::transparent());
+        let mut mrow = MrowLayout::new(Directionality::LTR,
+                                       Color::RGB(0, 0, 0),
+                                       Color::transparent());
         mrow.add_element(
-            Box::new(MiElement::new(
+            Box::new(MiLayout::new(
                 String::from("Hello"),
                 MathVariant::Normal,
                 64.,
