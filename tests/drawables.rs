@@ -25,17 +25,19 @@ use akriti_core::elements::*;
 use akriti_core::draw::*;
 use akriti_core::props::*;
 use akriti_core::platform::Context;
+use akriti_core::paint::*;
+
+
+struct Test;
+
+impl Element for Test {
+    fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
+        unimplemented!()
+    }
+}
 
 #[test]
 fn test_symbol() {
-    struct Test;
-
-    impl Element for Test {
-        fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
-            unimplemented!()
-        }
-    }
-
     let test_element = Test {};
 
     let mut symbol = Symbol::new(
@@ -98,4 +100,49 @@ fn test_symbol() {
 
     snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
                   &MeasureMode::Wrap, "symbol_text");
+}
+
+#[test]
+fn test_line() {
+    let element = Test { };
+
+    let mut line = Line::new(
+        LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(100., 100.) },
+        &element,
+        |_| 50.,
+        |_| &Color::RGB(0, 0, 0)
+    );
+
+    snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
+                  "line_45deg");
+
+    let mut line = Line::new(
+        LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(50., 100.) },
+        &element,
+        |_| 50.,
+        |_| &Color::RGB(0, 0, 0)
+    );
+
+    snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
+                  "line_inclined");
+
+    let mut line = Line::new(
+        LineParam::Vertical { x: 0. },
+        &element,
+        |_| 50.,
+        |_| &Color::RGB(0, 0, 0)
+    );
+
+    snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::UpTo(100.),
+                  "line_vertical");
+
+    let mut line = Line::new(
+        LineParam::Horizontal { y: 0. },
+        &element,
+        |_| 50.,
+        |_| &Color::RGB(0, 0, 0)
+    );
+
+    snap_drawable(&mut line, &MeasureMode::UpTo(100.), &MeasureMode::Wrap,
+                  "line_horizontal");
 }
