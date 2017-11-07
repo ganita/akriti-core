@@ -22,7 +22,7 @@ use ::platform::Context;
 use ::draw::{Drawable, Wrapper, Text};
 
 pub struct MiLayout {
-    token_element: TokenLayout
+    pub(crate) token_element: TokenLayout
 }
 
 impl MiLayout {

@@ -51,7 +51,9 @@ impl Mi {
 impl Element for Mi {
     fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
-        Box::new(self.layout_token_element(self, context, parent, inherited, style))
+        Box::new(MiLayout {
+            token_element: self.layout_token_element(self, context, parent, inherited, style)
+        })
     }
 
     fn type_info(&self) -> ElementType {
@@ -86,3 +88,36 @@ impl TokenPrivate<Mi> for Mi {
 impl Token<Mi> for Mi {}
 
 impl Presentation<Mi> for Mi {}
+
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    use ::test::skia::Snapshot;
+
+    #[test]
+    fn it_works() {
+        let snap = Snapshot::default();
+        snap.snap_element(&Mi::new(String::from("i")), "mi_normal");
+
+        snap.snap_element(
+            Mi::new(String::from("i")).with_math_variant(Some(MathVariant::Italic)),
+            "mi_italic"
+        );
+
+        snap.snap_element(
+            Mi::new(String::from("i")).with_math_size(Some(MathSize::BIG)),
+            "mi_big"
+        );
+
+        snap.snap_element(
+            Mi::new(String::from("i")).with_math_color(Some(Color::RGB(255, 0, 0))),
+            "mi_red"
+        );
+
+        snap.snap_element(
+            Mi::new(String::from("i")).with_math_background(Some(Color::RGB(255, 0, 0))),
+            "mi_red_bg"
+        );
+    }
+}
