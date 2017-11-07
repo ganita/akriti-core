@@ -123,7 +123,7 @@ impl<'a, T: Layout + 'a> Line<'a, T> {
 mod test {
     use super::*;
     use ::platform::test::test_context;
-    use ::test::skia::snap_drawable;
+    use ::test::skia::Snapshot;
 
     struct MockElement;
     impl Layout for MockElement {
@@ -185,6 +185,8 @@ mod test {
 
     #[test]
     fn test_line() {
+        let skia = Snapshot::default();
+
         let element = MockElement { };
 
         let mut line = Line::new(
@@ -194,7 +196,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
+        skia.snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
                       "line_45deg");
 
         let mut line = Line::new(
@@ -204,7 +206,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
+        skia.snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
                       "line_inclined");
 
         let mut line = Line::new(
@@ -214,7 +216,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::UpTo(100.),
+        skia.snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::UpTo(100.),
                       "line_vertical");
 
         let mut line = Line::new(
@@ -224,7 +226,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut line, &MeasureMode::UpTo(100.), &MeasureMode::Wrap,
+        skia.snap_drawable(&mut line, &MeasureMode::UpTo(100.), &MeasureMode::Wrap,
                       "line_horizontal");
     }
 }

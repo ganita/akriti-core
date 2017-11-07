@@ -302,7 +302,7 @@ impl<'a, T: Layout + 'a> Symbol<'a, T> {
 #[cfg(test)]
 mod test {
     use super::*;
-    use ::test::skia::{snap_drawable};
+    use ::test::skia::Snapshot;
 
     struct Test;
 
@@ -330,7 +330,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut symbol, &MeasureMode::Wrap,
+        Snapshot::default().snap_drawable(&mut symbol, &MeasureMode::Wrap,
                       &MeasureMode::UpTo(1000.), "symbol_sqrt");
     }
 
@@ -350,7 +350,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+        Snapshot::default().snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
                       &MeasureMode::Wrap, "symbol_left_arrow");
     }
 
@@ -370,7 +370,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+        Snapshot::default().snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
                       &MeasureMode::Wrap, "symbol_plus");
     }
 
@@ -390,7 +390,7 @@ mod test {
             |_| &Color::RGB(0, 0, 0)
         );
 
-        snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+        Snapshot::default().snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
                       &MeasureMode::Wrap, "symbol_text");
     }
 }
