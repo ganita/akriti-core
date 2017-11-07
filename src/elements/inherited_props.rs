@@ -41,8 +41,8 @@ pub struct InheritedProps {
     table_mtd_group_align: Vec<GroupAlign>,
 }
 
-impl InheritedProps {
-    pub fn new() -> InheritedProps {
+impl Default for InheritedProps {
+    fn default() -> InheritedProps {
         InheritedProps {
             display_style: true,
             script_level: ScriptLevel::new(0, 64.),
