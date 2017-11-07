@@ -123,6 +123,7 @@ impl<'a, T: Layout + 'a> Line<'a, T> {
 mod test {
     use super::*;
     use ::platform::test::test_context;
+    use ::test::skia::snap_drawable;
 
     struct MockElement;
     impl Layout for MockElement {
@@ -180,5 +181,50 @@ mod test {
 
         assert_eq!(line.bounding_box().width(), 13.535534);
         assert_eq!(line.bounding_box().height(), 13.535534);
+    }
+
+    #[test]
+    fn test_line() {
+        let element = MockElement { };
+
+        let mut line = Line::new(
+            LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(100., 100.) },
+            &element,
+            |_| 50.,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
+                      "line_45deg");
+
+        let mut line = Line::new(
+            LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(50., 100.) },
+            &element,
+            |_| 50.,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::Wrap,
+                      "line_inclined");
+
+        let mut line = Line::new(
+            LineParam::Vertical { x: 0. },
+            &element,
+            |_| 50.,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut line, &MeasureMode::Wrap, &MeasureMode::UpTo(100.),
+                      "line_vertical");
+
+        let mut line = Line::new(
+            LineParam::Horizontal { y: 0. },
+            &element,
+            |_| 50.,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut line, &MeasureMode::UpTo(100.), &MeasureMode::Wrap,
+                      "line_horizontal");
     }
 }

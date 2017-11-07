@@ -23,11 +23,10 @@ use std::io::Error;
 use std::path::Path;
 use std::io::Write;
 
-use ::akriti_core;
-use akriti_core::paint::{Point, Rect};
-use akriti_core::draw::{BoundingBox};
-use akriti_core::props::{Directionality, Color};
-use ::skia::{Surface, Paint, ImageInfo, ColorType, AlphaType, Typeface,
+use ::paint::{Point, Rect};
+use ::draw::{BoundingBox};
+use ::props::{Directionality, Color};
+use ::skia_sys::{Surface, Paint, ImageInfo, ColorType, AlphaType, Typeface,
              Color as SkiaColor, TextEncoding, Rect as SkiaRect, Path as SkiaPath};
 
 pub struct Canvas {
@@ -63,7 +62,7 @@ impl Canvas {
     }
 }
 
-impl akriti_core::paint::Canvas for Canvas {
+impl ::paint::Canvas for Canvas {
     fn draw_text(&self, top_left: &Point, bound: &BoundingBox, text: &str, color: &Color, size: f32,
                  _: &Directionality) {
 

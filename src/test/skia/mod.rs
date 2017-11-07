@@ -14,25 +14,24 @@
  * limitations under the License.
 */
 
-
-extern crate akriti_core;
-extern crate akriti_snapshot;
+pub mod ruler;
+pub mod canvas;
+pub mod platform;
 
 use std::path::Path;
 
-use akriti_core::paint::{Point};
-use akriti_core::layout::Layout;
-use akriti_core::platform::Context;
-use akriti_core::paint::Canvas as AkritiCanvas;
-use akriti_core::draw::{Drawable, MeasureMode};
+use ::paint::{Point};
+use ::layout::Layout;
+use ::platform::Context;
+use ::paint::Canvas as AkritiCanvas;
+use ::draw::{Drawable, MeasureMode};
 
-use self::akriti_snapshot::platform::Platform;
-use self::akriti_snapshot::canvas::Canvas;
+use self::platform::Platform;
+use self::canvas::Canvas;
 
-#[allow(dead_code)]
 pub fn snap_element(element: &Layout, name: &str) {
     let root_dir = env!("CARGO_MANIFEST_DIR");
-    let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
+    let font = format!("{}/src/test/assets/STIX2Math.otf", root_dir);
 
     let context = Context::new(Box::new(Platform::new(&font)), 64.);
 
@@ -50,7 +49,7 @@ pub fn snap_element(element: &Layout, name: &str) {
 #[allow(dead_code)]
 pub fn snap_drawable(drawable: &mut Drawable, width_mode: &MeasureMode, height_mode: &MeasureMode, name: &str) {
     let root_dir = env!("CARGO_MANIFEST_DIR");
-    let font = format!("{}/tests/fonts/STIX2Math.otf", root_dir);
+    let font = format!("{}/src/test/assets/STIX2Math.otf", root_dir);
 
     let context = Context::new(Box::new(Platform::new(&font)), 64.);
     drawable.calculate(&context, width_mode, height_mode);
@@ -62,4 +61,36 @@ pub fn snap_drawable(drawable: &mut Drawable, width_mode: &MeasureMode, height_m
 
     canvas.as_any().downcast_ref::<Canvas>().unwrap().snapshot(Path::new("target")
         .join(format!("{}.png", name)).as_ref()).expect("Cannot snap");
+}
+
+pub struct Snapshot {
+    platform: platform::Platform
+}
+
+impl Snapshot {
+    pub fn new() -> Snapshot {
+        unimplemented!()
+    }
+
+    pub fn load() -> Snapshot {
+        unimplemented!()
+    }
+
+    pub fn save(&self, path: &Path) {
+        unimplemented!()
+    }
+
+    pub fn diff(&self, other: &Snapshot) -> Snapshot {
+        unimplemented!()
+    }
+
+    pub fn open(&self) {
+        unimplemented!()
+    }
+}
+
+impl PartialEq for Snapshot {
+    fn eq(&self, other: &Snapshot) -> bool {
+        unimplemented!()
+    }
 }

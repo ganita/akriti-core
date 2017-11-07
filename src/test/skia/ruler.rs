@@ -18,12 +18,12 @@
 use std::rc::Rc;
 use std::cell::RefCell;
 
-use akriti_core::props::Directionality;
-use akriti_core::paint::{
+use ::props::Directionality;
+use ::paint::{
     MathRuler, TextRuler, Rect, GlyphConstructionDirection, GlyphVariant, GlyphAssembly, TypeFace,
     GlyphAssemblyPart
 };
-use ::skia::{Paint, Typeface as SkTypeface, TextEncoding};
+use ::skia_sys::{Paint, Typeface as SkTypeface, TextEncoding};
 use ::akriti_measure::freetype::{Freetype, FreetypeFace};
 use ::akriti_measure::harfbuzz::HBDirection;
 

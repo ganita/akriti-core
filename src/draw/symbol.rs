@@ -297,3 +297,100 @@ impl<'a, T: Layout + 'a> Symbol<'a, T> {
     }
 
 }
+
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    use ::test::skia::{snap_drawable};
+
+    struct Test;
+
+    impl Layout for Test {
+        fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
+            unimplemented!()
+        }
+    }
+
+    static TEST_ELEMENT: Test = Test{};
+
+    #[test]
+    fn test_vertical_stretching() {
+        let test_element = Test {};
+
+        let mut symbol = Symbol::new(
+            &test_element,
+            |_| "√",
+            |_| &MathVariant::Normal,
+            |_| true,
+            |_| 64.,
+            |_| f32::INFINITY,
+            |_| 64.,
+            |_| &Directionality::LTR,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut symbol, &MeasureMode::Wrap,
+                      &MeasureMode::UpTo(1000.), "symbol_sqrt");
+    }
+
+    #[test]
+    fn test_horizontal_stretching() {
+        let test_element = Test {};
+
+        let mut symbol = Symbol::new(
+            &test_element,
+            |_| "←",
+            |_| &MathVariant::Normal,
+            |_| true,
+            |_| 64.,
+            |_| f32::INFINITY,
+            |_| 64.,
+            |_| &Directionality::LTR,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+                      &MeasureMode::Wrap, "symbol_left_arrow");
+    }
+
+    #[test]
+    fn test_non_stretchable() {
+        let test_element = Test {};
+
+        let mut symbol = Symbol::new(
+            &test_element,
+            |_| "+",
+            |_| &MathVariant::Normal,
+            |_| true,
+            |_| 64.,
+            |_| f32::INFINITY,
+            |_| 64.,
+            |_| &Directionality::LTR,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+                      &MeasureMode::Wrap, "symbol_plus");
+    }
+
+    #[test]
+    fn test_text() {
+        let test_element = Test {};
+
+        let mut symbol = Symbol::new(
+            &test_element,
+            |_| "hello",
+            |_| &MathVariant::Normal,
+            |_| true,
+            |_| 64.,
+            |_| f32::INFINITY,
+            |_| 64.,
+            |_| &Directionality::LTR,
+            |_| &Color::RGB(0, 0, 0)
+        );
+
+        snap_drawable(&mut symbol, &MeasureMode::UpTo(1000.),
+                      &MeasureMode::Wrap, "symbol_text");
+    }
+}
