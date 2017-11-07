@@ -64,7 +64,7 @@ pub trait PresentationPrivate<T: Element> {
             math_color: Self::PROP_MATH_COLOR.calculate(
                 context, element, specified.math_color.as_ref(), &parent, inherited, style),
             math_background: Self::PROP_MATH_BACKGROUND.calculate(
-                context, element, specified.math_color.as_ref(), &parent, inherited, style),
+                context, element, specified.math_background.as_ref(), &parent, inherited, style),
             display_style: Self::PROP_DISPLAY_STYLE.calculate(
                 context, element, None, &parent, inherited, style),
             script_level: Self::PROP_SCRIPT_LEVEL.calculate(
