@@ -33,8 +33,10 @@ mod notation;               pub use self::notation::*;
 mod operator_form;          pub use self::operator_form::*;
 mod property_modifier;      pub use self::property_modifier::*;
 mod pseudo_length;          pub use self::pseudo_length::*;
+mod script_level;           pub use self::script_level::*;
 mod valign;                 pub use self::valign::*;
 mod table_side;             pub use self::table_side::*;
 
-mod inherited;              pub use self::inherited::*;
-mod style;                  pub use self::style::*;
+pub type DisplayStyle = bool;
+pub type ScriptMinSize = f32;
+pub type ScriptSizeMultiplier = f32;

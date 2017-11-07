@@ -21,10 +21,10 @@ use ::draw::{Drawable, LinearLayout, Gravity, Align, LinearLayoutParams, Wrapper
 use ::props::{Directionality, Color};
 
 pub struct MrowLayout {
-    elements: Vec<Box<Layout>>,
-    dir: Directionality,
+    pub(crate) elements: Vec<Box<Layout>>,
+    pub(crate) dir: Directionality,
 
-    presentation_element: PresentationLayout,
+    pub(crate) presentation_element: PresentationLayout,
 }
 
 impl Layout for MrowLayout {

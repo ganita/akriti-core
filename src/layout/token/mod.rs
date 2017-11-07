@@ -20,6 +20,8 @@ mod mn;                         pub use self::mn::*;
 mod mtext;                      pub use self::mtext::*;
 mod mo;                         pub use self::mo::*;
 
+use std::rc::Rc;
+
 use super::{ConcreteLayout, Layout, PresentationLayout};
 use ::draw::{Text, Drawable, Wrapper, MeasureMode};
 use ::platform::{Context};
@@ -27,12 +29,12 @@ use ::props::{MathVariant, Directionality, Color};
 
 
 pub struct TokenLayout {
-    text: String,
-    math_variant: MathVariant,
-    math_size: f32,
-    dir: Directionality,
+    pub(crate) text: Rc<String>,
+    pub(crate) math_variant: MathVariant,
+    pub(crate) math_size: f32,
+    pub(crate) dir: Directionality,
 
-    presentation_element: PresentationLayout
+    pub(crate) presentation_element: PresentationLayout
 }
 
 impl Layout for TokenLayout {
@@ -59,7 +61,7 @@ impl TokenLayout {
     pub fn new(text: String, math_variant: MathVariant, math_size: f32, dir: Directionality,
                math_color: Color, math_background: Color) -> TokenLayout {
         TokenLayout {
-            text,
+            text: Rc::new(text),
             math_variant,
             math_size,
             dir,

@@ -27,12 +27,11 @@ mod style_props;            pub use self::style_props::*;
 use std::any::Any;
 
 use ::platform::Context;
-use ::draw::Drawable;
-
+use ::layout::Layout;
 
 pub trait Element {
-    fn layout<'a>(&'a self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
-                  style: &StyleProps) -> Box<Drawable + 'a>;
+    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+                  style: &Option<&StyleProps>) -> Box<Layout>;
     fn type_info(&self) -> ElementType;
     fn as_any(&self) -> &Any;
 }

@@ -22,18 +22,14 @@ pub type ComputedPropComputer<T, U: Element> = fn(context: &Context, element: &U
                                                   parent: &Option<&Element>) -> Option<T>;
 pub type StylePropReader<T> = fn(style: &StyleProps) -> Option<&T>;
 
-pub enum PropertyDefault<T> {
-    Value(T),
-    Function(fn() -> T),
-}
+pub type DefaultProp<T> = fn() -> T;
 
 pub enum Property<T: Clone, U: Element> {
-    Inherited { affect_draw: bool, affect_layout: bool, reader: InheritedPropReader<T> },
+    Inherited { reader: InheritedPropReader<T> },
 
-    Computed { affect_draw: bool, affect_layout: bool, default: T, computer: ComputedPropComputer<T, U>,
-        reader: StylePropReader<T> },
+    Computed { default: DefaultProp<T>, computer: ComputedPropComputer<T, U>, reader: StylePropReader<T> },
 
-    Specified { affect_draw: bool, affect_layout: bool, default: T, reader: StylePropReader<T> },
+    Specified { default: DefaultProp<T>, reader: StylePropReader<T> },
 }
 
 impl<T: Clone, U: Element> Property<T, U> {
@@ -70,7 +66,7 @@ impl<T: Clone, U: Element> Property<T, U> {
                     return val;
                 }
 
-                return default.clone();
+                return default();
             },
 
             // Specified props have priority :
@@ -82,24 +78,8 @@ impl<T: Clone, U: Element> Property<T, U> {
                     }
                 }
 
-                return default.clone();
+                return default();
             }
-        }
-    }
-
-    pub fn affect_layout(&self) -> bool {
-        match *self {
-            Property::Specified { affect_layout, .. }
-                | Property::Computed { affect_layout, .. }
-                | Property::Inherited { affect_layout, .. } => affect_layout
-        }
-    }
-
-    pub fn affect_draw(&self) -> bool {
-        match *self {
-            Property::Specified { affect_draw, .. }
-            | Property::Computed { affect_draw, .. }
-            | Property::Inherited { affect_draw, .. } => affect_draw
         }
     }
 }

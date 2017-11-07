@@ -15,104 +15,74 @@
 */
 
 
+use std::rc::Rc;
+use std::any::Any;
+
 use ::props::*;
 use ::layout::{MiLayout, Layout};
+use super::super::{
+    TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps,
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement};
 use ::draw::*;
 use ::platform::*;
 
 pub struct Mi {
-    text: String,
-    math_variant: Option<MathVariant>,
-    dir: Option<Directionality>,
-    math_size: Option<MathSize>,
-
-    math_color: Option<Color>,
-    math_background: Option<Color>,
-
-    element: Option<MiLayout>,
+    token_props: SpecifiedTokenProps,
+    presentation_props: SpecifiedPresentationProps,
 }
 
 impl Mi {
     pub fn new(text: String) -> Mi {
         Mi {
-            text,
-            math_variant: None,
-            dir: None,
-            math_size: None,
-
-            math_color: None,
-            math_background: None,
-
-            element: Some(MiLayout::new (
-                String::from("Test"),
-                MathVariant::Normal,
-                64.,
-                Directionality::LTR,
-                Color::RGB(0, 0, 0),
-                Color::transparent()
-            )),
+            token_props: SpecifiedTokenProps {
+                text: Rc::new(text),
+                math_variant: None,
+                math_size: None,
+                dir: None,
+            },
+            presentation_props: SpecifiedPresentationProps {
+                math_color: None,
+                math_background: None,
+            }
         }
     }
+}
 
-    pub fn with_text(mut self, text: String) -> Mi {
-        self.text = text;
+impl Element for Mi {
+    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+              style: &Option<&StyleProps>) -> Box<Layout> {
+        Box::new(self.layout_token_element(self, context, parent, inherited, style))
+    }
+
+    fn type_info(&self) -> ElementType {
+        ElementType::TokenElement(TokenElement::Mi)
+    }
+
+    fn as_any(&self) -> &Any {
         self
-    }
-
-    pub fn with_dir(mut self, dir: Option<Directionality>) -> Mi {
-        self.dir = dir;
-        self
-    }
-
-    pub fn with_math_size(mut self, math_size: Option<MathSize>) -> Mi {
-        self.math_size = math_size;
-        self
-    }
-
-    pub fn with_math_color(mut self, math_color: Option<Color>) -> Mi {
-        self.math_color = math_color;
-        self
-    }
-
-    pub fn with_math_background(mut self, math_background: Option<Color>) -> Mi {
-        self.math_background = math_background;
-        self
-    }
-
-    pub fn get_text(&self) -> &str {
-        &self.text
-    }
-
-    pub fn get_dir(&self) -> Option<&Directionality> {
-        self.dir.as_ref()
-    }
-
-    pub fn get_math_size(&self) -> Option<&MathSize> {
-        self.math_size.as_ref()
-    }
-
-    pub fn get_math_color(&self) -> Option<&Color> {
-        self.math_color.as_ref()
-    }
-
-    pub fn get_math_background(&self) -> Option<&Color> {
-        self.math_background.as_ref()
-    }
-
-    pub fn layout<'a>(&'a mut self, context: &Context) -> Box<Drawable + 'a> {
-        self.element.as_ref().unwrap().layout(context)
     }
 }
 
+impl PresentationPrivate<Mi> for Mi {
+    fn get_specified_presentation_props(&self) -> &SpecifiedPresentationProps {
+        &self.presentation_props
+    }
 
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn it_has_good_api() {
-        let mi = Mi::new(String::from("Hello world!"))
-            .with_dir(Some(Directionality::RTL))
-            .with_math_color(Some(Color::RGB(0, 0, 0)));
+    fn get_specified_presentation_props_mut(&mut self) -> &mut SpecifiedPresentationProps {
+        &mut self.presentation_props
     }
 }
+
+impl TokenPrivate<Mi> for Mi {
+    fn get_specified_token_props(&self) -> &SpecifiedTokenProps {
+        &self.token_props
+    }
+
+    fn get_specified_token_props_mut(&mut self) -> &mut SpecifiedTokenProps {
+        &mut self.token_props
+    }
+}
+
+impl Token<Mi> for Mi {}
+
+impl Presentation<Mi> for Mi {}

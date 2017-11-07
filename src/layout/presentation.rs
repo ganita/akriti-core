@@ -15,14 +15,18 @@
 */
 
 
-use ::props::Color;
+use ::props::{Color, DisplayStyle, ScriptLevel, ScriptMinSize, ScriptSizeMultiplier};
 use super::ConcreteLayout;
 use ::platform::Context;
 use ::draw::{Drawable, Wrapper};
 
 pub struct PresentationLayout {
-    pub math_color: Color,
-    pub math_background: Color,
+    pub(crate) math_color: Color,
+    pub(crate) math_background: Color,
+    pub(crate) display_style: DisplayStyle,
+    pub(crate) script_level: ScriptLevel,
+    pub(crate) script_min_size: ScriptMinSize,
+    pub(crate) script_size_multiplier: ScriptSizeMultiplier,
 }
 
 fn math_background_reader(element: &PresentationLayout) -> &Color {
@@ -38,8 +42,14 @@ impl<'a, U: Drawable + 'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, U>
     }
 }
 
+
+// TODO remove
 impl PresentationLayout {
     pub fn new(math_color: Color, math_background: Color) -> PresentationLayout {
-        PresentationLayout { math_color, math_background }
+        PresentationLayout {
+            math_color, math_background, display_style: false,
+            script_level: ScriptLevel::new(0, 12.),
+            script_min_size: 0.0, script_size_multiplier: 0.0
+        }
     }
 }

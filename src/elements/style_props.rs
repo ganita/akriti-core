@@ -14,6 +14,18 @@
  * limitations under the License.
 */
 
+use ::props::*;
+
 pub struct StyleProps {
 
+}
+
+impl StyleProps {
+    pub fn math_background(&self) -> Option<&Color> {
+        unimplemented!()
+    }
+
+    pub fn math_variant(&self) -> Option<&MathVariant> {
+        unimplemented!()
+    }
 }
