@@ -22,7 +22,7 @@ use ::props::*;
 use ::layout::{MiLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
-    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement};
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property};
 use ::draw::*;
 use ::platform::*;
 
@@ -79,6 +79,18 @@ impl PresentationPrivate<Mi> for Mi {
 }
 
 impl TokenPrivate<Mi> for Mi {
+    const PROP_MATH_VARIANT: Property<MathVariant, Mi> = Property::Computed {
+        default:    || MathVariant::Normal,
+        computer:   |ctx, elm, parent| {
+            let text = elm.get_text();
+            if text.len() == 1 {
+                return Some(MathVariant::Italic);
+            }
+            return None;
+        },
+        reader:     |s| s.math_variant(),
+    };
+
     fn get_specified_token_props(&self) -> &SpecifiedTokenProps {
         &self.token_props
     }
@@ -104,8 +116,13 @@ mod test {
         snap.snap_element(&Mi::new(String::from("i")), "mi_normal");
 
         snap.snap_element(
-            Mi::new(String::from("i")).with_math_variant(Some(MathVariant::Italic)),
-            "mi_italic"
+            &Mi::new(String::from("i")),
+            "mi_normal_identifier"
+        );
+
+        snap.snap_element(
+            &Mi::new(String::from("ix")),
+            "mi_text"
         );
 
         snap.snap_element(
