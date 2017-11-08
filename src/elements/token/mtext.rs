@@ -22,7 +22,7 @@ use ::layout::{MtextLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
-    TokenElement, InstanceId};
+    TokenElement, InstanceId, Family};
 use ::platform::Context;
 
 pub struct Mtext {
@@ -50,10 +50,10 @@ impl Mtext {
 }
 
 impl Element for Mtext {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
         let mut calculator = PropertyCalculator::new(
-            context, self, parent, inherited, style.clone());
+            context, self, family, inherited, style.clone());
 
         Box::new(MtextLayout {
             token_element: self.layout_token_element(context, &mut calculator)

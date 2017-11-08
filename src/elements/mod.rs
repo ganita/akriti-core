@@ -25,6 +25,7 @@ mod inherited_props;        pub use self::inherited_props::*;
 mod style_props;            pub use self::style_props::*;
 
 mod instance_id;            pub use self::instance_id::*;
+mod family;                 pub use self::family::*;
 
 use std::any::Any;
 
@@ -32,7 +33,7 @@ use ::platform::Context;
 use ::layout::Layout;
 
 pub trait Element {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
                   style: &Option<&StyleProps>) -> Box<Layout>;
     fn type_info(&self) -> ElementType;
     fn as_any(&self) -> &Any;

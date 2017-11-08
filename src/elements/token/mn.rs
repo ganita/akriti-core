@@ -22,7 +22,7 @@ use ::layout::{MnLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
-    TokenElement, InstanceId};
+    TokenElement, InstanceId, Family};
 use ::platform::Context;
 
 pub struct Mn {
@@ -50,10 +50,10 @@ impl Mn {
 }
 
 impl Element for Mn {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
         let mut calculator = PropertyCalculator::new(
-            context, self, parent, inherited, style.clone());
+            context, self, family, inherited, style.clone());
 
         Box::new(MnLayout {
             token_element: self.layout_token_element(context, &mut calculator)

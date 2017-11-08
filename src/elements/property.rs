@@ -14,14 +14,14 @@
  * limitations under the License.
 */
 
-use super::{InheritedProps, StyleProps, Element, Mstyle, InheritedPropsCopier};
+use super::{InheritedProps, StyleProps, Element, Mstyle, InheritedPropsCopier, Family};
 use ::platform::Context;
 
 pub type InheritedPropReader<T> = fn(inherited: &InheritedProps) -> &T;
 pub type InheritedPropWriter<T> = fn(val: T, fork: &mut InheritedPropsCopier) -> &mut InheritedPropsCopier;
 
-pub type ComputedPropComputer<T, U> = fn(context: &Context, element: &U,
-                                                  parent: &Option<&Element>) -> Option<T>;
+pub type ComputedPropComputer<T, U> = for<'a> fn(context: &Context, element: &U,
+                                                  parent: &Family<'a>) -> Option<T>;
 pub type StylePropReader<T> = fn(style: &StyleProps) -> Option<&T>;
 
 pub type DefaultProp<T> = fn() -> T;
@@ -35,7 +35,7 @@ pub enum Property<T: Clone, U: Element> {
 }
 
 impl<T: Clone, U: Element> Property<T, U> {
-    pub fn calculate(&self, context: &Context, element: &U, specified: Option<&T>, parent: &Option<&Element>,
+    pub fn calculate<'a>(&self, context: &Context, element: &U, specified: Option<&T>, family: &Family<'a>,
                      inherited: &InheritedProps, style: &Option<&StyleProps>) -> T {
 
         // Specified value always have the highest priority
@@ -54,7 +54,7 @@ impl<T: Clone, U: Element> Property<T, U> {
             // Specified value > Value in enclosing Mstyle > Computed value > Default value
             // Value that is available with highest priority will be used
             Property::Computed { ref default, ref computer, ref reader, .. } => {
-                if let Some(parent) = *parent {
+                if let Some(parent) = family.parent() {
                     if parent.type_info().is_mstyle() {
                         let mstyle: &Mstyle = parent.as_any().downcast_ref::<Mstyle>().unwrap();
                         let style_props = mstyle.get_props();
@@ -64,7 +64,7 @@ impl<T: Clone, U: Element> Property<T, U> {
                     }
                 }
 
-                if let Some(val) = computer(context, element, parent) {
+                if let Some(val) = computer(context, element, family) {
                     return val;
                 }
 
@@ -99,35 +99,35 @@ impl<T: Clone, U: Element> Property<T, U> {
 }
 
 
-pub struct PropertyCalculator<'a, 'b, 'c, 'd, 'e, T: Element + 'b> {
+pub struct PropertyCalculator<'a, 'b, 'c, 'e, 'f, T: Element + 'b> {
     context: &'a Context,
     element: &'b T,
-    parent: Option<&'c Element>,
-    inherited: &'d InheritedProps,
-    style: Option<&'e StyleProps>,
+    family: &'c Family<'c>,
+    inherited: &'e InheritedProps,
+    style: Option<&'f StyleProps>,
 
     copier: InheritedPropsCopier,
 }
 
-impl<'a, 'b, 'c, 'd, 'e, T: Element> PropertyCalculator<'a, 'b, 'c, 'd, 'e, T> {
-    pub fn new(context: &'a Context, element: &'b T, parent: Option<&'c Element>,
-               inherited: &'d InheritedProps, style: Option<&'e StyleProps>
-    ) -> PropertyCalculator<'a, 'b, 'c, 'd, 'e, T> {
+impl<'a, 'b, 'c, 'd, 'e, 'f, T: Element> PropertyCalculator<'a, 'b, 'c, 'e, 'f, T> {
+    pub fn new(context: &'a Context, element: &'b T, family: &'c Family<'c>,
+               inherited: &'e InheritedProps, style: Option<&'f StyleProps>
+    ) -> PropertyCalculator<'a, 'b, 'c, 'e, 'f, T> {
         let copier = inherited.copier();
 
         PropertyCalculator {
             context,
             element,
-            parent,
+            family,
             inherited,
             style,
             copier,
         }
     }
 
-    pub fn calculate<'f, U: Clone>(&'f mut self, property: &Property<U, T>, specified: Option<&U>) -> U {
-        let val = property.calculate(self.context, self.element, specified, &self.parent,
-                           self.inherited, &self.style);
+    pub fn calculate<U: Clone>(&mut self, property: &Property<U, T>, specified: Option<&U>) -> U {
+        let val = property.calculate(self.context, self.element, specified, self.family,
+                                     self.inherited, &self.style);
 
         if let Property::Inherited { writer, .. } = *property {
             writer(val.clone(), &mut self.copier);

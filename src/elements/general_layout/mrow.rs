@@ -19,7 +19,7 @@ use std::any::Any;
 
 use super::super::{Element, Presentation, PresentationPrivate, ElementType, TokenElement,
                    SpecifiedPresentationProps, InheritedProps, StyleProps, Property,
-                   PropertyCalculator, InstanceId};
+                   PropertyCalculator, InstanceId, Family};
 use ::props::*;
 use ::platform::Context;
 use ::layout::{Layout, MrowLayout};
@@ -69,21 +69,22 @@ impl Mrow {
 }
 
 impl Element for Mrow {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
         let mut calculator = PropertyCalculator::new(
-            context, self, parent, inherited, style.clone());
+            context, self, family, inherited, style.clone());
 
         let presentation_layout = self.layout_presentation(&mut calculator);
         let dir = calculator.calculate(&PROP_DIRECTIONALITY, self.get_dir());
 
         let fork = calculator.make_fork().copy();
+        let new_family = family.add(self);
 
         Box::new(MrowLayout {
             presentation_element: presentation_layout,
             dir,
             elements: self.children.iter().map(|e|
-                e.layout(context, Some(self), &fork, style)).collect(),
+                e.layout(context, &new_family, &fork, style)).collect(),
         })
     }
 

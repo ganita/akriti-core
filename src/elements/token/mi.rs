@@ -23,7 +23,7 @@ use ::layout::{MiLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement,
-    Property, InstanceId};
+    Property, InstanceId, Family};
 use ::platform::*;
 
 pub struct Mi {
@@ -51,10 +51,10 @@ impl Mi {
 }
 
 impl Element for Mi {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
         let mut calculator = PropertyCalculator::new(
-            context, self, parent, inherited, style.clone());
+            context, self, family, inherited, style.clone());
 
         Box::new(MiLayout {
             token_element: self.layout_token_element(context, &mut calculator)

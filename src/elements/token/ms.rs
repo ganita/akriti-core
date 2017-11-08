@@ -22,7 +22,7 @@ use ::layout::{MsLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement,
-    Property, InstanceId};
+    Property, InstanceId, Family};
 use ::platform::Context;
 
 const PROP_LQUOTE: Property<String, Ms> = Property::Specified {
@@ -65,11 +65,11 @@ impl Ms {
 }
 
 impl Element for Ms {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
 
         let mut calculator = PropertyCalculator::new(
-            context, self, parent, inherited, style.clone());
+            context, self, family, inherited, style.clone());
 
 
         let lquote = calculator.calculate(&PROP_LQUOTE, self.lquote.as_ref());

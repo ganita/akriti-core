@@ -22,7 +22,7 @@ use ::layout::{MspaceLayout, Layout};
 use super::super::{
     TokenPrivate, PresentationPrivate, Presentation, PropertyCalculator, Property,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
-    TokenElement, InstanceId};
+    TokenElement, InstanceId, Family};
 use ::platform::Context;
 use ::props::{Length, MathVariant, MathSize, Directionality, LineBreak};
 
@@ -149,10 +149,10 @@ impl Mspace {
 }
 
 impl Element for Mspace {
-    fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
+    fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
         let mut property_calculator = PropertyCalculator::new(
-            context, self, parent, inherited, style.clone());
+            context, self, family, inherited, style.clone());
 
         let presentation_layout = self.layout_presentation(&mut property_calculator);
 

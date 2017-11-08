@@ -39,6 +39,7 @@ mod test {
     use super::*;
 
     #[test]
+    #[ignore]
     fn it_increments() {
         assert_eq!(InstanceId::new().id, 0);
         assert_eq!(InstanceId::new().id, 1);

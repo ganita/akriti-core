@@ -22,7 +22,7 @@ use std::path::Path;
 
 use ::paint::{Point};
 use ::layout::Layout;
-use ::elements::{Element, InheritedProps};
+use ::elements::{Element, InheritedProps, Family};
 use ::platform::Context;
 use ::paint::Canvas as AkritiCanvas;
 use ::draw::{Drawable, MeasureMode};
@@ -43,7 +43,7 @@ impl Snapshot {
 
     pub fn snap_element(&self, element: &Element, name: &str) {
         let inherited_props = InheritedProps::default();
-        let layout = element.layout(&self.context, None, &inherited_props, &None);
+        let layout = element.layout(&self.context, &Family::new(), &inherited_props, &None);
         self.snap_layout(layout.as_ref(), name);
     }
 
