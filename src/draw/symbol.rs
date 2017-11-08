@@ -312,8 +312,6 @@ mod test {
         }
     }
 
-    static TEST_ELEMENT: Test = Test{};
-
     #[test]
     fn test_vertical_stretching() {
         let test_element = Test {};

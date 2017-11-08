@@ -23,7 +23,6 @@ use ::layout::{MiLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property};
-use ::draw::*;
 use ::platform::*;
 
 pub struct Mi {
@@ -81,7 +80,7 @@ impl PresentationPrivate<Mi> for Mi {
 impl TokenPrivate<Mi> for Mi {
     const PROP_MATH_VARIANT: Property<MathVariant, Mi> = Property::Computed {
         default:    || MathVariant::Normal,
-        computer:   |ctx, elm, parent| {
+        computer:   |_, elm, _| {
             let text = elm.get_text();
             if text.len() == 1 {
                 return Some(MathVariant::Italic);

@@ -18,13 +18,11 @@
 use std::rc::Rc;
 use std::any::Any;
 
-use ::props::*;
 use ::layout::{MnLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
-    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property};
-use ::draw::*;
-use ::platform::*;
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement};
+use ::platform::Context;
 
 pub struct Mn {
     token_props: SpecifiedTokenProps,
@@ -97,6 +95,7 @@ impl Presentation<Mn> for Mn {}
 mod test {
     use super::*;
     use ::test::skia::Snapshot;
+    use ::props::{Color, MathSize, MathVariant};
 
     #[test]
     fn it_works() {

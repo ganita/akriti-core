@@ -21,7 +21,7 @@ mod mn;                         pub use self::mn::*;
 use std::rc::Rc;
 
 use ::props::{MathVariant, MathSize, Directionality};
-use ::elements::{Element, PresentationPrivate, Property, InheritedProps, StyleProps, PropertyCalculator};
+use ::elements::{Element, PresentationPrivate, Property, PropertyCalculator};
 use ::layout::{TokenLayout};
 use ::platform::Context;
 

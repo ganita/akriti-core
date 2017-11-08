@@ -17,8 +17,7 @@
 
 use ::props::*;
 use ::layout::PresentationLayout;
-use super::{Property, Element, InheritedProps, StyleProps, PropertyCalculator};
-use ::platform::Context;
+use super::{Property, Element, PropertyCalculator};
 
 #[derive(Default)]
 pub struct SpecifiedPresentationProps {

@@ -113,7 +113,7 @@ impl MfracLayout {
         ll
     }
 
-    pub fn layout_bevelled<'a>(&'a self, context: &Context) -> LinearLayout<'a> {
+    pub fn layout_bevelled<'a>(&'a self, _: &Context) -> LinearLayout<'a> {
         unimplemented!()
     }
 

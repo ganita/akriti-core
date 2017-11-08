@@ -20,7 +20,7 @@ use ::platform::Context;
 pub type InheritedPropReader<T> = fn(inherited: &InheritedProps) -> &T;
 pub type InheritedPropWriter<T> = fn(val: T, fork: &mut InheritedPropsCopier) -> &mut InheritedPropsCopier;
 
-pub type ComputedPropComputer<T, U: Element> = fn(context: &Context, element: &U,
+pub type ComputedPropComputer<T, U> = fn(context: &Context, element: &U,
                                                   parent: &Option<&Element>) -> Option<T>;
 pub type StylePropReader<T> = fn(style: &StyleProps) -> Option<&T>;
 

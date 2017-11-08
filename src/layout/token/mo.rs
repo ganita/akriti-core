@@ -18,7 +18,6 @@ use ::props::{
     MathVariant,
     Directionality,
     Color,
-    Length,
     LineBreak,
     LineBreakStyle,
     IndentAlign,

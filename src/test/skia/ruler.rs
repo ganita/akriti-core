@@ -15,7 +15,6 @@
 */
 
 
-use std::rc::Rc;
 use std::cell::RefCell;
 
 use ::props::Directionality;
@@ -26,10 +25,6 @@ use ::paint::{
 use ::skia_sys::{Paint, Typeface as SkTypeface, TextEncoding};
 use ::akriti_measure::freetype::{Freetype, FreetypeFace};
 use ::akriti_measure::harfbuzz::HBDirection;
-
-struct Test {
-    ft_face: FreetypeFace
-}
 
 pub struct Ruler {
     paint: RefCell<Paint>,

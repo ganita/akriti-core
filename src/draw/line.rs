@@ -52,7 +52,7 @@ impl<'a, T: Layout + 'a> Drawable for Line<'a, T> {
         )
     }
 
-    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
+    fn calculate(&mut self, _: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
         let (start, end) = match self.param {
             LineParam::Fixed { ref start, ref end } => {
                 (start.clone(), end.clone())
@@ -127,7 +127,7 @@ mod test {
 
     struct MockElement;
     impl Layout for MockElement {
-        fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
+        fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
             unimplemented!()
         }
     }
