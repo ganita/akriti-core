@@ -35,16 +35,19 @@ pub struct SpecifiedTokenProps {
 
 
 pub trait TokenPrivate<T: Element> : PresentationPrivate<T> {
+    #[allow(const_err)]
     const PROP_MATH_VARIANT: Property<MathVariant, T> = Property::Specified {
         default:    || MathVariant::Normal,
         reader:     |s| s.math_variant()
     };
 
+    #[allow(const_err)]
     const PROP_MATH_SIZE: Property<MathSize, T> = Property::Inherited {
         reader:     |i| i.math_size(),
         writer:     |v, fork| fork.math_size(v)
     };
 
+    #[allow(const_err)]
     const PROP_DIR: Property<Directionality, T> = Property::Inherited {
         reader:     |i| i.dir(),
         writer:     |v, fork| fork.dir(v)

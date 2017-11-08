@@ -23,6 +23,7 @@ use ::props::*;
 use ::platform::Context;
 use ::layout::{Layout, MrowLayout};
 
+#[allow(const_err)]
 const PROP_DIRECTIONALITY: Property<Directionality, Mrow> = Property::Inherited {
     reader: |i| i.dir(),
     writer: |v, fork| fork.dir(v)

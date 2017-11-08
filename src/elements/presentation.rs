@@ -26,31 +26,37 @@ pub struct SpecifiedPresentationProps {
 }
 
 pub trait PresentationPrivate<T: Element> {
+    #[allow(const_err)]
     const PROP_MATH_COLOR: Property<Color, T> = Property::Inherited {
         reader:                 |p| p.math_color(),
         writer:                 |v, fork| fork.math_color(v)
     };
 
+    #[allow(const_err)]
     const PROP_MATH_BACKGROUND: Property<Color, T> = Property::Specified {
         default:                || Color::transparent(),
         reader:                 |s| s.math_background(),
     };
 
+    #[allow(const_err)]
     const PROP_DISPLAY_STYLE: Property<DisplayStyle, T> = Property::Inherited {
         reader:                 |p| p.display_style(),
         writer:                 |v, fork| fork.display_style(v)
     };
 
+    #[allow(const_err)]
     const PROP_SCRIPT_LEVEL: Property<ScriptLevel, T> = Property::Inherited {
         reader:                 |p| p.script_level(),
         writer:                 |v, fork| fork.script_level(v)
     };
 
+    #[allow(const_err)]
     const PROP_SCRIPT_MIN_SIZE: Property<ScriptMinSize, T> = Property::Inherited {
         reader:                 |p| p.script_min_size(),
         writer:                 |v, fork| fork.script_min_size(v)
     };
 
+    #[allow(const_err)]
     const PROP_SCRIPT_SIZE_MULTIPLIER: Property<ScriptSizeMultiplier, T> = Property::Inherited {
         reader:                 |p| p.script_size_multiplier(),
         writer:                 |v, fork| fork.script_size_multiplier(v)

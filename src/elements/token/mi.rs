@@ -78,6 +78,7 @@ impl PresentationPrivate<Mi> for Mi {
 }
 
 impl TokenPrivate<Mi> for Mi {
+    #[allow(const_err)]
     const PROP_MATH_VARIANT: Property<MathVariant, Mi> = Property::Computed {
         default:    || MathVariant::Normal,
         computer:   |_, elm, _| {
