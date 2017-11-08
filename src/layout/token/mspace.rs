@@ -40,7 +40,7 @@ impl Layout for MspaceLayout {
 
 impl<'a> ConcreteLayout<'a, Wrapper<'a, MspaceLayout, Space>> for MspaceLayout {
     fn layout(&'a self, context: &Context) -> Wrapper<'a, MspaceLayout, Space> {
-        let space = Space::new(self.width, self.height, self.depth, self.depth);
+        let space = Space::new(self.width, self.height+self.depth, self.depth, self.depth);
         let mut wrapper = Wrapper::new(
             self,
             |mspace| &mspace.presentation_layout.math_background
