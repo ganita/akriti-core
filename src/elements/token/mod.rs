@@ -17,6 +17,7 @@
 
 mod mi;                         pub use self::mi::*;
 mod mn;                         pub use self::mn::*;
+mod mtext;                      pub use self::mtext::*;
 
 use std::rc::Rc;
 
