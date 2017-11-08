@@ -20,6 +20,7 @@ mod mn;                         pub use self::mn::*;
 mod mtext;                      pub use self::mtext::*;
 mod mo;                         pub use self::mo::*;
 mod ms;                         pub use self::ms::*;
+mod mspace;                     pub use self::mspace::*;
 
 use std::rc::Rc;
 

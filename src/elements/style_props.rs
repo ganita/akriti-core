@@ -32,4 +32,12 @@ impl StyleProps {
     pub fn ms_lquote(&self) -> Option<&String> { unimplemented!() }
 
     pub fn ms_rquote(&self) -> Option<&String> { unimplemented!() }
+
+    pub fn mspace_width(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mspace_height(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mspace_depth(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn linebreak(&self) -> Option<&LineBreak> { unimplemented!() }
 }

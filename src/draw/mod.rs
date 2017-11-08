@@ -24,6 +24,7 @@ mod padding_box;            pub use self::padding_box::*;
 mod symbol;                 pub use self::symbol::*;
 mod glyph;                  pub use self::glyph::*;
 mod line;                   pub use self::line::*;
+mod space;                  pub use self::space::*;
 
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;
