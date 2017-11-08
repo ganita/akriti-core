@@ -21,7 +21,8 @@ use std::any::Any;
 use ::layout::{MspaceLayout, Layout};
 use super::super::{
     TokenPrivate, PresentationPrivate, Presentation, PropertyCalculator, Property,
-    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement};
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
+    TokenElement, InstanceId};
 use ::platform::Context;
 use ::props::{Length, MathVariant, MathSize, Directionality, LineBreak};
 
@@ -52,6 +53,7 @@ const PROP_MATH_SIZE: Property<MathSize, Mspace> = Property::Inherited {
 };
 
 pub struct Mspace {
+    instance_id: InstanceId,
     width: Option<Length>,
     height: Option<Length>,
     depth: Option<Length>,
@@ -67,6 +69,7 @@ pub struct Mspace {
 impl Mspace {
     pub fn new() -> Mspace {
         Mspace {
+            instance_id: InstanceId::new(),
             width: None,
             height: None,
             depth: None,
@@ -177,6 +180,10 @@ impl Element for Mspace {
 
     fn as_any(&self) -> &Any {
         self
+    }
+
+    fn instance_id(&self) -> &InstanceId {
+        &self.instance_id
     }
 }
 

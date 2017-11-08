@@ -18,7 +18,8 @@
 use std::any::Any;
 
 use super::super::{Element, Presentation, PresentationPrivate, ElementType, TokenElement,
-                   SpecifiedPresentationProps, InheritedProps, StyleProps, Property, PropertyCalculator};
+                   SpecifiedPresentationProps, InheritedProps, StyleProps, Property,
+                   PropertyCalculator, InstanceId};
 use ::props::*;
 use ::platform::Context;
 use ::layout::{Layout, MrowLayout};
@@ -30,6 +31,8 @@ const PROP_DIRECTIONALITY: Property<Directionality, Mrow> = Property::Inherited 
 };
 
 pub struct Mrow {
+    instance_id: InstanceId,
+
     children: Vec<Box<Element>>,
 
     dir: Option<Directionality>,
@@ -39,6 +42,7 @@ pub struct Mrow {
 impl Mrow {
     pub fn new() -> Mrow {
         Mrow {
+            instance_id: InstanceId::new(),
             children: Vec::new(),
             dir: None,
             presentation_props: SpecifiedPresentationProps::default(),
@@ -57,6 +61,10 @@ impl Mrow {
     pub fn with_child<'a>(&'a mut self, child: Box<Element>) -> &'a mut Mrow {
         self.children.push(child);
         self
+    }
+
+    pub fn children(&self) -> &[Box<Element>] {
+        &self.children[..]
     }
 }
 
@@ -85,6 +93,10 @@ impl Element for Mrow {
 
     fn as_any(&self) -> &Any {
         self
+    }
+
+    fn instance_id(&self) -> &InstanceId {
+        &self.instance_id
     }
 }
 

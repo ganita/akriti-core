@@ -21,7 +21,8 @@ use std::any::Any;
 use ::layout::{MsLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
-    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property};
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement,
+    Property, InstanceId};
 use ::platform::Context;
 
 const PROP_LQUOTE: Property<String, Ms> = Property::Specified {
@@ -35,6 +36,7 @@ const PROP_RQUOTE: Property<String, Ms> = Property::Specified {
 };
 
 pub struct Ms {
+    instance_id: InstanceId,
     lquote: Option<String>,
     rquote: Option<String>,
 
@@ -45,6 +47,7 @@ pub struct Ms {
 impl Ms {
     pub fn new(text: String) -> Ms {
         Ms {
+            instance_id: InstanceId::new(),
             lquote: None,
             rquote: None,
             token_props: SpecifiedTokenProps {
@@ -87,6 +90,10 @@ impl Element for Ms {
 
     fn as_any(&self) -> &Any {
         self
+    }
+
+    fn instance_id(&self) -> &InstanceId {
+        &self.instance_id
     }
 }
 

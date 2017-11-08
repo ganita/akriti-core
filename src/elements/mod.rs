@@ -24,6 +24,8 @@ mod general_layout;         pub use self::general_layout::*;
 mod inherited_props;        pub use self::inherited_props::*;
 mod style_props;            pub use self::style_props::*;
 
+mod instance_id;            pub use self::instance_id::*;
+
 use std::any::Any;
 
 use ::platform::Context;
@@ -34,8 +36,14 @@ pub trait Element {
                   style: &Option<&StyleProps>) -> Box<Layout>;
     fn type_info(&self) -> ElementType;
     fn as_any(&self) -> &Any;
+    fn instance_id(&self) -> &InstanceId;
 }
 
+impl PartialEq for Element {
+    fn eq(&self, other: &Element) -> bool {
+        self.instance_id() == other.instance_id()
+    }
+}
 
 #[derive(Debug, Copy, Clone, PartialOrd, PartialEq)]
 pub enum TokenElement {

@@ -22,10 +22,12 @@ use ::props::*;
 use ::layout::{MiLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
-    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property};
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement,
+    Property, InstanceId};
 use ::platform::*;
 
 pub struct Mi {
+    instance_id: InstanceId,
     token_props: SpecifiedTokenProps,
     presentation_props: SpecifiedPresentationProps,
 }
@@ -33,6 +35,7 @@ pub struct Mi {
 impl Mi {
     pub fn new(text: String) -> Mi {
         Mi {
+            instance_id: InstanceId::new(),
             token_props: SpecifiedTokenProps {
                 text: Rc::new(text),
                 math_variant: None,
@@ -64,6 +67,10 @@ impl Element for Mi {
 
     fn as_any(&self) -> &Any {
         self
+    }
+
+    fn instance_id(&self) -> &InstanceId {
+        &self.instance_id
     }
 }
 

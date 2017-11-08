@@ -16,6 +16,7 @@
 
 
 #[macro_use] extern crate akriti_macros;
+#[macro_use] extern crate lazy_static;
 
 pub extern crate akriti_constants;
 pub use akriti_constants as constants;

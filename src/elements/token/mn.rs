@@ -21,10 +21,12 @@ use std::any::Any;
 use ::layout::{MnLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
-    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement};
+    SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
+    TokenElement, InstanceId};
 use ::platform::Context;
 
 pub struct Mn {
+    instance_id: InstanceId,
     token_props: SpecifiedTokenProps,
     presentation_props: SpecifiedPresentationProps,
 }
@@ -32,6 +34,7 @@ pub struct Mn {
 impl Mn {
     pub fn new(text: String) -> Mn {
         Mn {
+            instance_id: InstanceId::new(),
             token_props: SpecifiedTokenProps {
                 text: Rc::new(text),
                 math_variant: None,
@@ -63,6 +66,10 @@ impl Element for Mn {
 
     fn as_any(&self) -> &Any {
         self
+    }
+
+    fn instance_id(&self) -> &InstanceId {
+        &self.instance_id
     }
 }
 
