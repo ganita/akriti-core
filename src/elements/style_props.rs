@@ -28,4 +28,8 @@ impl StyleProps {
     pub fn math_variant(&self) -> Option<&MathVariant> {
         unimplemented!()
     }
+
+    pub fn ms_lquote(&self) -> Option<&String> { unimplemented!() }
+
+    pub fn ms_rquote(&self) -> Option<&String> { unimplemented!() }
 }
