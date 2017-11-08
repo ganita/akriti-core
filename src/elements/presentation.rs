@@ -17,7 +17,7 @@
 
 use ::props::*;
 use ::layout::PresentationLayout;
-use super::{Property, Element, InheritedProps, StyleProps};
+use super::{Property, Element, InheritedProps, StyleProps, PropertyCalculator};
 use ::platform::Context;
 
 #[derive(Default)]
@@ -29,6 +29,7 @@ pub struct SpecifiedPresentationProps {
 pub trait PresentationPrivate<T: Element> {
     const PROP_MATH_COLOR: Property<Color, T> = Property::Inherited {
         reader:                 |p| p.math_color(),
+        writer:                 |v, fork| fork.math_color(v)
     };
 
     const PROP_MATH_BACKGROUND: Property<Color, T> = Property::Specified {
@@ -38,41 +39,39 @@ pub trait PresentationPrivate<T: Element> {
 
     const PROP_DISPLAY_STYLE: Property<DisplayStyle, T> = Property::Inherited {
         reader:                 |p| p.display_style(),
+        writer:                 |v, fork| fork.display_style(v)
     };
 
     const PROP_SCRIPT_LEVEL: Property<ScriptLevel, T> = Property::Inherited {
         reader:                 |p| p.script_level(),
+        writer:                 |v, fork| fork.script_level(v)
     };
 
     const PROP_SCRIPT_MIN_SIZE: Property<ScriptMinSize, T> = Property::Inherited {
         reader:                 |p| p.script_min_size(),
+        writer:                 |v, fork| fork.script_min_size(v)
     };
 
     const PROP_SCRIPT_SIZE_MULTIPLIER: Property<ScriptSizeMultiplier, T> = Property::Inherited {
         reader:                 |p| p.script_size_multiplier(),
+        writer:                 |v, fork| fork.script_size_multiplier(v)
     };
 
     fn get_specified_presentation_props(&self) -> &SpecifiedPresentationProps;
     fn get_specified_presentation_props_mut(&mut self) -> &mut SpecifiedPresentationProps;
 
-    fn layout_presentation(
-        &self, element: &T, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
-        style: &Option<&StyleProps>) -> PresentationLayout {
+    fn layout_presentation(&self, calculator: &mut PropertyCalculator<T>) -> PresentationLayout {
         let specified = self.get_specified_presentation_props();
 
         PresentationLayout {
-            math_color: Self::PROP_MATH_COLOR.calculate(
-                context, element, specified.math_color.as_ref(), &parent, inherited, style),
-            math_background: Self::PROP_MATH_BACKGROUND.calculate(
-                context, element, specified.math_background.as_ref(), &parent, inherited, style),
-            display_style: Self::PROP_DISPLAY_STYLE.calculate(
-                context, element, None, &parent, inherited, style),
-            script_level: Self::PROP_SCRIPT_LEVEL.calculate(
-                context, element, None, &parent, inherited, style),
-            script_min_size: Self::PROP_SCRIPT_MIN_SIZE.calculate(
-                context, element, None, &parent, inherited, style),
-            script_size_multiplier: Self::PROP_SCRIPT_SIZE_MULTIPLIER.calculate(
-                context, element, None, &parent, inherited, style),
+            math_color: calculator.calculate(
+                &Self::PROP_MATH_COLOR, specified.math_color.as_ref()),
+            math_background: calculator.calculate(
+                &Self::PROP_MATH_BACKGROUND, specified.math_background.as_ref()),
+            display_style: calculator.calculate(&Self::PROP_DISPLAY_STYLE, None),
+            script_level: calculator.calculate(&Self::PROP_SCRIPT_LEVEL, None),
+            script_min_size: calculator.calculate(&Self::PROP_SCRIPT_MIN_SIZE, None),
+            script_size_multiplier: calculator.calculate(&Self::PROP_SCRIPT_SIZE_MULTIPLIER, None),
         }
     }
 }

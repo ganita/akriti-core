@@ -18,13 +18,14 @@
 use std::any::Any;
 
 use super::super::{Element, Presentation, PresentationPrivate, ElementType, TokenElement,
-                   SpecifiedPresentationProps, InheritedProps, StyleProps, Property};
+                   SpecifiedPresentationProps, InheritedProps, StyleProps, Property, PropertyCalculator};
 use ::props::*;
 use ::platform::Context;
 use ::layout::{Layout, MrowLayout};
 
 const PROP_DIRECTIONALITY: Property<Directionality, Mrow> = Property::Inherited {
-    reader: |i| i.dir()
+    reader: |i| i.dir(),
+    writer: |v, fork| fork.dir(v)
 };
 
 pub struct Mrow {
@@ -61,13 +62,19 @@ impl Mrow {
 impl Element for Mrow {
     fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
+        let mut calculator = PropertyCalculator::new(
+            context, self, parent, inherited, style.clone());
+
+        let presentation_layout = self.layout_presentation(&mut calculator);
+        let dir = calculator.calculate(&PROP_DIRECTIONALITY, self.get_dir());
+
+        let fork = calculator.make_fork().copy();
+
         Box::new(MrowLayout {
+            presentation_element: presentation_layout,
+            dir,
             elements: self.children.iter().map(|e|
-                e.layout(context, Some(self), inherited, style)).collect(),
-            dir: PROP_DIRECTIONALITY.calculate(
-                context, self, self.get_dir(), &parent, inherited, style),
-            presentation_element: self.layout_presentation(
-                self, context, Some(self), inherited, style),
+                e.layout(context, Some(self), &fork, style)).collect(),
         })
     }
 
@@ -91,3 +98,47 @@ impl PresentationPrivate<Mrow> for Mrow {
 }
 
 impl Presentation<Mrow> for Mrow {}
+
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    use ::elements::Mi;
+    use ::test::skia::Snapshot;
+
+    #[test]
+    fn it_works() {
+        let snap = Snapshot::default();
+
+        snap.snap_element(
+            Mrow::new()
+                .with_child(Box::new(Mi::new(String::from("i"))))
+                .with_child(Box::new(Mi::new(String::from(" + "))))
+                .with_child(Box::new(Mi::new(String::from("x")))),
+            "mrow_ltr");
+
+        snap.snap_element(
+            Mrow::new()
+                .with_child(Box::new(Mi::new(String::from("i"))))
+                .with_child(Box::new(Mi::new(String::from(" + "))))
+                .with_child(Box::new(Mi::new(String::from("x"))))
+                .with_dir(Some(Directionality::RTL)),
+            "mrow_rtl");
+
+        snap.snap_element(
+            Mrow::new()
+                .with_child(Box::new(Mi::new(String::from("i"))))
+                .with_child(Box::new(Mi::new(String::from(" + "))))
+                .with_child(Box::new(Mi::new(String::from("x"))))
+                .with_math_background(Some(Color::RGB(0, 255, 0))),
+            "mrow_green_bg");
+
+        snap.snap_element(
+            Mrow::new()
+                .with_child(Box::new(Mi::new(String::from("i"))))
+                .with_child(Box::new(Mi::new(String::from(" + "))))
+                .with_child(Box::new(Mi::new(String::from("x"))))
+                .with_math_color(Some(Color::RGB(0, 255, 0))),
+            "mrow_green_text");
+    }
+}

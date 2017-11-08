@@ -14,10 +14,12 @@
  * limitations under the License.
 */
 
-use super::{InheritedProps, StyleProps, Element, Mstyle};
+use super::{InheritedProps, StyleProps, Element, Mstyle, InheritedPropsCopier};
 use ::platform::Context;
 
 pub type InheritedPropReader<T> = fn(inherited: &InheritedProps) -> &T;
+pub type InheritedPropWriter<T> = fn(val: T, fork: &mut InheritedPropsCopier) -> &mut InheritedPropsCopier;
+
 pub type ComputedPropComputer<T, U: Element> = fn(context: &Context, element: &U,
                                                   parent: &Option<&Element>) -> Option<T>;
 pub type StylePropReader<T> = fn(style: &StyleProps) -> Option<&T>;
@@ -25,7 +27,7 @@ pub type StylePropReader<T> = fn(style: &StyleProps) -> Option<&T>;
 pub type DefaultProp<T> = fn() -> T;
 
 pub enum Property<T: Clone, U: Element> {
-    Inherited { reader: InheritedPropReader<T> },
+    Inherited { reader: InheritedPropReader<T>, writer: InheritedPropWriter<T> },
 
     Computed { default: DefaultProp<T>, computer: ComputedPropComputer<T, U>, reader: StylePropReader<T> },
 
@@ -81,5 +83,61 @@ impl<T: Clone, U: Element> Property<T, U> {
                 return default();
             }
         }
+    }
+
+    pub fn is_inherited(&self) -> bool {
+        if let Property::Inherited { .. } = *self { true } else { false }
+    }
+
+    pub fn is_computed(&self) -> bool {
+        if let Property::Computed { .. } = *self { true } else { false }
+    }
+
+    pub fn is_specified(&self) -> bool {
+        if let Property::Specified { .. } = *self { true } else { false }
+    }
+}
+
+
+pub struct PropertyCalculator<'a, 'b, 'c, 'd, 'e, T: Element + 'b> {
+    context: &'a Context,
+    element: &'b T,
+    parent: Option<&'c Element>,
+    inherited: &'d InheritedProps,
+    style: Option<&'e StyleProps>,
+
+    copier: InheritedPropsCopier,
+}
+
+impl<'a, 'b, 'c, 'd, 'e, T: Element> PropertyCalculator<'a, 'b, 'c, 'd, 'e, T> {
+    pub fn new(context: &'a Context, element: &'b T, parent: Option<&'c Element>,
+               inherited: &'d InheritedProps, style: Option<&'e StyleProps>
+    ) -> PropertyCalculator<'a, 'b, 'c, 'd, 'e, T> {
+        let copier = inherited.copier();
+
+        PropertyCalculator {
+            context,
+            element,
+            parent,
+            inherited,
+            style,
+            copier,
+        }
+    }
+
+    pub fn calculate<'f, U: Clone>(&'f mut self, property: &Property<U, T>, specified: Option<&U>) -> U {
+        let val = property.calculate(self.context, self.element, specified, &self.parent,
+                           self.inherited, &self.style);
+
+        if let Property::Inherited { writer, .. } = *property {
+            writer(val.clone(), &mut self.copier);
+        }
+
+        val
+
+    }
+
+    pub fn make_fork(self) -> InheritedPropsCopier {
+        self.copier
     }
 }

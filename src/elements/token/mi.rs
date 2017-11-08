@@ -21,7 +21,7 @@ use std::any::Any;
 use ::props::*;
 use ::layout::{MiLayout, Layout};
 use super::super::{
-    TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps,
+    TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement};
 use ::draw::*;
 use ::platform::*;
@@ -51,8 +51,11 @@ impl Mi {
 impl Element for Mi {
     fn layout(&self, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
               style: &Option<&StyleProps>) -> Box<Layout> {
+        let mut calculator = PropertyCalculator::new(
+            context, self, parent, inherited, style.clone());
+
         Box::new(MiLayout {
-            token_element: self.layout_token_element(self, context, parent, inherited, style)
+            token_element: self.layout_token_element(context, &mut calculator)
         })
     }
 

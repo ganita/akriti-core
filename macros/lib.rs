@@ -64,7 +64,7 @@ fn impl_make_immutable(ast: &syn::MacroInput) -> quote::Tokens {
         let ident = &field.ident;
         let ty = &field.ty;
         setters.append(quote! {
-            pub fn #ident(mut self, value: #ty) -> #builder_name {
+            pub fn #ident<'a>(&'a mut self, value: #ty) -> &'a mut #builder_name {
                 self.#ident = Some(value);
                 self
             }

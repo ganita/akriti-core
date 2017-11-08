@@ -20,7 +20,7 @@ mod mi;                         pub use self::mi::*;
 use std::rc::Rc;
 
 use ::props::{MathVariant, MathSize, Directionality};
-use ::elements::{Element, PresentationPrivate, Property, InheritedProps, StyleProps};
+use ::elements::{Element, PresentationPrivate, Property, InheritedProps, StyleProps, PropertyCalculator};
 use ::layout::{TokenLayout};
 use ::platform::Context;
 
@@ -40,36 +40,33 @@ pub trait TokenPrivate<T: Element> : PresentationPrivate<T> {
     };
 
     const PROP_MATH_SIZE: Property<MathSize, T> = Property::Inherited {
-        reader:     |i| i.math_size()
+        reader:     |i| i.math_size(),
+        writer:     |v, fork| fork.math_size(v)
     };
 
     const PROP_DIR: Property<Directionality, T> = Property::Inherited {
-        reader:     |i| i.dir()
+        reader:     |i| i.dir(),
+        writer:     |v, fork| fork.dir(v)
     };
 
     fn get_specified_token_props(&self) -> &SpecifiedTokenProps;
     fn get_specified_token_props_mut(&mut self) -> &mut SpecifiedTokenProps;
 
-    fn layout_token_element(
-        &self, element: &T, context: &Context, parent: Option<&Element>, inherited: &InheritedProps,
-        style: &Option<&StyleProps>) -> TokenLayout {
+    fn layout_token_element(&self, context: &Context, calculator: &mut PropertyCalculator<T>) -> TokenLayout {
         let token_props = self.get_specified_token_props();
 
-        let presentation_layout =
-            self.layout_presentation(element, context, parent, inherited, style);
+        let presentation_layout = self.layout_presentation(calculator);
 
         TokenLayout {
             text: token_props.text.clone(),
-            math_variant: Self::PROP_MATH_VARIANT.calculate(
-                context, element, token_props.math_variant.as_ref(), &parent, inherited, style),
+            math_variant: calculator.calculate(
+                &Self::PROP_MATH_VARIANT, token_props.math_variant.as_ref()),
             math_size: presentation_layout.script_level.get_font_size(
                 context,
-                &Self::PROP_MATH_SIZE.calculate(
-                    context, element, token_props.math_size.as_ref(), &parent, inherited, style
-                )
+                &calculator.calculate(
+                    &Self::PROP_MATH_SIZE, token_props.math_size.as_ref())
             ),
-            dir: Self::PROP_DIR.calculate(
-                context, element, token_props.dir.as_ref(), &parent, inherited, style),
+            dir: calculator.calculate(&Self::PROP_DIR, token_props.dir.as_ref()),
             presentation_element: presentation_layout,
         }
     }
