@@ -114,7 +114,7 @@ const PROP_FORM: Property<OperatorForm, Mo, DefaultComputationContext> = Propert
 };
 
 #[allow(const_err)]
-const PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
+const _PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
@@ -127,7 +127,7 @@ const PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property:
 };
 
 #[allow(const_err)]
-const PROP_SEPARATOR: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
+const _PROP_SEPARATOR: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
