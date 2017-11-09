@@ -22,15 +22,15 @@ use ::layout::{MsLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement,
-    Property, InstanceId, Family};
+    Property, InstanceId, Family, DefaultComputationContext};
 use ::platform::Context;
 
-const PROP_LQUOTE: Property<String, Ms> = Property::Specified {
+const PROP_LQUOTE: Property<String, Ms, DefaultComputationContext> = Property::Specified {
     default: || String::from("\""),
     reader: |s| s.ms_lquote(),
 };
 
-const PROP_RQUOTE: Property<String, Ms> = Property::Specified {
+const PROP_RQUOTE: Property<String, Ms, DefaultComputationContext> = Property::Specified {
     default: || String::from("\""),
     reader: |s| s.ms_rquote(),
 };

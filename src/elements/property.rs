@@ -20,23 +20,23 @@ use ::platform::Context;
 pub type InheritedPropReader<T> = fn(inherited: &InheritedProps) -> &T;
 pub type InheritedPropWriter<T> = fn(val: T, fork: &mut InheritedPropsCopier) -> &mut InheritedPropsCopier;
 
-pub type ComputedPropComputer<T, U> = for<'a> fn(context: &Context, element: &U,
-                                                  parent: &Family<'a>) -> Option<T>;
+pub type ComputedPropComputer<T, U, V> = for<'a> fn(context: &Context, element: &U,
+                                                  parent: &Family<'a>, computation_ctx: &V) -> Option<T>;
 pub type StylePropReader<T> = fn(style: &StyleProps) -> Option<&T>;
 
 pub type DefaultProp<T> = fn() -> T;
 
-pub enum Property<T: Clone, U: Element> {
+pub enum Property<T: Clone, U: Element, V> {
     Inherited { reader: InheritedPropReader<T>, writer: InheritedPropWriter<T> },
 
-    Computed { default: DefaultProp<T>, computer: ComputedPropComputer<T, U>, reader: StylePropReader<T> },
+    Computed { default: DefaultProp<T>, computer: ComputedPropComputer<T, U, V>, reader: StylePropReader<T> },
 
     Specified { default: DefaultProp<T>, reader: StylePropReader<T> },
 }
 
-impl<T: Clone, U: Element> Property<T, U> {
+impl<T: Clone, U: Element, V> Property<T, U, V> {
     pub fn calculate<'a>(&self, context: &Context, element: &U, specified: Option<&T>, family: &Family<'a>,
-                     inherited: &InheritedProps, style: &Option<&StyleProps>) -> T {
+                     inherited: &InheritedProps, style: &Option<&StyleProps>, computation_ctx: &V) -> T {
 
         // Specified value always have the highest priority
         if let Some(specified) = specified {
@@ -64,7 +64,7 @@ impl<T: Clone, U: Element> Property<T, U> {
                     }
                 }
 
-                if let Some(val) = computer(context, element, family) {
+                if let Some(val) = computer(context, element, family, computation_ctx) {
                     return val;
                 }
 
@@ -125,19 +125,26 @@ impl<'a, 'b, 'c, 'd, 'e, 'f, T: Element> PropertyCalculator<'a, 'b, 'c, 'e, 'f, 
         }
     }
 
-    pub fn calculate<U: Clone>(&mut self, property: &Property<U, T>, specified: Option<&U>) -> U {
-        let val = property.calculate(self.context, self.element, specified, self.family,
-                                     self.inherited, &self.style);
+    pub fn calculate<U: Clone>(&mut self, property: &Property<U, T, DefaultComputationContext>, specified: Option<&U>) -> U {
+        self.calculate_contextual(property, specified, &DefaultComputationContext {})
+    }
+
+    pub fn calculate_contextual<U: Clone, V>(
+        &mut self, property: &Property<U, T, V>, specified: Option<&U>, computation_ctx: &V) -> U {
+        let val = property.calculate(
+            self.context, self.element, specified, self.family, self.inherited, &self.style, computation_ctx);
 
         if let Property::Inherited { writer, .. } = *property {
             writer(val.clone(), &mut self.copier);
         }
 
         val
-
     }
 
     pub fn make_fork(self) -> InheritedPropsCopier {
         self.copier
     }
 }
+
+#[derive(Debug, Default)]
+pub struct DefaultComputationContext {}

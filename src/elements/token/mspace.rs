@@ -22,32 +22,32 @@ use ::layout::{MspaceLayout, Layout};
 use super::super::{
     TokenPrivate, PresentationPrivate, Presentation, PropertyCalculator, Property,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
-    TokenElement, InstanceId, Family};
+    TokenElement, InstanceId, Family, DefaultComputationContext};
 use ::platform::Context;
 use ::props::{Length, MathVariant, MathSize, Directionality, LineBreak};
 
-const PROP_WIDTH: Property<Length, Mspace> = Property::Specified {
+const PROP_WIDTH: Property<Length, Mspace, DefaultComputationContext> = Property::Specified {
     default: || Length::EX(0.),
     reader: |s| s.mspace_width(),
 };
 
-const PROP_HEIGHT: Property<Length, Mspace> = Property::Specified {
+const PROP_HEIGHT: Property<Length, Mspace, DefaultComputationContext> = Property::Specified {
     default: || Length::EX(0.),
     reader: |s| s.mspace_height(),
 };
 
-const PROP_DEPTH: Property<Length, Mspace> = Property::Specified {
+const PROP_DEPTH: Property<Length, Mspace, DefaultComputationContext> = Property::Specified {
     default: || Length::EX(0.),
     reader: |s| s.mspace_depth(),
 };
 
-const PROP_LINEBREAK: Property<LineBreak, Mspace> = Property::Specified {
+const PROP_LINEBREAK: Property<LineBreak, Mspace, DefaultComputationContext> = Property::Specified {
     default: || LineBreak::Auto,
     reader: |s| s.linebreak(),
 };
 
 #[allow(const_err)]
-const PROP_MATH_SIZE: Property<MathSize, Mspace> = Property::Inherited {
+const PROP_MATH_SIZE: Property<MathSize, Mspace, DefaultComputationContext> = Property::Inherited {
     reader:     |i| i.math_size(),
     writer:     |v, fork| fork.math_size(v)
 };
