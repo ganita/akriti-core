@@ -314,7 +314,7 @@ impl MathRuler for Ruler {
         hb_face.fraction_denominator_display_style_shift_down() as f32 / HB_SIZE_FACTOR
     }
 
-    fn numerator_gap_min(&self) -> f32 {
+    fn fraction_numerator_gap_min(&self) -> f32 {
         let ft_face = self.ft_face.borrow();
         let hb_face = ft_face.get_hb_face();
         hb_face.fraction_numerator_gap_min() as f32 / HB_SIZE_FACTOR

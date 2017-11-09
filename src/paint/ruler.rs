@@ -68,7 +68,7 @@ pub trait MathRuler : TextRuler {
     fn fraction_numerator_display_style_shift_up(&self) -> f32;
     fn fraction_denominator_shift_down(&self) -> f32;
     fn fraction_denominator_display_style_shift_down(&self) -> f32;
-    fn numerator_gap_min(&self) -> f32;
+    fn fraction_numerator_gap_min(&self) -> f32;
     fn fraction_num_display_style_gap_min(&self) -> f32;
     fn fraction_rule_thickness(&self) -> f32;
     fn fraction_denominator_gap_min(&self) -> f32;
