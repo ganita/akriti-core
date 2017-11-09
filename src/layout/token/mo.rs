@@ -30,17 +30,17 @@ use ::draw::{PaddingBox, Drawable, Symbol, MeasureMode};
 use ::platform::Context;
 
 pub struct MoLayout {
-    lspace: f32,
-    rspace: f32,
-    stretchy: bool,
-    symmetric: bool,
-    max_size: f32,
-    min_size: f32,
-    large_op: bool,
-    movable_limits: bool,
-    accent: bool,
+    pub(crate) lspace: f32,
+    pub(crate) rspace: f32,
+    pub(crate) stretchy: bool,
+    pub(crate) symmetric: bool,
+    pub(crate) max_size: f32,
+    pub(crate) min_size: f32,
+    pub(crate) large_op: bool,
+    pub(crate) movable_limits: bool,
+    pub(crate) accent: bool,
 
-    token_element: TokenLayout,
+    pub(crate) token_element: TokenLayout,
 }
 
 impl Layout for MoLayout {

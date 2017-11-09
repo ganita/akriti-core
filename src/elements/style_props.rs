@@ -40,4 +40,28 @@ impl StyleProps {
     pub fn mspace_depth(&self) -> Option<&Length> { unimplemented!() }
 
     pub fn linebreak(&self) -> Option<&LineBreak> { unimplemented!() }
+
+    pub fn mo_form(&self) -> Option<&OperatorForm> { unimplemented!() }
+
+    pub fn mo_fence(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mo_separator(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mo_lspace(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mo_rspace(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mo_stretchy(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mo_symmetric(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mo_max_size(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mo_min_size(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mo_large_op(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mo_movable_limits(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mo_accent(&self) -> Option<&bool> { unimplemented!() }
 }
