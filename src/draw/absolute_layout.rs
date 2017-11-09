@@ -27,6 +27,8 @@ pub struct AbsoluteLayout<'a> {
 
     baseline: Option<f32>,
     axis: Option<f32>,
+
+    calculate_child_bounds: bool,
 }
 
 pub struct Child<'a> {
@@ -62,8 +64,10 @@ impl<'a> Drawable for AbsoluteLayout<'a> {
     }
 
     fn calculate(&mut self, context: &Context, _: &MeasureMode, _: &MeasureMode) {
-        for child in self.children.iter_mut() {
-            child.drawable.calculate(context, &MeasureMode::Wrap,&MeasureMode::Wrap);
+        if self.calculate_child_bounds {
+            for child in self.children.iter_mut() {
+                child.drawable.calculate(context, &MeasureMode::Wrap,&MeasureMode::Wrap);
+            }
         }
 
         let end_x_calc = |child: &Child|
@@ -103,6 +107,7 @@ impl<'a> AbsoluteLayout<'a> {
             bounding_box: BoundingBox::default(),
             baseline: None,
             axis: None,
+            calculate_child_bounds: true
         }
     }
 
@@ -138,5 +143,13 @@ impl<'a> AbsoluteLayout<'a> {
 
     pub fn iter_mut(&mut self) -> IterMut<Child<'a>> {
         self.children.iter_mut()
+    }
+
+    pub fn should_calculate_child_bounds(&mut self, calculate: bool) {
+        self.calculate_child_bounds = calculate;
+    }
+
+    pub fn is_calculating_child_bounds(&self) -> bool {
+        self.calculate_child_bounds
     }
 }
