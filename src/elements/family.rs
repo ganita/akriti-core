@@ -70,8 +70,8 @@ mod test {
     }
 
     impl Element for MockElement {
-        fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
-                  style: &Option<&StyleProps>) -> Box<Layout> {
+        fn layout<'a>(&self, _: &Context, _: &Family<'a>, _: &InheritedProps,
+                  _: &Option<&StyleProps>) -> Box<Layout> {
             unimplemented!()
         }
 

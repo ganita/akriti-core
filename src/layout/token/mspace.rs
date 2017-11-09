@@ -15,8 +15,6 @@
 */
 
 
-use std::rc::Rc;
-
 use super::{PresentationLayout};
 use super::super::{Layout, ConcreteLayout};
 use ::props::{LineBreak};

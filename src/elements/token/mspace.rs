@@ -15,12 +15,11 @@
 */
 
 
-use std::rc::Rc;
 use std::any::Any;
 
 use ::layout::{MspaceLayout, Layout};
 use super::super::{
-    TokenPrivate, PresentationPrivate, Presentation, PropertyCalculator, Property,
+    PresentationPrivate, Presentation, PropertyCalculator, Property,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType,
     TokenElement, InstanceId, Family, DefaultComputationContext};
 use ::platform::Context;
@@ -204,7 +203,7 @@ impl Presentation<Mspace> for Mspace {}
 mod test {
     use super::*;
     use ::test::skia::Snapshot;
-    use ::props::{Color, MathSize, MathVariant};
+    use ::props::{Color, MathSize};
 
     #[test]
     fn it_works() {

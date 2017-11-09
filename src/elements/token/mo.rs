@@ -25,7 +25,6 @@ use super::super::{
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property,
     Mrow, InstanceId, Family, DefaultComputationContext};
 use ::platform::*;
-use ::constants::OperatorDictionary;
 use ::utils::{is_space_like, get_enclosing_embellished_operator};
 use ::constants::SpaceLevel;
 
@@ -61,7 +60,7 @@ const PROP_FORM: Property<OperatorForm, Mo, DefaultComputationContext> = Propert
         }
 
         if forms.len() == 1 {
-            let (form, attrs) = forms.entries().next().unwrap();
+            let (form, _) = forms.entries().next().unwrap();
             return Some(form.clone());
         }
 
@@ -115,7 +114,7 @@ const PROP_FORM: Property<OperatorForm, Mo, DefaultComputationContext> = Propert
 
 const PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -127,7 +126,7 @@ const PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property:
 
 const PROP_SEPARATOR: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -139,7 +138,7 @@ const PROP_SEPARATOR: Property<bool, Mo, FormRequiredComputationContext> = Prope
 
 const PROP_LSPACE: Property<Length, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || Length::SpaceLevel(SpaceLevel::ThickMathSpace),
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -151,7 +150,7 @@ const PROP_LSPACE: Property<Length, Mo, FormRequiredComputationContext> = Proper
 
 const PROP_RSPACE: Property<Length, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || Length::SpaceLevel(SpaceLevel::ThickMathSpace),
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -163,7 +162,7 @@ const PROP_RSPACE: Property<Length, Mo, FormRequiredComputationContext> = Proper
 
 const PROP_STRETCHY: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -175,7 +174,7 @@ const PROP_STRETCHY: Property<bool, Mo, FormRequiredComputationContext> = Proper
 
 const PROP_SYMMETRIC: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -203,7 +202,7 @@ const PROP_MIN_SIZE: Property<Length, Mo, FormRequiredComputationContext> = Prop
 
 const PROP_LARGE_OP: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -215,7 +214,7 @@ const PROP_LARGE_OP: Property<bool, Mo, FormRequiredComputationContext> = Proper
 
 const PROP_MOVABLE_LIMITS: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -227,7 +226,7 @@ const PROP_MOVABLE_LIMITS: Property<bool, Mo, FormRequiredComputationContext> = 
 
 const PROP_ACCENT: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
-    computer: |ctx, element, parent, computation_ctx| {
+    computer: |ctx, element, _, computation_ctx| {
         let operator = element.get_text();
         let op_dict = ctx.operator_dictionary();
 
@@ -410,9 +409,6 @@ impl Element for Mo {
 
         let form = calculator.calculate(&PROP_FORM, self.form.as_ref());
         let compute_ctx = FormRequiredComputationContext::new(form.clone());
-
-        let fence = calculator.calculate_contextual(
-            &PROP_FENCE, self.fence.as_ref(), &compute_ctx);
 
         let font_size = token_layout.math_size;
 

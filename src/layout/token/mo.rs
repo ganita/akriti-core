@@ -17,13 +17,7 @@
 use ::props::{
     MathVariant,
     Directionality,
-    Color,
-    LineBreak,
-    LineBreakStyle,
-    IndentAlign,
-    IndentAlignFirstLast,
-    IndentShiftFirstLast,
-    IdRef
+    Color
 };
 use super::{Layout, ConcreteLayout, TokenLayout};
 use ::draw::{PaddingBox, Drawable, Symbol, MeasureMode};
@@ -96,19 +90,6 @@ impl MoLayout {
         large_op: bool,
         movable_limits: bool,
         accent: bool,
-
-        linebreak: LineBreak,
-        line_leading: f32,
-        linebreak_style: LineBreakStyle,
-        linebreak_mult_char: String,
-
-        indent_align: IndentAlign,
-        indent_shift: f32,
-        indent_target: Option<IdRef>,
-        indent_align_first: IndentAlignFirstLast,
-        indent_shift_first: IndentShiftFirstLast,
-        indent_align_last: IndentAlignFirstLast,
-        indent_shift_last: IndentShiftFirstLast,
 
         math_background: Color,
     ) -> MoLayout {

@@ -18,7 +18,6 @@
 use super::{Drawable, BoundingBox, MeasureMode};
 use ::paint::{Rect, Point, Canvas};
 use ::platform::Context;
-use ::props::Color;
 
 pub struct Space {
     bounding_box: BoundingBox,
@@ -30,7 +29,7 @@ pub struct Space {
 }
 
 impl Drawable for Space {
-    fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
+    fn draw(&self, _: &Canvas, _: &Point) {
         // nothing to draw
     }
 

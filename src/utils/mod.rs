@@ -15,7 +15,7 @@
 */
 
 
-use ::elements::{Element, Mrow, Mo, Family};
+use ::elements::{Element, Mrow, Family};
 
 
 pub fn is_space_like(element: &Element) -> bool {

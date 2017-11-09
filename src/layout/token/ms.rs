@@ -17,7 +17,6 @@
 
 use super::{TokenLayout, PresentationLayout};
 use super::super::{Layout, ConcreteLayout};
-use ::props::{MathVariant, Directionality, Color};
 use ::platform::Context;
 use ::draw::{Drawable, Wrapper, Text, LinearLayout, Gravity, Align, LinearLayoutParams, MeasureMode};
 

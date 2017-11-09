@@ -35,7 +35,7 @@ pub struct Snapshot {
 }
 
 impl Snapshot {
-    pub fn new(font: &str, snaps_dir: &str, font_size: f32) -> Snapshot {
+    pub fn new(font: &str, _snaps_dir: &str, font_size: f32) -> Snapshot {
         Snapshot {
             context: Context::new(Box::new(Platform::new(font)), font_size),
         }
