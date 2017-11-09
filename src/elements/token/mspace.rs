@@ -25,21 +25,25 @@ use super::super::{
 use ::platform::Context;
 use ::props::{Length, MathVariant, MathSize, Directionality, LineBreak};
 
+#[allow(const_err)]
 const PROP_WIDTH: Property<Length, Mspace, DefaultComputationContext> = Property::Specified {
     default: || Length::EX(0.),
     reader: |s| s.mspace_width(),
 };
 
+#[allow(const_err)]
 const PROP_HEIGHT: Property<Length, Mspace, DefaultComputationContext> = Property::Specified {
     default: || Length::EX(0.),
     reader: |s| s.mspace_height(),
 };
 
+#[allow(const_err)]
 const PROP_DEPTH: Property<Length, Mspace, DefaultComputationContext> = Property::Specified {
     default: || Length::EX(0.),
     reader: |s| s.mspace_depth(),
 };
 
+#[allow(const_err)]
 const PROP_LINEBREAK: Property<LineBreak, Mspace, DefaultComputationContext> = Property::Specified {
     default: || LineBreak::Auto,
     reader: |s| s.linebreak(),

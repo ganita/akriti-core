@@ -25,11 +25,13 @@ use super::super::{
     Property, InstanceId, Family, DefaultComputationContext};
 use ::platform::Context;
 
+#[allow(const_err)]
 const PROP_LQUOTE: Property<String, Ms, DefaultComputationContext> = Property::Specified {
     default: || String::from("\""),
     reader: |s| s.ms_lquote(),
 };
 
+#[allow(const_err)]
 const PROP_RQUOTE: Property<String, Ms, DefaultComputationContext> = Property::Specified {
     default: || String::from("\""),
     reader: |s| s.ms_rquote(),

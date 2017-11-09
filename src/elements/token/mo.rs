@@ -43,6 +43,7 @@ impl FormRequiredComputationContext {
     }
 }
 
+#[allow(const_err)]
 const PROP_FORM: Property<OperatorForm, Mo, DefaultComputationContext> = Property::Computed {
     default: || OperatorForm::Infix,
     computer: |ctx, elm, family, _| {
@@ -112,6 +113,7 @@ const PROP_FORM: Property<OperatorForm, Mo, DefaultComputationContext> = Propert
     reader: |s| s.mo_form(),
 };
 
+#[allow(const_err)]
 const PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
@@ -124,6 +126,7 @@ const PROP_FENCE: Property<bool, Mo, FormRequiredComputationContext> = Property:
     reader: |s| s.mo_fence(),
 };
 
+#[allow(const_err)]
 const PROP_SEPARATOR: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
@@ -136,6 +139,7 @@ const PROP_SEPARATOR: Property<bool, Mo, FormRequiredComputationContext> = Prope
     reader: |s| s.mo_separator(),
 };
 
+#[allow(const_err)]
 const PROP_LSPACE: Property<Length, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || Length::SpaceLevel(SpaceLevel::ThickMathSpace),
     computer: |ctx, element, _, computation_ctx| {
@@ -148,6 +152,7 @@ const PROP_LSPACE: Property<Length, Mo, FormRequiredComputationContext> = Proper
     reader: |s| s.mo_lspace(),
 };
 
+#[allow(const_err)]
 const PROP_RSPACE: Property<Length, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || Length::SpaceLevel(SpaceLevel::ThickMathSpace),
     computer: |ctx, element, _, computation_ctx| {
@@ -160,6 +165,7 @@ const PROP_RSPACE: Property<Length, Mo, FormRequiredComputationContext> = Proper
     reader: |s| s.mo_rspace(),
 };
 
+#[allow(const_err)]
 const PROP_STRETCHY: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
@@ -172,6 +178,7 @@ const PROP_STRETCHY: Property<bool, Mo, FormRequiredComputationContext> = Proper
     reader: |s| s.mo_stretchy(),
 };
 
+#[allow(const_err)]
 const PROP_SYMMETRIC: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
@@ -184,6 +191,7 @@ const PROP_SYMMETRIC: Property<bool, Mo, FormRequiredComputationContext> = Prope
     reader: |s| s.mo_symmetric(),
 };
 
+#[allow(const_err)]
 const PROP_MAX_SIZE: Property<Length, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || Length::Infinity,
     computer: |_, _, _, _| {
@@ -192,6 +200,7 @@ const PROP_MAX_SIZE: Property<Length, Mo, FormRequiredComputationContext> = Prop
     reader: |s| s.mo_max_size(),
 };
 
+#[allow(const_err)]
 const PROP_MIN_SIZE: Property<Length, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || Length::EM(1.),
     computer: |_, _, _, _| {
@@ -200,6 +209,7 @@ const PROP_MIN_SIZE: Property<Length, Mo, FormRequiredComputationContext> = Prop
     reader: |s| s.mo_min_size(),
 };
 
+#[allow(const_err)]
 const PROP_LARGE_OP: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
@@ -212,6 +222,7 @@ const PROP_LARGE_OP: Property<bool, Mo, FormRequiredComputationContext> = Proper
     reader: |s| s.mo_large_op(),
 };
 
+#[allow(const_err)]
 const PROP_MOVABLE_LIMITS: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
@@ -224,6 +235,7 @@ const PROP_MOVABLE_LIMITS: Property<bool, Mo, FormRequiredComputationContext> = 
     reader: |s| s.mo_movable_limits(),
 };
 
+#[allow(const_err)]
 const PROP_ACCENT: Property<bool, Mo, FormRequiredComputationContext> = Property::Computed {
     default: || false,
     computer: |ctx, element, _, computation_ctx| {
