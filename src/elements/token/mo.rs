@@ -34,7 +34,7 @@ struct FormRequiredComputationContext {
     form: OperatorForm
 }
 
-impl<'z> FormRequiredComputationContext {
+impl FormRequiredComputationContext {
     pub fn new(form: OperatorForm) -> FormRequiredComputationContext {
         FormRequiredComputationContext { form }
     }
