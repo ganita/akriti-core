@@ -40,19 +40,6 @@ pub struct MoLayout {
     movable_limits: bool,
     accent: bool,
 
-    linebreak: LineBreak,
-    line_leading: f32,
-    linebreak_style: LineBreakStyle,
-    linebreak_mult_char: String,
-
-    indent_align: IndentAlign,
-    indent_shift: f32,
-    indent_target: Option<IdRef>,
-    indent_align_first: IndentAlignFirstLast,
-    indent_shift_first: IndentShiftFirstLast,
-    indent_align_last: IndentAlignFirstLast,
-    indent_shift_last: IndentShiftFirstLast,
-
     token_element: TokenLayout,
 }
 
@@ -135,17 +122,7 @@ impl MoLayout {
             large_op,
             movable_limits,
             accent,
-            linebreak,
-            line_leading,
-            linebreak_style,
-            linebreak_mult_char,
-            indent_align,
-            indent_shift,
-            indent_target,
-            indent_align_first,
-            indent_shift_first,
-            indent_align_last,
-            indent_shift_last,
+
             token_element: TokenLayout::new(
                 text,
                 math_variant,
