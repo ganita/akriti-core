@@ -17,7 +17,7 @@
 
 use std::any::Any;
 
-use super::super::{Element, Presentation, PresentationPrivate, ElementType, TokenElement,
+use super::super::{Element, Presentation, PresentationPrivate, ElementType, GeneralLayout,
                    SpecifiedPresentationProps, InheritedProps, StyleProps, Property,
                    PropertyCalculator, InstanceId, Family, DefaultComputationContext};
 use ::props::*;
@@ -182,7 +182,7 @@ impl Element for Mfrac {
     }
 
     fn type_info(&self) -> ElementType {
-        ElementType::TokenElement(TokenElement::Mi)
+        ElementType::TokenElement(GeneralLayout::Mfrac)
     }
 
     fn as_any(&self) -> &Any {

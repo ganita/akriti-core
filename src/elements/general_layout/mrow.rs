@@ -17,7 +17,7 @@
 
 use std::any::Any;
 
-use super::super::{Element, Presentation, PresentationPrivate, ElementType, TokenElement,
+use super::super::{Element, Presentation, PresentationPrivate, ElementType, GeneralLayout,
                    SpecifiedPresentationProps, InheritedProps, StyleProps, Property,
                    PropertyCalculator, InstanceId, Family, DefaultComputationContext};
 use ::props::*;
@@ -89,7 +89,7 @@ impl Element for Mrow {
     }
 
     fn type_info(&self) -> ElementType {
-        ElementType::TokenElement(TokenElement::Mi)
+        ElementType::TokenElement(GeneralLayout::Mrow)
     }
 
     fn as_any(&self) -> &Any {
@@ -171,6 +171,11 @@ mod test {
                 .with_child(Box::new(Mn::new(String::from("2")))),
             "mrow_frac"
         );
+    }
+
+    #[test]
+    fn it_stretches_stretchy_symbols() {
+
     }
 
 }
