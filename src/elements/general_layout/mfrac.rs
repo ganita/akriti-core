@@ -182,7 +182,7 @@ impl Element for Mfrac {
     }
 
     fn type_info(&self) -> ElementType {
-        ElementType::TokenElement(GeneralLayout::Mfrac)
+        ElementType::GeneralLayout(GeneralLayout::Mfrac)
     }
 
     fn as_any(&self) -> &Any {

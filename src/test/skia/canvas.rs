@@ -97,7 +97,8 @@ impl ::paint::Canvas for Canvas {
         paint.set_stroke(false);
 
         let baseline_pos = if bounds.rect().height()-size > 5f32 {
-            bounds.rect().height()-size
+            let (_, rect) = paint.measure_blob(&[glyph_index as u16]);
+            -rect.top
         } else {
             bounds.baseline_pos()
         };

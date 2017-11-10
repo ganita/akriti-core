@@ -59,9 +59,6 @@ impl<'a, T: Layout + 'a> Drawable for Glyph<'a, T> {
                                  (self.dir_reader)(self.element));
             }
         }
-
-        canvas.draw_rect_outline(
-            pen_pos, self.bounding_box().rect(), &Color::RGB(0, 255, 0), 5.);
     }
 
     fn calculate(&mut self, context: &Context, _: &MeasureMode, _: &MeasureMode) {

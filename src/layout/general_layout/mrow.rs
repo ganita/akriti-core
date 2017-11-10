@@ -16,9 +16,9 @@
 
 use std::any::Any;
 
-use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout, MfracLayout};
+use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout, MfracLayout, MoLayout};
 use ::platform::Context;
-use ::draw::{Drawable, LinearLayout, Gravity, Align, LinearLayoutParams, Wrapper, MeasureMode};
+use ::draw::{Drawable, LinearLayout, Gravity, Align, LinearLayoutParams, Wrapper, MeasureMode, CrossAxisBoundMode};
 use ::props::{Directionality, Color};
 
 pub struct MrowLayout {
@@ -86,6 +86,13 @@ impl MrowLayout {
     fn get_linear_layout_params_for_element(element: &Layout) -> LinearLayoutParams {
         if element.as_any().is::<MfracLayout>() {
             return LinearLayoutParams::new().with_align(Some(Align::Axis));
+        }
+
+        if let Some(mo_layout) = element.as_any().downcast_ref::<MoLayout>() {
+            if mo_layout.stretchy {
+                return LinearLayoutParams::new()
+                    .with_cross_axis_bound_mode(CrossAxisBoundMode::FillParent);
+            }
         }
 
         return LinearLayoutParams::new();

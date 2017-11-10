@@ -89,7 +89,7 @@ impl Element for Mrow {
     }
 
     fn type_info(&self) -> ElementType {
-        ElementType::TokenElement(GeneralLayout::Mrow)
+        ElementType::GeneralLayout(GeneralLayout::Mrow)
     }
 
     fn as_any(&self) -> &Any {
@@ -175,7 +175,21 @@ mod test {
 
     #[test]
     fn it_stretches_stretchy_symbols() {
-
+        let snap = Snapshot::default();
+        snap.snap_element(
+            Mrow::new()
+                .with_child(Box::new(Mi::new(String::from("a"))))
+                .with_child(Box::new(Mo::new(String::from("+"))))
+                .with_child(Box::new(Mo::new(String::from("("))))
+                .with_child(Box::new(Mfrac::new(
+                    Box::new(Mi::new(String::from("x"))),
+                    Box::new(Mi::new(String::from("y")))
+                )))
+                .with_child(Box::new(Mo::new(String::from(")"))))
+                .with_child(Box::new(Mo::new(String::from("+"))))
+                .with_child(Box::new(Mn::new(String::from("2")))),
+            "mrow_stretchy_symbol"
+        );
     }
 
 }

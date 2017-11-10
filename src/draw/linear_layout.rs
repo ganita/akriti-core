@@ -244,7 +244,7 @@ impl<'a> Drawable for LinearLayout<'a> {
             }
         }
 
-        let axis_params = axis_params.unwrap_or(AxisParams {
+        let mut axis_params = axis_params.unwrap_or(AxisParams {
             align: Align::Start,
             baseline_pos: cross_axis_length,
             axis_baseline_shift: 0.,
@@ -252,6 +252,7 @@ impl<'a> Drawable for LinearLayout<'a> {
 
         let mut main_axis_wrap_length = 0f32;
         let mut weight_sum = 0f32;
+        let mut cross_axis_length_adjusted = cross_axis_length;
         // Calculate width and height of cross axis flexible items.
         for child in self.children.iter_mut() {
             if child.params.cross_axis_bound_mode == CrossAxisBoundMode::FillParent {
@@ -261,6 +262,9 @@ impl<'a> Drawable for LinearLayout<'a> {
                 };
 
                 child.drawable.calculate(context, &width_mode, &height_mode);
+
+                cross_axis_length_adjusted = cross_axis_length_adjusted
+                    .max(child.drawable.bounding_box().height());
             }
 
             if child.params.weight <= 0. {
@@ -272,6 +276,11 @@ impl<'a> Drawable for LinearLayout<'a> {
 
             weight_sum += child.params.weight;
         }
+
+        let cross_axis_diff = cross_axis_length_adjusted-cross_axis_length;
+        let baseline_new = axis_params.baseline_pos() + cross_axis_diff;
+        axis_params.set_baseline_pos(baseline_new);
+        cross_axis_length = cross_axis_length_adjusted;
 
         let main_axis_available_length = match self.gravity {
             Gravity::Horizontal => if let MeasureMode::UpTo(width) = *width_mode { width } else { -1. },
