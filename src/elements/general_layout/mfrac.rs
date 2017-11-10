@@ -292,4 +292,33 @@ mod test {
             &mfrac,
             "mfrac_bevelled");
     }
+
+    #[test]
+    fn it_works_nested() {
+        let snap = Snapshot::default();
+
+
+
+        let create_nested = | v: &str, x: Box<Element> | {
+            let mut nested = Mrow::new();
+
+            nested.with_child(Box::new(Mi::new(String::from(v))))
+                .with_child(Box::new(Mo::new(String::from("+"))))
+                .with_child(Box::new(Mfrac::new(
+                    Box::new(Mn::new(String::from("1"))),
+                    x
+                )));
+
+            nested
+        };
+
+        let nested = create_nested(
+            "a", Box::new(create_nested("b", Box::new(
+                create_nested("c", Box::new(
+                    create_nested("d", Box::new(
+                        create_nested("e", Box::new(Mi::new(String::from("f"))))))))))));
+
+        snap.snap_element(&nested, "mfrac_nested");
+    }
+
 }

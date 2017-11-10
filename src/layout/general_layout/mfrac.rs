@@ -167,6 +167,8 @@ impl MfracLayout {
             denom_baseline_shift_from_frac_axis-
             (denom_layout.bounding_box().baseline_pos());
 
+        ll.set_axis(Some(denom_y_pos-line_y_pos+denom_layout.bounding_box().height()-(rule_thickness/2f32)));
+
         line.calculate(context, &MeasureMode::UpTo(frac_width), &MeasureMode::Wrap);
 
         ll.add_child(num_layout, AbsoluteLayoutParams::new(Point::new(num_x_pos, num_y_pos)));
