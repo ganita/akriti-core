@@ -88,8 +88,8 @@ impl<'a, T: Layout + 'a> Drawable for Line<'a, T> {
             height = 0.;
         }
 
-        self.start = &start+&Point::new(x_diff, y_diff);
-        self.end = &end+&Point::new(x_diff, y_diff);
+        self.start = &start+&Point::new(x_diff, y_diff+(stroke_width/2.));
+        self.end = &end+&Point::new(x_diff, y_diff+(stroke_width/2.));
 
         self.bounding_box = BoundingBox {
             rect: Rect::new(width, height),
