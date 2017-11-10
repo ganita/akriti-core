@@ -100,7 +100,9 @@ impl ::paint::Canvas for Canvas {
             let (_, rect) = paint.measure_blob(&[glyph_index as u16]);
             -rect.top
         } else {
-            bounds.baseline_pos()
+            bounds.baseline_pos();
+            let (_, rect) = paint.measure_blob(&[glyph_index as u16]);
+            -rect.top
         };
 
         self.surface.get_canvas().draw_blob(&[glyph_index as u16], top_left.x(),

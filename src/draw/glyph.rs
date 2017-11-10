@@ -18,7 +18,7 @@
 use std::char::from_u32;
 
 use super::{Drawable, BoundingBox, MeasureMode};
-use ::paint::{Point, Canvas};
+use ::paint::{Point, Canvas, Rect};
 use ::layout::Layout;
 use ::platform::Context;
 use ::props::{Color, Directionality};
@@ -40,6 +40,8 @@ pub struct Glyph<'a, T: Layout + 'a> {
     color_reader: ColorReader<T>,
 
     bounding_box: BoundingBox,
+
+    advance: Option<f32>,
 }
 
 impl<'a, T: Layout + 'a> Drawable for Glyph<'a, T> {
@@ -77,6 +79,12 @@ impl<'a, T: Layout + 'a> Drawable for Glyph<'a, T> {
             1.
         };
 
+        let bounds = if let Some(advance) = self.advance {
+            Rect::new(bounds.width(), advance)
+        } else {
+            bounds
+        };
+
         self.bounding_box = BoundingBox {
             rect: bounds,
             baseline: -ruler.descent()*factor,
@@ -99,6 +107,11 @@ impl<'a, T: Layout + 'a> Glyph<'a, T> {
             dir_reader,
             color_reader,
             bounding_box: BoundingBox::default(),
+            advance: None
         }
+    }
+
+    pub fn set_advance(&mut self, advance: Option<f32>) {
+        self.advance = advance;
     }
 }

@@ -257,14 +257,19 @@ impl<'a, T: Layout + 'a> Symbol<'a, T> {
         let mut pen_pos = pen_pos;
 
         for _ in 0..num_iters {
+            let mut glyph = Glyph::new(
+                self.props,
+                GlyphIndex::Index(part.glyph_index()),
+                self.base_size_reader,
+                self.color_reader,
+                self.dir_reader);
+
+            if *stretch_dir == GlyphConstructionDirection::Vertical {
+                glyph.set_advance(Some(part.full_advance()));
+            }
+
             self.layout.add_child(
-                Box::new(Glyph::new(
-                    self.props,
-                    GlyphIndex::Index(part.glyph_index()),
-                    self.base_size_reader,
-                    self.color_reader,
-                    self.dir_reader)
-                ),
+                Box::new(glyph),
                 AbsoluteLayoutParams::new(match *stretch_dir {
                     GlyphConstructionDirection::Horizontal => Point::new(pen_pos, 0.),
                     GlyphConstructionDirection::Vertical => Point::new(0., pen_pos)
@@ -294,6 +299,10 @@ impl<'a, T: Layout + 'a> Symbol<'a, T> {
         self.layout.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
 
         self.bounding_box = self.layout.iter().next().unwrap().drawable().bounding_box().clone();
+    }
+
+    pub fn get_layout(&self) -> &AbsoluteLayout<'a> {
+        &self.layout
     }
 
 }
