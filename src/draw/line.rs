@@ -120,6 +120,8 @@ impl<'a, T: Layout + 'a> Line<'a, T> {
 
 #[cfg(test)]
 mod test {
+    use std::any::Any;
+
     use super::*;
     use ::platform::test::test_context;
     use ::test::skia::Snapshot;
@@ -127,6 +129,10 @@ mod test {
     struct MockElement;
     impl Layout for MockElement {
         fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
+            unimplemented!()
+        }
+
+        fn as_any(&self) -> &Any {
             unimplemented!()
         }
     }

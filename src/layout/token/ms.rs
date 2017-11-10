@@ -14,6 +14,7 @@
  * limitations under the License.
 */
 
+use std::any::Any;
 
 use super::{TokenLayout, PresentationLayout};
 use super::super::{Layout, ConcreteLayout};
@@ -29,6 +30,10 @@ pub struct MsLayout {
 impl Layout for MsLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
         Box::new(ConcreteLayout::layout(self, context))
+    }
+
+    fn as_any(&self) -> &Any {
+        self
     }
 }
 

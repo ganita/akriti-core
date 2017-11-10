@@ -14,8 +14,9 @@
  * limitations under the License.
 */
 
+use std::any::Any;
 
-use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout};
+use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout, MfracLayout};
 use ::platform::Context;
 use ::draw::{Drawable, LinearLayout, Gravity, Align, LinearLayoutParams, Wrapper, MeasureMode};
 use ::props::{Directionality, Color};
@@ -30,6 +31,10 @@ pub struct MrowLayout {
 impl Layout for MrowLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
         Box::new(ConcreteLayout::layout(self, context))
+    }
+
+    fn as_any(&self) -> &Any {
+        self
     }
 }
 
@@ -47,10 +52,12 @@ impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, LinearLayout<'a>>> f
 
         match self.dir {
             Directionality::LTR => for element in self.elements.iter() {
-                layout.add_child(element.layout(context), LinearLayoutParams::new());
+                layout.add_child(element.layout(context),
+                                 MrowLayout::get_linear_layout_params_for_element(element.as_ref()));
             },
             Directionality::RTL => for element in self.elements.iter().rev() {
-                layout.add_child(element.layout(context), LinearLayoutParams::new());
+                layout.add_child(element.layout(context),
+                                 MrowLayout::get_linear_layout_params_for_element(element.as_ref()));
             }
         }
 
@@ -74,6 +81,14 @@ impl MrowLayout {
     pub fn add_element(&mut self, element: Box<Layout>) -> &mut MrowLayout {
         self.elements.push(element);
         self
+    }
+
+    fn get_linear_layout_params_for_element(element: &Layout) -> LinearLayoutParams {
+        if element.as_any().is::<MfracLayout>() {
+            return LinearLayoutParams::new().with_align(Some(Align::Axis));
+        }
+
+        return LinearLayoutParams::new();
     }
 }
 

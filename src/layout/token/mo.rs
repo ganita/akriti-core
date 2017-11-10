@@ -14,6 +14,8 @@
  * limitations under the License.
 */
 
+use std::any::Any;
+
 use ::props::{
     MathVariant,
     Directionality,
@@ -40,6 +42,10 @@ pub struct MoLayout {
 impl Layout for MoLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
         Box::new(ConcreteLayout::layout(self, context))
+    }
+
+    fn as_any(&self) -> &Any {
+        self
     }
 }
 

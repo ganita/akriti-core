@@ -20,11 +20,14 @@ mod presentation;               pub use self::presentation::*;
 mod token;                      pub use self::token::*;
 mod general_layout;             pub use self::general_layout::*;
 
+use std::any::Any;
+
 use ::platform::Context;
 use ::draw::Drawable;
 
 pub trait Layout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a>;
+    fn as_any(&self) -> &Any;
 }
 
 pub trait ConcreteLayout<'a, T: Drawable + 'a> {

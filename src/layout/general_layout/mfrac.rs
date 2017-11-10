@@ -15,6 +15,8 @@
 */
 
 
+use std::any::Any;
+
 use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout};
 use ::platform::Context;
 use ::draw::{Drawable, AbsoluteLayout, Wrapper, MeasureMode, Line, LineParam, AbsoluteLayoutParams, Symbol};
@@ -37,6 +39,10 @@ pub struct MfracLayout {
 impl Layout for MfracLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
         Box::new(ConcreteLayout::layout(self, context))
+    }
+
+    fn as_any(&self) -> &Any {
+        self
     }
 }
 

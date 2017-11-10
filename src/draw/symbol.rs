@@ -301,6 +301,8 @@ impl<'a, T: Layout + 'a> Symbol<'a, T> {
 
 #[cfg(test)]
 mod test {
+    use std::any::Any;
+
     use super::*;
     use ::test::skia::Snapshot;
 
@@ -308,6 +310,10 @@ mod test {
 
     impl Layout for Test {
         fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
+            unimplemented!()
+        }
+
+        fn as_any(&self) -> &Any {
             unimplemented!()
         }
     }

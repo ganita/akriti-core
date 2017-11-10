@@ -117,7 +117,7 @@ impl Presentation<Mrow> for Mrow {}
 #[cfg(test)]
 mod test {
     use super::*;
-    use ::elements::Mi;
+    use ::elements::*;
     use ::test::skia::Snapshot;
 
     #[test]
@@ -155,4 +155,22 @@ mod test {
                 .with_math_color(Some(Color::RGB(0, 255, 0))),
             "mrow_green_text");
     }
+
+    #[test]
+    fn it_aligns_mfrac() {
+        let snap = Snapshot::default();
+        snap.snap_element(
+            Mrow::new()
+                .with_child(Box::new(Mi::new(String::from("a"))))
+                .with_child(Box::new(Mo::new(String::from("+"))))
+                .with_child(Box::new(Mfrac::new(
+                    Box::new(Mi::new(String::from("x"))),
+                    Box::new(Mi::new(String::from("y")))
+                )))
+                .with_child(Box::new(Mo::new(String::from("+"))))
+                .with_child(Box::new(Mn::new(String::from("2")))),
+            "mrow_frac"
+        );
+    }
+
 }

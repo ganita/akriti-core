@@ -23,6 +23,7 @@ mod ms;                         pub use self::ms::*;
 mod mspace;                     pub use self::mspace::*;
 
 use std::rc::Rc;
+use std::any::Any;
 
 use super::{ConcreteLayout, Layout, PresentationLayout};
 use ::draw::{Text, Drawable, Wrapper, MeasureMode};
@@ -42,6 +43,10 @@ pub struct TokenLayout {
 impl Layout for TokenLayout {
     fn layout<'a>(&'a self, _context: &Context) -> Box<Drawable + 'a> {
         unimplemented!()
+    }
+
+    fn as_any(&self) -> &Any {
+        self
     }
 }
 
