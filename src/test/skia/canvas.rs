@@ -96,8 +96,14 @@ impl ::paint::Canvas for Canvas {
         paint.set_antialias(true);
         paint.set_stroke(false);
 
+        let baseline_pos = if bounds.rect().height()-size > 5f32 {
+            bounds.rect().height()-size
+        } else {
+            bounds.baseline_pos()
+        };
+
         self.surface.get_canvas().draw_blob(&[glyph_index as u16], top_left.x(),
-                                            top_left.y()+bounds.baseline_pos(), paint.deref());
+                                            top_left.y()+baseline_pos, paint.deref());
     }
 
     fn draw_rect(&self, top_left: &Point, rect: &Rect, color: &Color) {
