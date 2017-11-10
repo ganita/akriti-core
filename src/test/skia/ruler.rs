@@ -431,7 +431,7 @@ impl MathRuler for Ruler {
     fn radical_degree_bottom_raise_percent(&self) -> f32 {
         let ft_face = self.ft_face.borrow();
         let hb_face = ft_face.get_hb_face();
-        hb_face.radical_degree_bottom_raise_percent() as f32 / HB_SIZE_FACTOR
+        hb_face.radical_degree_bottom_raise_percent() as f32 / 100.
     }
 
     fn minimum_connector_overlap(&self, direction: &GlyphConstructionDirection) -> f32 {
