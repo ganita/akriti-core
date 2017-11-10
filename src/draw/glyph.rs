@@ -59,6 +59,9 @@ impl<'a, T: Layout + 'a> Drawable for Glyph<'a, T> {
                                  (self.dir_reader)(self.element));
             }
         }
+
+        canvas.draw_rect_outline(
+            pen_pos, self.bounding_box().rect(), &Color::RGB(0, 255, 0), 5.);
     }
 
     fn calculate(&mut self, context: &Context, _: &MeasureMode, _: &MeasureMode) {
@@ -71,10 +74,16 @@ impl<'a, T: Layout + 'a> Drawable for Glyph<'a, T> {
             GlyphIndex::Index(index) => ruler.measure_glyph(index, dir),
         };
 
+        let factor = if bounds.height() > base_size {
+            bounds.height() / base_size
+        } else {
+            1.
+        };
+
         self.bounding_box = BoundingBox {
             rect: bounds,
-            baseline: -ruler.descent(),
-            axis: ruler.axis_height()-ruler.descent(),
+            baseline: -ruler.descent()*factor,
+            axis: (ruler.axis_height()-ruler.descent())*factor,
         };
     }
 
