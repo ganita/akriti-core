@@ -21,7 +21,6 @@ use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;
 use ::props::{Color};
 
-pub type StrokeWidthReader<T> = fn(&T) -> f32;
 pub type ColorReader<T> = fn(&T) -> &Color;
 
 pub enum LineParam {
@@ -34,7 +33,7 @@ pub struct Line<'a, T: Layout + 'a> {
     param: LineParam,
 
     element: &'a T,
-    stroke_width_reader: StrokeWidthReader<T>,
+    stroke_width: f32,
     color_reader: ColorReader<T>,
 
     bounding_box: BoundingBox,
@@ -48,7 +47,7 @@ impl<'a, T: Layout + 'a> Drawable for Line<'a, T> {
             &(&self.start+pen_pos),
             &(&self.end+pen_pos),
             (self.color_reader)(self.element),
-            (self.stroke_width_reader)(self.element),
+            self.stroke_width,
         )
     }
 
@@ -71,7 +70,7 @@ impl<'a, T: Layout + 'a> Drawable for Line<'a, T> {
             }
         };
 
-        let stroke_width = (self.stroke_width_reader)(self.element);
+        let stroke_width = self.stroke_width;
 
         let slope = (start.y()-end.y()).abs() / (start.x()-end.x()).abs();
         let angle = slope.atan();
@@ -105,12 +104,12 @@ impl<'a, T: Layout + 'a> Drawable for Line<'a, T> {
 }
 
 impl<'a, T: Layout + 'a> Line<'a, T> {
-    pub fn new(param: LineParam, element: &'a T, stroke_width_reader: StrokeWidthReader<T>,
+    pub fn new(param: LineParam, element: &'a T, stroke_width: f32,
                color_reader: ColorReader<T>) -> Line<'a, T> {
         Line {
             param,
             element,
-            stroke_width_reader,
+            stroke_width,
             color_reader,
             bounding_box: BoundingBox::default(),
             start: Point::new(0., 0.),
@@ -139,7 +138,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Vertical { x: 10. },
             &element,
-            |_| 5.,
+            5.,
             |_| &Color::RGB(0, 0, 0)
         );
 
@@ -156,7 +155,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Horizontal { y: 10. },
             &element,
-            |_| 5.,
+            5.,
             |_| &Color::RGB(0, 0, 0)
         );
 
@@ -173,7 +172,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(10., 10.) },
             &element,
-            |_| 5.,
+            5.,
             |_| &Color::RGB(0, 0, 0)
         );
 
@@ -192,7 +191,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(100., 100.) },
             &element,
-            |_| 50.,
+            50.,
             |_| &Color::RGB(0, 0, 0)
         );
 
@@ -202,7 +201,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Fixed { start: Point::new(0., 0.), end: Point::new(50., 100.) },
             &element,
-            |_| 50.,
+            50.,
             |_| &Color::RGB(0, 0, 0)
         );
 
@@ -212,7 +211,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Vertical { x: 0. },
             &element,
-            |_| 50.,
+            50.,
             |_| &Color::RGB(0, 0, 0)
         );
 
@@ -222,7 +221,7 @@ mod test {
         let mut line = Line::new(
             LineParam::Horizontal { y: 0. },
             &element,
-            |_| 50.,
+            50.,
             |_| &Color::RGB(0, 0, 0)
         );
 

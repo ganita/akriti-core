@@ -64,4 +64,12 @@ impl StyleProps {
     pub fn mo_movable_limits(&self) -> Option<&bool> { unimplemented!() }
 
     pub fn mo_accent(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mfrac_line_thickness(&self) -> Option<&LineThickness> { unimplemented!() }
+
+    pub fn mfrac_num_align(&self) -> Option<&HAlign> { unimplemented!() }
+
+    pub fn mfrac_denom_align(&self) -> Option<&HAlign> { unimplemented!() }
+
+    pub fn mfrac_bevelled(&self) -> Option<&bool> { unimplemented!() }
 }

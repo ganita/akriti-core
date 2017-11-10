@@ -16,4 +16,5 @@
 
 
 mod mrow;                   pub use self::mrow::*;
+mod mfrac;                  pub use self::mfrac::*;
 mod mstyle;                 pub use self::mstyle::*;
