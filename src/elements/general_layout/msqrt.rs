@@ -49,6 +49,10 @@ impl Element for Msqrt {
         self
     }
 
+    fn as_any_mut(&mut self) -> &mut Any {
+        self
+    }
+
     fn instance_id(&self) -> &InstanceId {
         self.root.instance_id()
     }

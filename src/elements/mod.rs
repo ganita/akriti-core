@@ -39,6 +39,7 @@ pub trait Element {
                   style: &Option<&StyleProps>) -> Box<Layout>;
     fn type_info(&self) -> ElementType;
     fn as_any(&self) -> &Any;
+    fn as_any_mut(&mut self) -> &mut Any;
     fn instance_id(&self) -> &InstanceId;
 }
 

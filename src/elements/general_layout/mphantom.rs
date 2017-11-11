@@ -73,6 +73,10 @@ impl Element for Mphantom {
         self
     }
 
+    fn as_any_mut(&mut self) -> &mut Any {
+        self
+    }
+
     fn instance_id(&self) -> &InstanceId {
         &self.instance_id
     }

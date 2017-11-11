@@ -66,6 +66,8 @@ impl Mrow {
     pub fn children(&self) -> &[Box<Element>] {
         &self.children[..]
     }
+
+    pub fn children_mut(&mut self) -> &mut [Box<Element>] { &mut self.children[..] }
 }
 
 impl Element for Mrow {
@@ -93,6 +95,10 @@ impl Element for Mrow {
     }
 
     fn as_any(&self) -> &Any {
+        self
+    }
+
+    fn as_any_mut(&mut self) -> &mut Any {
         self
     }
 
