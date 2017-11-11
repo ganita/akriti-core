@@ -72,4 +72,10 @@ impl StyleProps {
     pub fn mfrac_denom_align(&self) -> Option<&HAlign> { unimplemented!() }
 
     pub fn mfrac_bevelled(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mfenced_open(&self) -> Option<&String> { unimplemented!() }
+
+    pub fn mfenced_close(&self) -> Option<&String> { unimplemented!() }
+
+    pub fn mfenced_separators(&self) -> Option<&String> { unimplemented!() }
 }
