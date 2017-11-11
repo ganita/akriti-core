@@ -20,3 +20,4 @@ mod mfrac;                  pub use self::mfrac::*;
 mod mroot;                  pub use self::mroot::*;
 mod msqrt;                  pub use self::msqrt::*;
 mod mstyle;                 pub use self::mstyle::*;
+mod mphantom;               pub use self::mphantom::*;

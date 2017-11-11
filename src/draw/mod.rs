@@ -26,6 +26,7 @@ mod glyph;                  pub use self::glyph::*;
 mod line;                   pub use self::line::*;
 mod space;                  pub use self::space::*;
 mod empty;                  pub use self::empty::*;
+mod phantom;                pub use self::phantom::*;
 
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;

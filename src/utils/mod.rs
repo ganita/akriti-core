@@ -15,7 +15,7 @@
 */
 
 
-use ::elements::{Element, Mrow, Family};
+use ::elements::{Element, Mrow, Family, Mphantom};
 
 
 pub fn is_space_like(element: &Element) -> bool {
@@ -34,7 +34,8 @@ pub fn is_space_like(element: &Element) -> bool {
     }
 
     if element_type.is_mphantom() {
-        unimplemented!();
+        let phantom: &Mphantom = element.as_any().downcast_ref::<Mphantom>().unwrap();
+        return is_space_like(phantom.child().as_ref());
     }
 
     if element_type.is_mpadded() {
