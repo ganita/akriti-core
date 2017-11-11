@@ -25,6 +25,7 @@ pub enum PseudoLength {
     DP(f32),
     SP(f32),
     EM(f32),
+    DU(f32),
 
     PercentWidth(f32),
     PercentHeight(f32),
@@ -39,13 +40,14 @@ pub enum PseudoLength {
 }
 
 impl PseudoLength {
-    pub fn get_length_px(&self, context: &Context, font_size_du: f32,
+    pub fn get_length_du(&self, context: &Context, font_size_du: f32,
                          child_width: f32, child_height: f32, child_depth: f32) -> f32 {
         match *self {
             PseudoLength::PX(px) => Length::PX(px).get_length_du(context, font_size_du),
             PseudoLength::DP(dp) => Length::DP(dp).get_length_du(context, font_size_du),
             PseudoLength::SP(sp) => Length::SP(sp).get_length_du(context, font_size_du),
             PseudoLength::EM(em) => Length::EM(em).get_length_du(context, font_size_du),
+            PseudoLength::DU(du) => Length::DU(du).get_length_du(context, font_size_du),
 
             PseudoLength::PercentWidth(val) => child_width*val/100.0,
             PseudoLength::PercentHeight(val) => child_height*val/100.0,
@@ -56,11 +58,11 @@ impl PseudoLength {
             PseudoLength::Depth(val) => val*child_depth,
 
             PseudoLength::_Add(ref v1, ref v2) =>
-                v1.get_length_px(context, font_size_du, child_width, child_height, child_depth) +
-                v2.get_length_px(context, font_size_du, child_width, child_height, child_depth),
+                v1.get_length_du(context, font_size_du, child_width, child_height, child_depth) +
+                v2.get_length_du(context, font_size_du, child_width, child_height, child_depth),
             PseudoLength::_Sub(ref v1, ref v2) =>
-                v1.get_length_px(context, font_size_du, child_width, child_height, child_depth) -
-                v2.get_length_px(context, font_size_du, child_width, child_height, child_depth)
+                v1.get_length_du(context, font_size_du, child_width, child_height, child_depth) -
+                v2.get_length_du(context, font_size_du, child_width, child_height, child_depth)
         }
     }
 }

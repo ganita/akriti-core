@@ -26,6 +26,7 @@ pub enum Length {
     SP(f32),
     EM(f32),
     EX(f32),
+    DU(f32),
     SpaceLevel(SpaceLevel),
     Infinity,
     Auto
@@ -38,6 +39,7 @@ impl Length {
             Length::DP(dp) => context.platform().dp_to_du(dp),
             Length::SP(sp) => context.platform().sp_to_du(sp),
             Length::EM(em) => em*font_size_du,
+            Length::DU(du) => du,
             Length::SpaceLevel(ref level) => level.em()*font_size_du,
             Length::Infinity => f32::INFINITY,
             Length::Auto => f32::NAN,

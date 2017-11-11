@@ -78,4 +78,14 @@ impl StyleProps {
     pub fn mfenced_close(&self) -> Option<&String> { unimplemented!() }
 
     pub fn mfenced_separators(&self) -> Option<&String> { unimplemented!() }
+
+    pub fn mpadded_width(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
+
+    pub fn mpadded_height(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
+
+    pub fn mpadded_depth(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
+
+    pub fn mpadded_lspace(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
+
+    pub fn mpadded_voffset(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
 }
