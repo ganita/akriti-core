@@ -23,3 +23,4 @@ mod mstyle;                 pub use self::mstyle::*;
 mod mphantom;               pub use self::mphantom::*;
 mod mfenced;                pub use self::mfenced::*;
 mod mpadded;                pub use self::mpadded::*;
+mod merror;                 pub use self::merror::*;
