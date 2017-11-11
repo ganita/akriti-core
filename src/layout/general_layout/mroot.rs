@@ -99,7 +99,7 @@ impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, AbsoluteLayout<'a>>>
         let child_pos_y = rule_pos_y + rule_thickness + extra_ascender;
 
         let mut rule_line = Line::new(
-            LineParam::Horizontal { y: 0f32 },
+            LineParam::Horizontal { y: rule_thickness/2.0 },
             self,
             rule_thickness,
             |e| &e.presentation_element.math_color
