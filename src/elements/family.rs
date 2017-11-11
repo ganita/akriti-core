@@ -86,6 +86,10 @@ mod test {
         fn instance_id(&self) -> &InstanceId {
             &self.instance_id
         }
+
+        fn as_any_mut(&mut self) -> &mut Any {
+            unimplemented!()
+        }
     }
 
     trait Test {

@@ -325,6 +325,10 @@ mod test {
         fn as_any(&self) -> &Any {
             unimplemented!()
         }
+
+        fn as_any_mut(&mut self) -> &mut Any {
+            unimplemented!()
+        }
     }
 
     #[test]
