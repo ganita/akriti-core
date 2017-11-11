@@ -25,6 +25,7 @@ mod symbol;                 pub use self::symbol::*;
 mod glyph;                  pub use self::glyph::*;
 mod line;                   pub use self::line::*;
 mod space;                  pub use self::space::*;
+mod empty;                  pub use self::empty::*;
 
 use ::paint::{Canvas, Point, Rect};
 use ::platform::Context;

@@ -14,28 +14,26 @@
  * limitations under the License.
 */
 
-
-mod presentation;               pub use self::presentation::*;
-
-mod token;                      pub use self::token::*;
-mod general_layout;             pub use self::general_layout::*;
-
-mod mempty;                     pub use self::mempty::*;
-
 use std::any::Any;
 
+use super::{Layout};
 use ::platform::Context;
-use ::draw::Drawable;
+use ::draw::{Drawable, Empty};
 
-pub trait Layout {
-    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a>;
-    fn as_any(&self) -> &Any;
+pub struct MemptyLayout {}
+
+impl MemptyLayout {
+    pub fn new() -> MemptyLayout {
+        MemptyLayout {}
+    }
 }
 
-pub trait ConcreteLayout<'a, T: Drawable + 'a> {
-    fn layout(&'a self, context: &Context) -> T;
-}
+impl Layout for MemptyLayout {
+    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
+        Box::new(Empty::new())
+    }
 
-pub trait ElementGroup : Layout {
-    fn children(&self) -> &[Box<Layout>];
+    fn as_any(&self) -> &Any {
+        self
+    }
 }

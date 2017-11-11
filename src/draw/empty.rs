@@ -15,27 +15,30 @@
 */
 
 
-mod presentation;               pub use self::presentation::*;
-
-mod token;                      pub use self::token::*;
-mod general_layout;             pub use self::general_layout::*;
-
-mod mempty;                     pub use self::mempty::*;
-
-use std::any::Any;
-
+use super::{Drawable, BoundingBox, MeasureMode};
+use ::paint::{Point, Canvas};
 use ::platform::Context;
-use ::draw::Drawable;
 
-pub trait Layout {
-    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a>;
-    fn as_any(&self) -> &Any;
+pub struct Empty {
+    bounding_box: BoundingBox,
 }
 
-pub trait ConcreteLayout<'a, T: Drawable + 'a> {
-    fn layout(&'a self, context: &Context) -> T;
+impl Empty {
+    pub fn new() -> Empty {
+        Empty { bounding_box: BoundingBox::default() }
+    }
 }
 
-pub trait ElementGroup : Layout {
-    fn children(&self) -> &[Box<Layout>];
+impl Drawable for Empty {
+    fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
+        // do nothing
+    }
+
+    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
+        // do nothing
+    }
+
+    fn bounding_box(&self) -> &BoundingBox {
+        &self.bounding_box
+    }
 }

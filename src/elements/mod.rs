@@ -27,6 +27,8 @@ mod style_props;            pub use self::style_props::*;
 mod instance_id;            pub use self::instance_id::*;
 mod family;                 pub use self::family::*;
 
+mod mempty;                 pub use self::mempty::*;
+
 use std::any::Any;
 
 use ::platform::Context;
@@ -109,6 +111,13 @@ pub enum EnliveningExpression {
     Maction,
 }
 
+
+// Not specified in MathML specs. Used internally.
+#[derive(Debug, Copy, Clone, PartialOrd, PartialEq)]
+pub enum Miscellaneous {
+    Mempty,
+}
+
 #[derive(Debug, Copy, Clone, PartialOrd, PartialEq)]
 pub enum ElementType {
     TokenElement(TokenElement),
@@ -117,6 +126,7 @@ pub enum ElementType {
     TabularMath(TablularMath),
     ElementaryMath(ElementaryMath),
     EnliveningExpression(EnliveningExpression),
+    Miscellaneous(Miscellaneous)
 }
 
 impl ElementType {
