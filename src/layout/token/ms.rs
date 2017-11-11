@@ -35,6 +35,10 @@ impl Layout for MsLayout {
     fn as_any(&self) -> &Any {
         self
     }
+
+    fn as_any_mut(&mut self) -> &mut Any {
+        self
+    }
 }
 
 impl<'a> ConcreteLayout<'a, Wrapper<'a, MsLayout, LinearLayout<'a>>> for MsLayout {

@@ -39,6 +39,10 @@ impl Layout for MspaceLayout {
     fn as_any(&self) -> &Any {
         self
     }
+
+    fn as_any_mut(&mut self) -> &mut Any {
+        self
+    }
 }
 
 impl<'a> ConcreteLayout<'a, Wrapper<'a, MspaceLayout, Space>> for MspaceLayout {

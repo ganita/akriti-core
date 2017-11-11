@@ -47,6 +47,10 @@ impl Layout for MoLayout {
     fn as_any(&self) -> &Any {
         self
     }
+
+    fn as_any_mut(&mut self) -> &mut Any {
+        self
+    }
 }
 
 impl<'a> ConcreteLayout<'a, PaddingBox<'a, MoLayout, Symbol<'a, MoLayout>>> for MoLayout {

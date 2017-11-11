@@ -30,6 +30,7 @@ use ::draw::Drawable;
 pub trait Layout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a>;
     fn as_any(&self) -> &Any;
+    fn as_any_mut(&mut self) -> &mut Any;
 }
 
 pub trait ConcreteLayout<'a, T: Drawable + 'a> {
