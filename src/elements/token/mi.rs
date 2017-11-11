@@ -23,7 +23,7 @@ use ::layout::{MiLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement,
-    Property, InstanceId, Family, DefaultComputationContext};
+    Property, InstanceId, Family, EmptyComputeCtx};
 use ::platform::*;
 
 pub struct Mi {
@@ -86,7 +86,7 @@ impl PresentationPrivate<Mi> for Mi {
 
 impl TokenPrivate<Mi> for Mi {
     #[allow(const_err)]
-    const PROP_MATH_VARIANT: Property<MathVariant, Mi, DefaultComputationContext> = Property::Computed {
+    const PROP_MATH_VARIANT: Property<MathVariant, Mi, EmptyComputeCtx> = Property::Computed {
         default:    || MathVariant::Normal,
         computer:   |_, elm, _, _| {
             let text = elm.get_text();

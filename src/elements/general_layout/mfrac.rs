@@ -19,37 +19,37 @@ use std::any::Any;
 
 use super::super::{Element, Presentation, PresentationPrivate, ElementType, GeneralLayout,
                    SpecifiedPresentationProps, InheritedProps, StyleProps, Property,
-                   PropertyCalculator, InstanceId, Family, DefaultComputationContext};
+                   PropertyCalculator, InstanceId, Family, EmptyComputeCtx};
 use ::props::*;
 use ::platform::Context;
 use ::layout::{Layout, MfracLayout};
 
 #[allow(const_err)]
-const PROP_DIRECTIONALITY: Property<Directionality, Mfrac, DefaultComputationContext> = Property::Inherited {
+const PROP_DIRECTIONALITY: Property<Directionality, Mfrac, EmptyComputeCtx> = Property::Inherited {
     reader: |i| i.dir(),
     writer: |v, fork| fork.dir(v)
 };
 
 #[allow(const_err)]
-const PROP_LINE_THICKNESS: Property<LineThickness, Mfrac, DefaultComputationContext> = Property::Specified {
+const PROP_LINE_THICKNESS: Property<LineThickness, Mfrac, EmptyComputeCtx> = Property::Specified {
     default: || LineThickness::MEDIUM,
     reader: |s| s.mfrac_line_thickness(),
 };
 
 #[allow(const_err)]
-const PROP_NUM_ALIGN: Property<HAlign, Mfrac, DefaultComputationContext> = Property::Specified {
+const PROP_NUM_ALIGN: Property<HAlign, Mfrac, EmptyComputeCtx> = Property::Specified {
     default: || HAlign::Center,
     reader: |s| s.mfrac_num_align(),
 };
 
 #[allow(const_err)]
-const PROP_DENOM_ALIGN: Property<HAlign, Mfrac, DefaultComputationContext> = Property::Specified {
+const PROP_DENOM_ALIGN: Property<HAlign, Mfrac, EmptyComputeCtx> = Property::Specified {
     default: || HAlign::Center,
     reader: |s| s.mfrac_denom_align(),
 };
 
 #[allow(const_err)]
-const PROP_BEVELLED: Property<bool, Mfrac, DefaultComputationContext> = Property::Specified {
+const PROP_BEVELLED: Property<bool, Mfrac, EmptyComputeCtx> = Property::Specified {
     default: || false,
     reader: |s| s.mfrac_bevelled(),
 };

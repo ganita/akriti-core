@@ -125,8 +125,8 @@ impl<'a, 'b, 'c, 'd, 'e, 'f, T: Element> PropertyCalculator<'a, 'b, 'c, 'e, 'f, 
         }
     }
 
-    pub fn calculate<U: Clone>(&mut self, property: &Property<U, T, DefaultComputationContext>, specified: Option<&U>) -> U {
-        self.calculate_contextual(property, specified, &DefaultComputationContext {})
+    pub fn calculate<U: Clone>(&mut self, property: &Property<U, T, EmptyComputeCtx>, specified: Option<&U>) -> U {
+        self.calculate_contextual(property, specified, &EmptyComputeCtx {})
     }
 
     pub fn calculate_contextual<U: Clone, V>(
@@ -147,4 +147,4 @@ impl<'a, 'b, 'c, 'd, 'e, 'f, T: Element> PropertyCalculator<'a, 'b, 'c, 'e, 'f, 
 }
 
 #[derive(Debug, Default)]
-pub struct DefaultComputationContext {}
+pub struct EmptyComputeCtx {}

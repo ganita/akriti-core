@@ -25,7 +25,7 @@ mod mo;                         pub use self::mo::*;
 use std::rc::Rc;
 
 use ::props::{MathVariant, MathSize, Directionality};
-use ::elements::{Element, PresentationPrivate, Property, PropertyCalculator, DefaultComputationContext};
+use ::elements::{Element, PresentationPrivate, Property, PropertyCalculator, EmptyComputeCtx};
 use ::layout::{TokenLayout};
 use ::platform::Context;
 
@@ -40,19 +40,19 @@ pub struct SpecifiedTokenProps {
 
 pub trait TokenPrivate<T: Element> : PresentationPrivate<T> {
     #[allow(const_err)]
-    const PROP_MATH_VARIANT: Property<MathVariant, T, DefaultComputationContext> = Property::Specified {
+    const PROP_MATH_VARIANT: Property<MathVariant, T, EmptyComputeCtx> = Property::Specified {
         default:    || MathVariant::Normal,
         reader:     |s| s.math_variant()
     };
 
     #[allow(const_err)]
-    const PROP_MATH_SIZE: Property<MathSize, T, DefaultComputationContext> = Property::Inherited {
+    const PROP_MATH_SIZE: Property<MathSize, T, EmptyComputeCtx> = Property::Inherited {
         reader:     |i| i.math_size(),
         writer:     |v, fork| fork.math_size(v)
     };
 
     #[allow(const_err)]
-    const PROP_DIR: Property<Directionality, T, DefaultComputationContext> = Property::Inherited {
+    const PROP_DIR: Property<Directionality, T, EmptyComputeCtx> = Property::Inherited {
         reader:     |i| i.dir(),
         writer:     |v, fork| fork.dir(v)
     };

@@ -19,13 +19,13 @@ use std::any::Any;
 
 use super::super::{Element, Presentation, PresentationPrivate, ElementType, GeneralLayout,
                    SpecifiedPresentationProps, InheritedProps, StyleProps, Property,
-                   PropertyCalculator, InstanceId, Family, DefaultComputationContext};
+                   PropertyCalculator, InstanceId, Family, EmptyComputeCtx};
 use ::props::*;
 use ::platform::Context;
 use ::layout::{Layout, MrowLayout};
 
 #[allow(const_err)]
-const PROP_DIRECTIONALITY: Property<Directionality, Mrow, DefaultComputationContext> = Property::Inherited {
+const PROP_DIRECTIONALITY: Property<Directionality, Mrow, EmptyComputeCtx> = Property::Inherited {
     reader: |i| i.dir(),
     writer: |v, fork| fork.dir(v)
 };

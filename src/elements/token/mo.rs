@@ -23,7 +23,7 @@ use ::layout::{MoLayout, Layout};
 use super::super::{
     TokenPrivate, Token, PresentationPrivate, Presentation, SpecifiedTokenProps, PropertyCalculator,
     SpecifiedPresentationProps, Element, InheritedProps, StyleProps, ElementType, TokenElement, Property,
-    Mrow, InstanceId, Family, DefaultComputationContext};
+    Mrow, InstanceId, Family, EmptyComputeCtx};
 use ::platform::*;
 use ::utils::{is_space_like, get_enclosing_embellished_operator};
 use ::constants::SpaceLevel;
@@ -44,7 +44,7 @@ impl FormRequiredComputationContext {
 }
 
 #[allow(const_err)]
-const PROP_FORM: Property<OperatorForm, Mo, DefaultComputationContext> = Property::Computed {
+const PROP_FORM: Property<OperatorForm, Mo, EmptyComputeCtx> = Property::Computed {
     default: || OperatorForm::Infix,
     computer: |ctx, elm, family, _| {
         let operator = elm.get_text();
