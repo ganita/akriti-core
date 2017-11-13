@@ -66,7 +66,7 @@ impl<'a, T: Layout> Drawable for Text<'a, T> {
             (self.math_variant_reader)(self.props)
         );
 
-        let ruler = context.platform().get_math_ruler(self.props, size);
+        let ruler = context.platform().get_math_ruler(size);
         let width = ruler.measure(self.variant_text.as_ref(), (self.dir_reader)(self.props)).width();
         let height = ruler.ascent() - ruler.descent();
         let baseline = ruler.descent().abs();

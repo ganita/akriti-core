@@ -53,7 +53,7 @@ impl<'a, T: Layout + 'a> Drawable for Symbol<'a, T> {
     fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
         let base_size = (self.base_size_reader)(self.props);
         let symbol = (self.symbol_reader)(self.props);
-        let ruler = context.platform().get_math_ruler(self.props, base_size);
+        let ruler = context.platform().get_math_ruler(base_size);
 
         let chars: Vec<char> = symbol.chars().collect();
 

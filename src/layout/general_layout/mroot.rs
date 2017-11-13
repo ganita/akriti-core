@@ -52,7 +52,7 @@ impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, AbsoluteLayout<'a>>>
         let mut ll = AbsoluteLayout::new();
         ll.should_calculate_child_bounds(false);
 
-        let ruler = context.platform().get_math_ruler(self, self.base_size);
+        let ruler = context.platform().get_math_ruler(self.base_size);
 
         let vertical_gap = if self.presentation_element.display_style {
             ruler.radical_display_style_vertical_gap()

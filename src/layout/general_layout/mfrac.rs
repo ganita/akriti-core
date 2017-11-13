@@ -107,7 +107,7 @@ impl MfracLayout {
 
         let font_size = self.presentation_element.script_level.get_font_size(
             context, &MathSize::NORMAL);
-        let ruler = context.platform().get_math_ruler(self, font_size);
+        let ruler = context.platform().get_math_ruler(font_size);
 
         let rule_thickness = self.line_thickness.get_thickness_du(
             context, font_size, ruler.fraction_rule_thickness());
@@ -204,7 +204,7 @@ impl MfracLayout {
 
         let font_size = self.presentation_element.script_level.get_font_size(
             context, &MathSize::NORMAL);
-        let ruler = context.platform().get_math_ruler(self, font_size);
+        let ruler = context.platform().get_math_ruler(font_size);
 
         let rule_thickness = self.line_thickness.get_thickness_du(
             context, font_size, ruler.fraction_rule_thickness());

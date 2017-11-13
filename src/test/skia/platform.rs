@@ -37,12 +37,12 @@ impl Platform {
 }
 
 impl ::platform::Platform for Platform {
-    fn get_text_ruler(&self, _: &Layout, size: f32) -> &TextRuler {
+    fn get_text_ruler(&self, size: f32) -> &TextRuler {
         self.ruler.set_size(size);
         &self.ruler
     }
 
-    fn get_math_ruler(&self, _: &Layout, size: f32) -> &MathRuler {
+    fn get_math_ruler(&self, size: f32) -> &MathRuler {
         self.ruler.set_size(size);
         &self.ruler
     }
