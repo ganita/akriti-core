@@ -269,7 +269,7 @@ impl<'a> MultiscriptDrawable<'a> {
                 script_pos.superscript_baseline_pos-script.superscript.bounding_box().baseline_pos());
 
             pen_x += width;
-            y_max = y_max.max(script_pos.subscript_baseline_pos+script.superscript.bounding_box().baseline())
+            y_max = y_max.max(script_pos.subscript_baseline_pos+script.subscript.bounding_box().baseline())
         }
 
         return Rect::new(pen_x-current_pen_x, y_max);
