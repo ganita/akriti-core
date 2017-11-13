@@ -253,19 +253,31 @@ impl<'a> MultiscriptDrawable<'a> {
     }
 
     fn set_script_positions(scripts: &mut Vec<MultiscriptDrawableChild<'a>>,
-                            script_pos: &ScriptPosition, current_pen_x: f32) -> Rect {
+                            script_pos: &ScriptPosition, current_pen_x: f32, is_post_script: bool) -> Rect {
         let mut pen_x = current_pen_x;
         let mut y_max = 0f32;
         for script in scripts.iter_mut() {
             let width = script.subscript.bounding_box().width()
                 .max(script.superscript.bounding_box().width());
 
+            let subscript_x_pos = if is_post_script {
+                pen_x
+            } else {
+                pen_x+width-script.subscript.bounding_box().width()
+            };
+
             script.subscript_pos = Point::new(
-                pen_x+width-script.subscript.bounding_box().width(),
+                subscript_x_pos,
                 script_pos.subscript_baseline_pos-script.subscript.bounding_box().baseline_pos());
 
+            let superscript_x_pos = if is_post_script {
+                pen_x
+            } else {
+                pen_x+width-script.superscript.bounding_box().width()
+            };
+
             script.superscript_pos = Point::new(
-                pen_x+width-script.superscript.bounding_box().width(),
+                superscript_x_pos,
                 script_pos.superscript_baseline_pos-script.superscript.bounding_box().baseline_pos());
 
             pen_x += width;
@@ -301,14 +313,14 @@ impl<'a> Drawable for MultiscriptDrawable<'a> {
         let mut pen_x = 0f32;
 
         let prescript_bounds = MultiscriptDrawable::set_script_positions(
-            &mut self.prescripts, &script_pos, pen_x);
+            &mut self.prescripts, &script_pos, pen_x, false);
         pen_x += prescript_bounds.width();
 
         self.base_pos = Point::new(pen_x, base_baseline_pos-self.base.bounding_box().baseline_pos());
         pen_x += self.base.bounding_box().width();
 
         let postscript_bounds = MultiscriptDrawable::set_script_positions(
-            &mut self.postscripts, &script_pos, pen_x);
+            &mut self.postscripts, &script_pos, pen_x, true);
         pen_x += postscript_bounds.width();
 
         let height = prescript_bounds.height()
