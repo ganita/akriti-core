@@ -88,4 +88,8 @@ impl StyleProps {
     pub fn mpadded_lspace(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
 
     pub fn mpadded_voffset(&self) -> Option<&PropertyModifier<PseudoLength>> { unimplemented!() }
+
+    pub fn superscript_shift(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn subscript_shift(&self) -> Option<&Length> { unimplemented!() }
 }
