@@ -105,12 +105,8 @@ impl<'a> Drawable for MunderoverDrawable<'a> {
 
         self.base.calculate(context, width_mode, height_mode);
 
-        let base = &self.base;
-        let overscript = &self.overscript;
-        let underscript = &self.underscript;
-
-        let has_overscript = overscript.bounding_box().width() > 0f32 || overscript.bounding_box().height() > 0f32;
-        let has_underscript = underscript.bounding_box().width() > 0f32 || underscript.bounding_box().height() > 0f32;
+        let has_overscript = self.overscript.bounding_box().width() > 0f32 || self.overscript.bounding_box().height() > 0f32;
+        let has_underscript = self.underscript.bounding_box().width() > 0f32 || self.underscript.bounding_box().height() > 0f32;
 
         // Fix y position of overscript
         let overscript_y_pos = 0f32;
@@ -120,14 +116,14 @@ impl<'a> Drawable for MunderoverDrawable<'a> {
             let upper_limit_baseline_rise_min = ruler.upper_limit_baseline_rise_min();
 
             let mut base_y_pos = overscript_y_pos +
-                overscript.bounding_box().baseline_pos() +
+                self.overscript.bounding_box().baseline_pos() +
                 upper_limit_baseline_rise_min;
 
             // Minimum shift between top of base and bottom of overscript
             let upper_limit_gap_min = ruler.upper_limit_gap_min();
 
             base_y_pos = base_y_pos.max(
-                overscript_y_pos + overscript.bounding_box().height() + upper_limit_gap_min);
+                overscript_y_pos + self.overscript.bounding_box().height() + upper_limit_gap_min);
 
             base_y_pos
         } else {
@@ -139,39 +135,42 @@ impl<'a> Drawable for MunderoverDrawable<'a> {
             let lower_limit_baseline_drop_min = ruler.lower_limit_baseline_drop_min();
 
             let mut underscript_y_pos = base_y_pos +
-                base.bounding_box().height() +
+                self.base.bounding_box().height() +
                 lower_limit_baseline_drop_min -
-                underscript.bounding_box().baseline_pos();
+                self.underscript.bounding_box().baseline_pos();
 
             // Minimum shift between bottom of base and top of underscript
             let lower_limit_gap_min = ruler.lower_limit_gap_min();
 
             underscript_y_pos = underscript_y_pos.max(
-                base_y_pos + base.bounding_box().height() + lower_limit_gap_min);
+                base_y_pos + self.base.bounding_box().height() + lower_limit_gap_min);
 
             underscript_y_pos
         } else {
-            base_y_pos+base.bounding_box().height()
+            base_y_pos+self.base.bounding_box().height()
         };
 
-        let layout_width = base.bounding_box().width()
-            .max(overscript.bounding_box().width())
-            .max(underscript.bounding_box().width());
+        let layout_width = self.base.bounding_box().width()
+            .max(self.overscript.bounding_box().width())
+            .max(self.underscript.bounding_box().width());
 
-        let overscript_x_pos = self.get_x_pos_aligned(layout_width, overscript.bounding_box().width());
-        let base_x_pos = self.get_x_pos_aligned(layout_width, base.bounding_box().width());
-        let underscript_x_pos = self.get_x_pos_aligned(layout_width, underscript.bounding_box().width());
+        self.overscript.calculate(context, &MeasureMode::UpTo(layout_width), &MeasureMode::Wrap);
+        self.underscript.calculate(context, &MeasureMode::UpTo(layout_width), &MeasureMode::Wrap);
+
+        let overscript_x_pos = self.get_x_pos_aligned(layout_width, self.overscript.bounding_box().width());
+        let base_x_pos = self.get_x_pos_aligned(layout_width, self.base.bounding_box().width());
+        let underscript_x_pos = self.get_x_pos_aligned(layout_width, self.underscript.bounding_box().width());
 
         self.overscript_pos = Point::new(overscript_x_pos, overscript_y_pos);
         self.base_pos = Point::new(base_x_pos, base_y_pos);
         self.underscript_pos = Point::new(underscript_x_pos, underscript_y_pos);
 
-        let layout_height = underscript_y_pos + underscript.bounding_box().height();
+        let layout_height = underscript_y_pos + self.underscript.bounding_box().height();
 
         self.bounding_box = BoundingBox::new(
             Rect::new(layout_width, layout_height),
-            layout_height-(base_y_pos+base.bounding_box().baseline_pos()),
-            layout_height-(base_y_pos+base.bounding_box().axis_pos()),
+            layout_height-(base_y_pos+self.base.bounding_box().baseline_pos()),
+            layout_height-(base_y_pos+self.base.bounding_box().axis_pos()),
         );
     }
 

@@ -95,7 +95,8 @@ impl MrowLayout {
         if let Some(mo_layout) = element.as_any().downcast_ref::<MoLayout>() {
             if mo_layout.stretchy {
                 return LinearLayoutParams::new()
-                    .with_cross_axis_bound_mode(CrossAxisBoundMode::FillParent);
+                    .with_cross_axis_bound_mode(CrossAxisBoundMode::FillParent)
+                    .with_weight(1f32);
             }
         }
 
