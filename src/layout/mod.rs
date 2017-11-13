@@ -20,6 +20,8 @@ mod presentation;               pub use self::presentation::*;
 mod token;                      pub use self::token::*;
 mod general_layout;             pub use self::general_layout::*;
 mod scripts_and_limits;         pub use self::scripts_and_limits::*;
+mod action;                     pub use self::action::*;
+mod tabluar_math;               pub use self::tabluar_math::*;
 
 mod mempty;                     pub use self::mempty::*;
 

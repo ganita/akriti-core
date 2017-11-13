@@ -92,4 +92,10 @@ impl StyleProps {
     pub fn superscript_shift(&self) -> Option<&Length> { unimplemented!() }
 
     pub fn subscript_shift(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn underover_accent(&self) -> Option<&Accent> { unimplemented!() }
+
+    pub fn underover_accent_under(&self) -> Option<&Accent> { unimplemented!() }
+
+    pub fn underover_align(&self) -> Option<&HAlign> { unimplemented!() }
 }

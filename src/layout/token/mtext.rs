@@ -14,6 +14,51 @@
  * limitations under the License.
 */
 
-use super::MiLayout;
+use std::any::Any;
 
-pub type MtextLayout = MiLayout;
+use super::{TokenLayout, PresentationLayout};
+use super::super::{Layout, ConcreteLayout};
+use ::props::{MathVariant, Directionality, Color};
+use ::platform::Context;
+use ::draw::{Drawable, Wrapper, Text};
+
+pub struct MtextLayout {
+    pub(crate) token_element: TokenLayout
+}
+
+impl MtextLayout {
+    pub fn new(text: String, math_variant: MathVariant, math_size: f32, dir: Directionality,
+               math_color: Color, math_background: Color) -> MtextLayout {
+        MtextLayout {
+            token_element: TokenLayout::new(
+                text,
+                math_variant,
+                math_size,
+                dir,
+                math_color,
+                math_background,
+            )
+        }
+    }
+}
+
+impl Layout for MtextLayout {
+    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
+        Box::new(ConcreteLayout::layout(self, context))
+    }
+
+    fn as_any(&self) -> &Any {
+        self
+    }
+
+    fn as_any_mut(&mut self) -> &mut Any {
+        self
+    }
+}
+
+impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>>> for MtextLayout {
+    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>> {
+        <TokenLayout as ConcreteLayout<'a, Wrapper<'a, PresentationLayout, Text<'a, TokenLayout>>>>
+        ::layout(&self.token_element, context)
+    }
+}

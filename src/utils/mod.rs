@@ -16,6 +16,8 @@
 
 
 use ::elements::{Element, Mrow, Family, Mphantom};
+use ::layout::{ElementGroup, Layout, MrowLayout, MoLayout, MmultiscriptLayout, MunderoverLayout, MfracLayout,
+               MstyleLayout, MphatomLayout, MpaddedLayout, MactionLayout, MtextLayout, Maligngroup, Malignmark};
 
 
 pub fn is_space_like(element: &Element) -> bool {
@@ -102,6 +104,108 @@ pub fn get_enclosing_embellished_operator<'a>(family: &'a Family<'a>) -> Option<
         return family.grand_parent()
             .and_then(|f| get_enclosing_embellished_operator(f))
             .or(Some(family));
+    }
+
+    return None;
+}
+
+// The following MathML elements are defined to be ‘space-like’:
+// • an mtext, mspace, maligngroup, or malignmark element;
+// • an mstyle, mphantom, or mpadded element, all of whose direct sub-expressions are space-
+//   like;
+// • an maction element whose selected sub-expression exists and is space-like;
+// • an mrow all of whose direct sub-expressions are space-like.
+pub fn is_space_like_layout(layout: &Box<Layout>) -> bool {
+    if layout.as_any().is::<MtextLayout>() || layout.as_any().is::<Maligngroup>() || layout.as_any().is::<Malignmark>() {
+        return true;
+    }
+
+    if let Some(_) = layout.as_any().downcast_ref::<MstyleLayout>() {
+        unimplemented!()
+    }
+
+    if let Some(phantom) = layout.as_any().downcast_ref::<MphatomLayout>() {
+        let phantom: &MphatomLayout = phantom;
+        return is_space_like_layout(&phantom.child_layout);
+    }
+
+    if let Some(padded) = layout.as_any().downcast_ref::<MpaddedLayout>() {
+        let padded: &MpaddedLayout = padded;
+        return is_space_like_layout(&padded.child_layout);
+    }
+
+    if let Some(_) = layout.as_any().downcast_ref::<MactionLayout>() {
+        unimplemented!();
+    }
+
+    if let Some(row) = layout.as_any().downcast_ref::<MrowLayout>() {
+        let row: &MrowLayout = row;
+        return row.children().iter()
+            .find(|child| !is_space_like_layout(*child))
+            .is_none();
+    }
+
+    return false;
+}
+
+
+// The precise definition of an ‘embellished operator’ is:
+//
+// • an mo element;
+// • or one of the elements msub, msup, msubsup, munder, mover, munderover,
+//   mmultiscripts, mfrac, or semantics (Section 5.1), whose first argument exists and is an
+//   embellished operator;
+// • or one of the elements mstyle, mphantom, or mpadded, such that an mrow containing the
+//   same arguments would be an embellished operator;
+// • or an maction element whose selected sub-expression exists and is an embellished operator;
+// • or an mrow whose arguments consist (in any order) of one embellished operator and zero or
+//   more space-like elements.
+pub fn get_core_mo_layout(layout: &Box<Layout>) -> Option<&MoLayout> {
+    if let Some(mo) = layout.as_any().downcast_ref::<MoLayout>() {
+        return Some(mo);
+    }
+
+    if let Some(multiscript) = layout.as_any().downcast_ref::<MmultiscriptLayout>() {
+        let multiscript: &MmultiscriptLayout = multiscript;
+        return get_core_mo_layout(&multiscript.base_layout);
+    }
+
+    if let Some(underoverscript) = layout.as_any().downcast_ref::<MunderoverLayout>() {
+        let underoverscript: &MunderoverLayout = underoverscript;
+        return get_core_mo_layout(&underoverscript.base);
+    }
+
+    if let Some(frac) = layout.as_any().downcast_ref::<MfracLayout>() {
+        let frac: &MfracLayout = frac;
+        return get_core_mo_layout(&frac.numerator);
+    }
+
+    if let Some(mstyle) = layout.as_any().downcast_ref::<MstyleLayout>() {
+        unimplemented!();
+    }
+
+    if let Some(phantom) = layout.as_any().downcast_ref::<MphatomLayout>() {
+        let phantom: &MphatomLayout = phantom;
+        return get_core_mo_layout(&phantom.child_layout);
+    }
+
+    if let Some(padded) = layout.as_any().downcast_ref::<MpaddedLayout>() {
+        let padded: &MpaddedLayout = padded;
+        return get_core_mo_layout(&padded.child_layout);
+    }
+
+    if let Some(action) = layout.as_any().downcast_ref::<MactionLayout>() {
+        unimplemented!();
+    }
+
+    if let Some(mrow) = layout.as_any().downcast_ref::<MrowLayout>() {
+        let mrow: &MrowLayout = mrow;
+        let non_space_like = mrow.children().iter()
+            .find(|child| is_space_like_layout(*child));
+
+        if let Some(layout) = non_space_like {
+            return get_core_mo_layout(layout);
+        }
     }
 
     return None;

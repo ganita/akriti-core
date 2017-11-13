@@ -21,3 +21,4 @@ mod mroot;              pub use self::mroot::*;
 mod mphantom;           pub use self::mphantom::*;
 mod mpadded;            pub use self::mpadded::*;
 mod merror;             pub use self::merror::*;
+mod mstyle;             pub use self::mstyle::*;

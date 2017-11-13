@@ -15,9 +15,21 @@
 */
 
 
+use ::layout::MoLayout;
+
 #[derive(Clone, PartialEq, Debug)]
 pub enum Accent {
     True,
     False,
     Automatic
+}
+
+impl Accent {
+    pub fn get_accent(&self, auto_val: bool) -> bool {
+        match *self {
+            Accent::True => true,
+            Accent::False => false,
+            Accent::Automatic => auto_val,
+        }
+    }
 }
