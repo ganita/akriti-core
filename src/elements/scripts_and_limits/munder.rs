@@ -114,6 +114,7 @@ mod test {
     use ::props::*;
     use ::test::skia::Snapshot;
 
+    #[ignore]
     #[test]
     fn it_works() {
         let snapshot = Snapshot::default();
