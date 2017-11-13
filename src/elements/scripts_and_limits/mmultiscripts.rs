@@ -36,8 +36,8 @@ const PROP_SUBSCRIPT_SHIFT: Property<Length, Mmultiscripts, EmptyComputeCtx> = P
 };
 
 pub struct Mmultiscript {
-    superscript: Box<Element>,
-    subscript: Box<Element>,
+    pub superscript: Box<Element>,
+    pub subscript: Box<Element>,
 }
 
 pub struct Mmultiscripts {
@@ -65,7 +65,7 @@ impl Mmultiscripts {
         }
     }
 
-    pub fn with_baset<'a>(&'a mut self, base: Box<Element>) -> &'a mut Mmultiscripts {
+    pub fn with_base<'a>(&'a mut self, base: Box<Element>) -> &'a mut Mmultiscripts {
         self.base = base;
         self
     }
