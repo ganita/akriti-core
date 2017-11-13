@@ -65,7 +65,7 @@ const PROP_FORM: Property<OperatorForm, Mo, EmptyComputeCtx> = Property::Compute
             return Some(form.clone());
         }
 
-        let embellished_operator = get_enclosing_embellished_operator(family).unwrap_or(family);
+        let embellished_operator = get_enclosing_embellished_operator(family, elm).unwrap_or(family);
         let parent = embellished_operator.parent();
 
         if parent.is_none() {

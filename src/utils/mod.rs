@@ -15,7 +15,7 @@
 */
 
 
-use ::elements::{Element, Mrow, Family, Mphantom};
+use ::elements::{Element, Mrow, Family, Mphantom, Mmultiscripts, Mo, Munderover};
 use ::layout::{ElementGroup, Layout, MrowLayout, MoLayout, MmultiscriptLayout, MunderoverLayout, MfracLayout,
                MstyleLayout, MphatomLayout, MpaddedLayout, MactionLayout, MtextLayout, Maligngroup, Malignmark};
 
@@ -63,7 +63,7 @@ pub fn is_space_like(element: &Element) -> bool {
 }
 
 
-pub fn get_enclosing_embellished_operator<'a>(family: &'a Family<'a>) -> Option<&'a Family> {
+pub fn get_enclosing_embellished_operator<'a>(family: &'a Family<'a>, base_op: & Mo) -> Option<&'a Family<'a>> {
     let parent = family.parent();
 
     if parent.is_none() {
@@ -89,7 +89,15 @@ pub fn get_enclosing_embellished_operator<'a>(family: &'a Family<'a>) -> Option<
 
         children.len()-num_space_like == 1
     } else if parent_type.is_scrips_or_limits() {
-        unimplemented!()
+        if let Some(scripts) = parent.as_any().downcast_ref::<Mmultiscripts>() {
+            let scripts: &Mmultiscripts = scripts;
+            scripts.base().instance_id() == base_op.instance_id()
+        } else if let Some(underover) = parent.as_any().downcast_ref::<Munderover>() {
+            let underover: &Munderover = underover;
+            underover.base().instance_id() == base_op.instance_id()
+        } else {
+            panic!("Unknown script type")
+        }
     } else if parent_type.is_mfrac() {
         unimplemented!()
     } else if parent_type.is_mstyle() || parent_type.is_mphantom() || parent_type.is_mpadded() {
@@ -102,7 +110,7 @@ pub fn get_enclosing_embellished_operator<'a>(family: &'a Family<'a>) -> Option<
 
     if is_embellished_operator {
         return family.grand_parent()
-            .and_then(|f| get_enclosing_embellished_operator(f))
+            .and_then(|f| get_enclosing_embellished_operator(f, base_op))
             .or(Some(family));
     }
 
