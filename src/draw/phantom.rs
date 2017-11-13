@@ -35,7 +35,7 @@ impl<'a> Phantom<'a> {
 }
 
 impl<'a> Drawable for Phantom<'a> {
-    fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
+    fn draw(&self, _: &Canvas, _: &Point) {
         // do nothing
     }
 

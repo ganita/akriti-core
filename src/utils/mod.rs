@@ -188,7 +188,7 @@ pub fn get_core_mo_layout(layout: &Box<Layout>) -> Option<&MoLayout> {
         return get_core_mo_layout(&frac.numerator);
     }
 
-    if let Some(mstyle) = layout.as_any().downcast_ref::<MstyleLayout>() {
+    if let Some(_) = layout.as_any().downcast_ref::<MstyleLayout>() {
         unimplemented!();
     }
 
@@ -202,7 +202,7 @@ pub fn get_core_mo_layout(layout: &Box<Layout>) -> Option<&MoLayout> {
         return get_core_mo_layout(&padded.child_layout);
     }
 
-    if let Some(action) = layout.as_any().downcast_ref::<MactionLayout>() {
+    if let Some(_) = layout.as_any().downcast_ref::<MactionLayout>() {
         unimplemented!();
     }
 

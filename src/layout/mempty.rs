@@ -29,7 +29,7 @@ impl MemptyLayout {
 }
 
 impl Layout for MemptyLayout {
-    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
+    fn layout<'a>(&'a self, _: &Context) -> Box<Drawable + 'a> {
         Box::new(Empty::new())
     }
 

@@ -280,7 +280,7 @@ impl<'a> MultiscriptDrawable<'a> {
                 superscript_x_pos,
                 script_pos.superscript_baseline_pos-script.superscript.bounding_box().baseline_pos());
 
-            pen_x += (width+space);
+            pen_x += width+space;
             y_max = y_max.max(script_pos.subscript_baseline_pos+script.subscript.bounding_box().baseline())
         }
 
@@ -305,12 +305,8 @@ impl<'a> Drawable for MultiscriptDrawable<'a> {
         let script_pos = self.find_max_script_y_pos(&self.prescripts, ruler)
             .max(&self.find_max_script_y_pos(&self.postscripts, ruler));
 
-        let subscript_baseline_pos = script_pos.subscript_baseline_pos;
-
         let base_baseline_pos = script_pos.base_baseline_pos
             .max(self.base.bounding_box().baseline_pos());
-
-        let superscript_baseline_pos = script_pos.superscript_baseline_pos;
 
         let mut pen_x = 0f32;
 

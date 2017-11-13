@@ -44,7 +44,6 @@ impl Layout for MpaddedLayout {
         let child_width = child_drawable.bounding_box().width();
         let child_height = child_drawable.bounding_box().height() - child_drawable.bounding_box().baseline();
         let child_depth = child_drawable.bounding_box().baseline();
-        let child_axis = child_drawable.bounding_box().axis();
 
         let font_size = self.presentation_layout.script_level
             .get_font_size(context, &MathSize::NORMAL);
@@ -65,9 +64,6 @@ impl Layout for MpaddedLayout {
             .get_length_du(context, font_size, child_width, child_height, child_depth);
         let layout_voffset = self.voffset.value(PseudoLength::DU(0f32))
             .get_length_du(context, font_size, child_width, child_height, child_depth);
-
-        let child_pos_x = layout_lspace;
-        let child_pos_y = 0f32;
 
         wrapper.wrap(MpaddedDrawable {
             content: child_drawable,
@@ -106,7 +102,7 @@ impl<'a> Drawable for MpaddedDrawable<'a> {
         self.content.draw(canvas,&(pen_pos+&Point::new(self.lspace, self.voffset)));
     }
 
-    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
+    fn calculate(&mut self, _: &Context, _: &MeasureMode, _: &MeasureMode) {
         // do nothing
     }
 

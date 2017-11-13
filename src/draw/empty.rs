@@ -30,11 +30,11 @@ impl Empty {
 }
 
 impl Drawable for Empty {
-    fn draw(&self, canvas: &Canvas, pen_pos: &Point) {
+    fn draw(&self, _: &Canvas, _: &Point) {
         // do nothing
     }
 
-    fn calculate(&mut self, context: &Context, width_mode: &MeasureMode, height_mode: &MeasureMode) {
+    fn calculate(&mut self, _: &Context, _: &MeasureMode, _: &MeasureMode) {
         // do nothing
     }
 

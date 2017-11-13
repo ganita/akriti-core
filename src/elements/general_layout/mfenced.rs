@@ -19,16 +19,9 @@ use std::cell::RefCell;
 
 use super::super::{Element, ElementType, GeneralLayout, InheritedProps, StyleProps, Family, InstanceId,
                    Presentation, PresentationPrivate, SpecifiedPresentationProps,
-                   PropertyCalculator, Property, EmptyComputeCtx, Mrow, Mo, Token, Mi};
+                   PropertyCalculator, Property, EmptyComputeCtx, Mrow, Mo, Token};
 use ::platform::Context;
 use ::layout::{Layout};
-use ::props::{Directionality};
-
-#[allow(const_err)]
-const PROP_DIRECTIONALITY: Property<Directionality, Mfenced, EmptyComputeCtx> = Property::Inherited {
-    reader: |i| i.dir(),
-    writer: |v, fork| fork.dir(v)
-};
 
 #[allow(const_err)]
 const PROP_OPEN: Property<String, Mfenced, EmptyComputeCtx> = Property::Specified {
@@ -88,8 +81,6 @@ impl Mfenced {
         {
             let content = &mut self.placeholders.get_mut().children_mut()[1];
             let content: &mut Mrow = content.as_any_mut().downcast_mut::<Mrow>().unwrap();
-
-            let len = content.children().len();
 
             if content.children().len() > 0 {
                 // Separator placeholder
@@ -174,7 +165,6 @@ impl Element for Mfenced {
             {
                 let content: &mut Mrow = children[1].as_any_mut().downcast_mut::<Mrow>()
                     .expect("Cannot find contents");
-                let size = content.children().len();
 
                 let mut latest_separator = separators[0];
                 let mut separator_index = 0usize;

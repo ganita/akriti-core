@@ -2,7 +2,6 @@ use std::any::Any;
 
 use ::platform::{Platform, Context};
 use ::paint::{TextRuler, MathRuler};
-use ::layout::Layout;
 
 pub struct MockPlatform {}
 

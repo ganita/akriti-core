@@ -19,8 +19,8 @@ use std::any::Any;
 
 use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout};
 use ::platform::Context;
-use ::draw::{Drawable, AbsoluteLayout, Wrapper, MeasureMode, Line, LineParam, AbsoluteLayoutParams, Symbol};
-use ::props::{Directionality, Color, HAlign, MathSize, LineThickness, MathVariant};
+use ::draw::{Drawable, AbsoluteLayout, Wrapper, MeasureMode, Line, LineParam, AbsoluteLayoutParams};
+use ::props::{Directionality, Color, HAlign, MathSize, LineThickness};
 use ::paint::{Point};
 
 pub struct MfracLayout {

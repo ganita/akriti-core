@@ -19,7 +19,7 @@ use std::any::Any;
 use super::super::{Element, InheritedProps, StyleProps, Family, ElementType, InstanceId,
                    SpecifiedPresentationProps, PresentationPrivate, Presentation, ScriptsAndLimits,
                    PropertyCalculator, Property, EmptyComputeCtx};
-use ::layout::{Layout, MunderoverLayout, MmultiscriptLayout, MoLayout};
+use ::layout::{Layout, MunderoverLayout, MmultiscriptLayout};
 use ::platform::Context;
 use ::props::{HAlign, PropertyModifier, MathSize, Accent};
 use ::utils::get_core_mo_layout;
@@ -143,7 +143,6 @@ impl Element for Munderover {
         let new_family = family.add(self);
         let inherited_base = calculator.make_fork().copy();
 
-        let mut movable_limits = false;
         let base_layout = self.base.layout(context, &new_family, &inherited_base, style);
 
         let (mo_movable_limits, mo_accent) = {

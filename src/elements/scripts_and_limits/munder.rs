@@ -111,7 +111,6 @@ impl Presentation<Munderover> for Munder {}
 mod test {
     use super::*;
     use ::elements::*;
-    use ::props::*;
     use ::test::skia::Snapshot;
 
     #[ignore]

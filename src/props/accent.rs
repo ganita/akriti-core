@@ -15,8 +15,6 @@
 */
 
 
-use ::layout::MoLayout;
-
 #[derive(Clone, PartialEq, Debug)]
 pub enum Accent {
     True,

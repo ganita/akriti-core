@@ -17,10 +17,10 @@
 use std::any::Any;
 use std::f32;
 
-use super::super::{Layout, ElementGroup, ConcreteLayout, PresentationLayout};
+use super::super::{Layout, ConcreteLayout, PresentationLayout};
 use ::platform::Context;
 use ::draw::{Drawable, AbsoluteLayout, AbsoluteLayoutParams, Wrapper, MeasureMode, Symbol, Line, LineParam};
-use ::props::{Directionality, Color, MathSize, MathVariant, Length};
+use ::props::{Directionality, MathVariant};
 use ::paint::Point;
 
 pub struct MrootLayout {

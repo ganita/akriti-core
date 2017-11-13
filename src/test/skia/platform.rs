@@ -16,7 +16,6 @@
 
 use std::any::Any;
 
-use ::layout::Layout;
 use ::paint::{TextRuler, MathRuler};
 use super::ruler::Ruler as SnapshotRuler;
 use super::canvas::Canvas;

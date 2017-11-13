@@ -17,7 +17,7 @@
 use std::any::Any;
 
 use super::super::{Mmultiscripts, Mmultiscript, Element, ElementType, InheritedProps, StyleProps,
-                   Family, InstanceId, ScriptsAndLimits, Presentation, PresentationPrivate, Mempty,
+                   Family, InstanceId, ScriptsAndLimits, Presentation, PresentationPrivate,
                    SpecifiedPresentationProps};
 use ::platform::Context;
 use ::layout::{Layout};

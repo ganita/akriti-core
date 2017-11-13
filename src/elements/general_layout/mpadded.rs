@@ -22,7 +22,6 @@ use super::super::{Element, InstanceId, Family, InheritedProps, StyleProps, Elem
                    EmptyComputeCtx, Property};
 use ::layout::{Layout, MpaddedLayout};
 use ::props::{PseudoLength, PropertyModifier};
-use ::draw::Drawable;
 use ::platform::Context;
 
 #[allow(const_err)]
@@ -204,7 +203,7 @@ mod test {
     fn it_works() {
         let mut mrow = Mrow::new();
         mrow.with_child(Box::new(Mi::new(String::from("x"))));
-        let mut mpadded = Mpadded::new(Box::new(Mi::new(String::from("y"))));
+        let mpadded = Mpadded::new(Box::new(Mi::new(String::from("y"))));
 
         mrow.with_child(Box::new(mpadded));
         mrow.with_child(Box::new(Mi::new(String::from("z"))));
