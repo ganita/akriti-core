@@ -126,5 +126,20 @@ mod test {
         let munder = Munder::new(Box::new(row), Box::new(Mo::new(String::from("\u{23b5}"))));
 
         snapshot.snap_element(&munder, "munder_simple");
+
+        let mut row = Mrow::new();
+        row.with_child(Box::new(Mi::new(String::from("a"))));
+        row.with_child(Box::new(Mo::new(String::from("+"))));
+        row.with_child(Box::new(Mi::new(String::from("x"))));
+        row.with_child(Box::new(Mi::new(String::from("i"))));
+
+        let mut underscript = Mrow::new();
+        underscript.with_child(Box::new(Mi::new(String::from("x"))));
+        underscript.with_child(Box::new(Mo::new(String::from("→"))));
+        underscript.with_child(Box::new(Mi::new(String::from("∞"))));
+
+        let munder = Munder::new(Box::new(row), Box::new(underscript));
+
+        snapshot.snap_element(&munder, "munder_weight_stretched");
     }
 }
