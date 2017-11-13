@@ -119,8 +119,8 @@ impl<'a> MultiscriptDrawable<'a> {
     fn find_script_y_pos(&self, child: &MultiscriptDrawableChild<'a>, ruler: &MathRuler) -> ScriptPosition {
 
         let base = &self.base;
-        let subscript = &child.superscript;
-        let superscript = &child.subscript;
+        let subscript = &child.subscript;
+        let superscript = &child.superscript;
 
         let has_subscript = subscript.bounding_box().width() > 0f32 || subscript.bounding_box().height() > 0f32;
         let has_superscript = superscript.bounding_box().width() > 0f32 || superscript.bounding_box().height() > 0f32;
