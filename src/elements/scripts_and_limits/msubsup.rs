@@ -93,12 +93,46 @@ mod test {
 
     #[test]
     fn it_works() {
+        let snapshot = Snapshot::default();
+
         let msub = Msubsup::new(
             Box::new(Mi::new(String::from("a"))),
             Box::new(Mi::new(String::from("i"))),
             Box::new(Mi::new(String::from("j")))
         );
 
-        Snapshot::default().snap_element(&msub, "msubsup_simple");
+        snapshot.snap_element(&msub, "msubsup_simple");
+
+        let msub = Msubsup::new(
+            Box::new(Mi::new(String::from("a"))),
+            Box::new(Msubsup::new(
+                Box::new(Mi::new(String::from("a"))),
+                Box::new(Msubsup::new(
+                    Box::new(Mi::new(String::from("a"))),
+                    Box::new(Mi::new(String::from("i"))),
+                    Box::new(Mi::new(String::from("j")))
+                )),
+                Box::new(Msubsup::new(
+                    Box::new(Mi::new(String::from("a"))),
+                    Box::new(Mi::new(String::from("i"))),
+                    Box::new(Mi::new(String::from("j")))
+                ))
+            )),
+            Box::new(Msubsup::new(
+                Box::new(Mi::new(String::from("a"))),
+                Box::new(Msubsup::new(
+                    Box::new(Mi::new(String::from("a"))),
+                    Box::new(Mi::new(String::from("i"))),
+                    Box::new(Mi::new(String::from("j")))
+                )),
+                Box::new(Msubsup::new(
+                    Box::new(Mi::new(String::from("a"))),
+                    Box::new(Mi::new(String::from("i"))),
+                    Box::new(Mi::new(String::from("j")))
+                ))
+            ))
+        );
+
+        snapshot.snap_element(&msub, "msubsup_nested");
     }
 }

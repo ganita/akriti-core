@@ -93,11 +93,29 @@ mod test {
 
     #[test]
     fn it_works() {
+        let snapshot = Snapshot::default();
+
         let msub = Msub::new(
             Box::new(Mi::new(String::from("a"))),
             Box::new(Mi::new(String::from("i")))
         );
 
-        Snapshot::default().snap_element(&msub, "msub_simple");
+        snapshot.snap_element(&msub, "msub_simple");
+
+        let msub = Msub::new(
+            Box::new(Mi::new(String::from("a"))),
+            Box::new(Msub::new(
+                Box::new(Mi::new(String::from("a"))),
+                Box::new(Msub::new(
+                    Box::new(Mi::new(String::from("a"))),
+                    Box::new(Msub::new(
+                        Box::new(Mi::new(String::from("a"))),
+                        Box::new(Mi::new(String::from("i")))
+                    ))
+                ))
+            ))
+        );
+
+        snapshot.snap_element(&msub, "msub_nested");
     }
 }
