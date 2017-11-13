@@ -218,5 +218,26 @@ mod test {
         );
 
         snapshot.snap_element(&script, "mmutliscript_prescript_postscript");
+
+        script.with_postscript(
+            Mmultiscript {
+                superscript: Box::new(Msub::new(
+                    Box::new(Mi::new(String::from("a"))),
+                    Box::new(Msub::new(
+                        Box::new(Mi::new(String::from("a"))),
+                        Box::new(Msub::new(
+                            Box::new(Mi::new(String::from("a"))),
+                            Box::new(Msub::new(
+                                Box::new(Mi::new(String::from("a"))),
+                                Box::new(Mi::new(String::from("i")))
+                            ))
+                        ))
+                    ))
+                )),
+                subscript: Box::new(Mn::new(String::from("4")))
+            }
+        );
+
+        snapshot.snap_element(&script, "mmutliscript_prescript_postscript_diff_height");
     }
 }

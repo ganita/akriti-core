@@ -253,7 +253,7 @@ impl<'a> MultiscriptDrawable<'a> {
     }
 
     fn set_script_positions(scripts: &mut Vec<MultiscriptDrawableChild<'a>>,
-                            script_pos: &ScriptPosition, current_pen_x: f32, is_post_script: bool) -> Rect {
+                            script_pos: &ScriptPosition, current_pen_x: f32, space: f32, is_post_script: bool) -> Rect {
         let mut pen_x = current_pen_x;
         let mut y_max = 0f32;
         for script in scripts.iter_mut() {
@@ -280,7 +280,7 @@ impl<'a> MultiscriptDrawable<'a> {
                 superscript_x_pos,
                 script_pos.superscript_baseline_pos-script.superscript.bounding_box().baseline_pos());
 
-            pen_x += width;
+            pen_x += (width+space);
             y_max = y_max.max(script_pos.subscript_baseline_pos+script.subscript.bounding_box().baseline())
         }
 
@@ -300,6 +300,8 @@ impl<'a> Drawable for MultiscriptDrawable<'a> {
 
         let ruler = context.platform().get_math_ruler(self.base_size);
 
+        let space_after_script = ruler.space_after_script();
+
         let script_pos = self.find_max_script_y_pos(&self.prescripts, ruler)
             .max(&self.find_max_script_y_pos(&self.postscripts, ruler));
 
@@ -313,14 +315,15 @@ impl<'a> Drawable for MultiscriptDrawable<'a> {
         let mut pen_x = 0f32;
 
         let prescript_bounds = MultiscriptDrawable::set_script_positions(
-            &mut self.prescripts, &script_pos, pen_x, false);
+            &mut self.prescripts, &script_pos, pen_x, space_after_script, false);
         pen_x += prescript_bounds.width();
 
         self.base_pos = Point::new(pen_x, base_baseline_pos-self.base.bounding_box().baseline_pos());
         pen_x += self.base.bounding_box().width();
+        pen_x += space_after_script;
 
         let postscript_bounds = MultiscriptDrawable::set_script_positions(
-            &mut self.postscripts, &script_pos, pen_x, true);
+            &mut self.postscripts, &script_pos, pen_x, space_after_script, true);
         pen_x += postscript_bounds.width();
 
         let height = prescript_bounds.height()
