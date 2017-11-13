@@ -90,7 +90,7 @@ impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, AbsoluteLayout<'a>>>
         let degree_pos_y = ((root_height*degree_bottom_raise_pc)-degree_layout.bounding_box().height())
             .max(vertical_gap);
 
-        let surd_pos_x = degree_pos_x + degree_layout.bounding_box().width() + kern_after_degree;
+        let surd_pos_x = (degree_pos_x + degree_layout.bounding_box().width() + kern_after_degree).max(0f32);
         let surd_pos_y = degree_pos_y +
             degree_layout.bounding_box().height() +
             (root_height * degree_bottom_raise_pc) -
