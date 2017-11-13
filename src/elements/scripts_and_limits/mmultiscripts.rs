@@ -219,6 +219,11 @@ mod test {
 
         snapshot.snap_element(&script, "mmutliscript_prescript_postscript");
 
+        script.with_math_color(Some(Color::RGB(0, 255, 255)));
+        script.with_math_background(Some(Color::RGB(0, 0, 0)));
+
+        snapshot.snap_element(&script, "mmutliscript_math_color_sky_blue_bg_black");
+
         script.with_postscript(
             Mmultiscript {
                 superscript: Box::new(Msub::new(
