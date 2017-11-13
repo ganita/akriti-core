@@ -209,7 +209,7 @@ impl<'a> MultiscriptDrawable<'a> {
                 // Minimum gap between bottom of superscript and top of subscript
                 let sub_superscript_gap_min = ruler.sub_superscript_gap_min();
 
-                subscript_y_pos.max(
+                subscript_y_pos = subscript_y_pos.max(
                     superscript_y_pos +
                         superscript.bounding_box().height() +
                         sub_superscript_gap_min
