@@ -24,6 +24,7 @@ authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
 akriti-constants = { path = "constants" }
 akriti-macros = { path = "macros" }
 lazy_static = "*"
+cassowary = "*"
 
 [dev-dependencies]
 akriti-measure = { path="../akriti-measure" }

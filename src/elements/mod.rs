@@ -21,6 +21,7 @@ mod presentation;           pub use self::presentation::*;
 mod token;                  pub use self::token::*;
 mod general_layout;         pub use self::general_layout::*;
 mod scripts_and_limits;     pub use self::scripts_and_limits::*;
+mod tabular_math;           pub use self::tabular_math::*;
 
 mod inherited_props;        pub use self::inherited_props::*;
 mod style_props;            pub use self::style_props::*;

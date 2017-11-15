@@ -14,22 +14,11 @@
  * limitations under the License.
 */
 
+use super::Length;
 
-#[macro_use] extern crate akriti_macros;
-#[macro_use] extern crate lazy_static;
-
-pub extern crate akriti_constants;
-pub use akriti_constants as constants;
-pub extern crate cassowary;
-
-pub mod draw;
-pub mod elements;
-pub mod layout;
-pub mod paint;
-pub mod props;
-pub mod platform;
-pub mod utils;
-
-#[cfg(test)] pub extern crate akriti_measure;
-#[cfg(test)] pub extern crate skia_sys;
-#[cfg(test)] pub mod test;
+#[derive(Debug, Clone, PartialEq)]
+pub enum ColumnWidth {
+    Fit,
+    Auto,
+    Length(Length)
+}

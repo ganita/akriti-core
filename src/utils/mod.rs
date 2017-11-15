@@ -218,3 +218,7 @@ pub fn get_core_mo_layout(layout: &Box<Layout>) -> Option<&MoLayout> {
 
     return None;
 }
+
+pub fn get_variable_length_prop<T>(props: &Vec<T>, index: usize) -> &T {
+    &props[index.min(props.len()-1)]
+}

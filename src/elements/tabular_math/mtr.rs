@@ -14,5 +14,9 @@
  * limitations under the License.
 */
 
-mod maligngroup;                pub use self::maligngroup::*;
-mod malignmark;                 pub use self::malignmark::*;
+
+use super::{Mlabeledtr};
+
+pub struct Mtr {
+    row: Mlabeledtr
+}

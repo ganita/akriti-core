@@ -17,6 +17,7 @@
 
 mod accent;                 pub use self::accent::*;
 mod color;                  pub use self::color::*;
+mod column_width;           pub use self::column_width::*;
 mod directionality;         pub use self::directionality::*;
 mod frame_spacing;          pub use self::frame_spacing::*;
 mod group_align;            pub use self::group_align::*;

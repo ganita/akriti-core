@@ -98,4 +98,40 @@ impl StyleProps {
     pub fn underover_accent_under(&self) -> Option<&Accent> { unimplemented!() }
 
     pub fn underover_align(&self) -> Option<&HAlign> { unimplemented!() }
+
+    pub fn mtable_align(&self) -> Option<&TableVAlign> { unimplemented!() }
+
+    pub fn mtable_row_align(&self) -> Option<&Vec<VAlign>> { unimplemented!() }
+
+    pub fn mtable_column_align(&self) -> Option<&Vec<HAlign>> { unimplemented!() }
+
+    pub fn mtable_group_align(&self) -> Option<&Vec<Vec<GroupAlign>>> { unimplemented!() }
+
+    pub fn mtable_alignment_scope(&self) -> Option<&Vec<bool>> { unimplemented!() }
+
+    pub fn mtable_column_width(&self) -> Option<&Vec<ColumnWidth>> { unimplemented!() }
+
+    pub fn mtable_width(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mtable_row_spacing(&self) -> Option<&Vec<Length>> { unimplemented!() }
+
+    pub fn mtable_column_spacing(&self) -> Option<&Vec<Length>> { unimplemented!() }
+
+    pub fn mtable_row_lines(&self) -> Option<&Vec<LineType>> { unimplemented!() }
+
+    pub fn mtable_column_lines(&self) -> Option<&Vec<LineType>> { unimplemented!() }
+
+    pub fn mtable_frame(&self) -> Option<&LineType> { unimplemented!() }
+
+    pub fn mtable_frame_spacing(&self) -> Option<&FrameSpacing> { unimplemented!() }
+
+    pub fn mtable_equal_rows(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mtable_equal_columns(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mtable_display_style(&self) -> Option<&bool> { unimplemented!() }
+
+    pub fn mtable_side(&self) -> Option<&TableSide> { unimplemented!() }
+
+    pub fn mtable_min_label_spacing(&self) -> Option<&Length> { unimplemented!() }
 }

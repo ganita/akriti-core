@@ -14,8 +14,37 @@
  * limitations under the License.
 */
 
+extern crate cassowary;
+
+use cassowary::{Solver, Variable};
+use cassowary::WeightedRelation::*;
+use cassowary::strength::*;
+
+struct Column {
+    width: Variable,
+}
 
 fn main() {
-    println!("Hello, world!");
-    println!("{}", "Hi this is me");
+    let mut solver = Solver::new();
+
+    let mut constraints = Vec::new();
+
+    let table_width = Variable::new();
+    constraints.push(table_width |EQ(REQUIRED)| 300.0);
+
+    let col1 = Column { width: Variable::new() };
+    constraints.push(col1.width |GE(STRONG)| 10.0);
+    constraints.push(col1.width |GE(STRONG)| 20.0);
+
+    let col2 = Column { width: Variable::new() };
+    constraints.push(col2.width |GE(STRONG)| 10.0);
+    constraints.push(col1.width + col2.width | GE(STRONG) | 30.0);
+
+    constraints.push(col1.width + col2.width |EQ(REQUIRED)| table_width);
+    constraints.push(col1.width |EQ(REQUIRED)| col2.width);
+
+    solver.add_constraints(&constraints).unwrap();
+
+    println!("{:?}", solver.fetch_changes());
+
 }
