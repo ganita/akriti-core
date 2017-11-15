@@ -436,6 +436,7 @@ impl Element for Mtable {
                     row.layout_concrete(context, &new_family, &inherited.copy(), style)
                 })
                 .collect(),
+            presentation_layout,
         })
 
     }

@@ -21,7 +21,7 @@ use ::cassowary::{self, Solver, Variable, Expression};
 use cassowary::WeightedRelation::*;
 use cassowary::strength::*;
 
-use super::super::{Layout, ConcreteLayout};
+use super::super::{Layout, ConcreteLayout, PresentationLayout};
 use super::{MlabeledtrLayout, MlabeledtrDrawable, MtdDrawable};
 use ::draw::{Drawable, MeasureMode, BoundingBox};
 use ::platform::{Context};
@@ -48,11 +48,14 @@ pub struct MtableLayout {
     pub(crate) min_label_spacing: Length,
 
     pub(crate) rows: Vec<MlabeledtrLayout>,
+    pub(crate) presentation_layout: PresentationLayout,
 }
 
 impl Layout for MtableLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        Box::new(MtableDrawable {
+        let mut wrapper = self.presentation_layout.layout(context);
+
+        wrapper.wrap(MtableDrawable {
             layout: self,
             rows: self.rows.iter()
                 .map(|row| ConcreteLayout::layout(row, context))
@@ -71,7 +74,11 @@ impl Layout for MtableLayout {
             equal_cols: self.equal_columns,
             label_side: self.side.clone(),
             min_label_spacing: self.min_label_spacing.clone(),
-        })
+        });
+
+        wrapper.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
+
+        Box::new(wrapper)
     }
 
     fn as_any(&self) -> &Any {
