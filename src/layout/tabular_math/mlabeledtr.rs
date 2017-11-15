@@ -16,14 +16,15 @@
 
 use std::any::Any;
 
-use super::super::{Layout, ConcreteLayout};
+use super::super::{Layout, ConcreteLayout, MtdLayout, PresentationLayout};
 use super::{MtdDrawable};
 use ::platform::Context;
 use ::draw::{Drawable, BoundingBox, MeasureMode};
 use ::paint::{Canvas, Point};
 
 pub struct MlabeledtrLayout {
-
+    pub(crate) children: Vec<MtdLayout>,
+    pub(crate) presentation_layout: PresentationLayout,
 }
 
 impl<'a> ConcreteLayout<'a, MlabeledtrDrawable<'a>> for MlabeledtrLayout {
@@ -34,15 +35,15 @@ impl<'a> ConcreteLayout<'a, MlabeledtrDrawable<'a>> for MlabeledtrLayout {
 
 impl Layout for MlabeledtrLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        unimplemented!()
+        Box::new(ConcreteLayout::layout(self, context))
     }
 
     fn as_any(&self) -> &Any {
-        unimplemented!()
+        self
     }
 
     fn as_any_mut(&mut self) -> &mut Any {
-        unimplemented!()
+        self
     }
 }
 

@@ -14,6 +14,9 @@
  * limitations under the License.
 */
 
+use std::any::Any;
+
+use super::super::{Layout, ConcreteLayout};
 use ::draw::{Drawable, BoundingBox, MeasureMode};
 use ::props::{HAlign, VAlign, GroupAlign};
 use ::paint::{Point, Canvas};
@@ -23,6 +26,25 @@ pub struct MtdLayout {
 
 }
 
+impl<'a> ConcreteLayout<'a, MtdDrawable<'a>> for MtdLayout {
+    fn layout(&'a self, context: &Context) -> MtdDrawable<'a> {
+        unimplemented!()
+    }
+}
+
+impl Layout for MtdLayout {
+    fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
+        unimplemented!()
+    }
+
+    fn as_any(&self) -> &Any {
+        unimplemented!()
+    }
+
+    fn as_any_mut(&mut self) -> &mut Any {
+        unimplemented!()
+    }
+}
 
 pub(in super::super::tabular_math) struct MtdDrawable<'a> {
     pub(in super::super::tabular_math) row_span: u32,

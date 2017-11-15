@@ -17,11 +17,13 @@
 use std::any::Any;
 
 use super::super::{Element, ElementType, Presentation, PresentationPrivate, SpecifiedPresentationProps,
-                   InstanceId, InheritedProps, StyleProps, Family, TablularMath, Property, PropertyCalculator, EmptyComputeCtx};
+                   InstanceId, InheritedProps, StyleProps, Family, TablularMath, Property,
+                   PropertyCalculator, EmptyComputeCtx};
 use super::{Mtd};
 use ::props::{VAlign, HAlign, GroupAlign};
 use ::platform::Context;
 use ::layout::{Layout, MlabeledtrLayout};
+use ::utils::get_variable_length_prop;
 
 #[allow(const_err)]
 const PROP_ROW_ALIGN: Property<VAlign, Mlabeledtr, EmptyComputeCtx> = Property::Inherited {
@@ -68,7 +70,30 @@ impl Mlabeledtr {
 
     pub(crate) fn layout_concrete<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
                                   style: &Option<&StyleProps>) -> MlabeledtrLayout {
-        unimplemented!()
+        let mut calculator = PropertyCalculator::new(
+            context, self, family, inherited, style.clone());
+        let presentation_layout = self.layout_presentation(&mut calculator);
+
+        let _row_align = calculator.calculate(
+            &PROP_ROW_ALIGN, self.row_align.as_ref());
+        let column_align = calculator.calculate(
+            &PROP_COLUMN_ALIGN, self.column_align.as_ref());
+        let group_align = calculator.calculate(
+            &PROP_GROUP_ALIGN, self.group_align.as_ref());
+
+        let new_family = family.add(self);
+        let inherited_fork = calculator.make_fork().copy();
+
+        MlabeledtrLayout {
+            children: self.children.iter().enumerate().map(|(index, mtd)| {
+                let mut fork = inherited_fork.copier();
+                fork.table_mtd_column_align(get_variable_length_prop(&column_align, index).clone());
+                fork.table_mtd_group_align(get_variable_length_prop(&group_align, index).clone());
+
+                mtd.layout_concrete(context, &new_family, &fork.copy(), style)
+            }).collect(),
+            presentation_layout
+        }
     }
 
     pub fn with_mtd<'a>(&'a mut self, mtd: Mtd) -> &'a mut Mlabeledtr {

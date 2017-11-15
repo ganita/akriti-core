@@ -20,7 +20,7 @@ use ::props::{HAlign, VAlign, GroupAlign};
 use super::super::{Element, SpecifiedPresentationProps, Presentation, PresentationPrivate,
                    InheritedProps, StyleProps, Family, ElementType, InstanceId, TablularMath, EmptyComputeCtx, Property};
 use ::platform::{Context};
-use ::layout::{Layout};
+use ::layout::{Layout, MtdLayout};
 
 #[allow(const_err)]
 const PROP_ROW_ALIGN: Property<VAlign, Mtd, EmptyComputeCtx> = Property::Inherited {
@@ -66,6 +66,11 @@ impl Mtd {
             presentation_props: SpecifiedPresentationProps::default(),
             instance_id: InstanceId::new(),
         }
+    }
+
+    pub(crate) fn layout_concrete<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
+                                  style: &Option<&StyleProps>) -> MtdLayout {
+        unimplemented!()
     }
 
     pub fn with_child<'a>(&'a mut self, child: Option<Box<Element>>) -> &'a mut Mtd {
