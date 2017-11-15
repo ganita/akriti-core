@@ -84,4 +84,9 @@ impl<'a, T, U: Drawable> Wrapper<'a, T, U> {
     pub fn wrap(&mut self, drawable: U) {
         self.wrapped = Some(drawable);
     }
+
+    pub fn get_wrapped(&self) -> Option<&U> {
+        self.wrapped.as_ref()
+    }
+
 }
