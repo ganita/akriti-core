@@ -24,6 +24,7 @@ use ::props::{TableVAlign, VAlign, HAlign, Length, LineType, FrameSpacing, Displ
 use super::{Mlabeledtr};
 use ::platform::{Context};
 use ::layout::{Layout, MtableLayout};
+use ::utils::get_variable_length_prop;
 
 #[allow(const_err)]
 const PROP_ALIGN: Property<TableVAlign, Mtable, EmptyComputeCtx> = Property::Specified {
@@ -405,6 +406,13 @@ impl Element for Mtable {
         let new_family = family.add(self);
         let base_size = presentation_layout.script_level.get_font_size(context, &MathSize::NORMAL);
 
+        let mut inherited_fork = calculator.make_fork();
+        inherited_fork
+            .table_column_align(column_align)
+            .table_group_align(group_align);
+
+        let inherited_fork = inherited_fork.copy();
+
         Box::new(MtableLayout {
             base_size,
             align,
@@ -420,8 +428,13 @@ impl Element for Mtable {
             equal_columns,
             side,
             min_label_spacing,
-            rows: self.rows.iter()
-                .map(|row| row.layout_concrete(context, &new_family, inherited, style))
+            rows: self.rows.iter().enumerate()
+                .map(|(index, row)| {
+                    let row_align = get_variable_length_prop(&row_align, index);
+                    let mut inherited = inherited_fork.copier();
+                    inherited.table_row_align(row_align.clone());
+                    row.layout_concrete(context, &new_family, &inherited.copy(), style)
+                })
                 .collect(),
         })
 
