@@ -18,9 +18,22 @@ use std::any::Any;
 
 use ::props::{HAlign, VAlign, GroupAlign};
 use super::super::{Element, SpecifiedPresentationProps, Presentation, PresentationPrivate,
-                   InheritedProps, StyleProps, Family, ElementType, InstanceId, TablularMath, EmptyComputeCtx, Property};
+                   InheritedProps, StyleProps, Family, ElementType, InstanceId, TablularMath,
+                   EmptyComputeCtx, Property, PropertyCalculator};
 use ::platform::{Context};
 use ::layout::{Layout, MtdLayout};
+
+#[allow(const_err)]
+const PROP_ROW_SPAN: Property<u32, Mtd, EmptyComputeCtx> = Property::Specified {
+    default: || 1,
+    reader: |i| i.mtable_row_span(),
+};
+
+#[allow(const_err)]
+const PROP_COLUMN_SPAN: Property<u32, Mtd, EmptyComputeCtx> = Property::Specified {
+    default: || 1,
+    reader: |i| i.mtable_column_span(),
+};
 
 #[allow(const_err)]
 const PROP_ROW_ALIGN: Property<VAlign, Mtd, EmptyComputeCtx> = Property::Inherited {
@@ -70,7 +83,35 @@ impl Mtd {
 
     pub(crate) fn layout_concrete<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
                                   style: &Option<&StyleProps>) -> MtdLayout {
-        unimplemented!()
+        let mut calculator = PropertyCalculator::new(
+            context, self, family, inherited, style.clone());
+
+        let presentation_layout = self.layout_presentation(&mut calculator);
+        let row_span = calculator.calculate(
+            &PROP_ROW_SPAN, self.row_span.as_ref());
+        let column_span = calculator.calculate(
+            &PROP_COLUMN_SPAN, self.column_span.as_ref());
+        let row_align = calculator.calculate(
+            &PROP_ROW_ALIGN, self.row_align.as_ref());
+        let column_align = calculator.calculate(
+            &PROP_COLUMN_ALIGN, self.column_align.as_ref());
+        let group_align = calculator.calculate(
+            &PROP_GROUP_ALIGN, self.group_align.as_ref());
+
+        let new_family = family.add(self);
+        let inherited_fork = calculator.make_fork().copy();
+
+        MtdLayout {
+            row_span,
+            column_span,
+            row_align,
+            column_align,
+            group_align,
+            content: self.child.as_ref().and_then(|c| {
+                Some(c.layout(context, &new_family, &inherited_fork, style))
+            }),
+            presentation_layout,
+        }
     }
 
     pub fn with_child<'a>(&'a mut self, child: Option<Box<Element>>) -> &'a mut Mtd {
@@ -131,7 +172,7 @@ impl Mtd {
 impl Element for Mtd {
     fn layout<'a>(&self, context: &Context, family: &Family<'a>, inherited: &InheritedProps,
                   style: &Option<&StyleProps>) -> Box<Layout> {
-        unimplemented!()
+        Box::new(self.layout_concrete(context, family, inherited, style))
     }
 
     fn type_info(&self) -> ElementType {

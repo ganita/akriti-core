@@ -16,42 +16,65 @@
 
 use std::any::Any;
 
-use super::super::{Layout, ConcreteLayout};
-use ::draw::{Drawable, BoundingBox, MeasureMode};
+use super::super::{Layout, ConcreteLayout, PresentationLayout};
+use ::draw::{Drawable, BoundingBox, MeasureMode, Wrapper};
 use ::props::{HAlign, VAlign, GroupAlign};
 use ::paint::{Point, Canvas};
 use ::platform::Context;
 
 pub struct MtdLayout {
-
+    pub(crate) row_span: u32,
+    pub(crate) column_span: u32,
+    pub(crate) row_align: VAlign,
+    pub(crate) column_align: HAlign,
+    pub(crate) group_align: Vec<GroupAlign>,
+    pub(crate) content: Option<Box<Layout>>,
+    pub(crate) presentation_layout: PresentationLayout,
 }
 
-impl<'a> ConcreteLayout<'a, MtdDrawable<'a>> for MtdLayout {
-    fn layout(&'a self, context: &Context) -> MtdDrawable<'a> {
-        unimplemented!()
+impl<'a> ConcreteLayout<'a, Wrapper<'a, PresentationLayout, MtdDrawable<'a>>> for MtdLayout {
+    fn layout(&'a self, context: &Context) -> Wrapper<'a, PresentationLayout, MtdDrawable<'a>> {
+        let mut wrapper = self.presentation_layout.layout(context);
+
+        wrapper.wrap(MtdDrawable {
+            row_span: self.row_span,
+            col_span: self.column_span,
+            row_align: self.row_align.clone(),
+            col_align: self.column_align.clone(),
+            group_align_reader: |s| &s.group_align,
+            content: self.content.as_ref().and_then(|c| Some(c.layout(context))),
+            bounding_box: BoundingBox::default(),
+        });
+
+        wrapper.calculate(context, &MeasureMode::Wrap, &MeasureMode::Wrap);
+
+        wrapper
     }
 }
 
 impl Layout for MtdLayout {
     fn layout<'a>(&'a self, context: &Context) -> Box<Drawable + 'a> {
-        unimplemented!()
+        Box::new(ConcreteLayout::layout(self, context))
     }
 
     fn as_any(&self) -> &Any {
-        unimplemented!()
+        self
     }
 
     fn as_any_mut(&mut self) -> &mut Any {
-        unimplemented!()
+        self
     }
 }
+
+
+type GroupAlignReader = fn(&MtdLayout) -> &Vec<GroupAlign>;
 
 pub(in super::super::tabular_math) struct MtdDrawable<'a> {
     pub(in super::super::tabular_math) row_span: u32,
     pub(in super::super::tabular_math) col_span: u32,
     pub(in super::super::tabular_math) row_align: VAlign,
     pub(in super::super::tabular_math) col_align: HAlign,
-    pub(in super::super::tabular_math) group_align: GroupAlign,
+    pub(in super::super::tabular_math) group_align_reader: GroupAlignReader,
 
     pub(in super::super::tabular_math) content: Option<Box<Drawable + 'a>>,
 
@@ -68,6 +91,6 @@ impl<'a> Drawable for MtdDrawable<'a> {
     }
 
     fn bounding_box(&self) -> &BoundingBox {
-        unimplemented!()
+        &self.bounding_box
     }
 }

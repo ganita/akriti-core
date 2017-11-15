@@ -134,4 +134,8 @@ impl StyleProps {
     pub fn mtable_side(&self) -> Option<&TableSide> { unimplemented!() }
 
     pub fn mtable_min_label_spacing(&self) -> Option<&Length> { unimplemented!() }
+
+    pub fn mtable_row_span(&self) -> Option<&u32> { unimplemented!() }
+
+    pub fn mtable_column_span(&self) -> Option<&u32> { unimplemented!() }
 }
