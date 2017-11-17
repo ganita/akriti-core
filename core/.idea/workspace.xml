@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7ee008f3-d92b-41f9-9b09-535fb356f1bd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cargo.toml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/akriti-core.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/Cargo.toml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/blobs/math_variant_dictionary.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/blobs/operator_dictionary.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/build.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/lib.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/mathml.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/props/Cargo.toml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/props/lib.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/unicode.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/inspect/canvas.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/inspect/inspect.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/inspect/math_ruler.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/inspect/platform.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/inspect/text_ruler.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/macros/Cargo.toml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/macros/lib.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/absolute_layout.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/empty.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/fixed.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/glyph.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/line.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/linear_layout.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/padding_box.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/phantom.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/space.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/symbol.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/text.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/draw/wrapper.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/family.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/merror.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mfenced.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mfrac.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mpadded.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mphantom.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mroot.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mrow.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/msqrt.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/general_layout/mstyle.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/inherited_props.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/instance_id.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/mempty.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/presentation.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/property.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/mmultiscripts.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/mover.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/msub.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/msubsup.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/msup.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/munder.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/scripts_and_limits/munderover.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/style_props.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/mi.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/mn.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/mo.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/ms.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/mspace.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/elements/token/mtext.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/action/maction.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/action/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/merror.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mfrac.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mpadded.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mphantom.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mroot.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mrow.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/general_layout/mstyle.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/mempty.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/presentation.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/scripts_and_limits/mmultiscripts.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/scripts_and_limits/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/scripts_and_limits/munderover.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/tabluar_math/maligngroup.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/tabluar_math/malignmark.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/tabluar_math/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/mi.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/mn.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/mo.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/ms.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/mspace.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/layout/token/mtext.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/canvas.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/point.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/rect.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/ruler.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/style.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/paint/typeface.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/platform/context.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/platform/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/platform/test.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/accent.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/color.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/directionality.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/frame_spacing.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/group_align.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/halign.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/id_ref.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/indent.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/length.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/line_thickness.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/line_type.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/linebreak.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/mathsize.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/mathvariant.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/notation.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/operator_form.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/property_modifier.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/pseudo_length.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/script_level.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/table_side.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/props/valign.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/assets/STIX2Math.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/skia/canvas.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/skia/mod.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/skia/platform.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/skia/ruler.rs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/mod.rs" afterPath="" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="akriti-core" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Window</find>
+      <find>iter</find>
+      <find>self.ft_face.get_hb_face()</find>
+      <find>drawText</find>
+      <find>align</find>
+      <find>self.ft_face.borrow().get_hb_face()</find>
+      <find>print</find>
+      <find>atan</find>
+      <find>tan</find>
+      <find>Fixed</find>
+      <find>Mn</find>
+      <find>spa</find>
+      <find>lspace</find>
+      <find>Mrow</find>
+      <find>numerator</find>
+      <find>open</find>
+      <find>width</find>
+      <find>superscript</find>
+      <find>Mi</find>
+      <find>base</find>
+      <find>accent</find>
+      <find>Msub</find>
+      <find>Munder</find>
+      <find>underscript</find>
+      <find>row_spacing</find>
+      <find>column_span</find>
+      <find>(in super::super::tabular_math)</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>self.ft_face.borrow().get_hb_face()</replace>
+      <replace>Mn</replace>
+      <replace>Ms</replace>
+      <replace>Space</replace>
+      <replace>axis</replace>
+      <replace>Mspace</replace>
+      <replace>Mo</replace>
+      <replace>min_size</replace>
+      <replace>Mfrac</replace>
+      <replace>Mroot</replace>
+      <replace>degree</replace>
+      <replace>separators</replace>
+      <replace>voffset</replace>
+      <replace>subscript</replace>
+      <replace>Msup</replace>
+      <replace>Msubsup</replace>
+      <replace>Mtext</replace>
+      <replace>underscript</replace>
+      <replace>align</replace>
+      <replace>Munder</replace>
+      <replace>Mover</replace>
+      <replace>overscript</replace>
+      <replace>row_align</replace>
+      <replace>row_lines</replace>
+      <replace>min_label_spacing</replace>
+      <replace>group_align</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="tabular_math" />
+      </map>
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/layout/scripts_and_limits/munderover.rs" />
+        <option value="$PROJECT_DIR$/src/layout/general_layout/mrow.rs" />
+        <option value="$PROJECT_DIR$/src/test/skia/canvas.rs" />
+        <option value="$PROJECT_DIR$/src/draw/symbol.rs" />
+        <option value="$PROJECT_DIR$/src/layout/mempty.rs" />
+        <option value="$PROJECT_DIR$/src/layout/general_layout/mpadded.rs" />
+        <option value="$PROJECT_DIR$/src/elements/mempty.rs" />
+        <option value="$PROJECT_DIR$/src/draw/phantom.rs" />
+        <option value="$PROJECT_DIR$/src/draw/empty.rs" />
+        <option value="$PROJECT_DIR$/src/platform/mod.rs" />
+        <option value="$PROJECT_DIR$/src/props/accent.rs" />
+        <option value="$PROJECT_DIR$/src/layout/scripts_and_limits/mmultiscripts.rs" />
+        <option value="$PROJECT_DIR$/src/elements/scripts_and_limits/msubsup.rs" />
+        <option value="$PROJECT_DIR$/src/elements/scripts_and_limits/munderover.rs" />
+        <option value="$PROJECT_DIR$/src/layout/general_layout/mfrac.rs" />
+        <option value="$PROJECT_DIR$/src/elements/scripts_and_limits/munder.rs" />
+        <option value="$PROJECT_DIR$/src/platform/test.rs" />
+        <option value="$PROJECT_DIR$/src/elements/general_layout/mpadded.rs" />
+        <option value="$PROJECT_DIR$/src/elements/token/mod.rs" />
+        <option value="$PROJECT_DIR$/src/elements/general_layout/mrow.rs" />
+        <option value="$PROJECT_DIR$/src/elements/general_layout/mfenced.rs" />
+        <option value="$PROJECT_DIR$/src/layout/general_layout/mroot.rs" />
+        <option value="$PROJECT_DIR$/src/elements/general_layout/merror.rs" />
+        <option value="$PROJECT_DIR$/src/test/skia/platform.rs" />
+        <option value="$PROJECT_DIR$/src/test/skia/mod.rs" />
+        <option value="$PROJECT_DIR$/src/elements/mod.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/maligngroup.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/malignmark.rs" />
+        <option value="$PROJECT_DIR$/src/test/skia/ruler.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/mod.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/mtr.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabluar_math/mlabeledtr.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabluar_math/mtable.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabluar_math/mod.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabluar_math/mtd.rs" />
+        <option value="$PROJECT_DIR$/src/layout/mod.rs" />
+        <option value="$PROJECT_DIR$/src/props/mod.rs" />
+        <option value="$PROJECT_DIR$/Cargo.toml" />
+        <option value="$PROJECT_DIR$/src/lib.rs" />
+        <option value="$PROJECT_DIR$/src/props/column_width.rs" />
+        <option value="$PROJECT_DIR$/src/utils/mod.rs" />
+        <option value="$PROJECT_DIR$/src/elements/inherited_props.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/mlabeledtr.rs" />
+        <option value="$PROJECT_DIR$/src/elements/style_props.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/mtd.rs" />
+        <option value="$PROJECT_DIR$/src/draw/wrapper.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabular_math/mlabeledtr.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabular_math/mtd.rs" />
+        <option value="$PROJECT_DIR$/src/elements/tabular_math/mtable.rs" />
+        <option value="$PROJECT_DIR$/src/layout/tabular_math/mtable.rs" />
+        <option value="$PROJECT_DIR$/src/main.rs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="331" />
+    <option name="y" value="23" />
+    <option name="width" value="1349" />
+    <option name="height" value="958" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="akriti-core" type="b2602c69:ProjectViewProjectNode" />
+              <item name="akriti-core" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="SearchEverywhereHistoryKey" value="Mtd&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/elements/tabular_math/mtd.rs&#10;Mla&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/layout/tabular_math/mlabeledtr.rs&#10;Length&#9;null&#9;null&#10;Mrow&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/layout/general_layout/mrow.rs&#10;draw_g&#9;null&#9;null&#10;Glyph&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/draw/glyph.rs&#10;mrowla&#9;null&#9;null&#10;Operator&#9;null&#9;null&#10;Operatordi&#9;null&#9;null&#10;Sty&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/elements/style_props.rs&#10;Text&#9;null&#9;null&#10;text&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/elements/token/mtext.rs&#10;drawa&#9;null&#9;null&#10;Wra&#9;FILE&#9;file:///Users/sreejithkrishnanr/Shakuntala/akriti-core/src/draw/wrapper.rs&#10;Vec&#9;null&#9;null&#10;displa&#9;null&#9;null&#10;Hash&#9;null&#9;null&#10;Lru&#9;null&#9;null" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/elements/general_layout" />
+      <recent name="$PROJECT_DIR$/src/elements/token" />
+      <recent name="$PROJECT_DIR$/examples/inspect" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/elements/scripts_and_limits" />
+      <recent name="$PROJECT_DIR$/src/layout/tabluar_math" />
+      <recent name="$PROJECT_DIR$/src/test/assets" />
+      <recent name="$PROJECT_DIR$/src/test/skia" />
+      <recent name="$PROJECT_DIR$/snapshot" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Cargo Command.Test">
+    <configuration name="Check" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="check " />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="NO" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Inspect" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="STABLE" />
+      <option name="command" value="run --example inspect" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="NO" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="STABLE" />
+      <option name="command" value="run" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="NO" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Test elements::scripts_and_limits::mmultiscripts::test::it_works" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package akriti-core --lib elements::scripts_and_limits::mmultiscripts::test::it_works -- --exact" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Test merror::test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package akriti-core --lib elements::general_layout::merror::test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Test munder::test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package akriti-core --lib elements::scripts_and_limits::munder::test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Test munderover::test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package akriti-core --lib elements::scripts_and_limits::munderover::test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Test table" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package akriti-core --lib elements::tabular_math::mtable::table" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="NO" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration name="Test" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="STABLE" />
+      <option name="command" value="test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="NO" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <list size="9">
+      <item index="0" class="java.lang.String" itemvalue="Cargo Command.Run" />
+      <item index="1" class="java.lang.String" itemvalue="Cargo Command.Test" />
+      <item index="2" class="java.lang.String" itemvalue="Cargo Command.Check" />
+      <item index="3" class="java.lang.String" itemvalue="Cargo Command.Inspect" />
+      <item index="4" class="java.lang.String" itemvalue="Cargo Command.Test elements::scripts_and_limits::mmultiscripts::test::it_works" />
+      <item index="5" class="java.lang.String" itemvalue="Cargo Command.Test munderover::test" />
+      <item index="6" class="java.lang.String" itemvalue="Cargo Command.Test munder::test" />
+      <item index="7" class="java.lang.String" itemvalue="Cargo Command.Test merror::test" />
+      <item index="8" class="java.lang.String" itemvalue="Cargo Command.Test table" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Cargo Command.Test table" />
+        <item index="1" class="java.lang.String" itemvalue="Cargo Command.Test merror::test" />
+        <item index="2" class="java.lang.String" itemvalue="Cargo Command.Test munder::test" />
+        <item index="3" class="java.lang.String" itemvalue="Cargo Command.Test munderover::test" />
+        <item index="4" class="java.lang.String" itemvalue="Cargo Command.Test elements::scripts_and_limits::mmultiscripts::test::it_works" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ee008f3-d92b-41f9-9b09-535fb356f1bd" name="Default" comment="" />
+      <created>1508489864390</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508489864390</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Ignore false positive warning from compiler">
+      <created>1510240683766</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1510240683766</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Mark props to be used in future">
+      <created>1510240740160</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1510240740160</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Refactor for consistency">
+      <created>1510244136221</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1510244136221</updated>
+    </task>
+    <task id="LOCAL-00092" summary="API to disable calculating child layout">
+      <created>1510244731012</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1510244731012</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Mfrac initial implementation">
+      <created>1510292385912</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1510292385913</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Mfrac should be aligned with axis in mrow">
+      <created>1510294868469</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1510294868469</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Fix axis alignment of mfrac">
+      <created>1510298263017</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1510298263017</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Fix element types">
+      <created>1510298638223</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1510298638223</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Fix drawing glyph variants">
+      <created>1510304043915</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1510304043915</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Adjust baseline and axis for glyph variants having higher height than base size">
+      <created>1510304071771</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1510304071771</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Fix symbol stretching, fix element types, cleanup">
+      <created>1510307135759</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1510307135759</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Percent value">
+      <created>1510314333841</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1510314333841</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Center stroke">
+      <created>1510329947190</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1510329947190</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Mroot initial implementation">
+      <created>1510334416106</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1510334416106</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Fix line centering">
+      <created>1510372550568</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1510372550569</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Refactor">
+      <created>1510378172178</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1510378172178</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Empty element">
+      <created>1510379930129</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1510379930129</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Msqrt implementation">
+      <created>1510379944989</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1510379944989</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Mphantom implementation">
+      <created>1510384274177</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1510384274177</updated>
+    </task>
+    <task id="LOCAL-00108" summary="API for down casting to mutable reference">
+      <created>1510392174646</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1510392174646</updated>
+    </task>
+    <task id="LOCAL-00109" summary="API for down casting to mutable reference">
+      <created>1510393817135</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1510393817135</updated>
+    </task>
+    <task id="LOCAL-00110" summary="API for down casting to mutable reference">
+      <created>1510395969149</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1510395969149</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Mfenced implementation">
+      <created>1510401161556</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1510401161557</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Mpadded implementation">
+      <created>1510414695769</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1510414695769</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Merror implementation">
+      <created>1510418080890</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1510418080890</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Remove unused param">
+      <created>1510553902676</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1510553902677</updated>
+    </task>
+    <task id="LOCAL-00115" summary="Multiscripts implementation">
+      <created>1510553921533</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1510553921533</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Msub, Msup, Msubsup implementation">
+      <created>1510555397542</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1510555397542</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Fix ordering">
+      <created>1510556185853</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1510556185853</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Fix miscalculation of height">
+      <created>1510556781039</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1510556781039</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Fix minimum gap between subscript and superscript not preserved">
+      <created>1510556918448</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1510556918448</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Nested scripts test">
+      <created>1510556934922</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1510556934922</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Postscript should be aligned to left and prescript should be aligned to right">
+      <created>1510557287191</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1510557287191</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Implement space after script">
+      <created>1510557438739</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1510557438739</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Add test for math color and math background">
+      <created>1510558333003</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1510558333003</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Munderover, munder, mover implementation">
+      <created>1510576648056</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1510576648056</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Implement finding enclosing embellished operator for scripts and limits">
+      <created>1510583452268</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1510583452268</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Stretch underscript / overscript layout vertically">
+      <created>1510584726122</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1510584726122</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Horizontal stretch symbols with weight in underscript / overscript limits">
+      <created>1510586286555</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1510586286555</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Ignore failing test for now">
+      <created>1510586457550</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1510586457550</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Cleanup">
+      <created>1510591448699</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1510591448699</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Fix trimming of surd when root without degree is used">
+      <created>1510592839941</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1510592839941</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Initial tabular math framework">
+      <created>1510739571561</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1510739571562</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Initial tabular math framework">
+      <created>1510739589865</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1510739589865</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Pass props down to table row">
+      <created>1510740993217</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1510740993217</updated>
+    </task>
+    <task id="LOCAL-00134" summary="Background drawing for table">
+      <created>1510743979999</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1510743980000</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Pass props down to child from row">
+      <created>1510744895183</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1510744895183</updated>
+    </task>
+    <task id="LOCAL-00136" summary="Mtd layout">
+      <created>1510747211643</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1510747211643</updated>
+    </task>
+    <task id="LOCAL-00137" summary="Expose api to get wrapped drawable">
+      <created>1510758204879</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1510758204879</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="331" y="23" width="1349" height="958" extended-state="0" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5065134" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28041714" sideWeight="0.49578544" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32908458" sideWeight="0.49348658" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2789272" sideWeight="0.49535963" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24942617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26090282" sideWeight="0.5046404" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25707728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mpadded implementation" />
+    <MESSAGE value="Merror implementation" />
+    <MESSAGE value="Remove unused param" />
+    <MESSAGE value="Multiscripts implementation" />
+    <MESSAGE value="Msub, Msup, Msubsup implementation" />
+    <MESSAGE value="Fix ordering" />
+    <MESSAGE value="Fix miscalculation of height" />
+    <MESSAGE value="Fix minimum gap between subscript and superscript not preserved" />
+    <MESSAGE value="Nested scripts test" />
+    <MESSAGE value="Postscript should be aligned to left and prescript should be aligned to right" />
+    <MESSAGE value="Implement space after script" />
+    <MESSAGE value="Add test for math color and math background" />
+    <MESSAGE value="Munderover, munder, mover implementation" />
+    <MESSAGE value="Implement finding enclosing embellished operator for scripts and limits" />
+    <MESSAGE value="Stretch underscript / overscript layout vertically" />
+    <MESSAGE value="Horizontal stretch symbols with weight in underscript / overscript limits" />
+    <MESSAGE value="Ignore failing test for now" />
+    <MESSAGE value="Cleanup" />
+    <MESSAGE value="Fix trimming of surd when root without degree is used" />
+    <MESSAGE value="Initial tabular math framework" />
+    <MESSAGE value="Pass props down to table row" />
+    <MESSAGE value="Background drawing for table" />
+    <MESSAGE value="Pass props down to child from row" />
+    <MESSAGE value="Mtd layout" />
+    <MESSAGE value="Expose api to get wrapped drawable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Expose api to get wrapped drawable" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="akriti-core" type="b2602c69:ProjectViewProjectNode" />
+        <item name="akriti-core" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/layout/general_layout/mfrac.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="22" column="68" lean-forward="false" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/scripts_and_limits/munder.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/platform/test.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/general_layout/mpadded.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2985">
+          <caret line="217" column="26" lean-forward="true" selection-start-line="217" selection-start-column="26" selection-end-line="217" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/token/mtext.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/token/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/general_layout/mrow.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/general_layout/mfenced.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="88" column="36" lean-forward="false" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/general_layout/mroot.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/token/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-370">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/general_layout/merror.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/general_layout/merror.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/marker.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="346" column="17" lean-forward="false" selection-start-line="346" selection-start-column="17" selection-end-line="346" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/skia/platform.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/skia/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/malignmark.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/maligngroup.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/skia/ruler.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/valign.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/line_type.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/table_side.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/group_align.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/tabular_math/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/color.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/length.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="85" lean-forward="true" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cargo.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/scripts_and_limits/mmultiscripts.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="29" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/props/column_width.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="221" column="4" lean-forward="false" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/mod.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/inherited_props.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/style_props.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="139" column="51" lean-forward="false" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/mlabeledtr.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="92" column="34" lean-forward="true" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/mtr.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/mtd.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="185" column="33" lean-forward="false" selection-start-line="185" selection-start-column="33" selection-end-line="185" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/draw/wrapper.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="72" column="44" lean-forward="false" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/tabular_math/mtd.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="90" column="5" lean-forward="false" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/tabular_math/mtable.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6360">
+          <caret line="470" column="0" lean-forward="false" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/tabular_math/mtable.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/liballoc/vec.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2136">
+          <caret line="729" column="11" lean-forward="false" selection-start-line="729" selection-start-column="11" selection-end-line="729" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/collections/hash/set.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="657" column="11" lean-forward="false" selection-start-line="657" selection-start-column="11" selection-end-line="657" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/cmp.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="163" column="10" lean-forward="false" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/collections/hash/map.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17250">
+          <caret line="1190" column="11" lean-forward="false" selection-start-line="1190" selection-start-column="11" selection-end-line="1190" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/convert.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="396" column="7" lean-forward="false" selection-start-line="396" selection-start-column="7" selection-end-line="396" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/cassowary-0.3.0/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3600">
+          <caret line="240" column="11" lean-forward="false" selection-start-line="240" selection-start-column="11" selection-end-line="240" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout/tabular_math/mlabeledtr.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>Ganita Opensource</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>akriti-core</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
