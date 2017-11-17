@@ -1,0 +1,10 @@
+[package]
+name = "akriti-android"
+version = "0.1.0"
+authors = ["Sreejith Krishnan R <sreejith@ganita.io>"]
+
+[lib]
+path = "rust/lib.rs"
+crate-type = ["staticlib"]
+
+[dependencies]
